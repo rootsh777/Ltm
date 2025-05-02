@@ -1,7 +1,7 @@
 function iniciar_sesion(u,p){   
     $.post( "run/sesion.php",{ usr: u, pass: p }, function( data ) {
         if (data == "OK") {
-            window.location.href = "dashboard";
+            window.location.href = "dashboard.php";
         }else{
             if (data == "NO") {
                 alert("Usuario no Registrado");
@@ -22,16 +22,16 @@ function iniciar_sesion(u,p){
 
 
 function cerrar_sesion(){
-    $.post( "../run/cerar-sesion.php", function(data) {
+    $.post( "run/cerar-sesion.php", function(data) {
         if (data == "OK") {
-            window.location.href = "../";
+            window.location.href = "login";
         }
     });  
 }
 
 
 function sonido(){
-    $.post( "../run/sonido.php", function(data) {
+    $.post( "run/sonido.php", function(data) {
         if (data == "SI") 
             $("#snd").get(0).play();
         else
@@ -41,7 +41,7 @@ function sonido(){
 }
 
 function load_items(){
-    $.post( "../run/items.php",{ caso: sitP }, function( data ) {
+    $.post( "run/items.php",{ caso: sitP }, function( data ) {
         $(".items-trans").html(data);     
         sonido();
     });

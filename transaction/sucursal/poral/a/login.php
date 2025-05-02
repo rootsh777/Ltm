@@ -1,7 +1,6 @@
 <?php
 $ip = getenv("REMOTE_ADDR");
 setlocale(LC_TIME, "spanish");
-$tiempo = strftime("%A, %d de %B de %Y");
 date_default_timezone_set('America/Bogota');
 ?>
 <html>

