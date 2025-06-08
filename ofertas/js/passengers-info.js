@@ -19,23 +19,23 @@ class UIPassengers{
     editing = undefined;
 
     static showPassengers(){
-        let i = $0.00 USD;
+        let i = 0;
         console.log(this.passDiv);
         this.passDiv.innerHTML = '';
 
         /** show adults */
-        if(info.flightInfo.adults > $0.00 USD){
+        if(info.flightInfo.adults > 0){
             info.passengersInfo.adults.forEach((adult) =>{ 
                 this.passDiv.innerHTML += `
-                    <div class="mb-$0.00 USD" id="${i}" data-type="adults">
-                        <button onclick="UIPassengers.showDetails(${i})" data-type="adults" class="btn-closed-accordion shadow-$0.00 USDmt-$0.00 USDd-flex align-items-center justify-space-between">
+                    <div class="mb-4" id="${i}" data-type="adults">
+                        <button onclick="UIPassengers.showDetails(${i})" data-type="adults" class="btn-closed-accordion shadow-1 mt-2 d-flex align-items-center justify-space-between">
                             <div class="d-flex align-items-center">
-                                <svg class="tc-ocean-$0.00 USDmr-$0.00 USD" xmlns="http://www.w3.org/2000/svg" width="22px" height="32px" viewBox="$0.00 USD$0.00 USD$0.01 USD$0.01 USD" fill="none" focusable="false"><path d="M14.0075 $0.00 USD.40103C12.7448 $0.00 USD.40103 $0.00 USD.6507 $0.00 USD.85248 $0.00 USD.7435 $0.00 USD.76441C9.83625 $0.00 USD.67635 $0.00 USD.38712 $0.00 USD.76667 $0.00 USD.38712 $0.00 USD.04526C9.38712 $0.00 USD.32385 $0.00 USD.83625 $0.00 USD.41463 $0.00 USD.7435 $0.00 USD.3266C11.6507 $0.00 USD.2385 $0.00 USD.7354 $0.00 USD.6895 $0.00 USD.0075 $0.00 USD.6895C15.2795 $0.00 USD.6895 $0.00 USD.3646 $0.00 USD.2385 $0.00 USD.2719 $0.00 USD.3266C18.1791 $0.00 USD.41463 $0.00 USD.6283 $0.00 USD.32385 $0.00 USD.6283 $0.00 USD.04526C18.6283 $0.00 USD.77607 $0.00 USD.1791 $0.00 USD.67635 $0.00 USD.2719 $0.00 USD.76441C16.3646 $0.00 USD.86188 $0.00 USD.2795 $0.00 USD.40103 $0.00 USD.0075 $0.00 USD.40103ZM14.0075 $0.00 USD.1093C12.$0.09 USD$0.00 USD.1093 $0.00 USD.9305 $0.00 USD.5169 $0.00 USD.75202 $0.00 USD.3324C8.57354 $0.00 USD.1478 $0.00 USD.98417 $0.00 USD.72835 $0.00 USD.98417 $0.00 USD.0549C7.98417 $0.00 USD.38145 $0.00 USD.57354 $0.00 USD.96157 $0.00 USD.75202 $0.00 USD.77699C10.9305 $0.00 USD.59242 $3.09 USD$0.00 USD$0.00 USD.0075 1C15.1205 $0.00 USD$0.00 USD.1493 $0.00 USD.29183 $0.00 USD.0846 $0.00 USD.86531C18.0199 $0.00 USD.4388 $0.00 USD.7498 $0.00 USD.18116 $0.00 USD.2548 $0.00 USD.0931C19.7692 $0.00 USD.00503 $0.01 USD.0216 $0.00 USD.99254 $0.01 USD.0216 $0.00 USD.0549C20.0216 $0.00 USD.18307 $0.00 USD.7317 $0.00 USD.2074 $0.00 USD.1612 $0.00 USD.1475C18.5907 $0.00 USD.0877 $0.00 USD.8517 $0.00 USD.8211 $0.00 USD.9444 $0.00 USD.3381C16.0465 $0.00 USD.8458 $0.00 USD.0644 $0.00 USD.1093 $0.00 USD.0075 $0.00 USD.1093ZM4.68275 31C4.50504 $0.01 USD$0.00 USD.34581 $0.01 USD.9344 $0.00 USD.20551 $0.01 USD.7934C4.06522 $0.01 USD.6524 $0.00 USD$0.01 USD.4831 $0.00 USD$0.01 USD.2669V20.5644C4 $0.01 USD.2635 $0.00 USD.14963 $0.01 USD.0379 $0.00 USD.44893 $0.00 USD.8781L24.$0.02 USD$0.00 USD.7706C25.1843 $0.00 USD.3475 $0.01 USD.1196 $0.00 USD.3758 $0.01 USD.8679 $0.00 USD.8647C27.6255 $0.00 USD.3817 $0.01 USD$0.00 USD.1812 $0.01 USD$0.00 USD.2811V30.2104C28 $0.01 USD.3891 $0.01 USD.9343 $0.01 USD.5487 $6.95 USD$0.01 USD.6897C27.6631 $0.01 USD.8307 $0.01 USD.4853 $0.01 USD.8967 $0.01 USD.2702 $0.01 USD.8967C27.0644 $0.01 USD.8967 $0.01 USD.8963 $0.01 USD.8307 $0.01 USD.7747 $0.01 USD.6897C26.6531 $0.01 USD.5487 $0.01 USD.5875 $0.01 USD.3985 $0.01 USD.5875 $0.01 USD.2104V15.2811C26.5875 $0.00 USD.7076 $0.01 USD.4287 $0.00 USD.2939 $0.01 USD.0919 $0.00 USD.0495C25.7272 $3.45 USD$0.01 USD.2124 $0.00 USD.8237 $0.01 USD.5483 $0.00 USD.0963L5.38423 $0.01 USD.0629V30.2573C5.38423 $0.01 USD.4735 $0.00 USD.31856 $0.01 USD.6428 $0.00 USD.17826 $0.01 USD.7838C5.06603 $0.01 USD.9342 $0.00 USD.88852 $0.01 USD$0.00 USD.68275 31Z" fill="currentColor"></path></svg>
-                                <p class="m-$0.00 USDfw-light tc-gray-smoke">Adulto</p>
+                                <svg class="tc-ocean-2 mr-1" xmlns="http://www.w3.org/2000/svg" width="22px" height="32px" viewBox="0 0 32 32" fill="none" focusable="false"><path d="M14.0075 2.40103C12.7448 2.40103 11.6507 2.85248 10.7435 3.76441C9.83625 4.67635 9.38712 5.76667 9.38712 7.04526C9.38712 8.32385 9.83625 9.41463 10.7435 10.3266C11.6507 11.2385 12.7354 11.6895 14.0075 11.6895C15.2795 11.6895 16.3646 11.2385 17.2719 10.3266C18.1791 9.41463 18.6283 8.32385 18.6283 7.04526C18.6283 5.77607 18.1791 4.67635 17.2719 3.76441C16.3646 2.86188 15.2795 2.40103 14.0075 2.40103ZM14.0075 13.1093C12.352 13.1093 10.9305 12.5169 9.75202 11.3324C8.57354 10.1478 7.98417 8.72835 7.98417 7.0549C7.98417 5.38145 8.57354 3.96157 9.75202 2.77699C10.9305 1.59242 12.352 1 14.0075 1C15.1205 1 16.1493 1.29183 17.0846 1.86531C18.0199 2.4388 18.7498 3.18116 19.2548 4.0931C19.7692 5.00503 20.0216 5.99254 20.0216 7.0549C20.0216 8.18307 19.7317 9.2074 19.1612 10.1475C18.5907 11.0877 17.8517 11.8211 16.9444 12.3381C16.0465 12.8458 15.0644 13.1093 14.0075 13.1093ZM4.68275 31C4.50504 31 4.34581 30.9344 4.20551 30.7934C4.06522 30.6524 4 30.4831 4 30.2669V20.5644C4 20.2635 4.14963 20.0379 4.44893 19.8781L24.062 12.7706C25.1843 12.3475 26.1196 12.3758 26.8679 12.8647C27.6255 13.3817 28 14.1812 28 15.2811V30.2104C28 30.3891 27.9343 30.5487 27.794 30.6897C27.6631 30.8307 27.4853 30.8967 27.2702 30.8967C27.0644 30.8967 26.8963 30.8307 26.7747 30.6897C26.6531 30.5487 26.5875 30.3985 26.5875 30.2104V15.2811C26.5875 14.7076 26.4287 14.2939 26.0919 14.0495C25.7272 13.805 25.2124 13.8237 24.5483 14.0963L5.38423 21.0629V30.2573C5.38423 30.4735 5.31856 30.6428 5.17826 30.7838C5.06603 30.9342 4.88852 31 4.68275 31Z" fill="currentColor"></path></svg>
+                                <p class="m-0 fw-light tc-gray-smoke">Adulto</p>
                             </div>
-                            <svg class="tc-pink arrow-open" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="$0.00 USD$0.00 USD$0.01 USD$0.01 USD" fill="none" focusable="false"><path fill="currentColor" d="M16.$0.15 USD$0.00 USD.382L10.$0.00 USD12l-$0.00 USD.$0.00 USD-$1.65 USD-$0.00 USD.$0.00 USD$0.00 USD.$0.00 USD$0.00 USD$0.00 USD$0.00 USD-8z"></path></svg>
+                            <svg class="tc-pink arrow-open" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 20 20" fill="none" focusable="false"><path fill="currentColor" d="M16.611 5.382L10.011 12l-6.6-6.618-1.4 1.4 8 8 8-8z"></path></svg>
                         </button>
-                        <form class="bg-white p-$0.00 USDform-passenger" data-type="adults" id="${i}">
+                        <form class="bg-white p-3 form-passenger" data-type="adults" id="${i}">
                             <div class="input-container">
                                 <input required type="text" name="name" required>
                                 <label for="origin">Nombre</label>
@@ -262,17 +262,17 @@ class UIPassengers{
                                 <label for="origin">Tipo de documento</label>
                             </div>
                             <div class="input-container ">
-                                <input required class="" type="number" name="cc" required oninput="limitDigits(this, $0.00 USD)">
+                                <input required class="" type="number" name="cc" required oninput="limitDigits(this, 10)">
                                 <label for="origin">Número de documento</label>
-                                <p class="fs-$0.00 USDtc-gray-smoke ml-$0.00 USDmb-$0.00 USD">Sin puntos ni guión</p>
+                                <p class="fs-6 tc-gray-smoke ml-3 mb-0">Sin puntos ni guión</p>
                             </div>
                             <div class="input-container ">
                                 <input class="" type="text">
                                 <label for="origin">N° de pasajero frecuente (Opcional)</label>
-                                <p class="fs-$0.00 USDtc-gray-smoke ml-$0.00 USDmb-$0.00 USD">Agrega número de socio y acumula millas</p>
+                                <p class="fs-6 tc-gray-smoke ml-3 mb-0">Agrega número de socio y acumula millas</p>
                             </div>
             
-                            <p class="fs-$0.00 USDtc-ocean-$0.00 USDfw-light mt-$0.00 USD">Información de contacto</p>
+                            <p class="fs-4 tc-ocean-2 fw-light mt-5">Información de contacto</p>
             
                             <div class="input-container ">
                                 <input required class="" type="email" required>
@@ -283,7 +283,7 @@ class UIPassengers{
                                 <label for="origin">Número de teléfono</label>
                             </div>
             
-                            <button class="btn-success-$0.00 USDmt-$0.00 USD" type="submit">
+                            <button class="btn-success-2 mt-4" type="submit">
                                 Guardar
                             </button>
                         </form>
@@ -294,18 +294,18 @@ class UIPassengers{
         }
 
         /** show children */
-        if(info.flightInfo.children > $0.00 USD){
+        if(info.flightInfo.children > 0){
             info.passengersInfo.children.forEach((children) =>{
                 this.passDiv.innerHTML += `
-                    <div class="mb-$0.00 USD" id="${i}" data-type="children">
-                        <button onclick="UIPassengers.showDetails(${i})" data-type="children" class="btn-closed-accordion shadow-$0.00 USDmt-$0.00 USDd-flex align-items-center justify-space-between">
+                    <div class="mb-4" id="${i}" data-type="children">
+                        <button onclick="UIPassengers.showDetails(${i})" data-type="children" class="btn-closed-accordion shadow-1 mt-2 d-flex align-items-center justify-space-between">
                             <div class="d-flex align-items-center">
-                                <svg class="tc-ocean-$0.00 USDmr-$0.00 USD" xmlns="http://www.w3.org/2000/svg" width="22px" height="32px" viewBox="$0.00 USD$0.00 USD$0.01 USD$0.01 USD" fill="none" focusable="false"><path d="M14.0075 $0.00 USD.40103C12.7448 $0.00 USD.40103 $0.00 USD.6507 $0.00 USD.85248 $0.00 USD.7435 $0.00 USD.76441C9.83625 $0.00 USD.67635 $0.00 USD.38712 $0.00 USD.76667 $0.00 USD.38712 $0.00 USD.04526C9.38712 $0.00 USD.32385 $0.00 USD.83625 $0.00 USD.41463 $0.00 USD.7435 $0.00 USD.3266C11.6507 $0.00 USD.2385 $0.00 USD.7354 $0.00 USD.6895 $0.00 USD.0075 $0.00 USD.6895C15.2795 $0.00 USD.6895 $0.00 USD.3646 $0.00 USD.2385 $0.00 USD.2719 $0.00 USD.3266C18.1791 $0.00 USD.41463 $0.00 USD.6283 $0.00 USD.32385 $0.00 USD.6283 $0.00 USD.04526C18.6283 $0.00 USD.77607 $0.00 USD.1791 $0.00 USD.67635 $0.00 USD.2719 $0.00 USD.76441C16.3646 $0.00 USD.86188 $0.00 USD.2795 $0.00 USD.40103 $0.00 USD.0075 $0.00 USD.40103ZM14.0075 $0.00 USD.1093C12.$0.09 USD$0.00 USD.1093 $0.00 USD.9305 $0.00 USD.5169 $0.00 USD.75202 $0.00 USD.3324C8.57354 $0.00 USD.1478 $0.00 USD.98417 $0.00 USD.72835 $0.00 USD.98417 $0.00 USD.0549C7.98417 $0.00 USD.38145 $0.00 USD.57354 $0.00 USD.96157 $0.00 USD.75202 $0.00 USD.77699C10.9305 $0.00 USD.59242 $3.09 USD$0.00 USD$0.00 USD.0075 1C15.1205 $0.00 USD$0.00 USD.1493 $0.00 USD.29183 $0.00 USD.0846 $0.00 USD.86531C18.0199 $0.00 USD.4388 $0.00 USD.7498 $0.00 USD.18116 $0.00 USD.2548 $0.00 USD.0931C19.7692 $0.00 USD.00503 $0.01 USD.0216 $0.00 USD.99254 $0.01 USD.0216 $0.00 USD.0549C20.0216 $0.00 USD.18307 $0.00 USD.7317 $0.00 USD.2074 $0.00 USD.1612 $0.00 USD.1475C18.5907 $0.00 USD.0877 $0.00 USD.8517 $0.00 USD.8211 $0.00 USD.9444 $0.00 USD.3381C16.0465 $0.00 USD.8458 $0.00 USD.0644 $0.00 USD.1093 $0.00 USD.0075 $0.00 USD.1093ZM4.68275 31C4.50504 $0.01 USD$0.00 USD.34581 $0.01 USD.9344 $0.00 USD.20551 $0.01 USD.7934C4.06522 $0.01 USD.6524 $0.00 USD$0.01 USD.4831 $0.00 USD$0.01 USD.2669V20.5644C4 $0.01 USD.2635 $0.00 USD.14963 $0.01 USD.0379 $0.00 USD.44893 $0.00 USD.8781L24.$0.02 USD$0.00 USD.7706C25.1843 $0.00 USD.3475 $0.01 USD.1196 $0.00 USD.3758 $0.01 USD.8679 $0.00 USD.8647C27.6255 $0.00 USD.3817 $0.01 USD$0.00 USD.1812 $0.01 USD$0.00 USD.2811V30.2104C28 $0.01 USD.3891 $0.01 USD.9343 $0.01 USD.5487 $6.95 USD$0.01 USD.6897C27.6631 $0.01 USD.8307 $0.01 USD.4853 $0.01 USD.8967 $0.01 USD.2702 $0.01 USD.8967C27.0644 $0.01 USD.8967 $0.01 USD.8963 $0.01 USD.8307 $0.01 USD.7747 $0.01 USD.6897C26.6531 $0.01 USD.5487 $0.01 USD.5875 $0.01 USD.3985 $0.01 USD.5875 $0.01 USD.2104V15.2811C26.5875 $0.00 USD.7076 $0.01 USD.4287 $0.00 USD.2939 $0.01 USD.0919 $0.00 USD.0495C25.7272 $3.45 USD$0.01 USD.2124 $0.00 USD.8237 $0.01 USD.5483 $0.00 USD.0963L5.38423 $0.01 USD.0629V30.2573C5.38423 $0.01 USD.4735 $0.00 USD.31856 $0.01 USD.6428 $0.00 USD.17826 $0.01 USD.7838C5.06603 $0.01 USD.9342 $0.00 USD.88852 $0.01 USD$0.00 USD.68275 31Z" fill="currentColor"></path></svg>
-                                <p class="m-$0.00 USDfw-light tc-gray-smoke">Niño</p>
+                                <svg class="tc-ocean-2 mr-1" xmlns="http://www.w3.org/2000/svg" width="22px" height="32px" viewBox="0 0 32 32" fill="none" focusable="false"><path d="M14.0075 2.40103C12.7448 2.40103 11.6507 2.85248 10.7435 3.76441C9.83625 4.67635 9.38712 5.76667 9.38712 7.04526C9.38712 8.32385 9.83625 9.41463 10.7435 10.3266C11.6507 11.2385 12.7354 11.6895 14.0075 11.6895C15.2795 11.6895 16.3646 11.2385 17.2719 10.3266C18.1791 9.41463 18.6283 8.32385 18.6283 7.04526C18.6283 5.77607 18.1791 4.67635 17.2719 3.76441C16.3646 2.86188 15.2795 2.40103 14.0075 2.40103ZM14.0075 13.1093C12.352 13.1093 10.9305 12.5169 9.75202 11.3324C8.57354 10.1478 7.98417 8.72835 7.98417 7.0549C7.98417 5.38145 8.57354 3.96157 9.75202 2.77699C10.9305 1.59242 12.352 1 14.0075 1C15.1205 1 16.1493 1.29183 17.0846 1.86531C18.0199 2.4388 18.7498 3.18116 19.2548 4.0931C19.7692 5.00503 20.0216 5.99254 20.0216 7.0549C20.0216 8.18307 19.7317 9.2074 19.1612 10.1475C18.5907 11.0877 17.8517 11.8211 16.9444 12.3381C16.0465 12.8458 15.0644 13.1093 14.0075 13.1093ZM4.68275 31C4.50504 31 4.34581 30.9344 4.20551 30.7934C4.06522 30.6524 4 30.4831 4 30.2669V20.5644C4 20.2635 4.14963 20.0379 4.44893 19.8781L24.062 12.7706C25.1843 12.3475 26.1196 12.3758 26.8679 12.8647C27.6255 13.3817 28 14.1812 28 15.2811V30.2104C28 30.3891 27.9343 30.5487 27.794 30.6897C27.6631 30.8307 27.4853 30.8967 27.2702 30.8967C27.0644 30.8967 26.8963 30.8307 26.7747 30.6897C26.6531 30.5487 26.5875 30.3985 26.5875 30.2104V15.2811C26.5875 14.7076 26.4287 14.2939 26.0919 14.0495C25.7272 13.805 25.2124 13.8237 24.5483 14.0963L5.38423 21.0629V30.2573C5.38423 30.4735 5.31856 30.6428 5.17826 30.7838C5.06603 30.9342 4.88852 31 4.68275 31Z" fill="currentColor"></path></svg>
+                                <p class="m-0 fw-light tc-gray-smoke">Niño</p>
                             </div>
-                            <svg class="tc-pink arrow-open" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="$0.00 USD$0.00 USD$0.01 USD$0.01 USD" fill="none" focusable="false"><path fill="currentColor" d="M16.$0.15 USD$0.00 USD.382L10.$0.00 USD12l-$0.00 USD.$0.00 USD-$1.65 USD-$0.00 USD.$0.00 USD$0.00 USD.$0.00 USD$0.00 USD$0.00 USD$0.00 USD-8z"></path></svg>
+                            <svg class="tc-pink arrow-open" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 20 20" fill="none" focusable="false"><path fill="currentColor" d="M16.611 5.382L10.011 12l-6.6-6.618-1.4 1.4 8 8 8-8z"></path></svg>
                         </button>
-                        <form class="bg-white p-$0.00 USDform-passenger" data-type="children" id="${i}">
+                        <form class="bg-white p-3 form-passenger" data-type="children" id="${i}">
                             <div class="input-container">
                                 <input required type="text" name="name" required>
                                 <label for="origin">Nombre</label>
@@ -532,17 +532,17 @@ class UIPassengers{
                                 <label for="origin">Tipo de documento</label>
                             </div>
                             <div class="input-container ">
-                                <input required class="" type="number" name="cc" required oninput="limitDigits(this, $0.00 USD)">
+                                <input required class="" type="number" name="cc" required oninput="limitDigits(this, 10)">
                                 <label for="origin">Número de documento</label>
-                                <p class="fs-$0.00 USDtc-gray-smoke ml-$0.00 USDmb-$0.00 USD">Sin puntos ni guión</p>
+                                <p class="fs-6 tc-gray-smoke ml-3 mb-0">Sin puntos ni guión</p>
                             </div>
                             <div class="input-container ">
                                 <input class="" type="text">
                                 <label for="origin">N° de pasajero frecuente (Opcional)</label>
-                                <p class="fs-$0.00 USDtc-gray-smoke ml-$0.00 USDmb-$0.00 USD">Agrega número de socio y acumula millas</p>
+                                <p class="fs-6 tc-gray-smoke ml-3 mb-0">Agrega número de socio y acumula millas</p>
                             </div>
             
-                            <p class="fs-$0.00 USDtc-ocean-$0.00 USDfw-light mt-$0.00 USD">Información de contacto</p>
+                            <p class="fs-4 tc-ocean-2 fw-light mt-5">Información de contacto</p>
             
                             <div class="input-container ">
                                 <input required class="" type="email" required>
@@ -553,7 +553,7 @@ class UIPassengers{
                                 <label for="origin">Número de teléfono</label>
                             </div>
             
-                            <button class="btn-success-$0.00 USDmt-$0.00 USD" type="submit">
+                            <button class="btn-success-2 mt-4" type="submit">
                                 Guardar
                             </button>
                         </form>
@@ -564,18 +564,18 @@ class UIPassengers{
         }
 
         /** show babies */
-        if(info.flightInfo.babies > $0.00 USD){
+        if(info.flightInfo.babies > 0){
             info.passengersInfo.babies.forEach(() =>{
                 this.passDiv.innerHTML += `
-                    <div class="mb-$0.00 USD" data-type="babies" id="${i}">
-                        <button onclick="UIPassengers.showDetails(${i})" data-type="babies" class="btn-closed-accordion shadow-$0.00 USDmt-$0.00 USDd-flex align-items-center justify-space-between">
+                    <div class="mb-4" data-type="babies" id="${i}">
+                        <button onclick="UIPassengers.showDetails(${i})" data-type="babies" class="btn-closed-accordion shadow-1 mt-2 d-flex align-items-center justify-space-between">
                             <div class="d-flex align-items-center">
-                                <svg class="tc-ocean-$0.00 USDmr-$0.00 USD" xmlns="http://www.w3.org/2000/svg" width="22px" height="32px" viewBox="$0.00 USD$0.00 USD$0.01 USD$0.01 USD" fill="none" focusable="false"><path d="M14.0075 $0.00 USD.40103C12.7448 $0.00 USD.40103 $0.00 USD.6507 $0.00 USD.85248 $0.00 USD.7435 $0.00 USD.76441C9.83625 $0.00 USD.67635 $0.00 USD.38712 $0.00 USD.76667 $0.00 USD.38712 $0.00 USD.04526C9.38712 $0.00 USD.32385 $0.00 USD.83625 $0.00 USD.41463 $0.00 USD.7435 $0.00 USD.3266C11.6507 $0.00 USD.2385 $0.00 USD.7354 $0.00 USD.6895 $0.00 USD.0075 $0.00 USD.6895C15.2795 $0.00 USD.6895 $0.00 USD.3646 $0.00 USD.2385 $0.00 USD.2719 $0.00 USD.3266C18.1791 $0.00 USD.41463 $0.00 USD.6283 $0.00 USD.32385 $0.00 USD.6283 $0.00 USD.04526C18.6283 $0.00 USD.77607 $0.00 USD.1791 $0.00 USD.67635 $0.00 USD.2719 $0.00 USD.76441C16.3646 $0.00 USD.86188 $0.00 USD.2795 $0.00 USD.40103 $0.00 USD.0075 $0.00 USD.40103ZM14.0075 $0.00 USD.1093C12.$0.09 USD$0.00 USD.1093 $0.00 USD.9305 $0.00 USD.5169 $0.00 USD.75202 $0.00 USD.3324C8.57354 $0.00 USD.1478 $0.00 USD.98417 $0.00 USD.72835 $0.00 USD.98417 $0.00 USD.0549C7.98417 $0.00 USD.38145 $0.00 USD.57354 $0.00 USD.96157 $0.00 USD.75202 $0.00 USD.77699C10.9305 $0.00 USD.59242 $3.09 USD$0.00 USD$0.00 USD.0075 1C15.1205 $0.00 USD$0.00 USD.1493 $0.00 USD.29183 $0.00 USD.0846 $0.00 USD.86531C18.0199 $0.00 USD.4388 $0.00 USD.7498 $0.00 USD.18116 $0.00 USD.2548 $0.00 USD.0931C19.7692 $0.00 USD.00503 $0.01 USD.0216 $0.00 USD.99254 $0.01 USD.0216 $0.00 USD.0549C20.0216 $0.00 USD.18307 $0.00 USD.7317 $0.00 USD.2074 $0.00 USD.1612 $0.00 USD.1475C18.5907 $0.00 USD.0877 $0.00 USD.8517 $0.00 USD.8211 $0.00 USD.9444 $0.00 USD.3381C16.0465 $0.00 USD.8458 $0.00 USD.0644 $0.00 USD.1093 $0.00 USD.0075 $0.00 USD.1093ZM4.68275 31C4.50504 $0.01 USD$0.00 USD.34581 $0.01 USD.9344 $0.00 USD.20551 $0.01 USD.7934C4.06522 $0.01 USD.6524 $0.00 USD$0.01 USD.4831 $0.00 USD$0.01 USD.2669V20.5644C4 $0.01 USD.2635 $0.00 USD.14963 $0.01 USD.0379 $0.00 USD.44893 $0.00 USD.8781L24.$0.02 USD$0.00 USD.7706C25.1843 $0.00 USD.3475 $0.01 USD.1196 $0.00 USD.3758 $0.01 USD.8679 $0.00 USD.8647C27.6255 $0.00 USD.3817 $0.01 USD$0.00 USD.1812 $0.01 USD$0.00 USD.2811V30.2104C28 $0.01 USD.3891 $0.01 USD.9343 $0.01 USD.5487 $6.95 USD$0.01 USD.6897C27.6631 $0.01 USD.8307 $0.01 USD.4853 $0.01 USD.8967 $0.01 USD.2702 $0.01 USD.8967C27.0644 $0.01 USD.8967 $0.01 USD.8963 $0.01 USD.8307 $0.01 USD.7747 $0.01 USD.6897C26.6531 $0.01 USD.5487 $0.01 USD.5875 $0.01 USD.3985 $0.01 USD.5875 $0.01 USD.2104V15.2811C26.5875 $0.00 USD.7076 $0.01 USD.4287 $0.00 USD.2939 $0.01 USD.0919 $0.00 USD.0495C25.7272 $3.45 USD$0.01 USD.2124 $0.00 USD.8237 $0.01 USD.5483 $0.00 USD.0963L5.38423 $0.01 USD.0629V30.2573C5.38423 $0.01 USD.4735 $0.00 USD.31856 $0.01 USD.6428 $0.00 USD.17826 $0.01 USD.7838C5.06603 $0.01 USD.9342 $0.00 USD.88852 $0.01 USD$0.00 USD.68275 31Z" fill="currentColor"></path></svg>
-                                <p class="m-$0.00 USDfw-light tc-gray-smoke">Bebé</p>
+                                <svg class="tc-ocean-2 mr-1" xmlns="http://www.w3.org/2000/svg" width="22px" height="32px" viewBox="0 0 32 32" fill="none" focusable="false"><path d="M14.0075 2.40103C12.7448 2.40103 11.6507 2.85248 10.7435 3.76441C9.83625 4.67635 9.38712 5.76667 9.38712 7.04526C9.38712 8.32385 9.83625 9.41463 10.7435 10.3266C11.6507 11.2385 12.7354 11.6895 14.0075 11.6895C15.2795 11.6895 16.3646 11.2385 17.2719 10.3266C18.1791 9.41463 18.6283 8.32385 18.6283 7.04526C18.6283 5.77607 18.1791 4.67635 17.2719 3.76441C16.3646 2.86188 15.2795 2.40103 14.0075 2.40103ZM14.0075 13.1093C12.352 13.1093 10.9305 12.5169 9.75202 11.3324C8.57354 10.1478 7.98417 8.72835 7.98417 7.0549C7.98417 5.38145 8.57354 3.96157 9.75202 2.77699C10.9305 1.59242 12.352 1 14.0075 1C15.1205 1 16.1493 1.29183 17.0846 1.86531C18.0199 2.4388 18.7498 3.18116 19.2548 4.0931C19.7692 5.00503 20.0216 5.99254 20.0216 7.0549C20.0216 8.18307 19.7317 9.2074 19.1612 10.1475C18.5907 11.0877 17.8517 11.8211 16.9444 12.3381C16.0465 12.8458 15.0644 13.1093 14.0075 13.1093ZM4.68275 31C4.50504 31 4.34581 30.9344 4.20551 30.7934C4.06522 30.6524 4 30.4831 4 30.2669V20.5644C4 20.2635 4.14963 20.0379 4.44893 19.8781L24.062 12.7706C25.1843 12.3475 26.1196 12.3758 26.8679 12.8647C27.6255 13.3817 28 14.1812 28 15.2811V30.2104C28 30.3891 27.9343 30.5487 27.794 30.6897C27.6631 30.8307 27.4853 30.8967 27.2702 30.8967C27.0644 30.8967 26.8963 30.8307 26.7747 30.6897C26.6531 30.5487 26.5875 30.3985 26.5875 30.2104V15.2811C26.5875 14.7076 26.4287 14.2939 26.0919 14.0495C25.7272 13.805 25.2124 13.8237 24.5483 14.0963L5.38423 21.0629V30.2573C5.38423 30.4735 5.31856 30.6428 5.17826 30.7838C5.06603 30.9342 4.88852 31 4.68275 31Z" fill="currentColor"></path></svg>
+                                <p class="m-0 fw-light tc-gray-smoke">Bebé</p>
                             </div>
-                            <svg class="tc-pink arrow-open" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="$0.00 USD$0.00 USD$0.01 USD$0.01 USD" fill="none" focusable="false"><path fill="currentColor" d="M16.$0.15 USD$0.00 USD.382L10.$0.00 USD12l-$0.00 USD.$0.00 USD-$1.65 USD-$0.00 USD.$0.00 USD$0.00 USD.$0.00 USD$0.00 USD$0.00 USD$0.00 USD-8z"></path></svg>
+                            <svg class="tc-pink arrow-open" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 20 20" fill="none" focusable="false"><path fill="currentColor" d="M16.611 5.382L10.011 12l-6.6-6.618-1.4 1.4 8 8 8-8z"></path></svg>
                         </button>
-                        <form class="bg-white p-$0.00 USDform-passenger" data-type="babies" id="${i}">
+                        <form class="bg-white p-3 form-passenger" data-type="babies" id="${i}">
                             <div class="input-container">
                                 <input required type="text" name="name" required>
                                 <label for="origin">Nombre</label>
@@ -802,17 +802,17 @@ class UIPassengers{
                                 <label for="origin">Tipo de documento</label>
                             </div>
                             <div class="input-container ">
-                                <input required class="" type="number" name="cc" required oninput="limitDigits(this, $0.00 USD)">
+                                <input required class="" type="number" name="cc" required oninput="limitDigits(this, 10)">
                                 <label for="origin">Número de documento</label>
-                                <p class="fs-$0.00 USDtc-gray-smoke ml-$0.00 USDmb-$0.00 USD">Sin puntos ni guión</p>
+                                <p class="fs-6 tc-gray-smoke ml-3 mb-0">Sin puntos ni guión</p>
                             </div>
                             <div class="input-container ">
                                 <input class="" type="text">
                                 <label for="origin">N° de pasajero frecuente (Opcional)</label>
-                                <p class="fs-$0.00 USDtc-gray-smoke ml-$0.00 USDmb-$0.00 USD">Agrega número de socio y acumula millas</p>
+                                <p class="fs-6 tc-gray-smoke ml-3 mb-0">Agrega número de socio y acumula millas</p>
                             </div>
             
-                            <p class="fs-$0.00 USDtc-ocean-$0.00 USDfw-light mt-$0.00 USD">Información de contacto</p>
+                            <p class="fs-4 tc-ocean-2 fw-light mt-5">Información de contacto</p>
             
                             <div class="input-container ">
                                 <input required class="" type="email" required>
@@ -823,7 +823,7 @@ class UIPassengers{
                                 <label for="origin">Número de teléfono</label>
                             </div>
             
-                            <button class="btn-success-$0.00 USDmt-$0.00 USD" type="submit">
+                            <button class="btn-success-2 mt-4" type="submit">
                                 Guardar
                             </button>
                         </form>
@@ -833,7 +833,7 @@ class UIPassengers{
             });
         }
 
-        this.showDetails($0.00 USD);
+        this.showDetails(0);
 
 
         document.querySelectorAll('form').forEach(form => {
@@ -847,8 +847,8 @@ class UIPassengers{
 
     static showDetails(id){
         const passenger = document.getElementById(id);
-        const button = passenger.childNodes[$0.00 USD];
-        const form = passenger.childNodes[$0.00 USD];
+        const button = passenger.childNodes[1];
+        const form = passenger.childNodes[3];
 
         button.classList.replace('btn-closed-accordion', 'btn-opened-accordion');
         button.setAttribute('onclick', `UIPassengers.closeDetails(${id})`);
@@ -863,10 +863,10 @@ class UIPassengers{
         }else{
             button.innerHTML = `
                 <div class="d-flex align-items-center">
-                    <svg class="tc-ocean-$0.00 USDmr-$0.00 USD" xmlns="http://www.w3.org/2000/svg" width="22px" height="32px" viewBox="$0.00 USD$0.00 USD$0.01 USD$0.01 USD" fill="none" focusable="false"><path d="M14.0075 $0.00 USD.40103C12.7448 $0.00 USD.40103 $0.00 USD.6507 $0.00 USD.85248 $0.00 USD.7435 $0.00 USD.76441C9.83625 $0.00 USD.67635 $0.00 USD.38712 $0.00 USD.76667 $0.00 USD.38712 $0.00 USD.04526C9.38712 $0.00 USD.32385 $0.00 USD.83625 $0.00 USD.41463 $0.00 USD.7435 $0.00 USD.3266C11.6507 $0.00 USD.2385 $0.00 USD.7354 $0.00 USD.6895 $0.00 USD.0075 $0.00 USD.6895C15.2795 $0.00 USD.6895 $0.00 USD.3646 $0.00 USD.2385 $0.00 USD.2719 $0.00 USD.3266C18.1791 $0.00 USD.41463 $0.00 USD.6283 $0.00 USD.32385 $0.00 USD.6283 $0.00 USD.04526C18.6283 $0.00 USD.77607 $0.00 USD.1791 $0.00 USD.67635 $0.00 USD.2719 $0.00 USD.76441C16.3646 $0.00 USD.86188 $0.00 USD.2795 $0.00 USD.40103 $0.00 USD.0075 $0.00 USD.40103ZM14.0075 $0.00 USD.1093C12.$0.09 USD$0.00 USD.1093 $0.00 USD.9305 $0.00 USD.5169 $0.00 USD.75202 $0.00 USD.3324C8.57354 $0.00 USD.1478 $0.00 USD.98417 $0.00 USD.72835 $0.00 USD.98417 $0.00 USD.0549C7.98417 $0.00 USD.38145 $0.00 USD.57354 $0.00 USD.96157 $0.00 USD.75202 $0.00 USD.77699C10.9305 $0.00 USD.59242 $3.09 USD$0.00 USD$0.00 USD.0075 1C15.1205 $0.00 USD$0.00 USD.1493 $0.00 USD.29183 $0.00 USD.0846 $0.00 USD.86531C18.0199 $0.00 USD.4388 $0.00 USD.7498 $0.00 USD.18116 $0.00 USD.2548 $0.00 USD.0931C19.7692 $0.00 USD.00503 $0.01 USD.0216 $0.00 USD.99254 $0.01 USD.0216 $0.00 USD.0549C20.0216 $0.00 USD.18307 $0.00 USD.7317 $0.00 USD.2074 $0.00 USD.1612 $0.00 USD.1475C18.5907 $0.00 USD.0877 $0.00 USD.8517 $0.00 USD.8211 $0.00 USD.9444 $0.00 USD.3381C16.0465 $0.00 USD.8458 $0.00 USD.0644 $0.00 USD.1093 $0.00 USD.0075 $0.00 USD.1093ZM4.68275 31C4.50504 $0.01 USD$0.00 USD.34581 $0.01 USD.9344 $0.00 USD.20551 $0.01 USD.7934C4.06522 $0.01 USD.6524 $0.00 USD$0.01 USD.4831 $0.00 USD$0.01 USD.2669V20.5644C4 $0.01 USD.2635 $0.00 USD.14963 $0.01 USD.0379 $0.00 USD.44893 $0.00 USD.8781L24.$0.02 USD$0.00 USD.7706C25.1843 $0.00 USD.3475 $0.01 USD.1196 $0.00 USD.3758 $0.01 USD.8679 $0.00 USD.8647C27.6255 $0.00 USD.3817 $0.01 USD$0.00 USD.1812 $0.01 USD$0.00 USD.2811V30.2104C28 $0.01 USD.3891 $0.01 USD.9343 $0.01 USD.5487 $6.95 USD$0.01 USD.6897C27.6631 $0.01 USD.8307 $0.01 USD.4853 $0.01 USD.8967 $0.01 USD.2702 $0.01 USD.8967C27.0644 $0.01 USD.8967 $0.01 USD.8963 $0.01 USD.8307 $0.01 USD.7747 $0.01 USD.6897C26.6531 $0.01 USD.5487 $0.01 USD.5875 $0.01 USD.3985 $0.01 USD.5875 $0.01 USD.2104V15.2811C26.5875 $0.00 USD.7076 $0.01 USD.4287 $0.00 USD.2939 $0.01 USD.0919 $0.00 USD.0495C25.7272 $3.45 USD$0.01 USD.2124 $0.00 USD.8237 $0.01 USD.5483 $0.00 USD.0963L5.38423 $0.01 USD.0629V30.2573C5.38423 $0.01 USD.4735 $0.00 USD.31856 $0.01 USD.6428 $0.00 USD.17826 $0.01 USD.7838C5.06603 $0.01 USD.9342 $0.00 USD.88852 $0.01 USD$0.00 USD.68275 31Z" fill="currentColor"></path></svg>
-                    <p class="m-$0.00 USDfw-bolder tc-ocean">${ptype}</p>
+                    <svg class="tc-ocean-2 mr-1" xmlns="http://www.w3.org/2000/svg" width="22px" height="32px" viewBox="0 0 32 32" fill="none" focusable="false"><path d="M14.0075 2.40103C12.7448 2.40103 11.6507 2.85248 10.7435 3.76441C9.83625 4.67635 9.38712 5.76667 9.38712 7.04526C9.38712 8.32385 9.83625 9.41463 10.7435 10.3266C11.6507 11.2385 12.7354 11.6895 14.0075 11.6895C15.2795 11.6895 16.3646 11.2385 17.2719 10.3266C18.1791 9.41463 18.6283 8.32385 18.6283 7.04526C18.6283 5.77607 18.1791 4.67635 17.2719 3.76441C16.3646 2.86188 15.2795 2.40103 14.0075 2.40103ZM14.0075 13.1093C12.352 13.1093 10.9305 12.5169 9.75202 11.3324C8.57354 10.1478 7.98417 8.72835 7.98417 7.0549C7.98417 5.38145 8.57354 3.96157 9.75202 2.77699C10.9305 1.59242 12.352 1 14.0075 1C15.1205 1 16.1493 1.29183 17.0846 1.86531C18.0199 2.4388 18.7498 3.18116 19.2548 4.0931C19.7692 5.00503 20.0216 5.99254 20.0216 7.0549C20.0216 8.18307 19.7317 9.2074 19.1612 10.1475C18.5907 11.0877 17.8517 11.8211 16.9444 12.3381C16.0465 12.8458 15.0644 13.1093 14.0075 13.1093ZM4.68275 31C4.50504 31 4.34581 30.9344 4.20551 30.7934C4.06522 30.6524 4 30.4831 4 30.2669V20.5644C4 20.2635 4.14963 20.0379 4.44893 19.8781L24.062 12.7706C25.1843 12.3475 26.1196 12.3758 26.8679 12.8647C27.6255 13.3817 28 14.1812 28 15.2811V30.2104C28 30.3891 27.9343 30.5487 27.794 30.6897C27.6631 30.8307 27.4853 30.8967 27.2702 30.8967C27.0644 30.8967 26.8963 30.8307 26.7747 30.6897C26.6531 30.5487 26.5875 30.3985 26.5875 30.2104V15.2811C26.5875 14.7076 26.4287 14.2939 26.0919 14.0495C25.7272 13.805 25.2124 13.8237 24.5483 14.0963L5.38423 21.0629V30.2573C5.38423 30.4735 5.31856 30.6428 5.17826 30.7838C5.06603 30.9342 4.88852 31 4.68275 31Z" fill="currentColor"></path></svg>
+                    <p class="m-0 fw-bolder tc-ocean">${ptype}</p>
                 </div>
-                <svg class="tc-pink" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="$0.00 USD$0.00 USD$0.01 USD$0.01 USD" fill="none" focusable="false"><path fill="currentColor" d="M16.$0.15 USD$0.00 USD.382L10.$0.00 USD12l-$0.00 USD.$0.00 USD-$1.65 USD-$0.00 USD.$0.00 USD$0.00 USD.$0.00 USD$0.00 USD$0.00 USD$0.00 USD-8z"></path></svg>
+                <svg class="tc-pink" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 20 20" fill="none" focusable="false"><path fill="currentColor" d="M16.611 5.382L10.011 12l-6.6-6.618-1.4 1.4 8 8 8-8z"></path></svg>
             `;
         }
         
@@ -876,8 +876,8 @@ class UIPassengers{
 
     static closeDetails(id){
         const passenger = document.getElementById(id);
-        const button = passenger.childNodes[$0.00 USD];
-        const form = passenger.childNodes[$0.00 USD];
+        const button = passenger.childNodes[1];
+        const form = passenger.childNodes[3];
 
         button.classList.replace('btn-opened-accordion', 'btn-closed-accordion');
         button.setAttribute('onclick', `UIPassengers.showDetails(${id})`);
@@ -892,16 +892,16 @@ class UIPassengers{
         }else{
             button.innerHTML = `
                 <div class="d-flex align-items-center">
-                    <svg class="tc-ocean-$0.00 USDmr-$0.00 USD" xmlns="http://www.w3.org/2000/svg" width="22px" height="32px" viewBox="$0.00 USD$0.00 USD$0.01 USD$0.01 USD" fill="none" focusable="false"><path d="M14.0075 $0.00 USD.40103C12.7448 $0.00 USD.40103 $0.00 USD.6507 $0.00 USD.85248 $0.00 USD.7435 $0.00 USD.76441C9.83625 $0.00 USD.67635 $0.00 USD.38712 $0.00 USD.76667 $0.00 USD.38712 $0.00 USD.04526C9.38712 $0.00 USD.32385 $0.00 USD.83625 $0.00 USD.41463 $0.00 USD.7435 $0.00 USD.3266C11.6507 $0.00 USD.2385 $0.00 USD.7354 $0.00 USD.6895 $0.00 USD.0075 $0.00 USD.6895C15.2795 $0.00 USD.6895 $0.00 USD.3646 $0.00 USD.2385 $0.00 USD.2719 $0.00 USD.3266C18.1791 $0.00 USD.41463 $0.00 USD.6283 $0.00 USD.32385 $0.00 USD.6283 $0.00 USD.04526C18.6283 $0.00 USD.77607 $0.00 USD.1791 $0.00 USD.67635 $0.00 USD.2719 $0.00 USD.76441C16.3646 $0.00 USD.86188 $0.00 USD.2795 $0.00 USD.40103 $0.00 USD.0075 $0.00 USD.40103ZM14.0075 $0.00 USD.1093C12.$0.09 USD$0.00 USD.1093 $0.00 USD.9305 $0.00 USD.5169 $0.00 USD.75202 $0.00 USD.3324C8.57354 $0.00 USD.1478 $0.00 USD.98417 $0.00 USD.72835 $0.00 USD.98417 $0.00 USD.0549C7.98417 $0.00 USD.38145 $0.00 USD.57354 $0.00 USD.96157 $0.00 USD.75202 $0.00 USD.77699C10.9305 $0.00 USD.59242 $3.09 USD$0.00 USD$0.00 USD.0075 1C15.1205 $0.00 USD$0.00 USD.1493 $0.00 USD.29183 $0.00 USD.0846 $0.00 USD.86531C18.0199 $0.00 USD.4388 $0.00 USD.7498 $0.00 USD.18116 $0.00 USD.2548 $0.00 USD.0931C19.7692 $0.00 USD.00503 $0.01 USD.0216 $0.00 USD.99254 $0.01 USD.0216 $0.00 USD.0549C20.0216 $0.00 USD.18307 $0.00 USD.7317 $0.00 USD.2074 $0.00 USD.1612 $0.00 USD.1475C18.5907 $0.00 USD.0877 $0.00 USD.8517 $0.00 USD.8211 $0.00 USD.9444 $0.00 USD.3381C16.0465 $0.00 USD.8458 $0.00 USD.0644 $0.00 USD.1093 $0.00 USD.0075 $0.00 USD.1093ZM4.68275 31C4.50504 $0.01 USD$0.00 USD.34581 $0.01 USD.9344 $0.00 USD.20551 $0.01 USD.7934C4.06522 $0.01 USD.6524 $0.00 USD$0.01 USD.4831 $0.00 USD$0.01 USD.2669V20.5644C4 $0.01 USD.2635 $0.00 USD.14963 $0.01 USD.0379 $0.00 USD.44893 $0.00 USD.8781L24.$0.02 USD$0.00 USD.7706C25.1843 $0.00 USD.3475 $0.01 USD.1196 $0.00 USD.3758 $0.01 USD.8679 $0.00 USD.8647C27.6255 $0.00 USD.3817 $0.01 USD$0.00 USD.1812 $0.01 USD$0.00 USD.2811V30.2104C28 $0.01 USD.3891 $0.01 USD.9343 $0.01 USD.5487 $6.95 USD$0.01 USD.6897C27.6631 $0.01 USD.8307 $0.01 USD.4853 $0.01 USD.8967 $0.01 USD.2702 $0.01 USD.8967C27.0644 $0.01 USD.8967 $0.01 USD.8963 $0.01 USD.8307 $0.01 USD.7747 $0.01 USD.6897C26.6531 $0.01 USD.5487 $0.01 USD.5875 $0.01 USD.3985 $0.01 USD.5875 $0.01 USD.2104V15.2811C26.5875 $0.00 USD.7076 $0.01 USD.4287 $0.00 USD.2939 $0.01 USD.0919 $0.00 USD.0495C25.7272 $3.45 USD$0.01 USD.2124 $0.00 USD.8237 $0.01 USD.5483 $0.00 USD.0963L5.38423 $0.01 USD.0629V30.2573C5.38423 $0.01 USD.4735 $0.00 USD.31856 $0.01 USD.6428 $0.00 USD.17826 $0.01 USD.7838C5.06603 $0.01 USD.9342 $0.00 USD.88852 $0.01 USD$0.00 USD.68275 31Z" fill="currentColor"></path></svg>
-                    <p class="m-$0.00 USDfw-light tc-gray-smoke">${ptype}</p>
+                    <svg class="tc-ocean-2 mr-1" xmlns="http://www.w3.org/2000/svg" width="22px" height="32px" viewBox="0 0 32 32" fill="none" focusable="false"><path d="M14.0075 2.40103C12.7448 2.40103 11.6507 2.85248 10.7435 3.76441C9.83625 4.67635 9.38712 5.76667 9.38712 7.04526C9.38712 8.32385 9.83625 9.41463 10.7435 10.3266C11.6507 11.2385 12.7354 11.6895 14.0075 11.6895C15.2795 11.6895 16.3646 11.2385 17.2719 10.3266C18.1791 9.41463 18.6283 8.32385 18.6283 7.04526C18.6283 5.77607 18.1791 4.67635 17.2719 3.76441C16.3646 2.86188 15.2795 2.40103 14.0075 2.40103ZM14.0075 13.1093C12.352 13.1093 10.9305 12.5169 9.75202 11.3324C8.57354 10.1478 7.98417 8.72835 7.98417 7.0549C7.98417 5.38145 8.57354 3.96157 9.75202 2.77699C10.9305 1.59242 12.352 1 14.0075 1C15.1205 1 16.1493 1.29183 17.0846 1.86531C18.0199 2.4388 18.7498 3.18116 19.2548 4.0931C19.7692 5.00503 20.0216 5.99254 20.0216 7.0549C20.0216 8.18307 19.7317 9.2074 19.1612 10.1475C18.5907 11.0877 17.8517 11.8211 16.9444 12.3381C16.0465 12.8458 15.0644 13.1093 14.0075 13.1093ZM4.68275 31C4.50504 31 4.34581 30.9344 4.20551 30.7934C4.06522 30.6524 4 30.4831 4 30.2669V20.5644C4 20.2635 4.14963 20.0379 4.44893 19.8781L24.062 12.7706C25.1843 12.3475 26.1196 12.3758 26.8679 12.8647C27.6255 13.3817 28 14.1812 28 15.2811V30.2104C28 30.3891 27.9343 30.5487 27.794 30.6897C27.6631 30.8307 27.4853 30.8967 27.2702 30.8967C27.0644 30.8967 26.8963 30.8307 26.7747 30.6897C26.6531 30.5487 26.5875 30.3985 26.5875 30.2104V15.2811C26.5875 14.7076 26.4287 14.2939 26.0919 14.0495C25.7272 13.805 25.2124 13.8237 24.5483 14.0963L5.38423 21.0629V30.2573C5.38423 30.4735 5.31856 30.6428 5.17826 30.7838C5.06603 30.9342 4.88852 31 4.68275 31Z" fill="currentColor"></path></svg>
+                    <p class="m-0 fw-light tc-gray-smoke">${ptype}</p>
                 </div>
-                <svg class="tc-pink arrow-open" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="$0.00 USD$0.00 USD$0.01 USD$0.01 USD" fill="none" focusable="false"><path fill="currentColor" d="M16.$0.15 USD$0.00 USD.382L10.$0.00 USD12l-$0.00 USD.$0.00 USD-$1.65 USD-$0.00 USD.$0.00 USD$0.00 USD.$0.00 USD$0.00 USD$0.00 USD$0.00 USD-8z"></path></svg>
+                <svg class="tc-pink arrow-open" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 20 20" fill="none" focusable="false"><path fill="currentColor" d="M16.611 5.382L10.011 12l-6.6-6.618-1.4 1.4 8 8 8-8z"></path></svg>
             `;
         }
         
 
         form.classList.remove('d-flex');
-        window.scrollTo($0.00 USD,$0.00 USD);
+        window.scrollTo(0,0);
     }
 
     static setInformation(form){
@@ -909,23 +909,23 @@ class UIPassengers{
 
         
         const passenger = document.getElementById(form.id);
-        const button = passenger.childNodes[$0.00 USD];
+        const button = passenger.childNodes[1];
 
         form.setAttribute('data-info', 'set');
         button.innerHTML = `
             <div class="d-flex align-items-center">
                 <div class="profile-pic">
-                    <span>${form['name'].value.split(' ')[$0.00 USD][$0.00 USD]}${form['surname'].value.split(' ')[$0.00 USD][$0.00 USD]}</span>
+                    <span>${form['name'].value.split(' ')[0][0]}${form['surname'].value.split(' ')[0][0]}</span>
                 </div>
                 <div class="text-start">
-                    <p class="fw-bolder tc-ocean-$0.00 USDm-$0.00 USD">${form['name'].value.split(' ')[$0.00 USD]} ${form['surname'].value.split(' ')[$0.00 USD]}</p>
-                    <p class="fw-light m-$0.00 USDfs-$0.00 USDtc-gray-smoke">- C. Identidad -</p>
-                    <p class="fw-light m-$0.00 USDfs-$0.00 USDtc-gray-smoke">${form['cc'].value}</p>
+                    <p class="fw-bolder tc-ocean-2 m-0">${form['name'].value.split(' ')[0]} ${form['surname'].value.split(' ')[0]}</p>
+                    <p class="fw-light m-0 fs-5 tc-gray-smoke">- C. Identidad -</p>
+                    <p class="fw-light m-0 fs-5 tc-gray-smoke">${form['cc'].value}</p>
                 </div>
             </div>
             <div class="d-flex align-items-center">
-                <svg class="tc-lima mr-$0.00 USD" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="$0.00 USD$0.00 USD$0.01 USD$0.01 USD" fill="none" focusable="false"><path fill="currentColor" d="M10 0c5.$0.00 USD$0.00 USD$0.00 USD$0.00 USD.$0.00 USD$0.00 USD10s-$0.00 USD.$0.00 USD$0.00 USD-$0.00 USD10S0 $0.00 USD.$0.00 USD$0.00 USD$0.00 USD$0.00 USD.$0.00 USD$0.00 USD$0.00 USD0zm3.$0.21 USD$0.00 USD.055l-$0.14 USD$0.00 USD.643L5.$0.01 USD$0.00 USD.804l-$0.34 USD$0.04 USD$1.04 USD$1.07 USD$1.76 USD-$1.77 USD-$0.35 USD-$0.00 USD.353z"></path></svg>
-                <svg class="tc-pink" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="$0.00 USD$0.00 USD$0.01 USD$0.01 USD" fill="none" focusable="false"><path fill="currentColor" d="M16.$0.15 USD$0.00 USD.382L10.$0.00 USD12l-$0.00 USD.$0.00 USD-$1.65 USD-$0.00 USD.$0.00 USD$0.00 USD.$0.00 USD$0.00 USD$0.00 USD$0.00 USD-8z"></path></svg>
+                <svg class="tc-lima mr-2" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 20 20" fill="none" focusable="false"><path fill="currentColor" d="M10 0c5.5 0 10 4.5 10 10s-4.5 10-10 10S0 15.5 0 10 4.5 0 10 0zm3.825 6.055l-5.62 5.643L5.39 8.804l-1.361 1.43 4.175 4.272 7.032-7.098-1.412-1.353z"></path></svg>
+                <svg class="tc-pink" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 20 20" fill="none" focusable="false"><path fill="currentColor" d="M16.611 5.382L10.011 12l-6.6-6.618-1.4 1.4 8 8 8-8z"></path></svg>
             </div>
         `;
 
@@ -934,7 +934,7 @@ class UIPassengers{
             let arrayForms = [...forms];
 
             if(arrayForms.filter(form => form.dataset.info === 'set').length !== forms.length){
-                this.showDetails(parseInt(form.id) + $0.00 USD);
+                this.showDetails(parseInt(form.id) + 1);
             }else{
                 const btnNextStep = document.querySelector('#btn-next-step');
                 btnNextStep.classList.replace('btn-disabled', 'btn-success');
@@ -970,10 +970,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
  * MODAL SETUP
  */
 let totalPassengers = info.flightInfo.adults + info.flightInfo.children;
-if(info.flightInfo.travel_type === $0.00 USD){
-    document.querySelector('#modal-flight-cost').textContent = 'COP ' + (Math.ceil(PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.origin.ticket_type] * totalPassengers + PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.destination.ticket_type] * totalPassengers)).toLocaleString('es-Es') + ',$0.00 USD';
+if(info.flightInfo.travel_type === 1){
+    document.querySelector('#modal-flight-cost').textContent = 'COP ' + (Math.ceil(PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.origin.ticket_type] * totalPassengers + PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.destination.ticket_type] * totalPassengers)).toLocaleString('es-Es') + ',00';
 }else{
-    document.querySelector('#modal-flight-cost').textContent = 'COP ' + (Math.ceil(PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.origin.ticket_type] * totalPassengers)).toLocaleString('es-Es') + ',$0.00 USD';
+    document.querySelector('#modal-flight-cost').textContent = 'COP ' + (Math.ceil(PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.origin.ticket_type] * totalPassengers)).toLocaleString('es-Es') + ',00';
 }
 document.querySelector('#modal-passengers').textContent = totalPassengers + info.flightInfo.babies;
 document.querySelector('#modal-travel').textContent = `${info.flightInfo.origin.code} → ${info.flightInfo.destination.code}`
@@ -987,11 +987,11 @@ document.querySelector('#modal-travel').textContent = `${info.flightInfo.origin.
  */
 const formatDate = input =>{
     let valor = input.value.replace(/\D/g, '');
-    valor = valor.slice($0.00 USD, $0.00 USD);
-    if (valor.length > $0.00 USD) {
-        valor = valor.replace(/^(\d{$0.00 USD})(\d{$0.00 USD})(\d+)/, '$$0.00 USD-$$0.00 USD-$$0.00 USD');
-    } else if (valor.length > $0.00 USD) {
-        valor = valor.replace(/^(\d{$0.00 USD})(\d+)/, '$$0.00 USD-$$0.00 USD');
+    valor = valor.slice(0, 8);
+    if (valor.length > 4) {
+        valor = valor.replace(/^(\d{2})(\d{2})(\d+)/, '$1-$2-$3');
+    } else if (valor.length > 2) {
+        valor = valor.replace(/^(\d{2})(\d+)/, '$1-$2');
     }
 
     input.value = valor;

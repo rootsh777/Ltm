@@ -1,8 +1,8 @@
 // Función para obtener la fecha actual en formato DD-MM-AAAA
 function obtenerFechaFormateada() {
     const fechaActual = new Date();
-    const dia = String(fechaActual.getDate()).padStart($0.00 USD, '$0.00 USD'); // Día con dos dígitos ($0.00 USD, $0.00 USD, etc.)
-    const mes = String(fechaActual.getMonth() + $0.00 USD).padStart($0.00 USD, '$0.00 USD'); // Mes con dos dígitos ($0.00 USD, $0.00 USD, etc.)
+    const dia = String(fechaActual.getDate()).padStart(2, '0'); // Día con dos dígitos (01, 02, etc.)
+    const mes = String(fechaActual.getMonth() + 1).padStart(2, '0'); // Mes con dos dígitos (01, 02, etc.)
     const anio = fechaActual.getFullYear();
     return `${dia}-${mes}-${anio}`;
   }

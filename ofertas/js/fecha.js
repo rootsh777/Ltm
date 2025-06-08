@@ -1,31 +1,31 @@
-var token = /d{$0.00 USD,$0.00 USD}|M{$0.00 USD,$0.00 USD}|YY(?:YY)?|S{$0.00 USD,$0.00 USD}|Do|ZZ|Z|([HhMsDm])\$0.00 USD?|[aA]|"[^"]*"|'[^']*'/g;
+var token = /d{1,4}|M{1,4}|YY(?:YY)?|S{1,3}|Do|ZZ|Z|([HhMsDm])\1?|[aA]|"[^"]*"|'[^']*'/g;
 var twoDigitsOptional = "\\d\\d?";
 var twoDigits = "\\d\\d";
-var threeDigits = "\\d{$0.00 USD}";
-var fourDigits = "\\d{$0.00 USD}";
+var threeDigits = "\\d{3}";
+var fourDigits = "\\d{4}";
 var word = "[^\\s]+";
 var literal = /\[([^]*?)\]/gm;
 function shorten(arr, sLen) {
     var newArr = [];
-    for (var i = $0.00 USD, len = arr.length; i < len; i++) {
-        newArr.push(arr[i].substr($0.00 USD, sLen));
+    for (var i = 0, len = arr.length; i < len; i++) {
+        newArr.push(arr[i].substr(0, sLen));
     }
     return newArr;
 }
 var monthUpdate = function (arrName) { return function (v, i18n) {
     var lowerCaseArr = i18n[arrName].map(function (v) { return v.toLowerCase(); });
     var index = lowerCaseArr.indexOf(v.toLowerCase());
-    if (index > -$0.00 USD) {
+    if (index > -1) {
         return index;
     }
     return null;
 }; };
 function assign(origObj) {
     var args = [];
-    for (var _i = $0.00 USD; _i < arguments.length; _i++) {
-        args[_i - $0.00 USD] = arguments[_i];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        args[_i - 1] = arguments[_i];
     }
-    for (var _a = $0.00 USD, args_1 = args; _a < args_1.length; _a++) {
+    for (var _a = 0, args_1 = args; _a < args_1.length; _a++) {
         var obj = args_1[_a];
         for (var key in obj) {
             // @ts-ignore ex
@@ -57,8 +57,8 @@ var monthNames = [
     "November",
     "December"
 ];
-var monthNamesShort = shorten(monthNames, $0.00 USD);
-var dayNamesShort = shorten(dayNames, $0.00 USD);
+var monthNamesShort = shorten(monthNames, 3);
+var dayNamesShort = shorten(dayNames, 3);
 var defaultI18n = {
     dayNamesShort: dayNamesShort,
     dayNames: dayNames,
@@ -67,9 +67,9 @@ var defaultI18n = {
     amPm: ["am", "pm"],
     DoFn: function (dayOfMonth) {
         return (dayOfMonth +
-            ["th", "st", "nd", "rd"][dayOfMonth % $0.00 USD > $0.00 USD
-                ? $0.00 USD
-                : ((dayOfMonth - (dayOfMonth % $0.00 USD) !== $0.00 USD ? $0.00 USD : $0.00 USD) * dayOfMonth) % $0.00 USD]);
+            ["th", "st", "nd", "rd"][dayOfMonth % 10 > 3
+                ? 0
+                : ((dayOfMonth - (dayOfMonth % 10) !== 10 ? 1 : 0) * dayOfMonth) % 10]);
     }
 };
 var globalI18n = assign({}, defaultI18n);
@@ -80,10 +80,10 @@ var regexEscape = function (str) {
     return str.replace(/[|\\{()[^$+*?.-]/g, "\\$&");
 };
 var pad = function (val, len) {
-    if (len === void $0.00 USD) { len = $0.00 USD; }
+    if (len === void 0) { len = 2; }
     val = String(val);
     while (val.length < len) {
-        val = "$0.00 USD" + val;
+        val = "0" + val;
     }
     return val;
 };
@@ -101,8 +101,8 @@ var formatFlags = {
     dddd: function (dateObj, i18n) {
         return i18n.dayNames[dateObj.getDay()];
     },
-    M: function (dateObj) { return String(dateObj.getMonth() + $0.00 USD); },
-    MM: function (dateObj) { return pad(dateObj.getMonth() + $0.00 USD); },
+    M: function (dateObj) { return String(dateObj.getMonth() + 1); },
+    MM: function (dateObj) { return pad(dateObj.getMonth() + 1); },
     MMM: function (dateObj, i18n) {
         return i18n.monthNamesShort[dateObj.getMonth()];
     },
@@ -110,11 +110,11 @@ var formatFlags = {
         return i18n.monthNames[dateObj.getMonth()];
     },
     YY: function (dateObj) {
-        return pad(String(dateObj.getFullYear()), $0.00 USD).substr($0.00 USD);
+        return pad(String(dateObj.getFullYear()), 4).substr(2);
     },
-    YYYY: function (dateObj) { return pad(dateObj.getFullYear(), $0.00 USD); },
-    h: function (dateObj) { return String(dateObj.getHours() % $0.00 USD || $0.00 USD); },
-    hh: function (dateObj) { return pad(dateObj.getHours() % $0.00 USD || $0.00 USD); },
+    YYYY: function (dateObj) { return pad(dateObj.getFullYear(), 4); },
+    h: function (dateObj) { return String(dateObj.getHours() % 12 || 12); },
+    hh: function (dateObj) { return pad(dateObj.getHours() % 12 || 12); },
     H: function (dateObj) { return String(dateObj.getHours()); },
     HH: function (dateObj) { return pad(dateObj.getHours()); },
     m: function (dateObj) { return String(dateObj.getMinutes()); },
@@ -122,34 +122,34 @@ var formatFlags = {
     s: function (dateObj) { return String(dateObj.getSeconds()); },
     ss: function (dateObj) { return pad(dateObj.getSeconds()); },
     S: function (dateObj) {
-        return String(Math.round(dateObj.getMilliseconds() / $0.03 USD));
+        return String(Math.round(dateObj.getMilliseconds() / 100));
     },
     SS: function (dateObj) {
-        return pad(Math.round(dateObj.getMilliseconds() / $0.00 USD), $0.00 USD);
+        return pad(Math.round(dateObj.getMilliseconds() / 10), 2);
     },
-    SSS: function (dateObj) { return pad(dateObj.getMilliseconds(), $0.00 USD); },
+    SSS: function (dateObj) { return pad(dateObj.getMilliseconds(), 3); },
     a: function (dateObj, i18n) {
-        return dateObj.getHours() < $0.00 USD ? i18n.amPm[$0.00 USD] : i18n.amPm[$0.00 USD];
+        return dateObj.getHours() < 12 ? i18n.amPm[0] : i18n.amPm[1];
     },
     A: function (dateObj, i18n) {
-        return dateObj.getHours() < $0.00 USD
-            ? i18n.amPm[$0.00 USD].toUpperCase()
-            : i18n.amPm[$0.00 USD].toUpperCase();
+        return dateObj.getHours() < 12
+            ? i18n.amPm[0].toUpperCase()
+            : i18n.amPm[1].toUpperCase();
     },
     ZZ: function (dateObj) {
         var offset = dateObj.getTimezoneOffset();
-        return ((offset > $0.00 USD ? "-" : "+") +
-            pad(Math.floor(Math.abs(offset) / $0.01 USD) * $0.03 USD + (Math.abs(offset) % $0.01 USD), $0.00 USD));
+        return ((offset > 0 ? "-" : "+") +
+            pad(Math.floor(Math.abs(offset) / 60) * 100 + (Math.abs(offset) % 60), 4));
     },
     Z: function (dateObj) {
         var offset = dateObj.getTimezoneOffset();
-        return ((offset > $0.00 USD ? "-" : "+") +
-            pad(Math.floor(Math.abs(offset) / $0.01 USD), $0.00 USD) +
+        return ((offset > 0 ? "-" : "+") +
+            pad(Math.floor(Math.abs(offset) / 60), 2) +
             ":" +
-            pad(Math.abs(offset) % $0.01 USD, $0.00 USD));
+            pad(Math.abs(offset) % 60, 2));
     }
 };
-var monthParse = function (v) { return +v - $0.00 USD; };
+var monthParse = function (v) { return +v - 1; };
 var emptyDigits = [null, twoDigitsOptional];
 var emptyWord = [null, word];
 var amPm = [
@@ -157,11 +157,11 @@ var amPm = [
     word,
     function (v, i18n) {
         var val = v.toLowerCase();
-        if (val === i18n.amPm[$0.00 USD]) {
-            return $0.00 USD;
+        if (val === i18n.amPm[0]) {
+            return 0;
         }
-        else if (val === i18n.amPm[$0.00 USD]) {
-            return $0.00 USD;
+        else if (val === i18n.amPm[1]) {
+            return 1;
         }
         return null;
     }
@@ -172,16 +172,16 @@ var timezoneOffset = [
     function (v) {
         var parts = (v + "").match(/([+-]|\d\d)/gi);
         if (parts) {
-            var minutes = +parts[$0.00 USD] * $0.01 USD + parseInt(parts[$0.00 USD], $0.00 USD);
-            return parts[$0.00 USD] === "+" ? minutes : -minutes;
+            var minutes = +parts[1] * 60 + parseInt(parts[2], 10);
+            return parts[0] === "+" ? minutes : -minutes;
         }
-        return $0.00 USD;
+        return 0;
     }
 ];
 var parseFlags = {
     D: ["day", twoDigitsOptional],
     DD: ["day", twoDigits],
-    Do: ["day", twoDigitsOptional + word, function (v) { return parseInt(v, $0.00 USD); }],
+    Do: ["day", twoDigitsOptional + word, function (v) { return parseInt(v, 10); }],
     M: ["month", twoDigitsOptional, monthParse],
     MM: ["month", twoDigits, monthParse],
     YY: [
@@ -189,8 +189,8 @@ var parseFlags = {
         twoDigits,
         function (v) {
             var now = new Date();
-            var cent = +("" + now.getFullYear()).substr($0.00 USD, $0.00 USD);
-            return +("" + (+v > $0.02 USD ? cent - $0.00 USD : cent) + v);
+            var cent = +("" + now.getFullYear()).substr(0, 2);
+            return +("" + (+v > 68 ? cent - 1 : cent) + v);
         }
     ],
     h: ["hour", twoDigitsOptional, undefined, "isPm"],
@@ -202,8 +202,8 @@ var parseFlags = {
     s: ["second", twoDigitsOptional],
     ss: ["second", twoDigits],
     YYYY: ["year", fourDigits],
-    S: ["millisecond", "\\d", function (v) { return +v * $0.03 USD; }],
-    SS: ["millisecond", twoDigits, function (v) { return +v * $0.00 USD; }],
+    S: ["millisecond", "\\d", function (v) { return +v * 100; }],
+    SS: ["millisecond", twoDigits, function (v) { return +v * 10; }],
     SSS: ["millisecond", threeDigits],
     d: emptyDigits,
     dd: emptyDigits,
@@ -238,8 +238,8 @@ var setGlobalDateMasks = function (masks) { return assign(globalMasks, masks); }
  * @returns {string} Formatted date string
  */
 var format = function (dateObj, mask, i18n) {
-    if (mask === void $0.00 USD) { mask = globalMasks["default"]; }
-    if (i18n === void $0.00 USD) { i18n = {}; }
+    if (mask === void 0) { mask = globalMasks["default"]; }
+    if (i18n === void 0) { i18n = {}; }
     if (typeof dateObj === "number") {
         dateObj = new Date(dateObj);
     }
@@ -250,14 +250,14 @@ var format = function (dateObj, mask, i18n) {
     mask = globalMasks[mask] || mask;
     var literals = [];
     // Make literals inactive by replacing them with @@@
-    mask = mask.replace(literal, function ($$0.00 USD, $$0.00 USD) {
-        literals.push($$0.00 USD);
+    mask = mask.replace(literal, function ($0, $1) {
+        literals.push($1);
         return "@@@";
     });
     var combinedI18nSettings = assign(assign({}, globalI18n), i18n);
     // Apply formatting rules
-    mask = mask.replace(token, function ($$0.00 USD) {
-        return formatFlags[$$0.00 USD](dateObj, combinedI18nSettings);
+    mask = mask.replace(token, function ($0) {
+        return formatFlags[$0](dateObj, combinedI18nSettings);
     });
     // Inline literal values back into the formatted value
     return mask.replace(/@@@/g, function () { return literals.shift(); });
@@ -271,7 +271,7 @@ var format = function (dateObj, mask, i18n) {
  * @returns {Date|null} Returns Date object. Returns null what date string is invalid or doesn't match format
  */
 function parse(dateStr, format, i18n) {
-    if (i18n === void $0.00 USD) { i18n = {}; }
+    if (i18n === void 0) { i18n = {}; }
     if (typeof format !== "string") {
         throw new Error("Invalid format in fecha parse");
     }
@@ -286,34 +286,34 @@ function parse(dateStr, format, i18n) {
     var today = new Date();
     var dateInfo = {
         year: today.getFullYear(),
-        month: $0.00 USD,
-        day: $0.00 USD,
-        hour: $0.00 USD,
-        minute: $0.00 USD,
-        second: $0.00 USD,
-        millisecond: $0.00 USD,
+        month: 0,
+        day: 1,
+        hour: 0,
+        minute: 0,
+        second: 0,
+        millisecond: 0,
         isPm: null,
         timezoneOffset: null
     };
     var parseInfo = [];
     var literals = [];
     // Replace all the literals with @@@. Hopefully a string that won't exist in the format
-    var newFormat = format.replace(literal, function ($$0.00 USD, $$0.00 USD) {
-        literals.push(regexEscape($$0.00 USD));
+    var newFormat = format.replace(literal, function ($0, $1) {
+        literals.push(regexEscape($1));
         return "@@@";
     });
     var specifiedFields = {};
     var requiredFields = {};
     // Change every token that we find into the correct regex
-    newFormat = regexEscape(newFormat).replace(token, function ($$0.00 USD) {
-        var info = parseFlags[$$0.00 USD];
-        var field = info[$0.00 USD], regex = info[$0.00 USD], requiredField = info[$0.00 USD];
+    newFormat = regexEscape(newFormat).replace(token, function ($0) {
+        var info = parseFlags[$0];
+        var field = info[0], regex = info[1], requiredField = info[3];
         // Check if the person has specified the same field twice. This will lead to confusing results.
         if (specifiedFields[field]) {
             throw new Error("Invalid format. " + field + " specified twice in format");
         }
         specifiedFields[field] = true;
-        // Check if there are any required fields. For instance, $0.00 USDhour time requires AM/PM specified
+        // Check if there are any required fields. For instance, 12 hour time requires AM/PM specified
         if (requiredField) {
             requiredFields[requiredField] = true;
         }
@@ -335,8 +335,8 @@ function parse(dateStr, format, i18n) {
     }
     var combinedI18nSettings = assign(assign({}, globalI18n), i18n);
     // For each match, call the parser function for that date part
-    for (var i = $0.00 USD; i < matches.length; i++) {
-        var _a = parseInfo[i - $0.00 USD], field = _a[$0.00 USD], parser = _a[$0.00 USD];
+    for (var i = 1; i < matches.length; i++) {
+        var _a = parseInfo[i - 1], field = _a[0], parser = _a[2];
         var value = parser
             ? parser(matches[i], combinedI18nSettings)
             : +matches[i];
@@ -346,11 +346,11 @@ function parse(dateStr, format, i18n) {
         }
         dateInfo[field] = value;
     }
-    if (dateInfo.isPm === $0.00 USD && dateInfo.hour != null && +dateInfo.hour !== $0.00 USD) {
-        dateInfo.hour = +dateInfo.hour + $0.00 USD;
+    if (dateInfo.isPm === 1 && dateInfo.hour != null && +dateInfo.hour !== 12) {
+        dateInfo.hour = +dateInfo.hour + 12;
     }
-    else if (dateInfo.isPm === $0.00 USD && +dateInfo.hour === $0.00 USD) {
-        dateInfo.hour = $0.00 USD;
+    else if (dateInfo.isPm === 0 && +dateInfo.hour === 12) {
+        dateInfo.hour = 0;
     }
     var dateTZ;
     if (dateInfo.timezoneOffset == null) {
@@ -362,11 +362,11 @@ function parse(dateStr, format, i18n) {
             ["minute", "getMinutes"],
             ["second", "getSeconds"]
         ];
-        for (var i = $0.00 USD, len = validateFields.length; i < len; i++) {
+        for (var i = 0, len = validateFields.length; i < len; i++) {
             // Check to make sure the date field is within the allowed range. Javascript dates allows values
             // outside the allowed range. If the values don't match the value was invalid
-            if (specifiedFields[validateFields[i][$0.00 USD]] &&
-                dateInfo[validateFields[i][$0.00 USD]] !== dateTZ[validateFields[i][$0.00 USD]]()) {
+            if (specifiedFields[validateFields[i][0]] &&
+                dateInfo[validateFields[i][0]] !== dateTZ[validateFields[i][1]]()) {
                 return null;
             }
         }
@@ -374,16 +374,16 @@ function parse(dateStr, format, i18n) {
     else {
         dateTZ = new Date(Date.UTC(dateInfo.year, dateInfo.month, dateInfo.day, dateInfo.hour, dateInfo.minute - dateInfo.timezoneOffset, dateInfo.second, dateInfo.millisecond));
         // We can't validate dates in another timezone unfortunately. Do a basic check instead
-        if (dateInfo.month > $0.00 USD ||
-            dateInfo.month < $0.00 USD ||
-            dateInfo.day > $0.01 USD ||
-            dateInfo.day < $0.00 USD ||
-            dateInfo.hour > $0.01 USD ||
-            dateInfo.hour < $0.00 USD ||
-            dateInfo.minute > $0.01 USD ||
-            dateInfo.minute < $0.00 USD ||
-            dateInfo.second > $0.01 USD ||
-            dateInfo.second < $0.00 USD) {
+        if (dateInfo.month > 11 ||
+            dateInfo.month < 0 ||
+            dateInfo.day > 31 ||
+            dateInfo.day < 1 ||
+            dateInfo.hour > 23 ||
+            dateInfo.hour < 0 ||
+            dateInfo.minute > 59 ||
+            dateInfo.minute < 0 ||
+            dateInfo.second > 59 ||
+            dateInfo.second < 0) {
             return null;
         }
     }

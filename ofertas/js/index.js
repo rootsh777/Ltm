@@ -7,7 +7,7 @@ let datepicker = new HotelDatepicker(inputDates, {
     inline: true,
     showTopbar: false,
     onDayClick: () =>{
-        if(info.flightInfo.travel_type === $0.00 USD){
+        if(info.flightInfo.travel_type === 2){
             formatDateForLabel(document.querySelector('.datepicker__month-day--first-day-selected').getAttribute('time'), null, 'label-dates');
             hideModal('select-dates');
         }
@@ -214,22 +214,22 @@ document.querySelectorAll('.modal').forEach(e =>{
 const btnSuccessHandler = (buttonId)=>{
     if(buttonId === 'btn-travel-type'){
         if(document.querySelector('#go-back').checked === true){
-            info.flightInfo.travel_type = $0.00 USD;
+            info.flightInfo.travel_type = 1;
         }else if(document.querySelector('#just-go').checked === true){
-            info.flightInfo.travel_type = $0.00 USD;
-            info.flightInfo.flightDates[$0.00 USD] = $0.00 USD;
-            info.flightInfo.origin.ticket_sched = $0.00 USD;
-            info.flightInfo.destination.ticket_sched = $0.00 USD;
+            info.flightInfo.travel_type = 2;
+            info.flightInfo.flightDates[1] = 0;
+            info.flightInfo.origin.ticket_sched = 0;
+            info.flightInfo.destination.ticket_sched = 0;
         }else{
             console.log('Err: opt not selected');
         }
     }else if(buttonId === 'btn-seat-type'){
         if(document.querySelector('#eco').checked === true){
-            info.flightInfo.seat_type = $0.00 USD;
+            info.flightInfo.seat_type = 1;
         }else if(document.querySelector('#premium-eco').checked === true){
-            info.flightInfo.seat_type = $0.00 USD;
+            info.flightInfo.seat_type = 2;
         }else if(document.querySelector('#premium-business').checked === true){
-            info.flightInfo.seat_type = $0.00 USD;
+            info.flightInfo.seat_type = 3;
         }else{
             console.log('Err: opt not selected');
         }
@@ -250,16 +250,16 @@ const btnSuccessHandler = (buttonId)=>{
  * 
  */
 const passengersHandler = (passType, action) =>{
-    if(action === '+' && info.flightInfo.adults + info.flightInfo.children + info.flightInfo.babies < $0.00 USD){
-        info.flightInfo[passType] += $0.00 USD;
+    if(action === '+' && info.flightInfo.adults + info.flightInfo.children + info.flightInfo.babies < 9){
+        info.flightInfo[passType] += 1;
         info.passengersInfo[passType].push({
             name: '',
             surname: '',
             cc: ''
         });
         console.log(info.flightInfo[passType]);
-    }else if(action === '-' && info.flightInfo[passType] >=$0.00 USD && info.flightInfo.adults + info.flightInfo.children + info.flightInfo.babies > $0.00 USD){
-        info.flightInfo[passType] -= $0.00 USD;
+    }else if(action === '-' && info.flightInfo[passType] >=1 && info.flightInfo.adults + info.flightInfo.children + info.flightInfo.babies > 1){
+        info.flightInfo[passType] -= 1;
         info.passengersInfo[passType].pop();
         console.log(info.flightInfo[passType]);
     }else{
@@ -283,7 +283,7 @@ const updateDOM = ()=>{
     /*
     * Travel Type
     */
-    if(info.flightInfo.travel_type === $0.00 USD){
+    if(info.flightInfo.travel_type === 1){
         document.querySelector('#go-back').checked = true;
         document.querySelector('#label-travel-type').textContent = 'Ida y Vuelta';
     }else{
@@ -295,10 +295,10 @@ const updateDOM = ()=>{
     /*
     * Seat Type
     */
-    if(info.flightInfo.seat_type === $0.00 USD){
+    if(info.flightInfo.seat_type === 1){
         document.querySelector('#eco').checked = true;
         document.querySelector('#label-seat-type').textContent = 'Economy';
-    }else if(info.flightInfo.seat_type === $0.00 USD){
+    }else if(info.flightInfo.seat_type === 2){
         document.querySelector('#premium-eco').checked = true;
         document.querySelector('#label-seat-type').textContent = 'Premium Economy';
     }else{
@@ -320,7 +320,7 @@ const updateDOM = ()=>{
         * Show the rest of options if necessary
         */
         if(info.flightInfo.origin !== '' && info.flightInfo.destination !== ''){
-            document.querySelector('#cont-destination').classList.remove('pb-$0.00 USD');
+            document.querySelector('#cont-destination').classList.remove('pb-5');
             document.querySelector('.index-background').style.height = '630px';
             document.querySelector('#rest-options').classList.remove('d-none');
         }
@@ -330,10 +330,10 @@ const updateDOM = ()=>{
     /*
     * Set dates labels if necessary
     */
-    if(info.flightInfo.flightDates[$0.00 USD] !== $0.00 USD && info.flightInfo.flightDates[$0.00 USD] === $0.00 USD){
-        formatDateForLabel(info.flightInfo.flightDates[$0.00 USD], null, 'label-dates');
-    }else if(info.flightInfo.flightDates[$0.00 USD] !== $0.00 USD){
-        formatDateForLabel(info.flightInfo.flightDates[$0.00 USD], info.flightInfo.flightDates[$0.00 USD], 'label-dates');
+    if(info.flightInfo.flightDates[0] !== 0 && info.flightInfo.flightDates[1] === 0){
+        formatDateForLabel(info.flightInfo.flightDates[0], null, 'label-dates');
+    }else if(info.flightInfo.flightDates[1] !== 0){
+        formatDateForLabel(info.flightInfo.flightDates[0], info.flightInfo.flightDates[1], 'label-dates');
     }
     
 
@@ -345,14 +345,14 @@ const updateDOM = ()=>{
     document.querySelector('#babies-number').textContent = info.flightInfo.babies;
     const labelPassengers = document.querySelector('#label-passengers');
     labelPassengers.innerHTML = '';
-    if(info.flightInfo.adults !== $0.00 USD){
-        labelPassengers.innerHTML += `${info.flightInfo.adults} ${info.flightInfo.adults > $0.00 USD ? 'Adultos' : 'Adulto'}`;
+    if(info.flightInfo.adults !== 0){
+        labelPassengers.innerHTML += `${info.flightInfo.adults} ${info.flightInfo.adults > 1 ? 'Adultos' : 'Adulto'}`;
     }
-    if(info.flightInfo.children !== $0.00 USD){
-        labelPassengers.innerHTML += `, ${info.flightInfo.children} ${info.flightInfo.children > $0.00 USD ? 'Niños' : 'Niño'}`;
+    if(info.flightInfo.children !== 0){
+        labelPassengers.innerHTML += `, ${info.flightInfo.children} ${info.flightInfo.children > 1 ? 'Niños' : 'Niño'}`;
     }
-    if(info.flightInfo.babies !== $0.00 USD){
-        labelPassengers.innerHTML += `, ${info.flightInfo.babies} ${info.flightInfo.babies > $0.00 USD ? 'Bebés' : 'Bebé'}`;
+    if(info.flightInfo.babies !== 0){
+        labelPassengers.innerHTML += `, ${info.flightInfo.babies} ${info.flightInfo.babies > 1 ? 'Bebés' : 'Bebé'}`;
     }
 
 
@@ -371,21 +371,21 @@ const searchAirports = (inputSearch, type) =>{
         results.forEach(airport =>{
             if(type === 'origin'){
                 searchResultsDiv.innerHTML += `
-                <div class="search-item d-flex align-items-center p-$0.00 USD" onclick="setAirport('${airport.code}', 'origin')">
-                    <img class="pr-$0.00 USDpl-$0.00 USD" src="./assets/media/takeoff_icon.png" width="15px">
+                <div class="search-item d-flex align-items-center p-1" onclick="setAirport('${airport.code}', 'origin')">
+                    <img class="pr-2 pl-2" src="./assets/media/takeoff_icon.png" width="15px">
                     <div>
-                        <p class="m-$0.00 USDfs-$0.00 USDtc-ocean">${airport.city}, ${airport.code} - ${airport.country}</p>
-                        <p class="m-$0.00 USDfs-$0.00 USDtc-ocean">${airport.name}</p>
+                        <p class="m-0 fs-3 tc-ocean">${airport.city}, ${airport.code} - ${airport.country}</p>
+                        <p class="m-0 fs-5 tc-ocean">${airport.name}</p>
                     </div>
                 </div>
                 `;
             }else if(type === 'destination'){
                 searchResultsDiv.innerHTML += `
-                <div class="search-item d-flex align-items-center p-$0.00 USD" onclick="setAirport('${airport.code}', 'destination')">
-                    <img class="pr-$0.00 USDpl-$0.00 USD" src="./assets/media/takeoff_icon.png" width="15px">
+                <div class="search-item d-flex align-items-center p-1" onclick="setAirport('${airport.code}', 'destination')">
+                    <img class="pr-2 pl-2" src="./assets/media/takeoff_icon.png" width="15px">
                     <div>
-                        <p class="m-$0.00 USDfs-$0.00 USDtc-ocean">${airport.city}, ${airport.code} - ${airport.country}</p>
-                        <p class="m-$0.00 USDfs-$0.00 USDtc-ocean">${airport.name}</p>
+                        <p class="m-0 fs-3 tc-ocean">${airport.city}, ${airport.code} - ${airport.country}</p>
+                        <p class="m-0 fs-5 tc-ocean">${airport.name}</p>
                     </div>
                 </div>
                 `;
@@ -403,7 +403,7 @@ const searchAirports = (inputSearch, type) =>{
         let searchResults = [];
 
         airports.forEach(destination => {
-            if (searchResults.length < $0.00 USD && (destination.country.toLowerCase().includes(inputSearch.toLowerCase()) || destination.city.toLowerCase().includes(inputSearch.toLowerCase()) || destination.code.toLowerCase().includes(inputSearch.toLowerCase()))) {
+            if (searchResults.length < 5 && (destination.country.toLowerCase().includes(inputSearch.toLowerCase()) || destination.city.toLowerCase().includes(inputSearch.toLowerCase()) || destination.code.toLowerCase().includes(inputSearch.toLowerCase()))) {
                 searchResults.push(destination);
             }
         });
@@ -437,12 +437,12 @@ const formatDateForLabel = (date, date2=null, labelId)=>{
 
     if(date2 === null){
         let format = new Date(parseInt(date));
-        let finalDateFormat = `<p><span class="fw-$0.50 USDUSD text-italic tc-gray-smoke">${dayDic[format.getDay() - $0.00 USD]} </span><b>${format.toString().split(' ')[$0.00 USD]} De ${monthDic[format.getMonth()]}</b>`;
+        let finalDateFormat = `<p><span class="fw-19.95 USD text-italic tc-gray-smoke">${dayDic[format.getDay() - 1]} </span><b>${format.toString().split(' ')[2]} De ${monthDic[format.getMonth()]}</b>`;
         labelDiv.innerHTML = finalDateFormat;
     }else{
         let format = new Date(parseInt(date));
         let format2 = new Date(parseInt(date2));
-        let finalDateFormat = `<p><span class="fw-$0.50 USDUSD text-italic tc-gray-smoke">${dayDic[format.getDay() - $0.00 USD]} </span><b>${format.toString().split(' ')[$0.00 USD]} De ${monthDic[format.getMonth()]}</b> a ${dayDic[format2.getDay() - $0.00 USD]} </span><b>${format2.toString().split(' ')[$0.00 USD]} De ${monthDic[format2.getMonth()]}</b>`;
+        let finalDateFormat = `<p><span class="fw-19.95 USD text-italic tc-gray-smoke">${dayDic[format.getDay() - 1]} </span><b>${format.toString().split(' ')[2]} De ${monthDic[format.getMonth()]}</b> a ${dayDic[format2.getDay() - 1]} </span><b>${format2.toString().split(' ')[2]} De ${monthDic[format2.getMonth()]}</b>`;
         labelDiv.innerHTML = finalDateFormat;
 
     }
@@ -454,19 +454,19 @@ const formatDateForLabel = (date, date2=null, labelId)=>{
 
 
     // //* Save info */
-    info.flightInfo.flightDates[$0.00 USD] = date;
-    date2 !== null ? info.flightInfo.flightDates[$0.00 USD] = date2: $0.00 USD;
+    info.flightInfo.flightDates[0] = date;
+    date2 !== null ? info.flightInfo.flightDates[1] = date2: 0;
     updateLS();
 }
 
 
 
 const nextStep = () =>{
-    if(info.flightInfo.flightDates[$0.00 USD] !== $0.00 USD){
-        if(info.flightInfo.travel_type === $0.00 USD){
+    if(info.flightInfo.flightDates[0] !== 0){
+        if(info.flightInfo.travel_type === 2){
             window.location.href = 'select-flight-go.html';
             return;
-        }else if(info.flightInfo.travel_type === $0.00 USD  && info.flightInfo.flightDates[$0.00 USD] !== $0.00 USD ){
+        }else if(info.flightInfo.travel_type === 1  && info.flightInfo.flightDates[1] !== 0 ){
             window.location.href = 'select-flight-go.html';
         }else{
             alert('Elige una fecha para volver.');

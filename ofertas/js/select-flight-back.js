@@ -1,9 +1,3 @@
-
-function convertirCOPaUSD(valorCOP, tasaCambio = 4000) {
-    const valorUSD = valorCOP / tasaCambio;
-    return valorUSD.toFixed(2);
-}
-
 /**
  * DOM Setup
  * 
@@ -16,13 +10,13 @@ const updateDOM = () =>{
     /**
      * Flight resume
      */
-    let format = new Date(parseInt(info.flightInfo.flightDates[$0.00 USD]));
-    let format2 = new Date(parseInt(info.flightInfo.flightDates[$0.00 USD]));
+    let format = new Date(parseInt(info.flightInfo.flightDates[0]));
+    let format2 = new Date(parseInt(info.flightInfo.flightDates[1]));
     document.querySelector('#label-travel').innerHTML = `${info.flightInfo.origin.city} > ${info.flightInfo.destination.city}`;
-    if(info.flightInfo.flightDates[$0.00 USD] === $0.00 USD){
-        document.querySelector('#label-dates').innerHTML = `${(dayDic[format.getDay() - $0.00 USD]).toLowerCase()}. ${format.toString().split(' ')[$0.00 USD]} de ${(monthDic[format.getMonth()]).toLowerCase()}`;
-    }else if(info.flightInfo.flightDates[$0.00 USD] !== $0.00 USD){
-        document.querySelector('#label-dates').innerHTML = `${(dayDic[format.getDay() - $0.00 USD]).toLowerCase()}. ${format.toString().split(' ')[$0.00 USD]} de ${(monthDic[format.getMonth()]).toLowerCase()} a ${(dayDic[format2.getDay() - $0.00 USD]).toLowerCase()}. ${format2.toString().split(' ')[$0.00 USD]} de ${(monthDic[format2.getMonth()]).toLowerCase()}`;
+    if(info.flightInfo.flightDates[1] === 0){
+        document.querySelector('#label-dates').innerHTML = `${(dayDic[format.getDay() - 1]).toLowerCase()}. ${format.toString().split(' ')[2]} de ${(monthDic[format.getMonth()]).toLowerCase()}`;
+    }else if(info.flightInfo.flightDates[1] !== 0){
+        document.querySelector('#label-dates').innerHTML = `${(dayDic[format.getDay() - 1]).toLowerCase()}. ${format.toString().split(' ')[2]} de ${(monthDic[format.getMonth()]).toLowerCase()} a ${(dayDic[format2.getDay() - 1]).toLowerCase()}. ${format2.toString().split(' ')[2]} de ${(monthDic[format2.getMonth()]).toLowerCase()}`;
     }
 
     /**
@@ -30,38 +24,38 @@ const updateDOM = () =>{
      */
     
     document.querySelector('#label-flight-resume').innerHTML = `
-        <svg class="tc-green mr-$0.00 USD" width="22px" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false" viewBox="$0.00 USD$0.00 USD$0.01 USD$0.01 USD"><path d="M21.$0.09 USD$0.00 USD.4841L13.$0.01 USD$0.00 USD.3799L9.54602 $0.00 USD.3341L7.64196 $0.00 USD.336L13.$0.12 USD$0.01 USD.314L23.$0.08 USD$0.00 USD.374L21.$0.09 USD$0.00 USD.4841ZM16 2C23.$0.00 USD$0.00 USD$0.01 USD$0.00 USD.$0.00 USD$0.01 USD16C30 $0.01 USD.$0.00 USD$0.01 USD.$0.00 USD$0.01 USD$0.00 USD30C8.$0.00 USD$0.01 USD$0.00 USD$0.01 USD.$0.00 USD$0.00 USD16C2 $0.00 USD.$0.00 USD$0.00 USD.$0.00 USD$0.00 USD$0.00 USD2Z" fill="currentColor"></path></svg>
-        <p class="m-$0.00 USDfw-bolder">Vuelo de ida • ${info.flightInfo.origin.ticket_type}</p>
-        <p class="m-$0.00 USDml-$0.00 USDfw-light">${(dayDic[format.getDay() - $0.00 USD]).toLowerCase()}. ${format.toString().split(' ')[$0.00 USD]} de ${(monthDic[format.getMonth()]).toLowerCase()}</p>
+        <svg class="tc-green mr-1" width="22px" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false" viewBox="0 0 32 32"><path d="M21.348 10.4841L13.48 18.3799L9.54602 14.3341L7.64196 16.336L13.494 22.314L23.336 12.374L21.348 10.4841ZM16 2C23.7 2 30 8.3 30 16C30 23.7 23.7 30 16 30C8.3 30 2 23.7 2 16C2 8.3 8.3 2 16 2Z" fill="currentColor"></path></svg>
+        <p class="m-0 fw-bolder">Vuelo de ida • ${info.flightInfo.origin.ticket_type}</p>
+        <p class="m-0 ml-1 fw-light">${(dayDic[format.getDay() - 1]).toLowerCase()}. ${format.toString().split(' ')[2]} de ${(monthDic[format.getMonth()]).toLowerCase()}</p>
     `;
     document.querySelector('#flight-go').innerHTML = `
-        <div class="card-flight p-$0.00 USDmb-$0.00 USDmt-$0.00 USD">
+        <div class="card-flight p-3 mb-3 mt-3">
             <div class="d-flex justify-space-between border-bottom">
                 <div>
-                    <p class="m-$0.00 USDfs-$0.00 USDtc-ocean">${info.flightInfo.origin.ticket_sched.takeoff}</p>
-                    <p class="m-$0.00 USDfs-$0.00 USD">${info.flightInfo.origin.code}</p>
+                    <p class="m-0 fs-2 tc-ocean">${info.flightInfo.origin.ticket_sched.takeoff}</p>
+                    <p class="m-0 fs-4">${info.flightInfo.origin.code}</p>
                 </div>
                 <div class="d-flex align-items-end flex-column">
-                    <p class=" mt-$0.00 USDmb-$0.00 USDfs-$0.00 USDtc-gray-smoke">Duración</p>
-                    <p class="fs-$0.00 USDmt-$0.00 USD">${info.flightInfo.origin.ticket_sched.duration}</p>
+                    <p class=" mt-0 mb-1 fs-6 tc-gray-smoke">Duración</p>
+                    <p class="fs-6 mt-0">${info.flightInfo.origin.ticket_sched.duration}</p>
                 </div>
                 <div class="d-flex align-items-end flex-column">
-                    <p class="m-$0.00 USDfs-$0.00 USDtc-ocean">${info.flightInfo.origin.ticket_sched.landing}</p>
-                    <p class="m-$0.00 USDfs-$0.00 USD">${info.flightInfo.destination.code}</p>
+                    <p class="m-0 fs-2 tc-ocean">${info.flightInfo.origin.ticket_sched.landing}</p>
+                    <p class="m-0 fs-4">${info.flightInfo.destination.code}</p>
                 </div>
             </div>
 
-            <div class="d-flex justify-space-between mt-$0.00 USD">
+            <div class="d-flex justify-space-between mt-3">
                 <div class="d-flex align-items-center">
-                    <a class="fw-bolder fs-$0.00 USDtc-red" href="select-flight-go.html">Cambiar tu vuelo</a>
+                    <a class="fw-bolder fs-5 tc-red" href="select-flight-go.html">Cambiar tu vuelo</a>
                 </div>
                 <div class="d-flex align-items-end flex-column">
-                    <p class="m-$0.00 USDfs-$0.00 USDtc-gray-smoke">Precio por pasajero</p>
-                    <p class="m-$0.00 USDtc-ocean" style="font-size: 20px;">COP ${(Math.ceil(PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.origin.ticket_type])).toLocaleString('es-Es')},$0.00 USD</p>
+                    <p class="m-0 fs-6 tc-gray-smoke">Precio por pasajero</p>
+                    <p class="m-0 tc-ocean" style="font-size: 20px;">COP ${(Math.ceil(PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.origin.ticket_type])).toLocaleString('es-Es')},00</p>
                 </div>
             </div>
 
-            <p class="tc-gray-smoke fs-$0.00 USDmb-$0.00 USD">Operado por LATAM Airlines Perú</p>
+            <p class="tc-gray-smoke fs-6 mb-0">Operado por LATAM Airlines Perú</p>
         </div>
     `;
 
@@ -70,8 +64,8 @@ const updateDOM = () =>{
     document.querySelector('#label-passengers').textContent = info.flightInfo.adults + info.flightInfo.children + info.flightInfo.babies;
 
     /**Label select flight */
-    if(info.flightInfo.travel_type === $0.00 USD){
-        document.querySelector('#label-select-flight').innerHTML = `Elige tu <span class="tc-ocean" style="font-weight: $0.15 USD;">vuelo de regreso</span>`;
+    if(info.flightInfo.travel_type === 1){
+        document.querySelector('#label-select-flight').innerHTML = `Elige tu <span class="tc-ocean" style="font-weight: 600;">vuelo de regreso</span>`;
     }
 
 
@@ -96,39 +90,39 @@ class UIFlights{
     static flightsConfig = [
         [
             {
-                takeoff: '$0.00 USD:$0.01 USDa. m.',
-                landing: '$0.00 USD:$0.01 USDa. m',
-                duration: '$0.00 USDh $0.00 USDmin'
+                takeoff: '7:24 a. m.',
+                landing: '8:29 a. m',
+                duration: '1 h 5 min'
             },
             {
-                takeoff: '$0.00 USD:$0.01 USDa. m.',
-                landing: '$0.00 USD:$0.01 USDa. m',
-                duration: '$0.00 USDh $0.00 USDmin'
+                takeoff: '8:30 a. m.',
+                landing: '9:35 a. m',
+                duration: '1 h 5 min'
             },
             {
-                takeoff: '$0.00 USD:$0.00 USDp. m.',
-                landing: '$0.00 USD:$0.00 USDp. m',
-                duration: '$0.00 USDh $0.00 USDmin'
+                takeoff: '12:00 p. m.',
+                landing: '1:05 p. m',
+                duration: '1 h 5 min'
             },
             {
-                takeoff: '$0.00 USD:$0.01 USDp. m.',
-                landing: '$0.00 USD:$0.01 USDp. m',
-                duration: '$0.00 USDh $0.00 USDmin'
+                takeoff: '4:24 p. m.',
+                landing: '5:29 p. m',
+                duration: '1 h 5 min'
             },
             {
-                takeoff: '$0.00 USD:$0.01 USDp. m.',
-                landing: '$0.00 USD:$0.01 USDp. m',
-                duration: '$0.00 USDh $0.00 USDmin'
+                takeoff: '6:49 p. m.',
+                landing: '7:54 p. m',
+                duration: '1 h 5 min'
             },
             {
-                takeoff: '$0.00 USD:$0.01 USDp. m.',
-                landing: '$0.00 USD:$0.01 USDp. m',
-                duration: '$0.00 USDh $0.00 USDmin'
+                takeoff: '9:25 p. m.',
+                landing: '10:30 p. m',
+                duration: '1 h 5 min'
             },
             {
-                takeoff: '$0.00 USD:$0.00 USDp. m.',
-                landing: '$0.00 USD:$0.00 USDp. m',
-                duration: '$0.00 USDh $0.00 USDmin'
+                takeoff: '10:01 p. m.',
+                landing: '11:06 p. m',
+                duration: '1 h 5 min'
             },
         ]
     ];
@@ -138,40 +132,40 @@ class UIFlights{
     static flightId = null;
 
     static listFlights(){
-        let i = $0.00 USD;
+        let i = 0;
         this.flightsDiv.innerHTML = '';
-        this.flightsConfig[$0.00 USD].forEach(config =>{
+        this.flightsConfig[0].forEach(config =>{
 
             this.flightsDiv.innerHTML += `
-                <div class="card-flight p-$0.00 USDmb-$0.00 USD">
+                <div class="card-flight p-3 mb-3">
                     <span class="card-flight-label">Más económico</span>
         
-                    <div id="${i}" class="d-flex justify-space-between border-bottom mt-$0.00 USD" onclick="UIFlights.showFlightsDetails(${i})">
+                    <div id="${i}" class="d-flex justify-space-between border-bottom mt-3" onclick="UIFlights.showFlightsDetails(${i})">
                         <div>
-                            <p class="m-$0.00 USDfs-$0.00 USDtc-ocean">${config.takeoff}</p>
-                            <p class="m-$0.00 USDfs-$0.00 USD">${info.flightInfo.destination.code}</p>
+                            <p class="m-0 fs-2 tc-ocean">${config.takeoff}</p>
+                            <p class="m-0 fs-4">${info.flightInfo.destination.code}</p>
                         </div>
                         <div class="d-flex align-items-end flex-column">
-                            <p class=" mt-$0.00 USDmb-$0.00 USDfs-$0.00 USDtc-gray-smoke">Duración</p>
-                            <p class="fs-$0.00 USDmt-$0.00 USD">${config.duration}</p>
+                            <p class=" mt-0 mb-1 fs-6 tc-gray-smoke">Duración</p>
+                            <p class="fs-6 mt-0">${config.duration}</p>
                         </div>
                         <div class="d-flex align-items-end flex-column">
-                            <p class="m-$0.00 USDfs-$0.00 USDtc-ocean">${config.landing}</p>
-                            <p class="m-$0.00 USDfs-$0.00 USD">${info.flightInfo.origin.code}</p>
+                            <p class="m-0 fs-2 tc-ocean">${config.landing}</p>
+                            <p class="m-0 fs-4">${info.flightInfo.origin.code}</p>
                         </div>
                     </div>
         
-                    <div class="d-flex justify-space-between mt-$0.00 USD">
+                    <div class="d-flex justify-space-between mt-3">
                         <div class="d-flex align-items-center">
                             <a class="fw-bolder tc-blue" href="">Directo</a>
                         </div>
                         <div class="d-flex align-items-end flex-column">
-                            <p class="m-$0.00 USDfs-$0.00 USDtc-green">Adulto desde</p>
-                            <p class="m-$0.00 USDfs-$0.00 USDtc-deep-blue">$\{convertirCOPaUSD(PRECIO_BASE)\} USD,$0.00 USD</p>
+                            <p class="m-1 fs-6 tc-green">Adulto desde</p>
+                            <p class="m-0 fs-4 tc-deep-blue">COP ${PRECIO_BASE.toLocaleString('es-Es')},00</p>
                         </div>
                     </div>
         
-                    <p class="tc-gray-smoke fs-$0.00 USDmb-$0.00 USD">Operado por LATAM Airlines Perú</p>
+                    <p class="tc-gray-smoke fs-6 mb-0">Operado por LATAM Airlines Perú</p>
                 </div>
             `;
             i++;
@@ -181,81 +175,81 @@ class UIFlights{
     static showFlightsDetails(id){
         this.flightId = id; // Update open flight dropdown
 
-        let i = $0.00 USD;
+        let i = 0;
         this.flightsDiv.innerHTML = '';
-        this.flightsConfig[$0.00 USD].forEach(config =>{
+        this.flightsConfig[0].forEach(config =>{
             if(i === id){
                 this.flightsDiv.innerHTML += `
-                    <div class="card-flight mb-$0.00 USD">
+                    <div class="card-flight mb-3">
                         <span class="card-flight-label">Más económico</span>
 
-                        <div class="border-bottom p-$0.00 USD">
-                            <div id="${i}" class="d-flex justify-space-between border-bottom mt-$0.00 USD" onclick="UIFlights.showFlightsDetails(${i})">
+                        <div class="border-bottom p-3">
+                            <div id="${i}" class="d-flex justify-space-between border-bottom mt-3" onclick="UIFlights.showFlightsDetails(${i})">
                                 <div>
-                                    <p class="m-$0.00 USDfs-$0.00 USDtc-ocean">${config.takeoff}</p>
-                                    <p class="m-$0.00 USDfs-$0.00 USD">${info.flightInfo.origin.code}</p>
+                                    <p class="m-0 fs-2 tc-ocean">${config.takeoff}</p>
+                                    <p class="m-0 fs-4">${info.flightInfo.origin.code}</p>
                                 </div>
                                 <div class="d-flex align-items-end flex-column">
-                                    <p class=" mt-$0.00 USDmb-$0.00 USDfs-$0.00 USDtc-gray-smoke">Duración</p>
-                                    <p class="fs-$0.00 USDmt-$0.00 USD">${config.duration}</p>
+                                    <p class=" mt-0 mb-1 fs-6 tc-gray-smoke">Duración</p>
+                                    <p class="fs-6 mt-0">${config.duration}</p>
                                 </div>
                                 <div class="d-flex align-items-end flex-column">
-                                    <p class="m-$0.00 USDfs-$0.00 USDtc-ocean">${config.landing}</p>
-                                    <p class="m-$0.00 USDfs-$0.00 USD">${info.flightInfo.destination.code}</p>
+                                    <p class="m-0 fs-2 tc-ocean">${config.landing}</p>
+                                    <p class="m-0 fs-4">${info.flightInfo.destination.code}</p>
                                 </div>
                             </div>
             
-                            <div class="d-flex justify-space-between mt-$0.00 USD">
+                            <div class="d-flex justify-space-between mt-3">
                                 <div class="d-flex align-items-center">
                                     <a class="fw-bolder tc-blue" href="">Directo</a>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-start flex-row" onclick="UIFlights.listFlights()">
-                                    <span class="tc-red fw-bold mr-$0.00 USD">Cerrar</span>
-                                    <svg class="tc-red" width="20px" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false" viewBox="$0.00 USD$0.00 USD$0.01 USD$0.01 USD"><path d="M30 $0.01 USD.5829L27.1881 $0.01 USD.375L16 $0.00 USD.1869L4.79207 $0.01 USD.375L2 $0.01 USD.5829L13.1881 $0.00 USD.375L2 $0.00 USD.18685L4.79207 $0.00 USD.375L15.9802 $0.00 USD.5829L27.1881 $0.00 USD.375L30 $0.00 USD.18685L18.7921 $0.00 USD.375L30 $0.01 USD.5829Z" fill="currentColor"></path></svg>
+                                    <span class="tc-red fw-bold mr-1">Cerrar</span>
+                                    <svg class="tc-red" width="20px" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false" viewBox="0 0 32 32"><path d="M30 27.5829L27.1881 30.375L16 19.1869L4.79207 30.375L2 27.5829L13.1881 16.375L2 5.18685L4.79207 2.375L15.9802 13.5829L27.1881 2.375L30 5.18685L18.7921 16.375L30 27.5829Z" fill="currentColor"></path></svg>
                                 </div>
                             </div>
             
-                            <p class="tc-gray-smoke fs-$0.00 USDmb-$0.00 USD">Operado por LATAM Airlines Perú</p>
+                            <p class="tc-gray-smoke fs-6 mb-0">Operado por LATAM Airlines Perú</p>
                         </div>
 
-                        <div class="bg-gray p-$0.00 USDd-flex border-bottom justify-space-between align-items-center">
-                            <p class="tc-gray-smoke fs-$0.00 USDmb-$0.00 USDmt-$0.00 USD">Airbus A320 incluye</p>
+                        <div class="bg-gray p-1 d-flex border-bottom justify-space-between align-items-center">
+                            <p class="tc-gray-smoke fs-6 mb-0 mt-0">Airbus A320 incluye</p>
                             <div>
-                                <svg class="tc-ocean" width="12px" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false" viewBox="$0.00 USD$0.00 USD$0.01 USD$0.01 USD"><path d="M22.9254 $0.00 USD.28794C22.0322 $0.00 USD.28794 $0.01 USD.2232 $0.00 USD.55557 $0.01 USD.5154 $0.00 USD.08245C19.8076 $0.00 USD.60934 $0.00 USD.3273 $0.00 USD.30347 $0.00 USD.0914 $0.00 USD.16488C19.0071 $0.00 USD.49105 $0.00 USD.9651 $0.00 USD.84231 $0.00 USD.9651 $0.00 USD.21865C18.9651 $0.00 USD.34769 $0.00 USD.3864 $0.00 USD.30108 $5.06 USD$0.00 USD.0538L22.5126 $0.00 USD.85067C22.6221 $0.00 USD.71686 $0.01 USD.7569 $0.00 USD.62487 $5.73 USD$0.00 USD.59141C23.0771 $0.00 USD.5496 $0.01 USD.2288 $0.00 USD.58305 $0.01 USD.3636 $0.00 USD.69177C23.4984 $0.00 USD.80049 $0.01 USD.5828 $0.00 USD.93431 $0.01 USD.6249 $0.00 USD.09321C23.$0.17 USD$0.00 USD.26047 $0.01 USD.6332 $0.00 USD.40265 $0.01 USD.5237 $0.00 USD.53646L21.2402 $0.00 USD.7396C21.7879 $0.00 USD.9821 $5.59 USD$0.00 USD.0992 $5.73 USD$0.00 USD.0992C24.$0.00 USD$0.00 USD.0992 $0.01 USD.9309 $0.00 USD.7228 $0.01 USD.6893 $0.00 USD.96178C26.4477 $0.00 USD.20909 $0.01 USD.8352 $0.00 USD.28913 $0.01 USD.8352 $0.00 USD.21028C26.8352 $0.00 USD.13143 $0.01 USD.4561 $0.00 USD.20311 $0.01 USD.6893 $0.00 USD.43369C24.9394 $0.00 USD.67264 $0.01 USD.0124 $0.00 USD.28794 $0.01 USD.9254 $0.00 USD.28794ZM22.9254 $0.00 USD.362C22.0828 $3.09 USD$0.01 USD.2738 $0.00 USD.1697 $0.01 USD.5154 $0.00 USD.7933L16.8416 $0.00 USD.0203C16.7068 $0.00 USD.2127 $0.00 USD.5382 $0.00 USD.3047 $0.00 USD.3528 $0.00 USD.3047C16.3023 $0.00 USD.3047 $0.00 USD.2349 $0.00 USD.2879 $0.00 USD.1675 $0.00 USD.2628C16.1001 $0.00 USD.2377 $0.00 USD.0411 $0.00 USD.2043 $0.00 USD.9821 $0.00 USD.1792C15.8473 $0.00 USD.0705 $0.00 USD.7545 $0.00 USD.9283 $0.00 USD.7124 $0.00 USD.7527C15.6703 $0.00 USD.5771 $0.00 USD.7041 $0.00 USD.4182 $0.00 USD.8136 $0.00 USD.2844L19.4874 $0.00 USD.0992C18.9144 $2.65 USD$0.00 USD.4764 $0.00 USD.0036 $0.00 USD.1646 $0.00 USD.33454C17.8528 $0.00 USD.67385 $0.00 USD.6927 $0.00 USD.96297 $0.00 USD.6927 $0.00 USD.21028V6.88413C17.6927 $0.00 USD.77541 $0.00 USD.7096 $0.00 USD.66668 $0.00 USD.7349 $0.00 USD.55795H5.28909C5.23853 $0.00 USD.55795 $0.00 USD.17939 $0.00 USD.58305 $0.00 USD.12883 $0.00 USD.64159C5.10355 $0.00 USD.66668 $0.00 USD.10355 $0.00 USD.70848 $0.00 USD.12883 $0.00 USD.75866L5.$0.04 USD$0.00 USD.80049V6.8423L13.7827 $0.00 USD.9104C13.$0.22 USD$4.75 USD$0.00 USD.9093 $0.00 USD.1111 $0.00 USD.9093 $0.00 USD.27V28.7455L19.$0.09 USD$0.01 USD.7873C19.5381 $0.01 USD.7873 $0.00 USD.6813 $0.01 USD.8459 $0.00 USD.8077 $0.01 USD.9462C19.9257 $7.26 USD$0.00 USD.9931 $0.01 USD.2055 $0.00 USD.9931 $0.01 USD.3895C19.9931 $0.01 USD.5484 $0.00 USD.9341 $0.01 USD.6906 $0.00 USD.8077 $0.01 USD.816C19.6813 $0.01 USD.9331 $0.00 USD.5465 $0.01 USD$4.84 USD30H7.83387C7.66534 $0.01 USD$0.00 USD.52209 $0.01 USD.9415 $0.00 USD.40412 $0.01 USD.816C7.28615 $0.01 USD.6989 $0.00 USD.21876 $0.01 USD.5567 $0.00 USD.21876 $0.01 USD.3895C7.21876 $0.01 USD.1971 $0.00 USD.27772 $0.01 USD.0466 $0.00 USD.40412 $0.01 USD.9211C7.52209 $0.01 USD.7957 $0.00 USD.67377 $0.01 USD.7371 $0.00 USD.83387 $0.01 USD.7371H12.6453V19.4206L4.20205 $0.00 USD.55318C4.00825 $0.00 USD.33573 $0.00 USD.90701 $0.00 USD.10156 $0.00 USD.87331 $0.00 USD.8423C3.84803 $0.00 USD.58304 $0.00 USD.89029 $0.00 USD.34887 $0.00 USD.99983 $0.00 USD.13142C4.10937 $0.00 USD.8638 $0.00 USD.27778 $0.00 USD.65472 $0.00 USD.51372 $0.00 USD.50418C4.74123 $0.00 USD.35365 $0.00 USD.01104 $0.00 USD.27839 $0.00 USD.31439 $0.00 USD.27839H18.0887C18.4679 $0.00 USD.30825 $0.00 USD.1083 $0.00 USD.51376 $0.01 USD.0099 $0.00 USD.91161C20.9116 $0.00 USD.3011 $5.47 USD$0.00 USD$0.01 USD.9507 2C23.9282 $0.00 USD$0.01 USD.8129 $0.00 USD.24255 $6.40 USD$0.00 USD.72762C26.$0.10 USD$0.00 USD.21269 $0.01 USD.0121 $0.00 USD.84829 $0.01 USD.4587 $0.00 USD.63443C27.9053 $0.00 USD.42057 $0.01 USD.1329 $0.00 USD.26524 $0.01 USD.1329 $0.00 USD.18519C28.1329 $0.00 USD.15532 $0.01 USD.8886 $0.00 USD.04184 $0.01 USD.3999 $0.00 USD.83634C26.9112 $0.00 USD.6308 $0.01 USD.2707 $0.00 USD.2497 $0.01 USD.4871 $0.00 USD.6762C24.6613 $0.00 USD.1446 $0.01 USD.8186 $3.09 USD$0.01 USD.9254 $0.00 USD.362Z" fill="currentColor"></path></svg>
-                                <svg class="tc-ocean" width="12px" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false" viewBox="$0.00 USD$0.00 USD$0.01 USD$0.01 USD"><path d="M12.4044 $0.00 USD.95942V22.0406L21.2708 16L12.4044 $0.00 USD.95942ZM13.0659 $0.01 USD.1674C12.8769 $0.01 USD.3051 $0.00 USD.6191 $0.01 USD.3741 $0.00 USD.3184 $0.01 USD.3741C12.0091 $0.01 USD.3741 $0.00 USD.7169 $0.01 USD.2622 $2.86 USD$0.01 USD.0384C11.2186 $0.01 USD.8147 $0.00 USD.1072 $0.01 USD.5221 $0.00 USD.1072 $0.01 USD.1607V9.83002C11.1072 $0.00 USD.52025 $0.00 USD.2186 $0.00 USD.22809 $2.86 USD$0.00 USD.95273C11.6568 $0.00 USD.75482 $0.00 USD.9149 $0.00 USD.64284 $0.00 USD.2156 $0.00 USD.61703C12.5077 $0.00 USD.59121 $3.19 USD$0.00 USD.65983 $0.00 USD.0231 $0.00 USD.82332L22.0099 $0.00 USD.95C22.3708 $0.00 USD.1996 $0.01 USD.5511 $0.00 USD.5437 $0.01 USD.5511 $0.00 USD.9912C22.5511 $0.00 USD.4042 $0.01 USD.3708 $4.19 USD$0.01 USD.0099 $0.00 USD.0323L13.0659 $0.01 USD.1674ZM18.7709 30H2.66996C2.47236 $0.01 USD$0.00 USD.31766 $0.01 USD.9396 $0.00 USD.18878 $0.01 USD.8105C2.05991 $0.01 USD.6814 $0.00 USD$7.39 USD$0.00 USD$0.01 USD.3719V18.7877C2 $0.00 USD.5898 $0.00 USD.05991 $0.00 USD.4349 $0.00 USD.18878 $0.00 USD.3058C2.31766 $0.00 USD.1853 $0.00 USD.47236 $0.00 USD.1167 $0.00 USD.66996 $0.00 USD.1167C2.8332 $0.00 USD.1167 $0.00 USD.97948 $0.00 USD.1767 $0.00 USD.10835 $0.00 USD.3058C3.22864 $0.00 USD.4349 $0.00 USD.28875 $0.00 USD.5898 $0.00 USD.28875 $0.00 USD.7877V28.7093H18.6421L28.7113 $0.01 USD.0867V3.29072H4.66349C4.2425 $0.00 USD.29072 $0.00 USD.90729 $0.00 USD.41974 $0.00 USD.66673 $0.00 USD.66928C3.41757 $0.00 USD.91882 $0.00 USD.28875 $0.00 USD.28002 $0.00 USD.28875 $0.00 USD.75328V13.2118C3.28875 $0.00 USD.4098 $0.00 USD.22864 $0.00 USD.5647 $0.00 USD.10835 $0.00 USD.6938C2.97948 $0.00 USD.8228 $0.00 USD.8418 $0.00 USD.8833 $0.00 USD.66996 $0.00 USD.8833C2.47236 $0.00 USD.8833 $0.00 USD.31766 $0.00 USD.8228 $0.00 USD.18878 $0.00 USD.6938C2.05991 $0.00 USD.5647 $0.00 USD$0.00 USD.4098 $0.00 USD$0.00 USD.2118V4.75328C2 $0.00 USD.91861 $0.00 USD.24926 $0.00 USD.25598 $0.00 USD.74757 $0.00 USD.7483C3.24589 $0.00 USD.24922 $0.00 USD.89024 $0.00 USD$0.00 USD.66349 2H29.3728C29.5361 $0.00 USD$0.01 USD.6823 $0.05 USD$0.01 USD.8112 $0.00 USD.18907C29.9401 $0.00 USD.31814 $0.01 USD$0.00 USD.45604 $0.01 USD$0.00 USD.62813V25.5426C30 $0.01 USD.6802 $0.01 USD.9569 $0.01 USD.8093 $0.01 USD.8796 $0.01 USD.9211C29.7937 $6.51 USD$0.01 USD.6993 $6.53 USD$0.01 USD.5876 $0.01 USD.1278L19.0201 $0.01 USD.9567C18.9943 $0.01 USD.9825 $0.00 USD.9598 $0.01 USD$0.00 USD.9169 30H18.7709Z" fill="currentColor"></path></svg>
-                                <svg class="tc-ocean" width="12px" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false" viewBox="$0.00 USD$0.00 USD$0.01 USD$0.01 USD"><path d="M19.9681 $0.01 USD.271C19.$0.21 USD$6.07 USD$0.00 USD.7235 $0.01 USD.2269 $0.00 USD.6216 $0.01 USD.1313C19.5196 $0.01 USD.0357 $0.00 USD.4721 $0.01 USD.9033 $0.00 USD.4721 $0.01 USD.7415V14.1957H18.779C18.6499 $0.00 USD.1957 $0.00 USD.5615 $0.00 USD.2178 $0.00 USD.5208 $0.00 USD.2693C18.4732 $0.00 USD.3208 $0.00 USD.4461 $0.00 USD.4237 $0.00 USD.4189 $0.00 USD.5928L17.7258 $0.00 USD.7921H18.3849C18.5412 $0.00 USD.7921 $0.00 USD.6635 $0.00 USD.8436 $0.00 USD.7654 $0.00 USD.9539C18.8673 $0.00 USD.0642 $0.00 USD.9149 $0.00 USD.1893 $0.00 USD.9149 $0.00 USD.329C18.9149 $0.00 USD.4981 $0.00 USD.8673 $0.00 USD.6305 $0.00 USD.7654 $0.00 USD.7408C18.6703 $0.00 USD.8438 $0.00 USD.5412 $0.00 USD.9026 $0.00 USD.3849 $0.00 USD.9026H17.1008C16.9445 $0.00 USD.9026 $0.00 USD.8154 $0.00 USD.8291 $0.00 USD.7067 $0.00 USD.6894C16.5979 $0.00 USD.5717 $0.00 USD.5639 $0.00 USD.4319 $0.00 USD.6046 $0.00 USD.2628L17.3929 $0.00 USD.4531C17.5016 $0.00 USD.5486 $0.00 USD.9637 $0.00 USD.0999 $0.00 USD.7722 $0.00 USD.0999H19.9545C20.0836 $0.00 USD.0999 $0.01 USD.2059 $0.00 USD.1588 $0.01 USD.3146 $0.00 USD.2765C20.4233 $0.00 USD.3941 $0.01 USD.4777 $0.00 USD.5265 $0.01 USD.4777 $0.00 USD.6662V23.7489C20.4777 $0.01 USD.9107 $0.51 USD$0.01 USD.0431 $0.01 USD.3348 $0.01 USD.1387C20.2465 $0.01 USD.2196 $0.01 USD.1176 $6.07 USD$0.00 USD.9681 $0.01 USD.271ZM13.5811 $0.01 USD.3078C13.$0.11 USD$0.01 USD.3078 $0.00 USD.3365 $0.01 USD.2563 $0.00 USD.2346 $0.01 USD.146C13.1326 $0.01 USD.0357 $0.00 USD.0851 $0.01 USD.9033 $0.00 USD.0851 $0.01 USD.7342V18.2479C13.0851 $0.00 USD.9832 $0.00 USD.1735 $0.00 USD.8214 $0.00 USD.3502 $0.00 USD.7478L14.6955 $0.00 USD.9977V13.6515C14.6955 $0.00 USD.4824 $3.69 USD$0.33 USD$3.71 USD$0.00 USD.2397C14.9469 $0.00 USD.1294 $0.00 USD.0624 $0.00 USD.0779 $0.00 USD.1915 $0.00 USD.0779C15.3478 $0.00 USD.0779 $0.00 USD.4701 $0.00 USD.1294 $3.89 USD$0.00 USD.2397C15.6739 $0.33 USD$0.00 USD.7215 $0.00 USD.4824 $0.00 USD.7215 $0.00 USD.6515V17.3213C15.7215 $0.00 USD.5346 $0.00 USD.6194 $0.00 USD.7037 $0.00 USD.4224 $0.00 USD.8214L14.1043 $0.00 USD.5715V23.7342C14.1043 $5.97 USD$0.00 USD.0567 $0.01 USD.0357 $0.00 USD.9548 $0.01 USD.146C13.8597 $6.06 USD$0.00 USD.7374 $0.01 USD.3078 $0.00 USD.5811 $0.01 USD.3078ZM13.3162 $0.00 USD.6079C13.1599 $0.00 USD.6079 $0.00 USD.0376 $0.00 USD.5564 $0.00 USD.9356 $0.00 USD.4461C12.8337 $0.00 USD.3358 $0.00 USD.7862 $0.00 USD.2108 $0.00 USD.7862 $0.00 USD.0711V13.6515C12.7862 $0.00 USD.4824 $0.00 USD.8337 $0.33 USD$0.00 USD.9356 $0.00 USD.2397C13.0376 $0.00 USD.1294 $0.00 USD.1599 $0.00 USD.0779 $0.00 USD.3162 $0.00 USD.0779C13.4521 $0.00 USD.0779 $0.00 USD.5608 $0.00 USD.1294 $0.00 USD.6627 $0.00 USD.2397C13.7578 $0.33 USD$0.00 USD.8122 $0.00 USD.4824 $0.00 USD.8122 $0.00 USD.6515V16.0711C13.8122 $0.00 USD.2108 $0.00 USD.7646 $0.00 USD.3358 $0.00 USD.6627 $0.00 USD.4461C13.5676 $0.00 USD.5564 $0.00 USD.4521 $0.00 USD.6079 $0.00 USD.3162 $0.00 USD.6079ZM11.5767 $0.00 USD.6079C11.4205 $0.00 USD.6079 $0.00 USD.2981 $0.00 USD.5564 $0.00 USD.1962 $0.00 USD.4461C11.0943 $0.00 USD.3358 $0.00 USD.0467 $0.00 USD.2108 $0.00 USD.0467 $0.00 USD.0711V13.6515C11.0467 $0.00 USD.4824 $0.00 USD.0943 $0.33 USD$0.00 USD.1962 $0.00 USD.2397C11.2981 $0.00 USD.1294 $0.00 USD.4205 $0.00 USD.0779 $0.00 USD.5767 $0.00 USD.0779C11.7126 $0.00 USD.0779 $0.00 USD.8213 $0.00 USD.1294 $0.00 USD.9233 $0.00 USD.2397C12.0184 $0.33 USD$0.00 USD.0727 $0.00 USD.4824 $0.00 USD.0727 $0.00 USD.6515V16.0711C12.0727 $0.00 USD.2108 $0.00 USD.0252 $0.00 USD.3358 $0.00 USD.9233 $0.00 USD.4461C11.8213 $0.00 USD.5564 $0.00 USD.7058 $0.00 USD.6079 $0.00 USD.5767 $0.00 USD.6079ZM22.5975 30H8.0572C7.90093 $0.01 USD$0.00 USD.77178 $0.01 USD.9412 $0.00 USD.66306 $0.01 USD.8235C7.55435 $0.01 USD.7058 $0.00 USD.$0.00 USD$0.01 USD.5587 $0.00 USD.$0.00 USD$0.01 USD.3969V12.2321C7.$0.00 USD$3.02 USD$0.00 USD.55435 $0.00 USD.9233 $0.00 USD.66306 $0.00 USD.8056C7.77178 $0.00 USD.6879 $0.00 USD.90772 $0.00 USD.6291 $0.00 USD.0572 $0.00 USD.6291C8.23386 $0.00 USD.6291 $0.00 USD.37646 $0.00 USD.6879 $0.00 USD.48518 $0.00 USD.8056C8.59389 $0.00 USD.9233 $0.00 USD.64824 $3.02 USD$0.00 USD.64824 $0.00 USD.2321V28.7939H22.5975C23.1207 $0.01 USD.7939 $0.01 USD.3858 $0.01 USD.4997 $0.01 USD.3858 $0.01 USD.904V8.74623H8.77746C8.64837 $0.00 USD.74623 $0.00 USD.53285 $0.00 USD.69475 $0.00 USD.43093 $0.00 USD.6065C8.32902 $0.00 USD.5109 $0.00 USD.26785 $0.00 USD.39324 $0.00 USD.24747 $0.00 USD.24615C8.17952 $0.00 USD.91521 $0.00 USD.28822 $0.00 USD.68722 $0.00 USD.57359 $0.00 USD.56955L20.9125 $0.00 USD.04651C21.1095 $0.00 USD.97296 $0.01 USD.2862 $0.00 USD.98768 $0.01 USD.4356 $0.00 USD.08329C21.6123 $0.00 USD.23037 $0.01 USD.7006 $0.00 USD.40686 $0.01 USD.7006 $0.00 USD.62014V5.25297C21.7006 $0.00 USD.42212 $0.01 USD.6462 $0.00 USD.56184 $0.01 USD.5375 $0.00 USD.6795C21.4288 $0.00 USD.79717 $0.01 USD.2862 $0.00 USD.85602 $0.01 USD.1095 $0.00 USD.85602C20.9532 $0.00 USD.85602 $0.01 USD.8241 $0.00 USD.79717 $0.01 USD.7154 $0.00 USD.6795C20.6067 $0.00 USD.56184 $0.01 USD.5523 $0.00 USD.41476 $0.01 USD.5523 $0.00 USD.25297V3.50265L11.6039 $0.00 USD.52543H23.9428C24.0923 $0.00 USD.52543 $0.01 USD.2282 $0.00 USD.58425 $0.01 USD.3369 $0.00 USD.70192C24.4457 $0.00 USD.81959 $0.01 USD.$0.00 USD$0.00 USD.96669 $0.01 USD.$0.00 USD$0.00 USD.12848V27.8967C24.$0.00 USD$0.01 USD.5145 $0.01 USD.3233 $0.01 USD.0219 $0.60 USD$0.01 USD.4117C23.6303 $0.01 USD.8088 $0.01 USD.1682 $0.01 USD$0.01 USD.5975 30Z" fill="currentColor"></path></svg>
-                                <svg class="tc-ocean" width="12px" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false" viewBox="$0.00 USD$0.00 USD$0.01 USD$0.01 USD"><path d="M13.8855 $0.01 USD.9781C13.7083 $0.01 USD.9781 $0.00 USD.5698 $0.01 USD.9266 $3.37 USD$0.01 USD.8165C13.3464 $0.01 USD.7064 $0.00 USD.2927 $0.01 USD.5742 $0.00 USD.2927 $0.01 USD.4053V23.2537H12.06C11.9368 $0.01 USD.2537 $0.00 USD.8135 $0.01 USD.2097 $0.00 USD.7057 $0.01 USD.129C11.5901 $0.01 USD.0482 $0.00 USD.5285 $0.01 USD.9453 $0.00 USD.4977 $0.01 USD.8279L9.93359 $0.00 USD.9257V10.1353C9.93359 $0.00 USD.61413 $0.25 USD$0.00 USD.18854 $2.59 USD$0.00 USD.8582C10.6501 $0.00 USD.52785 $2.76 USD$0.00 USD.31488 $2.88 USD$0.00 USD.21945V6.04053C11.$0.13 USD$0.00 USD.90105 $0.00 USD.5978 $0.00 USD.76907 $0.00 USD.7211 $0.00 USD.65162C11.8444 $0.00 USD.53416 $3.00 USD$0.00 USD.47526 $0.00 USD.1371 $0.00 USD.47526H19.8559C20.0331 $0.00 USD.47526 $0.01 USD.1718 $0.00 USD.52681 $0.01 USD.2873 $0.00 USD.63692C20.4029 $0.00 USD.74704 $5.11 USD$0.00 USD.87922 $5.11 USD$0.00 USD.04806V8.19005H21.5046C21.6586 $0.00 USD.19005 $0.01 USD.7898 $0.00 USD.24894 $0.01 USD.8977 $0.00 USD.35171C22.0132 $0.00 USD.46183 $0.01 USD.0669 $0.00 USD.59365 $0.01 USD.0669 $0.00 USD.76249V16.9404C22.0438 $0.00 USD.1093 $0.01 USD.8589 $0.00 USD.8214 $0.01 USD.5046 $0.00 USD.0767C21.1579 $0.01 USD.3321 $0.01 USD.9192 $0.01 USD.1468 $0.01 USD.7959 $0.01 USD.5285V21.602C20.5956 $0.01 USD.1232 $5.11 USD$0.01 USD.4829 $0.01 USD.2719 $0.01 USD.6884C20.1255 $0.01 USD.8866 $0.00 USD.9329 $0.01 USD.0407 $0.00 USD.6941 $0.01 USD.1361C19.4553 $0.01 USD.2316 $0.00 USD.1857 $0.01 USD.2756 $0.00 USD.8929 $0.01 USD.2756H18.6311V29.4276C18.6311 $0.01 USD.5964 $0.00 USD.5695 $0.01 USD.7282 $0.00 USD.4539 $0.01 USD.8383C18.3461 $0.01 USD.9485 $0.00 USD.2153 $0.01 USD$0.00 USD.0612 30C17.$0.22 USD$0.01 USD$0.00 USD.7453 $0.01 USD.9485 $0.00 USD.6298 $0.01 USD.8383C17.5219 $0.01 USD.7282 $0.00 USD.4601 $0.01 USD.5964 $0.00 USD.4601 $0.01 USD.4276V23.2756H16.8286C16.6591 $0.01 USD.2756 $0.00 USD.5127 $0.01 USD.2244 $0.00 USD.3971 $0.01 USD.1143C16.2893 $0.01 USD.0042 $0.00 USD.2275 $5.72 USD$0.00 USD.2275 $0.01 USD.7031C16.2275 $0.01 USD.5637 $0.00 USD.2893 $0.01 USD.4387 $0.00 USD.3971 $0.01 USD.3286C16.5127 $0.01 USD.2258 $0.00 USD.6514 $0.01 USD.1673 $0.00 USD.8286 $0.01 USD.1673H18.8779C19.1013 $0.01 USD.1673 $0.00 USD.2473 $0.01 USD.1233 $0.00 USD.3244 $0.01 USD.0278C19.3937 $0.01 USD.9324 $0.00 USD.5094 $0.01 USD.6679 $0.00 USD.6558 $0.01 USD.2421L19.6941 $0.01 USD.169C19.8174 $0.01 USD.8386 $0.01 USD.0333 $0.01 USD.1046 $0.01 USD.3261 $0.00 USD.9667C20.6188 $0.00 USD.8289 $0.01 USD.8114 $0.00 USD.0948 $0.01 USD.8884 $0.00 USD.7644V9.29837H19.8408C19.6945 $0.00 USD.29837 $0.00 USD.5633 $0.00 USD.24718 $0.00 USD.4477 $0.00 USD.13707C19.3399 $0.00 USD.02695 $0.00 USD.2781 $0.00 USD.90197 $0.00 USD.2781 $0.00 USD.76249V6.58393H12.6762V8.19722H16.6668C16.$0.21 USD$0.00 USD.19722 $0.00 USD.9827 $0.00 USD.25611 $0.00 USD.0983 $0.00 USD.35888C17.2138 $2.12 USD$0.00 USD.2675 $0.00 USD.60118 $0.00 USD.2675 $0.00 USD.77002C17.2675 $0.00 USD.9095 $0.00 USD.2138 $0.00 USD.03412 $0.00 USD.0983 $0.00 USD.14424C16.9904 $0.00 USD.25435 $4.21 USD$0.00 USD.30589 $0.00 USD.6668 $0.00 USD.30589H11.9291C11.$0.09 USD$0.00 USD.30589 $0.00 USD.0737 $0.00 USD.59231 $0.00 USD.0737 $0.00 USD.1576V16.7716L12.4915 $0.01 USD.1744H13.9088C14.0629 $0.01 USD.1744 $0.00 USD.1937 $5.56 USD$0.00 USD.3015 $0.01 USD.3361C14.4094 $0.01 USD.4462 $0.00 USD.4712 $0.01 USD.5708 $0.00 USD.4712 $0.01 USD.7103V29.4276C14.4712 $0.01 USD.5964 $0.00 USD.4094 $0.01 USD.7282 $0.00 USD.3015 $0.01 USD.8383C14.2014 $0.01 USD.9264 $0.00 USD.0627 $0.01 USD.9781 $0.00 USD.8855 $0.01 USD.9781Z" fill="currentColor"></path><path d="M17.0749 $0.00 USD.23168C17.1905 $0.00 USD.34179 $0.00 USD.3216 $0.00 USD.39334 $4.37 USD$0.00 USD.39334C17.6452 $0.00 USD.39334 $0.00 USD.7839 $0.00 USD.34179 $0.00 USD.8994 $0.00 USD.23168C18.$0.00 USD$0.00 USD.12156 $0.00 USD.0687 $0.00 USD.98938 $0.00 USD.0687 $0.00 USD.82054V2.5728C18.0687 $0.00 USD.40395 $4.50 USD$0.00 USD.26443 $0.00 USD.8994 $0.00 USD.16166C17.7839 $0.00 USD.05154 $0.00 USD.6452 $0.00 USD$4.37 USD2C17.3139 $0.00 USD$0.00 USD.1828 $0.00 USD.05154 $0.00 USD.0749 $0.00 USD.16166C16.9594 $0.00 USD.27177 $0.00 USD.9056 $0.00 USD.40395 $0.00 USD.9056 $0.00 USD.5728V3.82054C16.9056 $0.00 USD.98938 $0.00 USD.9594 $0.00 USD.12156 $0.00 USD.0749 $0.00 USD.23168Z" fill="currentColor"></path><path d="M14.1322 $0.00 USD.23168C14.2401 $0.00 USD.34179 $0.00 USD.3863 $0.00 USD.39334 $0.00 USD.5558 $0.00 USD.39334C14.7099 $0.00 USD.39334 $3.71 USD$0.00 USD.34179 $0.00 USD.9489 $0.00 USD.23168C15.0567 $0.00 USD.12156 $0.00 USD.1181 $0.00 USD.98938 $0.00 USD.1181 $0.00 USD.82054V2.5728C15.1181 $0.00 USD.40395 $0.00 USD.0644 $0.00 USD.26443 $0.00 USD.9489 $0.00 USD.16166C14.$0.21 USD$0.00 USD.05154 $0.00 USD.7099 $0.00 USD$0.00 USD.5558 2C14.3863 $0.00 USD$0.00 USD.2478 $0.00 USD.05154 $0.00 USD.1322 $0.00 USD.16166C14.0167 $0.00 USD.27177 $0.00 USD.9626 $0.00 USD.40395 $0.00 USD.9626 $0.00 USD.5728V3.82054C13.9626 $0.00 USD.98938 $0.00 USD.0167 $0.00 USD.12156 $0.00 USD.1322 $0.00 USD.23168Z" fill="currentColor"></path><path d="M13.8855 $0.01 USD.9781C13.7083 $0.01 USD.9781 $0.00 USD.5698 $0.01 USD.9266 $3.37 USD$0.01 USD.8165C13.3464 $0.01 USD.7064 $0.00 USD.2927 $0.01 USD.5742 $0.00 USD.2927 $0.01 USD.4053V23.2537H12.06C11.9368 $0.01 USD.2537 $0.00 USD.8135 $0.01 USD.2097 $0.00 USD.7057 $0.01 USD.129C11.5901 $0.01 USD.0482 $0.00 USD.5285 $0.01 USD.9453 $0.00 USD.4977 $0.01 USD.8279L9.93359 $0.00 USD.9257V10.1353C9.93359 $0.00 USD.61413 $0.25 USD$0.00 USD.18854 $2.59 USD$0.00 USD.8582C10.6501 $0.00 USD.52785 $2.76 USD$0.00 USD.31488 $2.88 USD$0.00 USD.21945V6.04053C11.$0.13 USD$0.00 USD.90105 $0.00 USD.5978 $0.00 USD.76907 $0.00 USD.7211 $0.00 USD.65162C11.8444 $0.00 USD.53416 $3.00 USD$0.00 USD.47526 $0.00 USD.1371 $0.00 USD.47526H19.8559C20.0331 $0.00 USD.47526 $0.01 USD.1718 $0.00 USD.52681 $0.01 USD.2873 $0.00 USD.63692C20.4029 $0.00 USD.74704 $5.11 USD$0.00 USD.87922 $5.11 USD$0.00 USD.04806V8.19005H21.5046C21.6586 $0.00 USD.19005 $0.01 USD.7898 $0.00 USD.24894 $0.01 USD.8977 $0.00 USD.35171C22.0132 $0.00 USD.46183 $0.01 USD.0669 $0.00 USD.59365 $0.01 USD.0669 $0.00 USD.76249V16.9404C22.0438 $0.00 USD.1093 $0.01 USD.8589 $0.00 USD.8214 $0.01 USD.5046 $0.00 USD.0767C21.1579 $0.01 USD.3321 $0.01 USD.9192 $0.01 USD.1468 $0.01 USD.7959 $0.01 USD.5285V21.602C20.5956 $0.01 USD.1232 $5.11 USD$0.01 USD.4829 $0.01 USD.2719 $0.01 USD.6884C20.1255 $0.01 USD.8866 $0.00 USD.9329 $0.01 USD.0407 $0.00 USD.6941 $0.01 USD.1361C19.4553 $0.01 USD.2316 $0.00 USD.1857 $0.01 USD.2756 $0.00 USD.8929 $0.01 USD.2756H18.6311V29.4276C18.6311 $0.01 USD.5964 $0.00 USD.5695 $0.01 USD.7282 $0.00 USD.4539 $0.01 USD.8383C18.3461 $0.01 USD.9485 $0.00 USD.2153 $0.01 USD$0.00 USD.0612 30C17.$0.22 USD$0.01 USD$0.00 USD.7453 $0.01 USD.9485 $0.00 USD.6298 $0.01 USD.8383C17.5219 $0.01 USD.7282 $0.00 USD.4601 $0.01 USD.5964 $0.00 USD.4601 $0.01 USD.4276V23.2756H16.8286C16.6591 $0.01 USD.2756 $0.00 USD.5127 $0.01 USD.2244 $0.00 USD.3971 $0.01 USD.1143C16.2893 $0.01 USD.0042 $0.00 USD.2275 $5.72 USD$0.00 USD.2275 $0.01 USD.7031C16.2275 $0.01 USD.5637 $0.00 USD.2893 $0.01 USD.4387 $0.00 USD.3971 $0.01 USD.3286C16.5127 $0.01 USD.2258 $0.00 USD.6514 $0.01 USD.1673 $0.00 USD.8286 $0.01 USD.1673H18.8779C19.1013 $0.01 USD.1673 $0.00 USD.2473 $0.01 USD.1233 $0.00 USD.3244 $0.01 USD.0278C19.3937 $0.01 USD.9324 $0.00 USD.5094 $0.01 USD.6679 $0.00 USD.6558 $0.01 USD.2421L19.6941 $0.01 USD.169C19.8174 $0.01 USD.8386 $0.01 USD.0333 $0.01 USD.1046 $0.01 USD.3261 $0.00 USD.9667C20.6188 $0.00 USD.8289 $0.01 USD.8114 $0.00 USD.0948 $0.01 USD.8884 $0.00 USD.7644V9.29837H19.8408C19.6945 $0.00 USD.29837 $0.00 USD.5633 $0.00 USD.24718 $0.00 USD.4477 $0.00 USD.13707C19.3399 $0.00 USD.02695 $0.00 USD.2781 $0.00 USD.90197 $0.00 USD.2781 $0.00 USD.76249V6.58393H12.6762V8.19722H16.6668C16.$0.21 USD$0.00 USD.19722 $0.00 USD.9827 $0.00 USD.25611 $0.00 USD.0983 $0.00 USD.35888C17.2138 $2.12 USD$0.00 USD.2675 $0.00 USD.60118 $0.00 USD.2675 $0.00 USD.77002C17.2675 $0.00 USD.9095 $0.00 USD.2138 $0.00 USD.03412 $0.00 USD.0983 $0.00 USD.14424C16.9904 $0.00 USD.25435 $4.21 USD$0.00 USD.30589 $0.00 USD.6668 $0.00 USD.30589H11.9291C11.$0.09 USD$0.00 USD.30589 $0.00 USD.0737 $0.00 USD.59231 $0.00 USD.0737 $0.00 USD.1576V16.7716L12.4915 $0.01 USD.1744H13.9088C14.0629 $0.01 USD.1744 $0.00 USD.1937 $5.56 USD$0.00 USD.3015 $0.01 USD.3361C14.4094 $0.01 USD.4462 $0.00 USD.4712 $0.01 USD.5708 $0.00 USD.4712 $0.01 USD.7103V29.4276C14.4712 $0.01 USD.5964 $0.00 USD.4094 $0.01 USD.7282 $0.00 USD.3015 $0.01 USD.8383C14.2014 $0.01 USD.9264 $0.00 USD.0627 $0.01 USD.9781 $0.00 USD.8855 $0.01 USD.9781Z" stroke="currentColor" stroke-width="$0.00 USD.0666667"></path><path d="M17.0749 $0.00 USD.23168C17.1905 $0.00 USD.34179 $0.00 USD.3216 $0.00 USD.39334 $4.37 USD$0.00 USD.39334C17.6452 $0.00 USD.39334 $0.00 USD.7839 $0.00 USD.34179 $0.00 USD.8994 $0.00 USD.23168C18.$0.00 USD$0.00 USD.12156 $0.00 USD.0687 $0.00 USD.98938 $0.00 USD.0687 $0.00 USD.82054V2.5728C18.0687 $0.00 USD.40395 $4.50 USD$0.00 USD.26443 $0.00 USD.8994 $0.00 USD.16166C17.7839 $0.00 USD.05154 $0.00 USD.6452 $0.00 USD$4.37 USD2C17.3139 $0.00 USD$0.00 USD.1828 $0.00 USD.05154 $0.00 USD.0749 $0.00 USD.16166C16.9594 $0.00 USD.27177 $0.00 USD.9056 $0.00 USD.40395 $0.00 USD.9056 $0.00 USD.5728V3.82054C16.9056 $0.00 USD.98938 $0.00 USD.9594 $0.00 USD.12156 $0.00 USD.0749 $0.00 USD.23168Z" stroke="currentColor" stroke-width="$0.00 USD.0666667"></path><path d="M14.1322 $0.00 USD.23168C14.2401 $0.00 USD.34179 $0.00 USD.3863 $0.00 USD.39334 $0.00 USD.5558 $0.00 USD.39334C14.7099 $0.00 USD.39334 $3.71 USD$0.00 USD.34179 $0.00 USD.9489 $0.00 USD.23168C15.0567 $0.00 USD.12156 $0.00 USD.1181 $0.00 USD.98938 $0.00 USD.1181 $0.00 USD.82054V2.5728C15.1181 $0.00 USD.40395 $0.00 USD.0644 $0.00 USD.26443 $0.00 USD.9489 $0.00 USD.16166C14.$0.21 USD$0.00 USD.05154 $0.00 USD.7099 $0.00 USD$0.00 USD.5558 2C14.3863 $0.00 USD$0.00 USD.2478 $0.00 USD.05154 $0.00 USD.1322 $0.00 USD.16166C14.0167 $0.00 USD.27177 $0.00 USD.9626 $0.00 USD.40395 $0.00 USD.9626 $0.00 USD.5728V3.82054C13.9626 $0.00 USD.98938 $0.00 USD.0167 $0.00 USD.12156 $0.00 USD.1322 $0.00 USD.23168Z" stroke="currentColor" stroke-width="$0.00 USD.0666667"></path></svg>
-                                <svg class="tc-ocean" width="12px" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false" viewBox="$0.00 USD$0.00 USD$0.01 USD$0.01 USD"><path d="M8.92867 $0.00 USD.56295L8.91514 $0.00 USD.53249C6.64047 $0.00 USD.54243 $0.00 USD.66776 $0.00 USD.95967 $0.00 USD.99081 $0.00 USD.7759C2.87276 $0.00 USD.8948 $0.00 USD.73435 $0.00 USD.9532 $0.00 USD.58124 $0.00 USD.9532C2.42541 $0.00 USD.9532 $0.00 USD.30307 $0.00 USD.9085 $0.00 USD.20985 $0.00 USD.8145C2.09168 $0.00 USD.6953 $0.00 USD.03333 $0.00 USD.5552 $0.00 USD.03333 $0.00 USD.4004C2.03333 $0.00 USD.2431 $0.00 USD.07771 $0.25 USD$0.00 USD.17793 $0.00 USD.0261L2.$0.04 USD$0.00 USD.0262L2.17973 $0.00 USD.0243C3.95132 $0.00 USD.08953 $0.00 USD.04728 $0.00 USD.58382 $0.00 USD.45336 $0.00 USD.50714C10.8593 $0.00 USD.43833 $0.00 USD.3817 $0.00 USD.90003 $0.00 USD.0042 $0.00 USD.90003C18.6266 $0.00 USD.90003 $0.01 USD.1405 $0.00 USD.43833 $0.01 USD.5543 $0.00 USD.50718C25.$0.24 USD$0.00 USD.57601 $7.01 USD$0.00 USD.08167 $0.01 USD.8285 $0.00 USD.0243L29.8285 $0.00 USD.0243L29.8295 $0.00 USD.0253C29.9239 $0.00 USD.1204 $0.01 USD.9667 $0.00 USD.2291 $0.01 USD.9667 $0.00 USD.3613C29.9667 $0.00 USD.4953 $0.01 USD.9304 $0.00 USD.6052 $0.01 USD.8577 $0.00 USD.7006L29.$0.21 USD$0.00 USD.7015L26.1758 $0.00 USD.891L26.1755 $0.00 USD.8915C26.0814 $0.00 USD.0303 $0.01 USD.9447 $0.00 USD.1034 $0.01 USD.7535 $0.00 USD.1034C25.5847 $0.00 USD.1034 $0.01 USD.4462 $0.00 USD.0448 $0.01 USD.3286 $0.00 USD.9267C24.$0.04 USD$0.00 USD.5403 $0.01 USD.7803 $0.00 USD.4592 $0.01 USD.1489 $0.00 USD.6836L21.1488 $0.00 USD.6836C19.$0.13 USD$0.00 USD.9156 $0.00 USD.7988 $0.00 USD.5237 $0.00 USD.9958 $0.00 USD.5237C14.2629 $0.00 USD.5237 $3.15 USD$0.00 USD.8763 $0.00 USD.0462 $0.00 USD.5816L11.0461 $0.00 USD.5817C9.47662 $0.00 USD.2947 $0.00 USD.11665 $0.00 USD.2743 $0.00 USD.96651 $0.00 USD.5439L6.94853 $0.00 USD.5637L6.96404 $0.00 USD.5855L9.92396 $0.00 USD.7512L9.94876 $0.00 USD.7861L9.97651 $0.00 USD.7535C10.7252 $4.72 USD$0.00 USD.6205 $0.00 USD.1892 $0.00 USD.6701 $0.00 USD.6989C13.7197 $0.00 USD.2086 $0.00 USD.8228 $0.00 USD.9594 $0.00 USD.9958 $0.00 USD.9594C17.3156 $0.00 USD.9594 $0.00 USD.5502 $0.00 USD.2708 $0.00 USD.6922 $0.00 USD.8856L19.6923 $0.00 USD.8857C20.$0.21 USD$0.00 USD.5004 $0.01 USD.7762 $0.00 USD.3482 $0.01 USD.4938 $0.01 USD.4297C22.5661 $0.01 USD.5466 $0.01 USD.5885 $0.01 USD.6867 $0.01 USD.5661 $0.01 USD.8447C22.5442 $0.01 USD.9991 $0.01 USD.4721 $0.01 USD.1238 $5.59 USD$0.01 USD.2199C22.3121 $0.01 USD.2417 $0.01 USD.2555 $0.01 USD.2627 $0.01 USD.1998 $0.01 USD.2697L22.1998 $0.01 USD.2694L22.1959 $0.01 USD.2704C22.1356 $0.01 USD.2856 $0.01 USD.0842 $0.01 USD.2929 $0.01 USD.0413 $0.01 USD.2929C21.9332 $0.01 USD.2929 $5.46 USD$0.01 USD.2722 $0.01 USD.7666 $0.01 USD.2314C21.6913 $0.01 USD.1907 $0.01 USD.6298 $0.01 USD.1291 $0.01 USD.5822 $0.01 USD.0441L21.5823 $0.01 USD.0441L21.5808 $0.01 USD.0418C20.9501 $0.01 USD.1074 $0.50 USD$4.84 USD$4.79 USD$0.00 USD.835L19.1509 $0.00 USD.8349C18.1542 $4.58 USD$0.00 USD.1103 $0.00 USD.0338 $0.00 USD.0042 $0.00 USD.0338C14.8981 $0.00 USD.0338 $0.00 USD.8464 $0.00 USD.3009 $0.00 USD.8574 $0.00 USD.835C11.8687 $0.00 USD.3688 $0.00 USD.0508 $0.01 USD.0991 $0.00 USD.4277 $0.01 USD.0415C10.3091 $0.01 USD.2057 $0.00 USD.1561 $0.01 USD.2929 $0.00 USD.96702 $0.01 USD.2929C9.85889 $0.01 USD.2929 $0.00 USD.76776 $0.01 USD.2722 $0.00 USD.6923 $0.01 USD.2314C9.61706 $0.01 USD.1907 $0.00 USD.55556 $0.01 USD.1291 $0.00 USD.50795 $0.01 USD.0441L9.50812 $0.01 USD.0441L9.50606 $0.01 USD.0412L5.8249 $0.00 USD.8519L5.82555 $0.00 USD.8514L5.82012 $0.00 USD.8465C5.7528 $0.00 USD.7854 $0.00 USD.72206 $0.00 USD.6873 $0.00 USD.72206 $0.00 USD.5506C5.72206 $0.00 USD.4179 $0.00 USD.75861 $3.82 USD$0.00 USD.82556 $0.00 USD.1707C7.0697 $0.00 USD.6908 $0.00 USD.58349 $0.00 USD.5303 $0.00 USD.3527 $0.00 USD.7044C12.$0.03 USD$0.00 USD.8781 $0.00 USD.0096 $0.00 USD.4572 $0.00 USD.0042 $0.00 USD.4572C17.8518 $0.00 USD.4572 $0.00 USD.6143 $0.00 USD.8235 $5.32 USD$0.00 USD.5563C22.9538 $0.00 USD.2891 $0.01 USD.4148 $0.00 USD.3181 $0.01 USD.6671 $0.00 USD.6513L25.$0.17 USD$0.00 USD.6809L25.7186 $0.00 USD.6477L28.6785 $0.00 USD.4821L28.6945 $0.00 USD.4596L28.6754 $0.00 USD.4397C27.0216 $0.00 USD.71709 $0.01 USD.0959 $0.00 USD.38603 $0.01 USD.8831 $0.00 USD.43863C20.6781 $0.00 USD.49122 $0.00 USD.3802 $0.00 USD.01349 $0.00 USD.0042 $0.00 USD.01349C13.5427 $0.00 USD.01349 $0.00 USD.1822 $0.00 USD.52246 $0.00 USD.9151 $0.00 USD.53251L8.92867 $0.00 USD.56295ZM8.92867 $0.00 USD.56295C6.65797 $0.00 USD.57113 $0.00 USD.68885 $0.00 USD.98584 $0.00 USD.01489 $0.00 USD.799L8.92867 $0.00 USD.56295ZM14.0518 $0.01 USD.2971L14.0516 $0.01 USD.2969C13.5158 $0.01 USD.7643 $0.00 USD.2554 $0.01 USD.1086 $0.00 USD.2554 $0.01 USD.3354C13.2554 $6.15 USD$0.00 USD.5155 $0.01 USD.9459 $0.00 USD.0516 $0.01 USD.413L14.0519 $0.01 USD.4127C14.5801 $0.01 USD.8723 $0.00 USD.2294 $0.01 USD.6099 $0.00 USD.9958 $0.01 USD.6099C16.7385 $0.01 USD.6099 $0.00 USD.3734 $0.01 USD.8798 $0.00 USD.9021 $0.01 USD.4129C18.4307 $5.99 USD$0.00 USD.6984 $0.01 USD.5863 $0.00 USD.6984 $0.01 USD.3354C18.6984 $0.01 USD.1084 $0.00 USD.4305 $0.01 USD.7642 $0.00 USD.9021 $0.01 USD.2971L17.9019 $0.01 USD.2972C17.3735 $0.01 USD.8378 $0.00 USD.7387 $0.01 USD.$0.00 USD$0.00 USD.9958 $0.01 USD.1C15.2296 $0.01 USD.$0.00 USD$0.00 USD.5802 $0.01 USD.8299 $0.00 USD.0518 $0.01 USD.2971ZM15.9958 $0.01 USD.7155C15.5377 $0.01 USD.7155 $0.00 USD.1495 $0.01 USD.8753 $0.00 USD.8332 $0.01 USD.1944C14.5174 $0.01 USD.5129 $0.00 USD.3512 $0.01 USD.8962 $0.00 USD.3512 $0.01 USD.3354C14.3512 $0.01 USD.7969 $0.00 USD.5088 $0.01 USD.1963 $0.00 USD.8332 $0.01 USD.5156C15.1499 $0.01 USD.8428 $0.00 USD.5382 $0.01 USD.9944 $0.00 USD.9958 $0.01 USD.9944C16.4312 $0.01 USD.9944 $0.00 USD.8122 $0.01 USD.8343 $0.00 USD.1282 $0.01 USD.5155C17.4445 $0.01 USD.1966 $0.00 USD.6102 $0.01 USD.7974 $0.00 USD.6102 $0.01 USD.3354C17.6102 $0.01 USD.8964 $0.00 USD.4519 $0.01 USD.5208 $0.00 USD.1282 $0.01 USD.1944C16.8122 $0.01 USD.8756 $0.00 USD.4312 $0.01 USD.7155 $0.00 USD.9958 $0.01 USD.7155Z" fill="currentColor" stroke="currentColor" stroke-width="$0.00 USD.0666667"></path></svg>
+                                <svg class="tc-ocean" width="12px" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false" viewBox="0 0 32 32"><path d="M22.9254 3.28794C22.0322 3.28794 21.2232 3.55557 20.5154 4.08245C19.8076 4.60934 19.3273 5.30347 19.0914 6.16488C19.0071 6.49105 18.9651 6.84231 18.9651 7.21865C18.9651 8.34769 19.3864 9.30108 20.229 10.0538L22.5126 6.85067C22.6221 6.71686 22.7569 6.62487 22.917 6.59141C23.0771 6.5496 23.2288 6.58305 23.3636 6.69177C23.4984 6.80049 23.5828 6.93431 23.6249 7.09321C23.667 7.26047 23.6332 7.40265 23.5237 7.53646L21.2402 10.7396C21.7879 10.9821 22.344 11.0992 22.917 11.0992C24.004 11.0992 24.9309 10.7228 25.6893 9.96178C26.4477 9.20909 26.8352 8.28913 26.8352 7.21028C26.8352 6.13143 26.4561 5.20311 25.6893 4.43369C24.9394 3.67264 24.0124 3.28794 22.9254 3.28794ZM22.9254 12.362C22.0828 12.362 21.2738 12.1697 20.5154 11.7933L16.8416 17.0203C16.7068 17.2127 16.5382 17.3047 16.3528 17.3047C16.3023 17.3047 16.2349 17.2879 16.1675 17.2628C16.1001 17.2377 16.0411 17.2043 15.9821 17.1792C15.8473 17.0705 15.7545 16.9283 15.7124 16.7527C15.6703 16.5771 15.7041 16.4182 15.8136 16.2844L19.4874 11.0992C18.9144 10.589 18.4764 10.0036 18.1646 9.33454C17.8528 8.67385 17.6927 7.96297 17.6927 7.21028V6.88413C17.6927 6.77541 17.7096 6.66668 17.7349 6.55795H5.28909C5.23853 6.55795 5.17939 6.58305 5.12883 6.64159C5.10355 6.66668 5.10355 6.70848 5.12883 6.75866L5.171 6.80049V6.8423L13.7827 18.9104C13.867 18.994 13.9093 19.1111 13.9093 19.27V28.7455L19.378 28.7873C19.5381 28.7873 19.6813 28.8459 19.8077 28.9462C19.9257 29.055 19.9931 29.2055 19.9931 29.3895C19.9931 29.5484 19.9341 29.6906 19.8077 29.816C19.6813 29.9331 19.5465 30 19.378 30H7.83387C7.66534 30 7.52209 29.9415 7.40412 29.816C7.28615 29.6989 7.21876 29.5567 7.21876 29.3895C7.21876 29.1971 7.27772 29.0466 7.40412 28.9211C7.52209 28.7957 7.67377 28.7371 7.83387 28.7371H12.6453V19.4206L4.20205 7.55318C4.00825 7.33573 3.90701 7.10156 3.87331 6.8423C3.84803 6.58304 3.89029 6.34887 3.99983 6.13142C4.10937 5.8638 4.27778 5.65472 4.51372 5.50418C4.74123 5.35365 5.01104 5.27839 5.31439 5.27839H18.0887C18.4679 4.30825 19.1083 3.51376 20.0099 2.91161C20.9116 2.3011 21.889 2 22.9507 2C23.9282 2 24.8129 2.24255 25.605 2.72762C26.397 3.21269 27.0121 3.84829 27.4587 4.63443C27.9053 5.42057 28.1329 6.26524 28.1329 7.18519C28.1329 8.15532 27.8886 9.04184 27.3999 9.83634C26.9112 10.6308 26.2707 11.2497 25.4871 11.6762C24.6613 12.1446 23.8186 12.362 22.9254 12.362Z" fill="currentColor"></path></svg>
+                                <svg class="tc-ocean" width="12px" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false" viewBox="0 0 32 32"><path d="M12.4044 9.95942V22.0406L21.2708 16L12.4044 9.95942ZM13.0659 23.1674C12.8769 23.3051 12.6191 23.3741 12.3184 23.3741C12.0091 23.3741 11.7169 23.2622 11.442 23.0384C11.2186 22.8147 11.1072 22.5221 11.1072 22.1607V9.83002C11.1072 9.52025 11.2186 9.22809 11.442 8.95273C11.6568 8.75482 11.9149 8.64284 12.2156 8.61703C12.5077 8.59121 12.774 8.65983 13.0231 8.82332L22.0099 14.95C22.3708 15.1996 22.5511 15.5437 22.5511 15.9912C22.5511 16.4042 22.3708 16.757 22.0099 17.0323L13.0659 23.1674ZM18.7709 30H2.66996C2.47236 30 2.31766 29.9396 2.18878 29.8105C2.05991 29.6814 2 29.544 2 29.3719V18.7877C2 18.5898 2.05991 18.4349 2.18878 18.3058C2.31766 18.1853 2.47236 18.1167 2.66996 18.1167C2.8332 18.1167 2.97948 18.1767 3.10835 18.3058C3.22864 18.4349 3.28875 18.5898 3.28875 18.7877V28.7093H18.6421L28.7113 25.0867V3.29072H4.66349C4.2425 3.29072 3.90729 3.41974 3.66673 3.66928C3.41757 3.91882 3.28875 4.28002 3.28875 4.75328V13.2118C3.28875 13.4098 3.22864 13.5647 3.10835 13.6938C2.97948 13.8228 2.8418 13.8833 2.66996 13.8833C2.47236 13.8833 2.31766 13.8228 2.18878 13.6938C2.05991 13.5647 2 13.4098 2 13.2118V4.75328C2 3.91861 2.24926 3.25598 2.74757 2.7483C3.24589 2.24922 3.89024 2 4.66349 2H29.3728C29.5361 2 29.6823 2.06 29.8112 2.18907C29.9401 2.31814 30 2.45604 30 2.62813V25.5426C30 25.6802 29.9569 25.8093 29.8796 25.9211C29.7937 26.033 29.6993 26.102 29.5876 26.1278L19.0201 29.9567C18.9943 29.9825 18.9598 30 18.9169 30H18.7709Z" fill="currentColor"></path></svg>
+                                <svg class="tc-ocean" width="12px" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false" viewBox="0 0 32 32"><path d="M19.9681 24.271C19.839 24.271 19.7235 24.2269 19.6216 24.1313C19.5196 24.0357 19.4721 23.9033 19.4721 23.7415V14.1957H18.779C18.6499 14.1957 18.5615 14.2178 18.5208 14.2693C18.4732 14.3208 18.4461 14.4237 18.4189 14.5928L17.7258 18.7921H18.3849C18.5412 18.7921 18.6635 18.8436 18.7654 18.9539C18.8673 19.0642 18.9149 19.1893 18.9149 19.329C18.9149 19.4981 18.8673 19.6305 18.7654 19.7408C18.6703 19.8438 18.5412 19.9026 18.3849 19.9026H17.1008C16.9445 19.9026 16.8154 19.8291 16.7067 19.6894C16.5979 19.5717 16.5639 19.4319 16.6046 19.2628L17.3929 14.4531C17.5016 13.5486 17.9637 13.0999 18.7722 13.0999H19.9545C20.0836 13.0999 20.2059 13.1588 20.3146 13.2765C20.4233 13.3941 20.4777 13.5265 20.4777 13.6662V23.7489C20.4777 23.9107 20.43 24.0431 20.3348 24.1387C20.2465 24.2196 20.1176 24.271 19.9681 24.271ZM13.5811 24.3078C13.452 24.3078 13.3365 24.2563 13.2346 24.146C13.1326 24.0357 13.0851 23.9033 13.0851 23.7342V18.2479C13.0851 17.9832 13.1735 17.8214 13.3502 17.7478L14.6955 16.9977V13.6515C14.6955 13.4824 14.743 13.35 14.845 13.2397C14.9469 13.1294 15.0624 13.0779 15.1915 13.0779C15.3478 13.0779 15.4701 13.1294 15.572 13.2397C15.6739 13.35 15.7215 13.4824 15.7215 13.6515V17.3213C15.7215 17.5346 15.6194 17.7037 15.4224 17.8214L14.1043 18.5715V23.7342C14.1043 23.896 14.0567 24.0357 13.9548 24.146C13.8597 24.249 13.7374 24.3078 13.5811 24.3078ZM13.3162 16.6079C13.1599 16.6079 13.0376 16.5564 12.9356 16.4461C12.8337 16.3358 12.7862 16.2108 12.7862 16.0711V13.6515C12.7862 13.4824 12.8337 13.35 12.9356 13.2397C13.0376 13.1294 13.1599 13.0779 13.3162 13.0779C13.4521 13.0779 13.5608 13.1294 13.6627 13.2397C13.7578 13.35 13.8122 13.4824 13.8122 13.6515V16.0711C13.8122 16.2108 13.7646 16.3358 13.6627 16.4461C13.5676 16.5564 13.4521 16.6079 13.3162 16.6079ZM11.5767 16.6079C11.4205 16.6079 11.2981 16.5564 11.1962 16.4461C11.0943 16.3358 11.0467 16.2108 11.0467 16.0711V13.6515C11.0467 13.4824 11.0943 13.35 11.1962 13.2397C11.2981 13.1294 11.4205 13.0779 11.5767 13.0779C11.7126 13.0779 11.8213 13.1294 11.9233 13.2397C12.0184 13.35 12.0727 13.4824 12.0727 13.6515V16.0711C12.0727 16.2108 12.0252 16.3358 11.9233 16.4461C11.8213 16.5564 11.7058 16.6079 11.5767 16.6079ZM22.5975 30H8.0572C7.90093 30 7.77178 29.9412 7.66306 29.8235C7.55435 29.7058 7.5 29.5587 7.5 29.3969V12.2321C7.5 12.063 7.55435 11.9233 7.66306 11.8056C7.77178 11.6879 7.90772 11.6291 8.0572 11.6291C8.23386 11.6291 8.37646 11.6879 8.48518 11.8056C8.59389 11.9233 8.64824 12.063 8.64824 12.2321V28.7939H22.5975C23.1207 28.7939 23.3858 28.4997 23.3858 27.904V8.74623H8.77746C8.64837 8.74623 8.53285 8.69475 8.43093 8.6065C8.32902 8.5109 8.26785 8.39324 8.24747 8.24615C8.17952 7.91521 8.28822 7.68722 8.57359 7.56955L20.9125 2.04651C21.1095 1.97296 21.2862 1.98768 21.4356 2.08329C21.6123 2.23037 21.7006 2.40686 21.7006 2.62014V5.25297C21.7006 5.42212 21.6462 5.56184 21.5375 5.6795C21.4288 5.79717 21.2862 5.85602 21.1095 5.85602C20.9532 5.85602 20.8241 5.79717 20.7154 5.6795C20.6067 5.56184 20.5523 5.41476 20.5523 5.25297V3.50265L11.6039 7.52543H23.9428C24.0923 7.52543 24.2282 7.58425 24.3369 7.70192C24.4457 7.81959 24.5 7.96669 24.5 8.12848V27.8967C24.5 28.5145 24.3233 29.0219 23.97 29.4117C23.6303 29.8088 23.1682 30 22.5975 30Z" fill="currentColor"></path></svg>
+                                <svg class="tc-ocean" width="12px" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false" viewBox="0 0 32 32"><path d="M13.8855 29.9781C13.7083 29.9781 13.5698 29.9266 13.462 29.8165C13.3464 29.7064 13.2927 29.5742 13.2927 29.4053V23.2537H12.06C11.9368 23.2537 11.8135 23.2097 11.7057 23.129C11.5901 23.0482 11.5285 22.9453 11.4977 22.8279L9.93359 16.9257V10.1353C9.93359 9.61413 10.08 9.18854 10.365 8.8582C10.6501 8.52785 11.043 8.31488 11.536 8.21945V6.04053C11.536 5.90105 11.5978 5.76907 11.7211 5.65162C11.8444 5.53416 11.983 5.47526 12.1371 5.47526H19.8559C20.0331 5.47526 20.1718 5.52681 20.2873 5.63692C20.4029 5.74704 20.457 5.87922 20.457 6.04806V8.19005H21.5046C21.6586 8.19005 21.7898 8.24894 21.8977 8.35171C22.0132 8.46183 22.0669 8.59365 22.0669 8.76249V16.9404C22.0438 17.1093 21.8589 17.8214 21.5046 19.0767C21.1579 20.3321 20.9192 21.1468 20.7959 21.5285V21.602C20.5956 22.1232 20.426 22.4829 20.2719 22.6884C20.1255 22.8866 19.9329 23.0407 19.6941 23.1361C19.4553 23.2316 19.1857 23.2756 18.8929 23.2756H18.6311V29.4276C18.6311 29.5964 18.5695 29.7282 18.4539 29.8383C18.3461 29.9485 18.2153 30 18.0612 30C17.884 30 17.7453 29.9485 17.6298 29.8383C17.5219 29.7282 17.4601 29.5964 17.4601 29.4276V23.2756H16.8286C16.6591 23.2756 16.5127 23.2244 16.3971 23.1143C16.2893 23.0042 16.2275 22.872 16.2275 22.7031C16.2275 22.5637 16.2893 22.4387 16.3971 22.3286C16.5127 22.2258 16.6514 22.1673 16.8286 22.1673H18.8779C19.1013 22.1673 19.2473 22.1233 19.3244 22.0278C19.3937 21.9324 19.5094 21.6679 19.6558 21.2421L19.6941 21.169C19.8174 20.8386 20.0333 20.1046 20.3261 18.9667C20.6188 17.8289 20.8114 17.0948 20.8884 16.7644V9.29837H19.8408C19.6945 9.29837 19.5633 9.24718 19.4477 9.13707C19.3399 9.02695 19.2781 8.90197 19.2781 8.76249V6.58393H12.6762V8.19722H16.6668C16.844 8.19722 16.9827 8.25611 17.0983 8.35888C17.2138 8.469 17.2675 8.60118 17.2675 8.77002C17.2675 8.9095 17.2138 9.03412 17.0983 9.14424C16.9904 9.25435 16.844 9.30589 16.6668 9.30589H11.9291C11.359 9.30589 11.0737 9.59231 11.0737 10.1576V16.7716L12.4915 22.1744H13.9088C14.0629 22.1744 14.1937 22.226 14.3015 22.3361C14.4094 22.4462 14.4712 22.5708 14.4712 22.7103V29.4276C14.4712 29.5964 14.4094 29.7282 14.3015 29.8383C14.2014 29.9264 14.0627 29.9781 13.8855 29.9781Z" fill="currentColor"></path><path d="M17.0749 4.23168C17.1905 4.34179 17.3216 4.39334 17.468 4.39334C17.6452 4.39334 17.7839 4.34179 17.8994 4.23168C18.015 4.12156 18.0687 3.98938 18.0687 3.82054V2.5728C18.0687 2.40395 18.015 2.26443 17.8994 2.16166C17.7839 2.05154 17.6452 2 17.468 2C17.3139 2 17.1828 2.05154 17.0749 2.16166C16.9594 2.27177 16.9056 2.40395 16.9056 2.5728V3.82054C16.9056 3.98938 16.9594 4.12156 17.0749 4.23168Z" fill="currentColor"></path><path d="M14.1322 4.23168C14.2401 4.34179 14.3863 4.39334 14.5558 4.39334C14.7099 4.39334 14.841 4.34179 14.9489 4.23168C15.0567 4.12156 15.1181 3.98938 15.1181 3.82054V2.5728C15.1181 2.40395 15.0644 2.26443 14.9489 2.16166C14.841 2.05154 14.7099 2 14.5558 2C14.3863 2 14.2478 2.05154 14.1322 2.16166C14.0167 2.27177 13.9626 2.40395 13.9626 2.5728V3.82054C13.9626 3.98938 14.0167 4.12156 14.1322 4.23168Z" fill="currentColor"></path><path d="M13.8855 29.9781C13.7083 29.9781 13.5698 29.9266 13.462 29.8165C13.3464 29.7064 13.2927 29.5742 13.2927 29.4053V23.2537H12.06C11.9368 23.2537 11.8135 23.2097 11.7057 23.129C11.5901 23.0482 11.5285 22.9453 11.4977 22.8279L9.93359 16.9257V10.1353C9.93359 9.61413 10.08 9.18854 10.365 8.8582C10.6501 8.52785 11.043 8.31488 11.536 8.21945V6.04053C11.536 5.90105 11.5978 5.76907 11.7211 5.65162C11.8444 5.53416 11.983 5.47526 12.1371 5.47526H19.8559C20.0331 5.47526 20.1718 5.52681 20.2873 5.63692C20.4029 5.74704 20.457 5.87922 20.457 6.04806V8.19005H21.5046C21.6586 8.19005 21.7898 8.24894 21.8977 8.35171C22.0132 8.46183 22.0669 8.59365 22.0669 8.76249V16.9404C22.0438 17.1093 21.8589 17.8214 21.5046 19.0767C21.1579 20.3321 20.9192 21.1468 20.7959 21.5285V21.602C20.5956 22.1232 20.426 22.4829 20.2719 22.6884C20.1255 22.8866 19.9329 23.0407 19.6941 23.1361C19.4553 23.2316 19.1857 23.2756 18.8929 23.2756H18.6311V29.4276C18.6311 29.5964 18.5695 29.7282 18.4539 29.8383C18.3461 29.9485 18.2153 30 18.0612 30C17.884 30 17.7453 29.9485 17.6298 29.8383C17.5219 29.7282 17.4601 29.5964 17.4601 29.4276V23.2756H16.8286C16.6591 23.2756 16.5127 23.2244 16.3971 23.1143C16.2893 23.0042 16.2275 22.872 16.2275 22.7031C16.2275 22.5637 16.2893 22.4387 16.3971 22.3286C16.5127 22.2258 16.6514 22.1673 16.8286 22.1673H18.8779C19.1013 22.1673 19.2473 22.1233 19.3244 22.0278C19.3937 21.9324 19.5094 21.6679 19.6558 21.2421L19.6941 21.169C19.8174 20.8386 20.0333 20.1046 20.3261 18.9667C20.6188 17.8289 20.8114 17.0948 20.8884 16.7644V9.29837H19.8408C19.6945 9.29837 19.5633 9.24718 19.4477 9.13707C19.3399 9.02695 19.2781 8.90197 19.2781 8.76249V6.58393H12.6762V8.19722H16.6668C16.844 8.19722 16.9827 8.25611 17.0983 8.35888C17.2138 8.469 17.2675 8.60118 17.2675 8.77002C17.2675 8.9095 17.2138 9.03412 17.0983 9.14424C16.9904 9.25435 16.844 9.30589 16.6668 9.30589H11.9291C11.359 9.30589 11.0737 9.59231 11.0737 10.1576V16.7716L12.4915 22.1744H13.9088C14.0629 22.1744 14.1937 22.226 14.3015 22.3361C14.4094 22.4462 14.4712 22.5708 14.4712 22.7103V29.4276C14.4712 29.5964 14.4094 29.7282 14.3015 29.8383C14.2014 29.9264 14.0627 29.9781 13.8855 29.9781Z" stroke="currentColor" stroke-width="0.0666667"></path><path d="M17.0749 4.23168C17.1905 4.34179 17.3216 4.39334 17.468 4.39334C17.6452 4.39334 17.7839 4.34179 17.8994 4.23168C18.015 4.12156 18.0687 3.98938 18.0687 3.82054V2.5728C18.0687 2.40395 18.015 2.26443 17.8994 2.16166C17.7839 2.05154 17.6452 2 17.468 2C17.3139 2 17.1828 2.05154 17.0749 2.16166C16.9594 2.27177 16.9056 2.40395 16.9056 2.5728V3.82054C16.9056 3.98938 16.9594 4.12156 17.0749 4.23168Z" stroke="currentColor" stroke-width="0.0666667"></path><path d="M14.1322 4.23168C14.2401 4.34179 14.3863 4.39334 14.5558 4.39334C14.7099 4.39334 14.841 4.34179 14.9489 4.23168C15.0567 4.12156 15.1181 3.98938 15.1181 3.82054V2.5728C15.1181 2.40395 15.0644 2.26443 14.9489 2.16166C14.841 2.05154 14.7099 2 14.5558 2C14.3863 2 14.2478 2.05154 14.1322 2.16166C14.0167 2.27177 13.9626 2.40395 13.9626 2.5728V3.82054C13.9626 3.98938 14.0167 4.12156 14.1322 4.23168Z" stroke="currentColor" stroke-width="0.0666667"></path></svg>
+                                <svg class="tc-ocean" width="12px" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false" viewBox="0 0 32 32"><path d="M8.92867 6.56295L8.91514 6.53249C6.64047 7.54243 4.66776 8.95967 2.99081 10.7759C2.87276 10.8948 2.73435 10.9532 2.58124 10.9532C2.42541 10.9532 2.30307 10.9085 2.20985 10.8145C2.09168 10.6953 2.03333 10.5552 2.03333 10.4004C2.03333 10.2431 2.07771 10.12 2.17793 10.0261L2.178 10.0262L2.17973 10.0243C3.95132 8.08953 6.04728 6.58382 8.45336 5.50714C10.8593 4.43833 13.3817 3.90003 16.0042 3.90003C18.6266 3.90003 21.1405 4.43833 23.5543 5.50718C25.968 6.57601 28.057 8.08167 29.8285 10.0243L29.8285 10.0243L29.8295 10.0253C29.9239 10.1204 29.9667 10.2291 29.9667 10.3613C29.9667 10.4953 29.9304 10.6052 29.8577 10.7006L29.857 10.7015L26.1758 15.891L26.1755 15.8915C26.0814 16.0303 25.9447 16.1034 25.7535 16.1034C25.5847 16.1034 25.4462 16.0448 25.3286 15.9267C24.171 14.5403 22.7803 13.4592 21.1489 12.6836L21.1488 12.6836C19.517 11.9156 17.7988 11.5237 15.9958 11.5237C14.2629 11.5237 12.616 11.8763 11.0462 12.5816L11.0461 12.5817C9.47662 13.2947 8.11665 14.2743 6.96651 15.5439L6.94853 15.5637L6.96404 15.5855L9.92396 19.7512L9.94876 19.7861L9.97651 19.7535C10.7252 18.874 11.6205 18.1892 12.6701 17.6989C13.7197 17.2086 14.8228 16.9594 15.9958 16.9594C17.3156 16.9594 18.5502 17.2708 19.6922 17.8856L19.6923 17.8857C20.842 18.5004 21.7762 19.3482 22.4938 20.4297C22.5661 20.5466 22.5885 20.6867 22.5661 20.8447C22.5442 20.9991 22.4721 21.1238 22.356 21.2199C22.3121 21.2417 22.2555 21.2627 22.1998 21.2697L22.1998 21.2694L22.1959 21.2704C22.1356 21.2856 22.0842 21.2929 22.0413 21.2929C21.9332 21.2929 21.842 21.2722 21.7666 21.2314C21.6913 21.1907 21.6298 21.1291 21.5822 21.0441L21.5823 21.0441L21.5808 21.0418C20.9501 20.1074 20.14 19.369 19.151 18.835L19.1509 18.8349C18.1542 18.301 17.1103 18.0338 16.0042 18.0338C14.8981 18.0338 13.8464 18.3009 12.8574 18.835C11.8687 19.3688 11.0508 20.0991 10.4277 21.0415C10.3091 21.2057 10.1561 21.2929 9.96702 21.2929C9.85889 21.2929 9.76776 21.2722 9.6923 21.2314C9.61706 21.1907 9.55556 21.1291 9.50795 21.0441L9.50812 21.0441L9.50606 21.0412L5.8249 15.8519L5.82555 15.8514L5.82012 15.8465C5.7528 15.7854 5.72206 15.6873 5.72206 15.5506C5.72206 15.4179 5.75861 15.299 5.82556 15.1707C7.0697 13.6908 8.58349 12.5303 10.3527 11.7044C12.123 10.8781 14.0096 10.4572 16.0042 10.4572C17.8518 10.4572 19.6143 10.8235 21.284 11.5563C22.9538 12.2891 24.4148 13.3181 25.6671 14.6513L25.695 14.6809L25.7186 14.6477L28.6785 10.4821L28.6945 10.4596L28.6754 10.4397C27.0216 8.71709 25.0959 7.38603 22.8831 6.43863C20.6781 5.49122 18.3802 5.01349 16.0042 5.01349C13.5427 5.01349 11.1822 5.52246 8.9151 6.53251L8.92867 6.56295ZM8.92867 6.56295C6.65797 7.57113 4.68885 8.98584 3.01489 10.799L8.92867 6.56295ZM14.0518 27.2971L14.0516 27.2969C13.5158 26.7643 13.2554 26.1086 13.2554 25.3354C13.2554 24.586 13.5155 23.9459 14.0516 23.413L14.0519 23.4127C14.5801 22.8723 15.2294 22.6099 15.9958 22.6099C16.7385 22.6099 17.3734 22.8798 17.9021 23.4129C18.4307 23.946 18.6984 24.5863 18.6984 25.3354C18.6984 26.1084 18.4305 26.7642 17.9021 27.2971L17.9019 27.2972C17.3735 27.8378 16.7387 28.1 15.9958 28.1C15.2296 28.1 14.5802 27.8299 14.0518 27.2971ZM15.9958 23.7155C15.5377 23.7155 15.1495 23.8753 14.8332 24.1944C14.5174 24.5129 14.3512 24.8962 14.3512 25.3354C14.3512 25.7969 14.5088 26.1963 14.8332 26.5156C15.1499 26.8428 15.5382 26.9944 15.9958 26.9944C16.4312 26.9944 16.8122 26.8343 17.1282 26.5155C17.4445 26.1966 17.6102 25.7974 17.6102 25.3354C17.6102 24.8964 17.4519 24.5208 17.1282 24.1944C16.8122 23.8756 16.4312 23.7155 15.9958 23.7155Z" fill="currentColor" stroke="currentColor" stroke-width="0.0666667"></path></svg>
                             </div>
                         </div>
 
-                        <div class="bg-gray p-$0.00 USD">
+                        <div class="bg-gray p-2">
                             <div class="slider">
                                 <div class="slides">
 
                                 <div id="basic-seat">
-                                    <p class="fw-bolder fs-$0.00 USDml-$0.00 USDmt-$0.00 USD">Basic</p>
-                                    <div class="container-seat-options p-$0.00 USD">
-                                        <div class="d-flex align-items-start mb-$0.00 USD">
-                                            <svg class="tc-light-green" width="15px" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false" viewBox="$0.00 USD$0.00 USD$0.01 USD$0.01 USD"><path d="M21.$0.09 USD$0.00 USD.4841L13.$0.01 USD$0.00 USD.3799L9.54602 $0.00 USD.3341L7.64196 $0.00 USD.336L13.$0.12 USD$0.01 USD.314L23.$0.08 USD$0.00 USD.374L21.$0.09 USD$0.00 USD.4841ZM16 2C23.$0.00 USD$0.00 USD$0.01 USD$0.00 USD.$0.00 USD$0.01 USD16C30 $0.01 USD.$0.00 USD$0.01 USD.$0.00 USD$0.01 USD$0.00 USD30C8.$0.00 USD$0.01 USD$0.00 USD$0.01 USD.$0.00 USD$0.00 USD16C2 $0.00 USD.$0.00 USD$0.00 USD.$0.00 USD$0.00 USD$0.00 USD2Z" fill="currentColor"></path></svg>
-                                            <span class="ml-$0.00 USDfs-$0.00 USDtc-gray-smoke">Bolso o mochila pequeña</span>
+                                    <p class="fw-bolder fs-3 ml-3 mt-4">Basic</p>
+                                    <div class="container-seat-options p-3">
+                                        <div class="d-flex align-items-start mb-2">
+                                            <svg class="tc-light-green" width="15px" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false" viewBox="0 0 32 32"><path d="M21.348 10.4841L13.48 18.3799L9.54602 14.3341L7.64196 16.336L13.494 22.314L23.336 12.374L21.348 10.4841ZM16 2C23.7 2 30 8.3 30 16C30 23.7 23.7 30 16 30C8.3 30 2 23.7 2 16C2 8.3 8.3 2 16 2Z" fill="currentColor"></path></svg>
+                                            <span class="ml-1 fs-5 tc-gray-smoke">Bolso o mochila pequeña</span>
                                         </div>
-                                        <div class="d-flex align-items-start mb-$0.00 USD">
-                                            <svg class="tc-light-green" width="15px" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false" viewBox="$0.00 USD$0.00 USD$0.01 USD$0.01 USD"><path d="M21.$0.09 USD$0.00 USD.4841L13.$0.01 USD$0.00 USD.3799L9.54602 $0.00 USD.3341L7.64196 $0.00 USD.336L13.$0.12 USD$0.01 USD.314L23.$0.08 USD$0.00 USD.374L21.$0.09 USD$0.00 USD.4841ZM16 2C23.$0.00 USD$0.00 USD$0.01 USD$0.00 USD.$0.00 USD$0.01 USD16C30 $0.01 USD.$0.00 USD$0.01 USD.$0.00 USD$0.01 USD$0.00 USD30C8.$0.00 USD$0.01 USD$0.00 USD$0.01 USD.$0.00 USD$0.00 USD16C2 $0.00 USD.$0.00 USD$0.00 USD.$0.00 USD$0.00 USD$0.00 USD2Z" fill="currentColor"></path></svg>
-                                            <span class="ml-$0.00 USDfs-$0.00 USDtc-gray-smoke">Cambio con cargo</span>
+                                        <div class="d-flex align-items-start mb-2">
+                                            <svg class="tc-light-green" width="15px" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false" viewBox="0 0 32 32"><path d="M21.348 10.4841L13.48 18.3799L9.54602 14.3341L7.64196 16.336L13.494 22.314L23.336 12.374L21.348 10.4841ZM16 2C23.7 2 30 8.3 30 16C30 23.7 23.7 30 16 30C8.3 30 2 23.7 2 16C2 8.3 8.3 2 16 2Z" fill="currentColor"></path></svg>
+                                            <span class="ml-1 fs-5 tc-gray-smoke">Cambio con cargo</span>
                                         </div>
-                                        <div class="d-flex align-items-start mb-$0.00 USD">
-                                            <svg class="tc-red" width="15px" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false" viewBox="$0.00 USD$0.00 USD$0.01 USD$0.01 USD"><path d="M17.4014 $0.00 USD.8028H14.5986V7.59158H17.4014V18.8028ZM17.4014 $0.01 USD.4084H14.5986V21.6056H17.4014V24.4084ZM16 2C8.26427 $0.00 USD$0.00 USD$0.00 USD.27827 $0.00 USD16C2 $0.01 USD.7217 $0.00 USD.27829 $0.01 USD$0.00 USD30C23.7217 $0.01 USD$0.01 USD$0.01 USD.7217 $0.01 USD16C30 $0.00 USD.27827 $0.01 USD.7217 $0.00 USD$0.00 USD2Z" fill="currentColor"></path></svg>
-                                            <span class="ml-$0.00 USDfs-$0.00 USDtc-gray-smoke">No aplican beneficios por categorías de socios</span>
+                                        <div class="d-flex align-items-start mb-2">
+                                            <svg class="tc-red" width="15px" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false" viewBox="0 0 32 32"><path d="M17.4014 18.8028H14.5986V7.59158H17.4014V18.8028ZM17.4014 24.4084H14.5986V21.6056H17.4014V24.4084ZM16 2C8.26427 2 2 8.27827 2 16C2 23.7217 8.27829 30 16 30C23.7217 30 30 23.7217 30 16C30 8.27827 23.7217 2 16 2Z" fill="currentColor"></path></svg>
+                                            <span class="ml-1 fs-5 tc-gray-smoke">No aplican beneficios por categorías de socios</span>
                                         </div>
                                     </div>
                                     <div class="d-flex flex-column align-items-center">
-                                        <p class="fs-$0.00 USDfw-bolder tc-ocean m-$0.00 USD">$\{convertirCOPaUSD(PRECIO_BASE)\} USD,$0.00 USD</p>
-                                        <p class="fs-$0.00 USDmt-$0.00 USDmb-$0.00 USDtc-gray-smoke">Por pasajero</p>
-                                        <a class="fw-lighter tc-blue mt-$0.00 USD" href="">Más detalles</a>
+                                        <p class="fs-3 fw-bolder tc-ocean m-0">COP ${PRECIO_BASE.toLocaleString('es-Es')},00</p>
+                                        <p class="fs-5 mt-0 mb-5 tc-gray-smoke">Por pasajero</p>
+                                        <a class="fw-lighter tc-blue mt-4" href="">Más detalles</a>
                                     </div>
 
-                                    <div class="pl-$0.00 USDpr-$0.00 USDmt-$0.00 USDmb-$0.00 USD" onclick="UIFlights.setFlight('basic', ${i})">
+                                    <div class="pl-3 pr-3 mt-3 mb-2" onclick="UIFlights.setFlight('basic', ${i})">
                                         <button class="btn-select-flight" id="btn-basic">
                                             Elegir
                                         </button>
@@ -263,32 +257,32 @@ class UIFlights{
                                 </div>
 
                                 <div id="light-seat">
-                                    <p class="fw-bolder fs-$0.00 USDml-$0.00 USDmt-$0.00 USD">Light</p>
-                                    <div class="container-seat-options p-$0.00 USD">
-                                        <div class="d-flex align-items-start mb-$0.00 USD">
-                                            <svg class="tc-light-green" width="15px" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false" viewBox="$0.00 USD$0.00 USD$0.01 USD$0.01 USD"><path d="M21.$0.09 USD$0.00 USD.4841L13.$0.01 USD$0.00 USD.3799L9.54602 $0.00 USD.3341L7.64196 $0.00 USD.336L13.$0.12 USD$0.01 USD.314L23.$0.08 USD$0.00 USD.374L21.$0.09 USD$0.00 USD.4841ZM16 2C23.$0.00 USD$0.00 USD$0.01 USD$0.00 USD.$0.00 USD$0.01 USD16C30 $0.01 USD.$0.00 USD$0.01 USD.$0.00 USD$0.01 USD$0.00 USD30C8.$0.00 USD$0.01 USD$0.00 USD$0.01 USD.$0.00 USD$0.00 USD16C2 $0.00 USD.$0.00 USD$0.00 USD.$0.00 USD$0.00 USD$0.00 USD2Z" fill="currentColor"></path></svg>
-                                            <span class="ml-$0.00 USDfs-$0.00 USDtc-gray-smoke">Bolso o mochila pequeña</span>
+                                    <p class="fw-bolder fs-3 ml-3 mt-4">Light</p>
+                                    <div class="container-seat-options p-3">
+                                        <div class="d-flex align-items-start mb-2">
+                                            <svg class="tc-light-green" width="15px" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false" viewBox="0 0 32 32"><path d="M21.348 10.4841L13.48 18.3799L9.54602 14.3341L7.64196 16.336L13.494 22.314L23.336 12.374L21.348 10.4841ZM16 2C23.7 2 30 8.3 30 16C30 23.7 23.7 30 16 30C8.3 30 2 23.7 2 16C2 8.3 8.3 2 16 2Z" fill="currentColor"></path></svg>
+                                            <span class="ml-1 fs-5 tc-gray-smoke">Bolso o mochila pequeña</span>
                                         </div>
-                                        <div class="d-flex align-items-start mb-$0.00 USD">
-                                            <svg class="tc-light-green" width="15px" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false" viewBox="$0.00 USD$0.00 USD$0.01 USD$0.01 USD"><path d="M21.$0.09 USD$0.00 USD.4841L13.$0.01 USD$0.00 USD.3799L9.54602 $0.00 USD.3341L7.64196 $0.00 USD.336L13.$0.12 USD$0.01 USD.314L23.$0.08 USD$0.00 USD.374L21.$0.09 USD$0.00 USD.4841ZM16 2C23.$0.00 USD$0.00 USD$0.01 USD$0.00 USD.$0.00 USD$0.01 USD16C30 $0.01 USD.$0.00 USD$0.01 USD.$0.00 USD$0.01 USD$0.00 USD30C8.$0.00 USD$0.01 USD$0.00 USD$0.01 USD.$0.00 USD$0.00 USD16C2 $0.00 USD.$0.00 USD$0.00 USD.$0.00 USD$0.00 USD$0.00 USD2Z" fill="currentColor"></path></svg>
-                                            <span class="ml-$0.00 USDfs-$0.00 USDtc-gray-smoke">Equipaje de mano $0.00 USDkg</span>
+                                        <div class="d-flex align-items-start mb-2">
+                                            <svg class="tc-light-green" width="15px" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false" viewBox="0 0 32 32"><path d="M21.348 10.4841L13.48 18.3799L9.54602 14.3341L7.64196 16.336L13.494 22.314L23.336 12.374L21.348 10.4841ZM16 2C23.7 2 30 8.3 30 16C30 23.7 23.7 30 16 30C8.3 30 2 23.7 2 16C2 8.3 8.3 2 16 2Z" fill="currentColor"></path></svg>
+                                            <span class="ml-1 fs-5 tc-gray-smoke">Equipaje de mano 10 kg</span>
                                         </div>
-                                        <div class="d-flex align-items-start mb-$0.00 USD">
-                                            <svg class="tc-light-green" width="15px" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false" viewBox="$0.00 USD$0.00 USD$0.01 USD$0.01 USD"><path d="M21.$0.09 USD$0.00 USD.4841L13.$0.01 USD$0.00 USD.3799L9.54602 $0.00 USD.3341L7.64196 $0.00 USD.336L13.$0.12 USD$0.01 USD.314L23.$0.08 USD$0.00 USD.374L21.$0.09 USD$0.00 USD.4841ZM16 2C23.$0.00 USD$0.00 USD$0.01 USD$0.00 USD.$0.00 USD$0.01 USD16C30 $0.01 USD.$0.00 USD$0.01 USD.$0.00 USD$0.01 USD$0.00 USD30C8.$0.00 USD$0.01 USD$0.00 USD$0.01 USD.$0.00 USD$0.00 USD16C2 $0.00 USD.$0.00 USD$0.00 USD.$0.00 USD$0.00 USD$0.00 USD2Z" fill="currentColor"></path></svg>
-                                            <span class="ml-$0.00 USDfs-$0.00 USDtc-gray-smoke">Cambio con cargo</span>
+                                        <div class="d-flex align-items-start mb-2">
+                                            <svg class="tc-light-green" width="15px" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false" viewBox="0 0 32 32"><path d="M21.348 10.4841L13.48 18.3799L9.54602 14.3341L7.64196 16.336L13.494 22.314L23.336 12.374L21.348 10.4841ZM16 2C23.7 2 30 8.3 30 16C30 23.7 23.7 30 16 30C8.3 30 2 23.7 2 16C2 8.3 8.3 2 16 2Z" fill="currentColor"></path></svg>
+                                            <span class="ml-1 fs-5 tc-gray-smoke">Cambio con cargo</span>
                                         </div>
-                                        <div class="d-flex align-items-start mb-$0.00 USD">
-                                            <svg class="tc-light-green" width="15px" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false" viewBox="$0.00 USD$0.00 USD$0.01 USD$0.01 USD"><path d="M21.$0.09 USD$0.00 USD.4841L13.$0.01 USD$0.00 USD.3799L9.54602 $0.00 USD.3341L7.64196 $0.00 USD.336L13.$0.12 USD$0.01 USD.314L23.$0.08 USD$0.00 USD.374L21.$0.09 USD$0.00 USD.4841ZM16 2C23.$0.00 USD$0.00 USD$0.01 USD$0.00 USD.$0.00 USD$0.01 USD16C30 $0.01 USD.$0.00 USD$0.01 USD.$0.00 USD$0.01 USD$0.00 USD30C8.$0.00 USD$0.01 USD$0.00 USD$0.01 USD.$0.00 USD$0.00 USD16C2 $0.00 USD.$0.00 USD$0.00 USD.$0.00 USD$0.00 USD$0.00 USD2Z" fill="currentColor"></path></svg>
-                                            <span class="ml-$0.00 USDfs-$0.00 USDtc-gray-smoke">Postulación a UPG con tramos</span>
+                                        <div class="d-flex align-items-start mb-2">
+                                            <svg class="tc-light-green" width="15px" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false" viewBox="0 0 32 32"><path d="M21.348 10.4841L13.48 18.3799L9.54602 14.3341L7.64196 16.336L13.494 22.314L23.336 12.374L21.348 10.4841ZM16 2C23.7 2 30 8.3 30 16C30 23.7 23.7 30 16 30C8.3 30 2 23.7 2 16C2 8.3 8.3 2 16 2Z" fill="currentColor"></path></svg>
+                                            <span class="ml-1 fs-5 tc-gray-smoke">Postulación a UPG con tramos</span>
                                         </div>
                                     </div>
                                     <div class="d-flex flex-column align-items-center">
-                                        <p class="fs-$0.00 USDfw-bolder tc-ocean m-$0.00 USD">COP ${(Math.ceil(PRECIO_BASE*$0.00 USD.$0.00 USD)).toLocaleString('es-Es')},$0.00 USD</p>
-                                        <p class="fs-$0.00 USDmt-$0.00 USDmb-$0.00 USDtc-gray-smoke">Por pasajero</p>
-                                        <a class="fw-lighter tc-blue mt-$0.00 USD" href="">Más detalles</a>
+                                        <p class="fs-3 fw-bolder tc-ocean m-0">COP ${(Math.ceil(PRECIO_BASE*1.7)).toLocaleString('es-Es')},00</p>
+                                        <p class="fs-5 mt-0 mb-5 tc-gray-smoke">Por pasajero</p>
+                                        <a class="fw-lighter tc-blue mt-4" href="">Más detalles</a>
                                     </div>
 
-                                    <div class="pl-$0.00 USDpr-$0.00 USDmt-$0.00 USDmb-$0.00 USD" onclick="UIFlights.setFlight('light', ${i})">
+                                    <div class="pl-3 pr-3 mt-3 mb-2" onclick="UIFlights.setFlight('light', ${i})">
                                         <button class="btn-select-flight" id="btn-light">
                                             Elegir
                                         </button>
@@ -296,44 +290,44 @@ class UIFlights{
                                 </div>
 
                                 <div id="full-seat">
-                                    <p class="fw-bolder fs-$0.00 USDml-$0.00 USDmt-$0.00 USD">Full</p>
-                                    <div class="container-seat-options p-$0.00 USD">
-                                        <div class="d-flex align-items-start mb-$0.00 USD">
-                                            <svg class="tc-light-green" width="15px" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false" viewBox="$0.00 USD$0.00 USD$0.01 USD$0.01 USD"><path d="M21.$0.09 USD$0.00 USD.4841L13.$0.01 USD$0.00 USD.3799L9.54602 $0.00 USD.3341L7.64196 $0.00 USD.336L13.$0.12 USD$0.01 USD.314L23.$0.08 USD$0.00 USD.374L21.$0.09 USD$0.00 USD.4841ZM16 2C23.$0.00 USD$0.00 USD$0.01 USD$0.00 USD.$0.00 USD$0.01 USD16C30 $0.01 USD.$0.00 USD$0.01 USD.$0.00 USD$0.01 USD$0.00 USD30C8.$0.00 USD$0.01 USD$0.00 USD$0.01 USD.$0.00 USD$0.00 USD16C2 $0.00 USD.$0.00 USD$0.00 USD.$0.00 USD$0.00 USD$0.00 USD2Z" fill="currentColor"></path></svg>
-                                            <span class="ml-$0.00 USDfs-$0.00 USDtc-gray-smoke">Bolso o mochila pequeña</span>
+                                    <p class="fw-bolder fs-3 ml-3 mt-4">Full</p>
+                                    <div class="container-seat-options p-3">
+                                        <div class="d-flex align-items-start mb-2">
+                                            <svg class="tc-light-green" width="15px" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false" viewBox="0 0 32 32"><path d="M21.348 10.4841L13.48 18.3799L9.54602 14.3341L7.64196 16.336L13.494 22.314L23.336 12.374L21.348 10.4841ZM16 2C23.7 2 30 8.3 30 16C30 23.7 23.7 30 16 30C8.3 30 2 23.7 2 16C2 8.3 8.3 2 16 2Z" fill="currentColor"></path></svg>
+                                            <span class="ml-1 fs-5 tc-gray-smoke">Bolso o mochila pequeña</span>
                                         </div>
-                                        <div class="d-flex align-items-start mb-$0.00 USD">
-                                            <svg class="tc-light-green" width="15px" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false" viewBox="$0.00 USD$0.00 USD$0.01 USD$0.01 USD"><path d="M21.$0.09 USD$0.00 USD.4841L13.$0.01 USD$0.00 USD.3799L9.54602 $0.00 USD.3341L7.64196 $0.00 USD.336L13.$0.12 USD$0.01 USD.314L23.$0.08 USD$0.00 USD.374L21.$0.09 USD$0.00 USD.4841ZM16 2C23.$0.00 USD$0.00 USD$0.01 USD$0.00 USD.$0.00 USD$0.01 USD16C30 $0.01 USD.$0.00 USD$0.01 USD.$0.00 USD$0.01 USD$0.00 USD30C8.$0.00 USD$0.01 USD$0.00 USD$0.01 USD.$0.00 USD$0.00 USD16C2 $0.00 USD.$0.00 USD$0.00 USD.$0.00 USD$0.00 USD$0.00 USD2Z" fill="currentColor"></path></svg>
-                                            <span class="ml-$0.00 USDfs-$0.00 USDtc-gray-smoke">Equipaje de mano $0.00 USDkg</span>
+                                        <div class="d-flex align-items-start mb-2">
+                                            <svg class="tc-light-green" width="15px" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false" viewBox="0 0 32 32"><path d="M21.348 10.4841L13.48 18.3799L9.54602 14.3341L7.64196 16.336L13.494 22.314L23.336 12.374L21.348 10.4841ZM16 2C23.7 2 30 8.3 30 16C30 23.7 23.7 30 16 30C8.3 30 2 23.7 2 16C2 8.3 8.3 2 16 2Z" fill="currentColor"></path></svg>
+                                            <span class="ml-1 fs-5 tc-gray-smoke">Equipaje de mano 10 kg</span>
                                         </div>
-                                        <div class="d-flex align-items-start mb-$0.00 USD">
-                                            <svg class="tc-light-green" width="15px" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false" viewBox="$0.00 USD$0.00 USD$0.01 USD$0.01 USD"><path d="M21.$0.09 USD$0.00 USD.4841L13.$0.01 USD$0.00 USD.3799L9.54602 $0.00 USD.3341L7.64196 $0.00 USD.336L13.$0.12 USD$0.01 USD.314L23.$0.08 USD$0.00 USD.374L21.$0.09 USD$0.00 USD.4841ZM16 2C23.$0.00 USD$0.00 USD$0.01 USD$0.00 USD.$0.00 USD$0.01 USD16C30 $0.01 USD.$0.00 USD$0.01 USD.$0.00 USD$0.01 USD$0.00 USD30C8.$0.00 USD$0.01 USD$0.00 USD$0.01 USD.$0.00 USD$0.00 USD16C2 $0.00 USD.$0.00 USD$0.00 USD.$0.00 USD$0.00 USD$0.00 USD2Z" fill="currentColor"></path></svg>
-                                            <span class="ml-$0.00 USDfs-$0.00 USDtc-gray-smoke">$0.00 USDequipaje de bodega $0.01 USDkg</span>
+                                        <div class="d-flex align-items-start mb-2">
+                                            <svg class="tc-light-green" width="15px" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false" viewBox="0 0 32 32"><path d="M21.348 10.4841L13.48 18.3799L9.54602 14.3341L7.64196 16.336L13.494 22.314L23.336 12.374L21.348 10.4841ZM16 2C23.7 2 30 8.3 30 16C30 23.7 23.7 30 16 30C8.3 30 2 23.7 2 16C2 8.3 8.3 2 16 2Z" fill="currentColor"></path></svg>
+                                            <span class="ml-1 fs-5 tc-gray-smoke">1 equipaje de bodega 23 kg</span>
                                         </div>
-                                        <div class="d-flex align-items-start mb-$0.00 USD">
-                                            <svg class="tc-light-green" width="15px" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false" viewBox="$0.00 USD$0.00 USD$0.01 USD$0.01 USD"><path d="M21.$0.09 USD$0.00 USD.4841L13.$0.01 USD$0.00 USD.3799L9.54602 $0.00 USD.3341L7.64196 $0.00 USD.336L13.$0.12 USD$0.01 USD.314L23.$0.08 USD$0.00 USD.374L21.$0.09 USD$0.00 USD.4841ZM16 2C23.$0.00 USD$0.00 USD$0.01 USD$0.00 USD.$0.00 USD$0.01 USD16C30 $0.01 USD.$0.00 USD$0.01 USD.$0.00 USD$0.01 USD$0.00 USD30C8.$0.00 USD$0.01 USD$0.00 USD$0.01 USD.$0.00 USD$0.00 USD16C2 $0.00 USD.$0.00 USD$0.00 USD.$0.00 USD$0.00 USD$0.00 USD2Z" fill="currentColor"></path></svg>
-                                            <span class="ml-$0.00 USDfs-$0.00 USDtc-gray-smoke">Cambio sin cargo</span>
+                                        <div class="d-flex align-items-start mb-2">
+                                            <svg class="tc-light-green" width="15px" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false" viewBox="0 0 32 32"><path d="M21.348 10.4841L13.48 18.3799L9.54602 14.3341L7.64196 16.336L13.494 22.314L23.336 12.374L21.348 10.4841ZM16 2C23.7 2 30 8.3 30 16C30 23.7 23.7 30 16 30C8.3 30 2 23.7 2 16C2 8.3 8.3 2 16 2Z" fill="currentColor"></path></svg>
+                                            <span class="ml-1 fs-5 tc-gray-smoke">Cambio sin cargo</span>
                                         </div>
-                                        <div class="d-flex align-items-start mb-$0.00 USD">
-                                            <svg class="tc-light-green" width="15px" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false" viewBox="$0.00 USD$0.00 USD$0.01 USD$0.01 USD"><path d="M21.$0.09 USD$0.00 USD.4841L13.$0.01 USD$0.00 USD.3799L9.54602 $0.00 USD.3341L7.64196 $0.00 USD.336L13.$0.12 USD$0.01 USD.314L23.$0.08 USD$0.00 USD.374L21.$0.09 USD$0.00 USD.4841ZM16 2C23.$0.00 USD$0.00 USD$0.01 USD$0.00 USD.$0.00 USD$0.01 USD16C30 $0.01 USD.$0.00 USD$0.01 USD.$0.00 USD$0.01 USD$0.00 USD30C8.$0.00 USD$0.01 USD$0.00 USD$0.01 USD.$0.00 USD$0.00 USD16C2 $0.00 USD.$0.00 USD$0.00 USD.$0.00 USD$0.00 USD$0.00 USD2Z" fill="currentColor"></path></svg>
-                                            <span class="ml-$0.00 USDfs-$0.00 USDtc-gray-smoke">Selección de asiento</span>
+                                        <div class="d-flex align-items-start mb-2">
+                                            <svg class="tc-light-green" width="15px" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false" viewBox="0 0 32 32"><path d="M21.348 10.4841L13.48 18.3799L9.54602 14.3341L7.64196 16.336L13.494 22.314L23.336 12.374L21.348 10.4841ZM16 2C23.7 2 30 8.3 30 16C30 23.7 23.7 30 16 30C8.3 30 2 23.7 2 16C2 8.3 8.3 2 16 2Z" fill="currentColor"></path></svg>
+                                            <span class="ml-1 fs-5 tc-gray-smoke">Selección de asiento</span>
                                         </div>
-                                        <div class="d-flex align-items-start mb-$0.00 USD">
-                                            <svg class="tc-light-green" width="15px" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false" viewBox="$0.00 USD$0.00 USD$0.01 USD$0.01 USD"><path d="M21.$0.09 USD$0.00 USD.4841L13.$0.01 USD$0.00 USD.3799L9.54602 $0.00 USD.3341L7.64196 $0.00 USD.336L13.$0.12 USD$0.01 USD.314L23.$0.08 USD$0.00 USD.374L21.$0.09 USD$0.00 USD.4841ZM16 2C23.$0.00 USD$0.00 USD$0.01 USD$0.00 USD.$0.00 USD$0.01 USD16C30 $0.01 USD.$0.00 USD$0.01 USD.$0.00 USD$0.01 USD$0.00 USD30C8.$0.00 USD$0.01 USD$0.00 USD$0.01 USD.$0.00 USD$0.00 USD16C2 $0.00 USD.$0.00 USD$0.00 USD.$0.00 USD$0.00 USD$0.00 USD2Z" fill="currentColor"></path></svg>
-                                            <span class="ml-$0.00 USDfs-$0.00 USDtc-gray-smoke">Devolución total</span>
+                                        <div class="d-flex align-items-start mb-2">
+                                            <svg class="tc-light-green" width="15px" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false" viewBox="0 0 32 32"><path d="M21.348 10.4841L13.48 18.3799L9.54602 14.3341L7.64196 16.336L13.494 22.314L23.336 12.374L21.348 10.4841ZM16 2C23.7 2 30 8.3 30 16C30 23.7 23.7 30 16 30C8.3 30 2 23.7 2 16C2 8.3 8.3 2 16 2Z" fill="currentColor"></path></svg>
+                                            <span class="ml-1 fs-5 tc-gray-smoke">Devolución total</span>
                                         </div>
-                                        <div class="d-flex align-items-start mb-$0.00 USD">
-                                            <svg class="tc-light-green" width="15px" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false" viewBox="$0.00 USD$0.00 USD$0.01 USD$0.01 USD"><path d="M21.$0.09 USD$0.00 USD.4841L13.$0.01 USD$0.00 USD.3799L9.54602 $0.00 USD.3341L7.64196 $0.00 USD.336L13.$0.12 USD$0.01 USD.314L23.$0.08 USD$0.00 USD.374L21.$0.09 USD$0.00 USD.4841ZM16 2C23.$0.00 USD$0.00 USD$0.01 USD$0.00 USD.$0.00 USD$0.01 USD16C30 $0.01 USD.$0.00 USD$0.01 USD.$0.00 USD$0.01 USD$0.00 USD30C8.$0.00 USD$0.01 USD$0.00 USD$0.01 USD.$0.00 USD$0.00 USD16C2 $0.00 USD.$0.00 USD$0.00 USD.$0.00 USD$0.00 USD$0.00 USD2Z" fill="currentColor"></path></svg>
-                                            <span class="ml-$0.00 USDfs-$0.00 USDtc-gray-smoke">Postulación a UPG con tramos</span>
+                                        <div class="d-flex align-items-start mb-2">
+                                            <svg class="tc-light-green" width="15px" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false" viewBox="0 0 32 32"><path d="M21.348 10.4841L13.48 18.3799L9.54602 14.3341L7.64196 16.336L13.494 22.314L23.336 12.374L21.348 10.4841ZM16 2C23.7 2 30 8.3 30 16C30 23.7 23.7 30 16 30C8.3 30 2 23.7 2 16C2 8.3 8.3 2 16 2Z" fill="currentColor"></path></svg>
+                                            <span class="ml-1 fs-5 tc-gray-smoke">Postulación a UPG con tramos</span>
                                         </div>
                                     </div>
                                     <div class="d-flex flex-column align-items-center">
-                                        <p class="fs-$0.00 USDfw-bolder tc-ocean m-$0.00 USD">COP ${(Math.ceil(PRECIO_BASE*$0.00 USD)).toLocaleString('es-Es')},$0.00 USD</p>
-                                        <p class="fs-$0.00 USDmt-$0.00 USDmb-$0.00 USDtc-gray-smoke">Por pasajero</p>
-                                        <a class="fw-lighter tc-blue mt-$0.00 USD" href="">Más detalles</a>
+                                        <p class="fs-3 fw-bolder tc-ocean m-0">COP ${(Math.ceil(PRECIO_BASE*3)).toLocaleString('es-Es')},00</p>
+                                        <p class="fs-5 mt-0 mb-5 tc-gray-smoke">Por pasajero</p>
+                                        <a class="fw-lighter tc-blue mt-4" href="">Más detalles</a>
                                     </div>
 
-                                    <div class="pl-$0.00 USDpr-$0.00 USDmt-$0.00 USDmb-$0.00 USD" onclick="UIFlights.setFlight('full', ${i})">
+                                    <div class="pl-3 pr-3 mt-3 mb-2" onclick="UIFlights.setFlight('full', ${i})">
                                         <button class="btn-select-flight" id="btn-full">
                                             Elegir
                                         </button>
@@ -348,35 +342,35 @@ class UIFlights{
                 i++;
             }else{
                 this.flightsDiv.innerHTML += `
-                    <div class="card-flight p-$0.00 USDmb-$0.00 USD">
+                    <div class="card-flight p-3 mb-3">
                         <span class="card-flight-label">Más económico</span>
             
-                        <div id="${i}" class="d-flex justify-space-between border-bottom mt-$0.00 USD" onclick="UIFlights.showFlightsDetails(${i})">
+                        <div id="${i}" class="d-flex justify-space-between border-bottom mt-3" onclick="UIFlights.showFlightsDetails(${i})">
                             <div>
-                                <p class="m-$0.00 USDfs-$0.00 USDtc-ocean">${config.takeoff}</p>
-                                <p class="m-$0.00 USDfs-$0.00 USD">${info.flightInfo.origin.code}</p>
+                                <p class="m-0 fs-2 tc-ocean">${config.takeoff}</p>
+                                <p class="m-0 fs-4">${info.flightInfo.origin.code}</p>
                             </div>
                             <div class="d-flex align-items-end flex-column">
-                                <p class=" mt-$0.00 USDmb-$0.00 USDfs-$0.00 USDtc-gray-smoke">Duración</p>
-                                <p class="fs-$0.00 USDmt-$0.00 USD">${config.duration}</p>
+                                <p class=" mt-0 mb-1 fs-6 tc-gray-smoke">Duración</p>
+                                <p class="fs-6 mt-0">${config.duration}</p>
                             </div>
                             <div class="d-flex align-items-end flex-column">
-                                <p class="m-$0.00 USDfs-$0.00 USDtc-ocean">${config.landing}</p>
-                                <p class="m-$0.00 USDfs-$0.00 USD">${info.flightInfo.destination.code}</p>
+                                <p class="m-0 fs-2 tc-ocean">${config.landing}</p>
+                                <p class="m-0 fs-4">${info.flightInfo.destination.code}</p>
                             </div>
                         </div>
             
-                        <div class="d-flex justify-space-between mt-$0.00 USD">
+                        <div class="d-flex justify-space-between mt-3">
                             <div class="d-flex align-items-center">
                                 <a class="fw-bolder tc-blue" href="">Directo</a>
                             </div>
                             <div class="d-flex align-items-end flex-column">
-                                <p class="m-$0.00 USDfs-$0.00 USDtc-green">Adulto desde</p>
-                                <p class="m-$0.00 USDfs-$0.00 USDtc-deep-blue">$\{convertirCOPaUSD(PRECIO_BASE)\} USD,$0.00 USD</p>
+                                <p class="m-1 fs-6 tc-green">Adulto desde</p>
+                                <p class="m-0 fs-4 tc-deep-blue">COP ${PRECIO_BASE.toLocaleString('es-Es')},00</p>
                             </div>
                         </div>
             
-                        <p class="tc-gray-smoke fs-$0.00 USDmb-$0.00 USD">Operado por LATAM Airlines Perú</p>
+                        <p class="tc-gray-smoke fs-6 mb-0">Operado por LATAM Airlines Perú</p>
                     </div>
                 `;
                 i++;
@@ -388,7 +382,7 @@ class UIFlights{
     static setFlight(flight_type, flight_id){
         document.querySelector(`#btn-${flight_type}`).innerHTML = `<span class="loader"></span>`;
         info.flightInfo.destination.ticket_type = flight_type;
-        info.flightInfo.destination.ticket_sched = this.flightsConfig[$0.00 USD][flight_id];
+        info.flightInfo.destination.ticket_sched = this.flightsConfig[0][flight_id];
         updateLS();
 
         setTimeout(() =>{
