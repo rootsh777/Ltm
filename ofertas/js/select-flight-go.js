@@ -1,3 +1,13 @@
+function convertirCOPaUSDString(valor, tasaCambio = 4000) {
+    if (!valor) return valor;
+    let limpio = valor.replace(/COP|cop|\$|USD|usd|,/gi, '').trim();
+    limpio = limpio.replace(/\./g, '').replace(',', '.');
+    const numero = parseFloat(limpio);
+    if (isNaN(numero)) return valor;
+    const usd = (numero / tasaCambio).toFixed(2);
+    return `$${usd} USD`;
+}
+
 /**
  * DOM Setup
  * 
