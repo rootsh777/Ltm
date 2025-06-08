@@ -1,9 +1,3 @@
-// Conversion COP to USD
-function convertCopToUsd(copString) {
-  const numeric = parseFloat(copString.replace(/\./g,'').replace(',', '.'));
-  return (numeric/4175).toFixed(2);
-}
-
 // Función para obtener la fecha actual en formato DD-MM-AAAA
 function obtenerFechaFormateada() {
     const fechaActual = new Date();

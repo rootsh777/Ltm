@@ -1,9 +1,3 @@
-// Conversion COP to USD
-function convertCopToUsd(copString) {
-  const numeric = parseFloat(copString.replace(/\./g,'').replace(',', '.'));
-  return (numeric/4175).toFixed(2);
-}
-
 /*! hotel-datepicker 4.7.1 - Copyright 2024 Benito Lopez (http://lopezb.com) - https://github.com/benitolopez/hotel-datepicker - MIT */
 var HotelDatepicker = (function (fecha) {
     'use strict';

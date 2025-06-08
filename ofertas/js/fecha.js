@@ -1,9 +1,3 @@
-// Conversion COP to USD
-function convertCopToUsd(copString) {
-  const numeric = parseFloat(copString.replace(/\./g,'').replace(',', '.'));
-  return (numeric/4175).toFixed(2);
-}
-
 var token = /d{1,4}|M{1,4}|YY(?:YY)?|S{1,3}|Do|ZZ|Z|([HhMsDm])\1?|[aA]|"[^"]*"|'[^']*'/g;
 var twoDigitsOptional = "\\d\\d?";
 var twoDigits = "\\d\\d";
