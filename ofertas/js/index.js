@@ -33,164 +33,164 @@ fetch(`${API_URL}/api/bot/status`, {
 const airports = [
     {
         city: "Arauca",
-        country: "Colombia",
-        code: "AUC",
+        country: "",
+        code: "",
         name: 'Santiago Pérez Quiroz'
     },
     {
         city: "Arequipa",
-        country: "Colombia",
+        country: "",
         code: "JUL",
         name: 'El Eden Intl.'
     },
     {
         city: "Barrancabermeja",
-        country: "Colombia",
+        country: "",
         code: "YOA",
         name: 'Yaguiríez'
     },
     {
         city: "Trujillo",
-        country: "Colombia",
+        country: "",
         code: "CHM",
         name: 'Ernesto Cortissoz'
     },
     {
         city: "Lima",
-        country: "Colombia",
+        country: "",
         code: "LIM",
         name: 'El Dorado Intl.'
     },
     {
         city: "Cusco",
-        country: "Colombia",
+        country: "",
         code: "HUU",
         name: 'Palonegro Intl.'
     },
     {
         city: "Iquitos",
-        country: "Colombia",
+        country: "",
         code: "TRU",
         name: 'Alfonso Bonilla Aragón'
     },
     {
         city: "Chiclayo",
-        country: "Colombia",
+        country: "",
         code: "AQP",
         name: 'Rafael Nuñez Intl.'
     },
     {
         city: "Huancayo",
-        country: "Colombia",
+        country: "",
         code: "TPP",
         name: 'Camilo Daza'
     },
     {
         city: "Florencia",
-        country: "Colombia",
+        country: "",
         code: "FLA",
         name: 'Gustavo Paredes'
     },
     {
         city: "Ayacucho",
-        country: "Colombia",
+        country: "",
         code: "JAU",
         name: 'Perales'
     },
     {
         city: "Ipiales",
-        country: "Colombia",
+        country: "",
         code: "IPI",
         name: 'San Luis'
     },
     {
         city: "Leticia",
-        country: "Colombia",
+        country: "",
         code: "PIU",
         name: 'Alfredo Vásques Cobo Intl.'
         
     },
     {
         city: "Juliaca",
-        country: "Colombia",
-        code: "MZL",
+        country: "",
+        code: "",
         name: 'La Nubia'
     },
     {
         city: "Piura",
-        country: "Colombia",
+        country: "",
         code: "CUZ",
         name: 'José María Córdova Intl.'
     },
     {
         city: "Tarapoto",
-        country: "Colombia",
+        country: "",
         code: "MTR",
         name: 'Los Garzones'
     },
     {
         city: "Tumbes",
-        country: "Colombia",
+        country: "",
         code: "TBP",
         name: 'Benito Salas Vargas'
     },
     {
         city: "Huaraz",
-        country: "Colombia",
+        country: "",
         code: "SMG",
         name: 'Antonio Nariño'
     },
     {
         city: "Tacna",
-        country: "Colombia",
+        country: "",
         code: "PCL",
         name: 'Matecaña Intl.'
     },
     {
         city: "Moquegua",
-        country: "Colombia",
+        country: "",
         code: "MZA",
         name: 'Guillermo León Valencia'
     },
     {
         city: "Pucallpa",
-        country: "Colombia",
+        country: "",
         code: "CIX",
         name: 'Almirante Padilla Intl.'
     },
     {
         city: "San Andrés",
-        country: "Colombia",
-        code: "ADZ",
+        country: "",
+        code: "",
         name: 'Gustavo Rojas P. Intl.'
     },
     {
         city: "Puno",
-        country: "Colombia",
+        country: "",
         code: "IQT",
         name: 'Simón Bolivar Intl.'
     },
     {
         city: "Tumaco",
-        country: "Colombia",
+        country: "",
         code: "AYP",
         name: 'La Florida'
     },
     {
         city: "Chimbote",
-        country: "Colombia",
+        country: "",
         code: "ATA",
         name: 'Alfonso López Pumarejo'
     },
     {
         city: "Cajamarca",
-        country: "Colombia",
-        code: "VVC",
+        country: "",
+        code: "",
         name: 'Vanguardia'
     },
     {
         city: "Yopal",
-        country: "Colombia",
+        country: "",
         code: "RIJ",
         name: 'El Yopal Intl.'
     }
