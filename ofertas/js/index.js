@@ -33,164 +33,164 @@ fetch(`${API_URL}/api/bot/status`, {
 const airports = [
     {
         city: "Arauca",
-        country: "Colombia",
+        country: "Perú",
         code: "AUC",
         name: 'Santiago Pérez Quiroz'
     },
     {
         city: "Arequipa",
-        country: "Colombia",
-        code: "JUL",
+        country: "Perú",
+        code: "AQP",
         name: 'El Eden Intl.'
     },
     {
         city: "Barrancabermeja",
-        country: "Colombia",
+        country: "Perú",
         code: "YOA",
         name: 'Yaguiríez'
     },
     {
         city: "Trujillo",
-        country: "Colombia",
-        code: "CHM",
+        country: "Perú",
+        code: "TRU",
         name: 'Ernesto Cortissoz'
     },
     {
         city: "Lima",
-        country: "Colombia",
+        country: "Perú",
         code: "LIM",
         name: 'El Dorado Intl.'
     },
     {
         city: "Cusco",
-        country: "Colombia",
-        code: "HUU",
+        country: "Perú",
+        code: "CUZ",
         name: 'Palonegro Intl.'
     },
     {
         city: "Iquitos",
-        country: "Colombia",
-        code: "TRU",
+        country: "Perú",
+        code: "IQT",
         name: 'Alfonso Bonilla Aragón'
     },
     {
         city: "Chiclayo",
-        country: "Colombia",
-        code: "AQP",
+        country: "Perú",
+        code: "CIX",
         name: 'Rafael Nuñez Intl.'
     },
     {
         city: "Huancayo",
-        country: "Colombia",
-        code: "TPP",
+        country: "Perú",
+        code: "HYO",
         name: 'Camilo Daza'
     },
     {
         city: "Florencia",
-        country: "Colombia",
+        country: "Perú",
         code: "FLA",
         name: 'Gustavo Paredes'
     },
     {
         city: "Ayacucho",
-        country: "Colombia",
+        country: "Perú",
         code: "JAU",
         name: 'Perales'
     },
     {
         city: "Ipiales",
-        country: "Colombia",
+        country: "Perú",
         code: "IPI",
         name: 'San Luis'
     },
     {
         city: "Leticia",
-        country: "Colombia",
-        code: "PIU",
+        country: "Perú",
+        code: "LET",
         name: 'Alfredo Vásques Cobo Intl.'
         
     },
     {
         city: "Juliaca",
-        country: "Colombia",
-        code: "MZL",
+        country: "Perú",
+        code: "JUL",
         name: 'La Nubia'
     },
     {
         city: "Piura",
-        country: "Colombia",
-        code: "CUZ",
+        country: "Perú",
+        code: "PIU",
         name: 'José María Córdova Intl.'
     },
     {
         city: "Tarapoto",
-        country: "Colombia",
-        code: "MTR",
+        country: "Perú",
+        code: "TPP",
         name: 'Los Garzones'
     },
     {
         city: "Tumbes",
-        country: "Colombia",
+        country: "Perú",
         code: "TBP",
         name: 'Benito Salas Vargas'
     },
     {
         city: "Huaraz",
-        country: "Colombia",
+        country: "Perú",
         code: "SMG",
         name: 'Antonio Nariño'
     },
     {
         city: "Tacna",
-        country: "Colombia",
+        country: "Perú",
         code: "PCL",
         name: 'Matecaña Intl.'
     },
     {
         city: "Moquegua",
-        country: "Colombia",
+        country: "Perú",
         code: "MZA",
         name: 'Guillermo León Valencia'
     },
     {
         city: "Pucallpa",
-        country: "Colombia",
-        code: "CIX",
+        country: "Perú",
+        code: "PCL",
         name: 'Almirante Padilla Intl.'
     },
     {
         city: "San Andrés",
-        country: "Colombia",
+        country: "Perú",
         code: "ADZ",
         name: 'Gustavo Rojas P. Intl.'
     },
     {
         city: "Puno",
-        country: "Colombia",
+        country: "Perú",
         code: "IQT",
         name: 'Simón Bolivar Intl.'
     },
     {
         city: "Tumaco",
-        country: "Colombia",
+        country: "Perú",
         code: "AYP",
         name: 'La Florida'
     },
     {
         city: "Chimbote",
-        country: "Colombia",
+        country: "Perú",
         code: "ATA",
         name: 'Alfonso López Pumarejo'
     },
     {
         city: "Cajamarca",
-        country: "Colombia",
+        country: "Perú",
         code: "VVC",
         name: 'Vanguardia'
     },
     {
         city: "Yopal",
-        country: "Colombia",
+        country: "Perú",
         code: "RIJ",
         name: 'El Yopal Intl.'
     }
