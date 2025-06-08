@@ -43,12 +43,7 @@ const airports = [
         code: "AQP",
         name: 'El Eden Intl.'
     },
-    {
-        city: "Barrancabermeja",
-        country: "Perú",
-        code: "YOA",
-        name: 'Yaguiríez'
-    },
+    
     {
         city: "Trujillo",
         country: "Perú",
@@ -97,19 +92,8 @@ const airports = [
         code: "JAU",
         name: 'Perales'
     },
-    {
-        city: "Ipiales",
-        country: "Perú",
-        code: "IPI",
-        name: 'San Luis'
-    },
-    {
-        city: "Leticia",
-        country: "Perú",
-        code: "LET",
-        name: 'Alfredo Vásques Cobo Intl.'
-        
-    },
+    
+    
     {
         city: "Juliaca",
         country: "Perú",
@@ -158,12 +142,7 @@ const airports = [
         code: "PCL",
         name: 'Almirante Padilla Intl.'
     },
-    {
-        city: "San Andrés",
-        country: "Perú",
-        code: "ADZ",
-        name: 'Gustavo Rojas P. Intl.'
-    },
+    
     {
         city: "Puno",
         country: "Perú",
