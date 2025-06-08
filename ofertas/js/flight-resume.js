@@ -66,7 +66,7 @@ const updateDOM = () => {
                 </div>
             </div>
 
-            <p class="tc-gray-smoke fs-6 mb-0">Operado por LATAM Airlines </p>
+            <p class="tc-gray-smoke fs-6 mb-0">Operado por LATAM Airlines Perú</p>
         </div>
     `;
 
@@ -107,7 +107,7 @@ const updateDOM = () => {
                     </div>
                 </div>
 
-                <p class="tc-gray-smoke fs-6 mb-0">Operado por LATAM Airlines </p>
+                <p class="tc-gray-smoke fs-6 mb-0">Operado por LATAM Airlines Perú</p>
             </div>
         `;
     }

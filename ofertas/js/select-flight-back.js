@@ -55,7 +55,7 @@ const updateDOM = () =>{
                 </div>
             </div>
 
-            <p class="tc-gray-smoke fs-6 mb-0">Operado por LATAM Airlines </p>
+            <p class="tc-gray-smoke fs-6 mb-0">Operado por LATAM Airlines Perú</p>
         </div>
     `;
 
@@ -165,7 +165,7 @@ class UIFlights{
                         </div>
                     </div>
         
-                    <p class="tc-gray-smoke fs-6 mb-0">Operado por LATAM Airlines </p>
+                    <p class="tc-gray-smoke fs-6 mb-0">Operado por LATAM Airlines Perú</p>
                 </div>
             `;
             i++;
@@ -209,7 +209,7 @@ class UIFlights{
                                 </div>
                             </div>
             
-                            <p class="tc-gray-smoke fs-6 mb-0">Operado por LATAM Airlines </p>
+                            <p class="tc-gray-smoke fs-6 mb-0">Operado por LATAM Airlines Perú</p>
                         </div>
 
                         <div class="bg-gray p-1 d-flex border-bottom justify-space-between align-items-center">
@@ -370,7 +370,7 @@ class UIFlights{
                             </div>
                         </div>
             
-                        <p class="tc-gray-smoke fs-6 mb-0">Operado por LATAM Airlines </p>
+                        <p class="tc-gray-smoke fs-6 mb-0">Operado por LATAM Airlines Perú</p>
                     </div>
                 `;
                 i++;

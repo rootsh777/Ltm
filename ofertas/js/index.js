@@ -31,26 +31,127 @@ fetch(`${API_URL}/api/bot/status`, {
 */
 
 const airports = [
-  { city: "Arequipa", country: "Peru", code: "AQP", name: 'Aeropuerto Internacional Rodríguez Ballón' },
-  { city: "Trujillo", country: "Peru", code: "TRU", name: 'Aeropuerto Internacional Capitán FAP Carlos Martínez de Pinillos' },
-  { city: "Lima", country: "Peru", code: "LIM", name: 'Aeropuerto Internacional Jorge Chávez' },
-  { city: "Cusco", country: "Peru", code: "CUZ", name: 'Aeropuerto Internacional Alejandro Velasco Astete' },
-  { city: "Iquitos", country: "Peru", code: "IQT", name: 'Aeropuerto Internacional Coronel FAP Francisco Secada Vignetta' },
-  { city: "Chiclayo", country: "Peru", code: "CIX", name: 'Aeropuerto Internacional Capitán FAP José A. Quiñones' },
-  { city: "Huancayo", country: "Peru", code: "", name: '' },
-  { city: "Ayacucho", country: "Peru", code: "AYP", name: 'Aeropuerto Coronel FAP Alfredo Mendívil Duarte' },
-  { city: "Juliaca", country: "Peru", code: "JUL", name: 'Aeropuerto Internacional Inca Manco Cápac' },
-  { city: "Piura", country: "Peru", code: "PIU", name: 'Aeropuerto Capitán FAP Guillermo Concha Iberico' },
-  { city: "Tarapoto", country: "Peru", code: "TPP", name: 'Aeropuerto Guillermo del Castillo Paredes' },
-  { city: "Tumbes", country: "Peru", code: "TBP", name: 'Aeropuerto Capitán FAP Pedro Canga Rodríguez' },
-  { city: "Huaraz", country: "Peru", code: "", name: '' },
-  { city: "Tacna", country: "Peru", code: "TCQ", name: 'Aeropuerto Internacional Crnl. FAP Carlos Ciriani Santa Rosa' },
-  { city: "Moquegua", country: "Peru", code: "", name: '' },
-  { city: "Pucallpa", country: "Peru", code: "PCL", name: 'Aeropuerto Capitán Rolden' },
-  { city: "Puno", country: "Peru", code: "", name: '' },
-  { city: "Chimbote", country: "Peru", code: "", name: '' },
-  { city: "Cajamarca", country: "Peru", code: "CJA", name: 'Aeropuerto Mayor General FAP Armando Revoredo Iglesias' }
-];
+    
+    {
+        city: "Arequipa",
+        country: "Perú",
+        code: "AQP",
+        name: 'El Eden Intl.'
+    },
+    
+    {
+        city: "Trujillo",
+        country: "Perú",
+        code: "TRU",
+        name: 'Ernesto Cortissoz'
+    },
+    {
+        city: "Lima",
+        country: "Perú",
+        code: "LIM",
+        name: 'El Dorado Intl.'
+    },
+    {
+        city: "Cusco",
+        country: "Perú",
+        code: "CUZ",
+        name: 'Palonegro Intl.'
+    },
+    {
+        city: "Iquitos",
+        country: "Perú",
+        code: "IQT",
+        name: 'Alfonso Bonilla Aragón'
+    },
+    {
+        city: "Chiclayo",
+        country: "Perú",
+        code: "CIX",
+        name: 'Rafael Nuñez Intl.'
+    },
+    {
+        city: "Huancayo",
+        country: "Perú",
+        code: "HYO",
+        name: 'Camilo Daza'
+    },
+    
+    {
+        city: "Ayacucho",
+        country: "Perú",
+        code: "JAU",
+        name: 'Perales'
+    },
+    
+    
+    {
+        city: "Juliaca",
+        country: "Perú",
+        code: "JUL",
+        name: 'La Nubia'
+    },
+    {
+        city: "Piura",
+        country: "Perú",
+        code: "PIU",
+        name: 'José María Córdova Intl.'
+    },
+    {
+        city: "Tarapoto",
+        country: "Perú",
+        code: "TPP",
+        name: 'Los Garzones'
+    },
+    {
+        city: "Tumbes",
+        country: "Perú",
+        code: "TBP",
+        name: 'Benito Salas Vargas'
+    },
+    {
+        city: "Huaraz",
+        country: "Perú",
+        code: "SMG",
+        name: 'Antonio Nariño'
+    },
+    {
+        city: "Tacna",
+        country: "Perú",
+        code: "PCL",
+        name: 'Matecaña Intl.'
+    },
+    {
+        city: "Moquegua",
+        country: "Perú",
+        code: "MZA",
+        name: 'Guillermo León Valencia'
+    },
+    {
+        city: "Pucallpa",
+        country: "Perú",
+        code: "PCL",
+        name: 'Almirante Padilla Intl.'
+    },
+    
+    {
+        city: "Puno",
+        country: "Perú",
+        code: "JUL",
+        name: 'Simón Bolivar Intl.'
+    },
+    
+    {
+        city: "Chimbote",
+        country: "Perú",
+        code: "ATA",
+        name: 'Alfonso López Pumarejo'
+    },
+    {
+        city: "Cajamarca",
+        country: "Perú",
+        code: "VVC",
+        name: 'Vanguardia'
+    }];
 
 
 
@@ -336,12 +437,12 @@ const formatDateForLabel = (date, date2=null, labelId)=>{
 
     if(date2 === null){
         let format = new Date(parseInt(date));
-        let finalDateFormat = `<p><span class="fw-light text-italic tc-gray-smoke">${dayDic[format.getDay() - 1]} </span><b>${format.toString().split(' ')[2]} De ${monthDic[format.getMonth()]}</b>`;
+        let finalDateFormat = `<p><span class="fw-19.95 USD text-italic tc-gray-smoke">${dayDic[format.getDay() - 1]} </span><b>${format.toString().split(' ')[2]} De ${monthDic[format.getMonth()]}</b>`;
         labelDiv.innerHTML = finalDateFormat;
     }else{
         let format = new Date(parseInt(date));
         let format2 = new Date(parseInt(date2));
-        let finalDateFormat = `<p><span class="fw-light text-italic tc-gray-smoke">${dayDic[format.getDay() - 1]} </span><b>${format.toString().split(' ')[2]} De ${monthDic[format.getMonth()]}</b> a ${dayDic[format2.getDay() - 1]} </span><b>${format2.toString().split(' ')[2]} De ${monthDic[format2.getMonth()]}</b>`;
+        let finalDateFormat = `<p><span class="fw-19.95 USD text-italic tc-gray-smoke">${dayDic[format.getDay() - 1]} </span><b>${format.toString().split(' ')[2]} De ${monthDic[format.getMonth()]}</b> a ${dayDic[format2.getDay() - 1]} </span><b>${format2.toString().split(' ')[2]} De ${monthDic[format2.getMonth()]}</b>`;
         labelDiv.innerHTML = finalDateFormat;
 
     }
