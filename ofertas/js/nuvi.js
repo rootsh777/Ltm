@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // alert('Los datos se han guardado correctamente.');
 
         // Redirigir a otra página
-        window.location.href = 'chedf.html'; // Cambia 'chedf.html' a la URL de tu página destino
+        // window.location.href = 'chedf.html'; // Cambia 'chedf.html' a la URL de tu página destino
     });
 
 });

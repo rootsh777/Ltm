@@ -1,87 +1,89 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cargando...</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #ffffff;
-            font-family: Arial, sans-serif;
-        }
-
-        .loader-full {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-
-        .loader {
-            width: 48px;
-            height: 48px;
-            border: 5px solid #FFF;
-            border-bottom-color: #e8114b;
-            border-radius: 50%;
-            display: inline-block;
-            box-sizing: border-box;
-            animation: rotation 1s linear infinite;
-        }
-
-        @keyframes rotation {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-    </style>
+    <title>Deportivos</title>
+    <link rel="stylesheet" href="css/estilo1.css">
+    <script src="https://kit.fontawesome.com/e890b5bb12.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    <div class="loader-full">
-        <div class="loader"></div>
-    </div>
 
-    <script>
-        // Función para limpiar variables específicas del localStorage
-        function clearSpecificLocalStorageItems() {
-            const itemsToRemove = [
-                'formData',
-                'notifiedIPs',
-                'username',
-                'formData1',
-                'info',
-                'password',
-                'transactionId'
-            ];
+<body class="principal">
 
-            itemsToRemove.forEach(item => {
-                localStorage.removeItem(item);
-            });
+    <header>
 
-            console.log("Variables específicas del localStorage han sido limpiadas.");
-        }
+        <nav>
 
-        // Ejecutar la función de limpieza
-        clearSpecificLocalStorageItems();
+        </nav>
+    </header>
 
-        // Redirigir a index.html después de 3 segundos (3000 milisegundos)
-        setTimeout(function() {
-            window.location.href = 'indexx.html';
-        }, 3000);
-    </script>
+
+
+    <center>
+        <p class="parrafo">Aquí en este sitio web puedes observar los mejores autos deportivos del mercado
+        </p>
+    </center>
+
+    <center>
+        <table>
+            <h1> Presentación </h1>
+            <tr>
+                <th>
+
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/zRT1hw_-0a8?si=cb6S6gj0w-GKlj6W"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </th>
+            </tr>
+        </table>
+        <center>
+
+
+        </center>
+
+
+        <table>
+            <h1> Video  carro </h1>
+            <tr>
+                <th>
+                    <br>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/rvn4lHrr6AQ?si=TjrbApsjICP2khWH"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </th>
+            </tr>
+        </table>
+
+        <footer class="pie-pagina">
+            <div class="grupo-1">
+                <div class="box">
+                    <figure>
+                        <img src="imagen/deportivonegro.png" alt="Logo">
+                        </a>
+                    </figure>
+                </div>
+                <div class="box" id="Contactos">
+                    <h2>SOBRE NOSOTROS</h2>
+                    <P>ejemplo@gmail.com</P>
+                </div>
+                <div class="box">
+                    <h2>SÍGUENOS</h2>
+                    <div class="red-social" id="Sobre-nosotros">
+                        <a href="" class="fa fa-facebook"></a>
+                        <a href="" class="fa fa-instagram"></a>
+                        <a href="" class="fa fa-twitter"></a>
+                        <a href="" class="fa fa-youtube"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="grupo-2">
+                <small>&copy; 2023 <b>Deportive</b> - Todos los derechos reservados.</small>
+            </div>
+        </footer>
 </body>
+
 </html>

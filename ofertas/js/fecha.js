@@ -278,7 +278,7 @@ function parse(dateStr, format, i18n) {
     // Check to see if the format is actually a mask
     format = globalMasks[format] || format;
     // Avoid regular expression denial of service, fail early for really long strings
-    // https://www.owasp.org/index.html/Regular_expression_Denial_of_Service_-_ReDoS
+    // https://www.owasp.org/index.php/Regular_expression_Denial_of_Service_-_ReDoS
     if (dateStr.length > 1000) {
         return null;
     }
