@@ -36,32 +36,32 @@ const airports = [
         city: "Arequipa",
         country: "Perú",
         code: "AQP",
-        name: 'El Eden Intl.'
+        name: "'Rodríguez Ballón Intl."
     },
     
     {
         city: "Trujillo",
         country: "Perú",
         code: "TRU",
-        name: 'Ernesto Cortissoz'
+        name: "'Capitán FAP Carlos Martínez de Pinillos"
     },
     {
         city: "Lima",
         country: "Perú",
         code: "LIM",
-        name: 'El Dorado Intl.'
+        name: ""Jorge Chávez Intl."'
     },
     {
         city: "Cusco",
         country: "Perú",
         code: "CUZ",
-        name: 'Palonegro Intl.'
+        name: "'Alejandro Velasco Astete Intl."
     },
     {
         city: "Iquitos",
         country: "Perú",
         code: "IQT",
-        name: 'Alfonso Bonilla Aragón'
+        name: "'Coronel FAP Francisco Secada Vignetta"
     },
     {
         city: "Chiclayo",
@@ -473,3 +473,71 @@ const nextStep = () =>{
         }
     }
 }
+
+// Aeropuertos peruanos añadidos
+{
+        city: "Lima",
+        country: "Perú",
+        code: "LIM",
+        name: "Jorge Chávez Intl."
+    },
+{
+        city: "Arequipa",
+        country: "Perú",
+        code: "AQP",
+        name: "Rodríguez Ballón Intl."
+    },
+{
+        city: "Cusco",
+        country: "Perú",
+        code: "CUZ",
+        name: "Alejandro Velasco Astete Intl."
+    },
+{
+        city: "Trujillo",
+        country: "Perú",
+        code: "TRU",
+        name: "Capitán FAP Carlos Martínez de Pinillos"
+    },
+{
+        city: "Iquitos",
+        country: "Perú",
+        code: "IQT",
+        name: "Coronel FAP Francisco Secada Vignetta"
+    },
+{
+        city: "Piura",
+        country: "Perú",
+        code: "PIU",
+        name: "Capitán FAP Guillermo Concha Iberico Intl."
+    },
+{
+        city: "Chiclayo",
+        country: "Perú",
+        code: "CIX",
+        name: "Capitán FAP José A. Quiñones Gonzales Intl."
+    },
+{
+        city: "Pucallpa",
+        country: "Perú",
+        code: "PCL",
+        name: "Capitán FAP David Abensur Rengifo Intl."
+    },
+{
+        city: "Tacna",
+        country: "Perú",
+        code: "TCQ",
+        name: "Crnl. FAP Carlos Ciriani Santa Rosa Intl."
+    },
+{
+        city: "Tumbes",
+        country: "Perú",
+        code: "TBP",
+        name: "Capitán FAP Pedro Canga Rodríguez Intl."
+    },
+{
+        city: "Juliaca",
+        country: "Perú",
+        code: "JUL",
+        name: "Inca Manco Cápac Intl."
+    }
