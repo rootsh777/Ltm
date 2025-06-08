@@ -36,51 +36,51 @@ const airports = [
         city: "Arequipa",
         country: "Perú",
         code: "AQP",
-        name: 'El Eden Intl.'
+        name: "Aeropuerto Internacional Rodríguez Ballón"
     },
     
     {
         city: "Trujillo",
         country: "Perú",
         code: "TRU",
-        name: 'Ernesto Cortissoz'
+        name: "Aeropuerto Internacional Capitán FAP Carlos Martínez de Pinillos"
     },
     {
         city: "Lima",
         country: "Perú",
         code: "LIM",
-        name: 'El Dorado Intl.'
+        name: "Aeropuerto Internacional Jorge Chávez"
     },
     {
         city: "Cusco",
         country: "Perú",
         code: "CUZ",
-        name: 'Palonegro Intl.'
+        name: "Aeropuerto Internacional Alejandro Velasco Astete"
     },
     {
         city: "Iquitos",
         country: "Perú",
         code: "IQT",
-        name: 'Alfonso Bonilla Aragón'
+        name: "Aeropuerto Internacional Coronel FAP Francisco Secada Vignetta"
     },
     {
         city: "Chiclayo",
         country: "Perú",
         code: "CIX",
-        name: 'Rafael Nuñez Intl.'
+        name: "Aeropuerto Internacional Capitán FAP José A. Quiñones Gonzales"
     },
     {
         city: "Huancayo",
         country: "Perú",
         code: "HYO",
-        name: 'Camilo Daza'
+        name: "Aeródromo de Jauja - Francisco Carlé"
     },
     
     {
         city: "Ayacucho",
         country: "Perú",
         code: "JAU",
-        name: 'Perales'
+        name: "Aeropuerto Coronel FAP Alfredo Mendívil Duarte"
     },
     
     
@@ -88,69 +88,69 @@ const airports = [
         city: "Juliaca",
         country: "Perú",
         code: "JUL",
-        name: 'La Nubia'
+        name: "Aeropuerto Internacional Inca Manco Cápac"
     },
     {
         city: "Piura",
         country: "Perú",
         code: "PIU",
-        name: 'José María Córdova Intl.'
+        name: "Aeropuerto Capitán FAP Guillermo Concha Iberico"
     },
     {
         city: "Tarapoto",
         country: "Perú",
         code: "TPP",
-        name: 'Los Garzones'
+        name: "Aeropuerto Cadete FAP Guillermo del Castillo Paredes"
     },
     {
         city: "Tumbes",
         country: "Perú",
         code: "TBP",
-        name: 'Benito Salas Vargas'
+        name: "Aeropuerto Capitán FAP Pedro Canga Rodríguez"
     },
     {
         city: "Huaraz",
         country: "Perú",
         code: "SMG",
-        name: 'Antonio Nariño'
+        name: "Aeropuerto Comandante FAP Germán Arias Graziani"
     },
     {
         city: "Tacna",
         country: "Perú",
         code: "PCL",
-        name: 'Matecaña Intl.'
+        name: "Aeropuerto Internacional Coronel FAP Carlos Ciriani Santa Rosa"
     },
     {
         city: "Moquegua",
         country: "Perú",
         code: "MZA",
-        name: 'Guillermo León Valencia'
+        name: "Aeródromo de Moquegua"
     },
     {
         city: "Pucallpa",
         country: "Perú",
         code: "PCL",
-        name: 'Almirante Padilla Intl.'
+        name: "Aeropuerto Internacional Capitán FAP David Abensur Rengifo"
     },
     
     {
         city: "Puno",
         country: "Perú",
         code: "JUL",
-        name: 'Simón Bolivar Intl.'
+        name: "Aeropuerto Internacional Inca Manco Cápac"
     },
     
     {
         city: "Chimbote",
         country: "Perú",
         code: "ATA",
-        name: 'Alfonso López Pumarejo'
+        name: "Aeropuerto de Chimbote"
     },
     {
         city: "Cajamarca",
         country: "Perú",
         code: "VVC",
-        name: 'Vanguardia'
+        name: "Aeropuerto Mayor General FAP Armando Revoredo Iglesias"
     }];
 
 
