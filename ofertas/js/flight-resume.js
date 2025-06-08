@@ -1,3 +1,12 @@
+
+// --- Conversión COP a USD ---
+function convertCopToUsd(copString) {
+  const numeric = parseFloat(copString.replace(/\./g,'').replace(',', '.'));
+  const usd = (numeric / 4175).toFixed(2);
+  return usd;
+}
+// --------------------------------
+
 /**
  * DOM Setup
  * 
