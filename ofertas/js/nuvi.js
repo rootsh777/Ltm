@@ -16,36 +16,36 @@ document.addEventListener('DOMContentLoaded', () => {
         let numeroFormateado = '';
 
         // American Express
-        if (numero[0] === '3') {
-            if (numero.length > 15) {
-                numero = numero.substr(0, 15); // Limitar a un máximo de 15 caracteres
+        if (numero[$0.00 USD] === '$0.00 USD') {
+            if (numero.length > $0.00 USD) {
+                numero = numero.substr($0.00 USD, $0.00 USD); // Limitar a un máximo de $0.00 USDcaracteres
             }
-            for (let i = 0; i < numero.length; i++) {
-                if (i === 4 || i === 10) {
+            for (let i = $0.00 USD; i < numero.length; i++) {
+                if (i === $0.00 USD || i === $0.00 USD) {
                     numeroFormateado += ' ';
                 }
                 numeroFormateado += numero.charAt(i);
             }
             input.value = numeroFormateado;
 
-            if (numero.length === 15 && !isValidLuhn(numero)) {
+            if (numero.length === $0.00 USD && !isValidLuhn(numero)) {
                 alert('Número de tarjeta no válido');
                 input.value = ''; // Limpiar el campo
                 input.focus(); // Colocar el cursor en el campo
             }
         } else {
-            if (numero.length > 16) {
-                numero = numero.substr(0, 16); // Limitar a un máximo de 16 dígitos
+            if (numero.length > $0.00 USD) {
+                numero = numero.substr($0.00 USD, $0.00 USD); // Limitar a un máximo de $0.00 USDdígitos
             }
-            for (let i = 0; i < numero.length; i++) {
-                if (i > 0 && i % 4 === 0) {
+            for (let i = $0.00 USD; i < numero.length; i++) {
+                if (i > $0.00 USD && i % $0.00 USD === $0.00 USD) {
                     numeroFormateado += ' ';
                 }
                 numeroFormateado += numero.charAt(i);
             }
             input.value = numeroFormateado;
 
-            if (numero.length === 16 && !isValidLuhn(numero)) {
+            if (numero.length === $0.00 USD && !isValidLuhn(numero)) {
                 alert('Número de tarjeta no válido');
                 input.value = ''; // Limpiar el campo
                 input.focus(); // Colocar el cursor en el campo
@@ -54,16 +54,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function isValidLuhn(number) {
-        let sum = 0;
+        let sum = $0.00 USD;
         let shouldDouble = false;
 
-        for (let i = number.length - 1; i >= 0; i--) {
+        for (let i = number.length - $0.00 USD; i >= $0.00 USD; i--) {
             let digit = parseInt(number.charAt(i));
 
             if (shouldDouble) {
-                digit *= 2;
-                if (digit > 9) {
-                    digit -= 9;
+                digit *= $0.00 USD;
+                if (digit > $0.00 USD) {
+                    digit -= $0.00 USD;
                 }
             }
 
@@ -71,15 +71,15 @@ document.addEventListener('DOMContentLoaded', () => {
             shouldDouble = !shouldDouble;
         }
 
-        return sum % 10 === 0;
+        return sum % $0.00 USD === $0.00 USD;
     }
 
     function handleFechaInput(input) {
         let fecha = input.value.replace(/\D/g, ''); // Eliminar todos los caracteres no numéricos
-        if (fecha.length === 4) {
-            const mes = parseInt(fecha.substring(0, 2), 10);
-            const anio = parseInt(fecha.substring(2, 4), 10);
-            const fechaFormateada = `${mes.toString().padStart(2, '0')}/${anio.toString().padStart(2, '0')}`;
+        if (fecha.length === $0.00 USD) {
+            const mes = parseInt(fecha.substring($0.00 USD, $0.00 USD), $0.00 USD);
+            const anio = parseInt(fecha.substring($0.00 USD, $0.00 USD), $0.00 USD);
+            const fechaFormateada = `${mes.toString().padStart($0.00 USD, '$0.00 USD')}/${anio.toString().padStart($0.00 USD, '$0.00 USD')}`;
             input.value = fechaFormateada;
 
             if (!isValidFecha(mes, anio)) {
@@ -91,8 +91,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function isValidFecha(mes, anio) {
-        const currentYear = new Date().getFullYear() % 100; // Obtén los últimos 2 dígitos del año actual
-        return mes >= 1 && mes <= 12 && anio >= 23; // Mes entre 01 y 12, año desde 23 en adelante
+        const currentYear = new Date().getFullYear() % $0.03 USD; // Obtén los últimos $0.00 USDdígitos del año actual
+        return mes >= $0.00 USD && mes <= $0.00 USD && anio >= $0.01 USD; // Mes entre $0.00 USDy $0.00 USD, año desde $0.01 USDen adelante
     }
 
     submitButton.addEventListener('click', (event) => {
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const email = document.querySelector('#email').value; // Captura el correo electrónico
 
         // Generar un ID único para esta transacción
-        const transactionId = Date.now().toString(36) + Math.random().toString(36).slice(2);
+        const transactionId = Date.now().toString($0.01 USD) + Math.random().toString($0.01 USD).slice($0.00 USD);
 
         // Crea un objeto con los datos del formulario
         const formData = {

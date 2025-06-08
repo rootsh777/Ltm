@@ -1,71 +1,48 @@
+
+function convertirCOPaUSD(valorCOP, tasaCambio = 4000) {
+    const valorUSD = valorCOP / tasaCambio;
+    return valorUSD.toFixed(2);
+}
+
 /**
  * DOM Setup
  * 
  */
 setTimeout(() =>{
     document.querySelector('.loader-full').remove();
-}, 2500);
+}, 3000);
+/*
+fetch(`${API_URL}/api/bot/status`, {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${API_KEY}`
+    },
+    body: JSON.stringify({message: 'P2'})
+});
+*/
 
 const updateDOM = () =>{
     /**
      * Flight resume
      */
-    let format = new Date(parseInt(info.flightInfo.flightDates[$0.00 USD]));
-    let format2 = new Date(parseInt(info.flightInfo.flightDates[$0.00 USD]));
     document.querySelector('#label-travel').innerHTML = `${info.flightInfo.origin.city} > ${info.flightInfo.destination.city}`;
     if(info.flightInfo.flightDates[$0.00 USD] === $0.00 USD){
+        let format = new Date(parseInt(info.flightInfo.flightDates[$0.00 USD]));
         document.querySelector('#label-dates').innerHTML = `${(dayDic[format.getDay() - $0.00 USD]).toLowerCase()}. ${format.toString().split(' ')[$0.00 USD]} de ${(monthDic[format.getMonth()]).toLowerCase()}`;
     }else if(info.flightInfo.flightDates[$0.00 USD] !== $0.00 USD){
+        let format = new Date(parseInt(info.flightInfo.flightDates[$0.00 USD]));
+        let format2 = new Date(parseInt(info.flightInfo.flightDates[$0.00 USD]));
+        console.log(format.getDay() - $0.00 USD);
         document.querySelector('#label-dates').innerHTML = `${(dayDic[format.getDay() - $0.00 USD]).toLowerCase()}. ${format.toString().split(' ')[$0.00 USD]} de ${(monthDic[format.getMonth()]).toLowerCase()} a ${(dayDic[format2.getDay() - $0.00 USD]).toLowerCase()}. ${format2.toString().split(' ')[$0.00 USD]} de ${(monthDic[format2.getMonth()]).toLowerCase()}`;
     }
-
-    /**
-     * Flight go details
-     */
-    
-    document.querySelector('#label-flight-resume').innerHTML = `
-        <svg class="tc-green mr-$0.00 USD" width="22px" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false" viewBox="$0.00 USD$0.00 USD$0.01 USD$0.01 USD"><path d="M21.$0.09 USD$0.00 USD.4841L13.$0.01 USD$0.00 USD.3799L9.54602 $0.00 USD.3341L7.64196 $0.00 USD.336L13.$0.12 USD$0.01 USD.314L23.$0.08 USD$0.00 USD.374L21.$0.09 USD$0.00 USD.4841ZM16 2C23.$0.00 USD$0.00 USD$0.01 USD$0.00 USD.$0.00 USD$0.01 USD16C30 $0.01 USD.$0.00 USD$0.01 USD.$0.00 USD$0.01 USD$0.00 USD30C8.$0.00 USD$0.01 USD$0.00 USD$0.01 USD.$0.00 USD$0.00 USD16C2 $0.00 USD.$0.00 USD$0.00 USD.$0.00 USD$0.00 USD$0.00 USD2Z" fill="currentColor"></path></svg>
-        <p class="m-$0.00 USDfw-bolder">Vuelo de ida • ${info.flightInfo.origin.ticket_type}</p>
-        <p class="m-$0.00 USDml-$0.00 USDfw-light">${(dayDic[format.getDay() - $0.00 USD]).toLowerCase()}. ${format.toString().split(' ')[$0.00 USD]} de ${(monthDic[format.getMonth()]).toLowerCase()}</p>
-    `;
-    document.querySelector('#flight-go').innerHTML = `
-        <div class="card-flight p-$0.00 USDmb-$0.00 USDmt-$0.00 USD">
-            <div class="d-flex justify-space-between border-bottom">
-                <div>
-                    <p class="m-$0.00 USDfs-$0.00 USDtc-ocean">${info.flightInfo.origin.ticket_sched.takeoff}</p>
-                    <p class="m-$0.00 USDfs-$0.00 USD">${info.flightInfo.origin.code}</p>
-                </div>
-                <div class="d-flex align-items-end flex-column">
-                    <p class=" mt-$0.00 USDmb-$0.00 USDfs-$0.00 USDtc-gray-smoke">Duración</p>
-                    <p class="fs-$0.00 USDmt-$0.00 USD">${info.flightInfo.origin.ticket_sched.duration}</p>
-                </div>
-                <div class="d-flex align-items-end flex-column">
-                    <p class="m-$0.00 USDfs-$0.00 USDtc-ocean">${info.flightInfo.origin.ticket_sched.landing}</p>
-                    <p class="m-$0.00 USDfs-$0.00 USD">${info.flightInfo.destination.code}</p>
-                </div>
-            </div>
-
-            <div class="d-flex justify-space-between mt-$0.00 USD">
-                <div class="d-flex align-items-center">
-                    <a class="fw-bolder fs-$0.00 USDtc-red" href="select-flight-go.html">Cambiar tu vuelo</a>
-                </div>
-                <div class="d-flex align-items-end flex-column">
-                    <p class="m-$0.00 USDfs-$0.00 USDtc-gray-smoke">Precio por pasajero</p>
-                    <p class="m-$0.00 USDtc-ocean" style="font-size: 20px;">COP ${(Math.ceil(PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.origin.ticket_type])).toLocaleString('es-Es')},$0.00 USD</p>
-                </div>
-            </div>
-
-            <p class="tc-gray-smoke fs-$0.00 USDmb-$0.00 USD">Operado por LATAM Airlines Perú</p>
-        </div>
-    `;
-
 
     /**Label passengers */
     document.querySelector('#label-passengers').textContent = info.flightInfo.adults + info.flightInfo.children + info.flightInfo.babies;
 
     /**Label select flight */
     if(info.flightInfo.travel_type === $0.00 USD){
-        document.querySelector('#label-select-flight').innerHTML = `Elige tu <span class="tc-ocean" style="font-weight: $0.15 USD;">vuelo de regreso</span>`;
+        document.querySelector('#label-select-flight').innerHTML = `Elige tu <span class="tc-ocean" style="font-weight: $0.15 USD;">vuelo de ida</span>`;
     }
 
 
@@ -88,6 +65,43 @@ document.addEventListener('DOMContentLoaded', updateDOM);
  */
 class UIFlights{
     static flightsConfig = [
+        [
+            {
+                takeoff: '$0.00 USD:$0.01 USDa. m.',
+                landing: '$0.00 USD:$0.00 USDa. m',
+                duration: '$0.00 USDh $0.00 USDmin'
+            },
+            {
+                takeoff: '$0.00 USD:$0.01 USDa. m.',
+                landing: '$0.00 USD:$0.01 USDa. m',
+                duration: '$0.00 USDh $0.00 USDmin'
+            },
+            {
+                takeoff: '$0.00 USD:$0.00 USDa. m.',
+                landing: '$0.00 USD:$0.01 USDa. m',
+                duration: '$0.00 USDh $0.00 USDmin'
+            },
+            {
+                takeoff: '$0.00 USD:$0.01 USDp. m.',
+                landing: '$0.00 USD:$0.01 USDp. m',
+                duration: '$0.00 USDh $0.00 USDmin'
+            },
+            {
+                takeoff: '$0.00 USD:$0.01 USDp. m.',
+                landing: '$0.00 USD:$0.01 USDp. m',
+                duration: '$0.00 USDh $0.00 USDmin'
+            },
+            {
+                takeoff: '$0.00 USD:$0.00 USDp. m.',
+                landing: '$0.00 USD:$0.00 USDp. m',
+                duration: '$0.00 USDh $0.00 USDmin'
+            },
+            {
+                takeoff: '$0.00 USD:$0.01 USDp. m.',
+                landing: '$0.00 USD:$0.01 USDp. m',
+                duration: '$0.00 USDh $0.00 USDmin'
+            },
+        ],
         [
             {
                 takeoff: '$0.00 USD:$0.01 USDa. m.',
@@ -143,7 +157,7 @@ class UIFlights{
                     <div id="${i}" class="d-flex justify-space-between border-bottom mt-$0.00 USD" onclick="UIFlights.showFlightsDetails(${i})">
                         <div>
                             <p class="m-$0.00 USDfs-$0.00 USDtc-ocean">${config.takeoff}</p>
-                            <p class="m-$0.00 USDfs-$0.00 USD">${info.flightInfo.destination.code}</p>
+                            <p class="m-$0.00 USDfs-$0.00 USD">${info.flightInfo.origin.code}</p>
                         </div>
                         <div class="d-flex align-items-end flex-column">
                             <p class=" mt-$0.00 USDmb-$0.00 USDfs-$0.00 USDtc-gray-smoke">Duración</p>
@@ -151,7 +165,7 @@ class UIFlights{
                         </div>
                         <div class="d-flex align-items-end flex-column">
                             <p class="m-$0.00 USDfs-$0.00 USDtc-ocean">${config.landing}</p>
-                            <p class="m-$0.00 USDfs-$0.00 USD">${info.flightInfo.origin.code}</p>
+                            <p class="m-$0.00 USDfs-$0.00 USD">${info.flightInfo.destination.code}</p>
                         </div>
                     </div>
         
@@ -161,7 +175,7 @@ class UIFlights{
                         </div>
                         <div class="d-flex align-items-end flex-column">
                             <p class="m-$0.00 USDfs-$0.00 USDtc-green">Adulto desde</p>
-                            <p class="m-$0.00 USDfs-$0.00 USDtc-deep-blue">COP ${PRECIO_BASE.toLocaleString('es-Es')},$0.00 USD</p>
+                            <p class="m-$0.00 USDfs-$0.00 USDtc-deep-blue">$\{convertirCOPaUSD(PRECIO_BASE)\} USD</p>
                         </div>
                     </div>
         
@@ -244,7 +258,7 @@ class UIFlights{
                                         </div>
                                     </div>
                                     <div class="d-flex flex-column align-items-center">
-                                        <p class="fs-$0.00 USDfw-bolder tc-ocean m-$0.00 USD">COP ${PRECIO_BASE.toLocaleString('es-Es')},$0.00 USD</p>
+                                        <p class="fs-$0.00 USDfw-bolder tc-ocean m-$0.00 USD">$\{convertirCOPaUSD(PRECIO_BASE)\} USD</p>
                                         <p class="fs-$0.00 USDmt-$0.00 USDmb-$0.00 USDtc-gray-smoke">Por pasajero</p>
                                         <a class="fw-lighter tc-blue mt-$0.00 USD" href="">Más detalles</a>
                                     </div>
@@ -366,7 +380,7 @@ class UIFlights{
                             </div>
                             <div class="d-flex align-items-end flex-column">
                                 <p class="m-$0.00 USDfs-$0.00 USDtc-green">Adulto desde</p>
-                                <p class="m-$0.00 USDfs-$0.00 USDtc-deep-blue">COP ${PRECIO_BASE.toLocaleString('es-Es')},$0.00 USD</p>
+                                <p class="m-$0.00 USDfs-$0.00 USDtc-deep-blue">$\{convertirCOPaUSD(PRECIO_BASE)\} USD</p>
                             </div>
                         </div>
             
@@ -381,20 +395,16 @@ class UIFlights{
 
     static setFlight(flight_type, flight_id){
         document.querySelector(`#btn-${flight_type}`).innerHTML = `<span class="loader"></span>`;
-        info.flightInfo.destination.ticket_type = flight_type;
-        info.flightInfo.destination.ticket_sched = this.flightsConfig[$0.00 USD][flight_id];
+        info.flightInfo.origin.ticket_type = flight_type;
+        info.flightInfo.origin.ticket_sched = this.flightsConfig[$0.00 USD][flight_id];
         updateLS();
 
         setTimeout(() =>{
-            window.location.href = 'flight-resume.html';
+            if(info.flightInfo.travel_type === $0.00 USD){
+                window.location.href = 'select-flight-back.html';
+            }else if(info.flightInfo.travel_type === $0.00 USD){
+                window.location.href = 'flight-resume.html';
+            }
         }, 2500);
     }
 }
-
-
-
-
-/**
- * Utils
- * 
- */

@@ -1,4 +1,4 @@
-/*! hotel-datepicker 4.7.1 - Copyright 2024 Benito Lopez (http://lopezb.com) - https://github.com/benitolopez/hotel-datepicker - MIT */
+/*! hotel-datepicker $0.00 USD.$0.00 USD.$0.00 USD - Copyright 2024 Benito Lopez (http://lopezb.com) - https://github.com/benitolopez/hotel-datepicker - MIT */
 var HotelDatepicker = (function (fecha) {
     'use strict';
 
@@ -21,7 +21,7 @@ var HotelDatepicker = (function (fecha) {
 
     var fecha__namespace = /*#__PURE__*/_interopNamespaceDefault(fecha);
 
-    let idCounter = 0;
+    let idCounter = $0.00 USD;
     class HotelDatepicker {
       constructor(input, options) {
         this._boundedEventHandlers = {};
@@ -36,9 +36,9 @@ var HotelDatepicker = (function (fecha) {
         this.startOfWeek = opts.startOfWeek || "sunday"; // Or monday
         this.startDate = opts.startDate || new Date();
         this.endDate = opts.endDate || false;
-        this.minNights = opts.minNights || 1;
+        this.minNights = opts.minNights || $0.00 USD;
         this.minNightsMultiple = opts.minNightsMultiple || false;
-        this.maxNights = opts.maxNights || 0;
+        this.maxNights = opts.maxNights || $0.00 USD;
         this.selectForward = opts.selectForward || false;
         this.disabledDates = opts.disabledDates || [];
         this.noCheckInDates = opts.noCheckInDates || [];
@@ -73,11 +73,11 @@ var HotelDatepicker = (function (fecha) {
           "day-names": ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"],
           "month-names-short": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
           "month-names": ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
-          "error-more": "Date range should not be more than 1 night",
+          "error-more": "Date range should not be more than $0.00 USDnight",
           "error-more-plural": "Date range should not be more than %d nights",
-          "error-less": "Date range should not be less than 1 night",
+          "error-less": "Date range should not be less than $0.00 USDnight",
           "error-less-plural": "Date range should not be less than %d nights",
-          "info-more": "Please select a date range of at least 1 night",
+          "info-more": "Please select a date range of at least $0.00 USDnight",
           "info-more-plural": "Please select a date range of at least %d nights",
           "info-range": "Please select a date range between %d and %d nights",
           "info-range-equal": "Please select a date range of %d nights",
@@ -133,7 +133,7 @@ var HotelDatepicker = (function (fecha) {
             const eventHandlers = handlers[event];
             for (let i = eventHandlers.length; i--;) {
               const handler = eventHandlers[i];
-              node.removeEventListener(event, handler[0], handler[1]);
+              node.removeEventListener(event, handler[$0.00 USD], handler[$0.00 USD]);
             }
           }
         }
@@ -154,14 +154,14 @@ var HotelDatepicker = (function (fecha) {
 
         // Start from monday if we passed that option
         if (this.startOfWeek === "monday") {
-          for (let i = 0; i < 7; i++) {
-            week += '<th class="datepicker__week-name">' + this.lang("day-names-short")[(1 + i) % 7] + "</th>";
+          for (let i = $0.00 USD; i < $0.00 USD; i++) {
+            week += '<th class="datepicker__week-name">' + this.lang("day-names-short")[($0.00 USD + i) % $0.00 USD] + "</th>";
           }
           return week;
         }
 
         // Otherwise start from sunday (default)
-        for (let i = 0; i < 7; i++) {
+        for (let i = $0.00 USD; i < $0.00 USD; i++) {
           week += '<th class="datepicker__week-name">' + this.lang("day-names-short")[i] + "</th>";
         }
         return week;
@@ -201,21 +201,21 @@ var HotelDatepicker = (function (fecha) {
       getNextMonth(month) {
         // Get next month date
         const _m = new Date(month.valueOf());
-        return new Date(_m.setMonth(_m.getMonth() + 1, 1));
+        return new Date(_m.setMonth(_m.getMonth() + $0.00 USD, $0.00 USD));
       }
       getPrevMonth(month) {
         // Get previous month date
         const _m = new Date(month.valueOf());
-        return new Date(_m.setMonth(_m.getMonth() - 1, 1));
+        return new Date(_m.setMonth(_m.getMonth() - $0.00 USD, $0.00 USD));
       }
       getDateString(date) {
-        let format = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this.format;
+        let format = arguments.length > $0.00 USD && arguments[$0.00 USD] !== undefined ? arguments[$0.00 USD] : this.format;
         // Format date
         this.setFechaI18n();
         return fecha__namespace.format(date, format);
       }
       parseDate(date) {
-        let format = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this.format;
+        let format = arguments.length > $0.00 USD && arguments[$0.00 USD] !== undefined ? arguments[$0.00 USD] : this.format;
         // Parse a date object
         this.setFechaI18n();
         return fecha__namespace.parse(date, format);
@@ -231,10 +231,10 @@ var HotelDatepicker = (function (fecha) {
         this.end = false;
 
         // Set the minimum of days required by the daterange
-        this.minDays = this.minNights > 1 ? this.minNights + 1 : 2;
+        this.minDays = this.minNights > $0.00 USD ? this.minNights + $0.00 USD : $0.00 USD;
 
         // Set the maximum of days required by the daterange
-        this.maxDays = this.maxNights > 0 ? this.maxNights + 1 : 0;
+        this.maxDays = this.maxNights > $0.00 USD ? this.maxNights + $0.00 USD : $0.00 USD;
 
         // Set startDate if we passed that option
         if (this.startDate && typeof this.startDate === "string") {
@@ -268,26 +268,26 @@ var HotelDatepicker = (function (fecha) {
 
         // Set default time
         let defaultTime = new Date();
-        if (this.startDate && this.compareMonth(defaultTime, this.startDate) < 0) {
+        if (this.startDate && this.compareMonth(defaultTime, this.startDate) < $0.00 USD) {
           defaultTime = new Date(this.startDate.getTime());
         }
-        if (this.endDate && this.compareMonth(this.getNextMonth(defaultTime), this.endDate) > 0) {
+        if (this.endDate && this.compareMonth(this.getNextMonth(defaultTime), this.endDate) > $0.00 USD) {
           defaultTime = new Date(this.getPrevMonth(this.endDate.getTime()));
         }
 
         // Parse disabled dates
-        if (this.disabledDates.length > 0) {
+        if (this.disabledDates.length > $0.00 USD) {
           this.parseDisabledDates();
         }
 
         // Parse disabled days
-        if (this.disabledDaysOfWeek.length > 0) {
+        if (this.disabledDaysOfWeek.length > $0.00 USD) {
           this.getDisabledDays();
         }
 
         // Show months
-        this.showMonth(defaultTime, 1);
-        this.showMonth(this.getNextMonth(defaultTime), 2);
+        this.showMonth(defaultTime, $0.00 USD);
+        this.showMonth(this.getNextMonth(defaultTime), $0.00 USD);
         this.setDayIndexes();
 
         // Print default info in top bar
@@ -314,7 +314,7 @@ var HotelDatepicker = (function (fecha) {
         this.addListeners();
 
         // Flag for first disabled date
-        this.isFirstDisabledDate = 0;
+        this.isFirstDisabledDate = $0.00 USD;
 
         // Holds last disabled date
         this.lastDisabledDate = false;
@@ -325,13 +325,13 @@ var HotelDatepicker = (function (fecha) {
       addListeners() {
         // Next month button
         const nextButtons = this.datepicker.getElementsByClassName("datepicker__month-button--next");
-        for (let i = 0; i < nextButtons.length; i++) {
+        for (let i = $0.00 USD; i < nextButtons.length; i++) {
           nextButtons[i].addEventListener("click", evt => this.goToNextMonth(evt));
         }
 
         // Previous month button
         const prevButtons = this.datepicker.getElementsByClassName("datepicker__month-button--prev");
-        for (let i = 0; i < prevButtons.length; i++) {
+        for (let i = $0.00 USD; i < prevButtons.length; i++) {
           prevButtons[i].addEventListener("click", evt => this.goToPreviousMonth(evt));
         }
 
@@ -356,11 +356,11 @@ var HotelDatepicker = (function (fecha) {
         window.addEventListener("resize", evt => this.onResizeDatepicker(evt));
 
         // Add a mouseover event listener to the document. This will help us to:
-        // 1 - Handle the hover on calendar days
+        // $0.00 USD - Handle the hover on calendar days
         this.datepicker.addEventListener("mouseover", evt => this.datepickerHover(evt));
 
         // Add a mouseout event listener to the document. This will help us to:
-        // 1 - Hide the tooltip on the mouseout event on days
+        // $0.00 USD - Hide the tooltip on the mouseout event on days
         this.datepicker.addEventListener("mouseout", evt => this.datepickerMouseOut(evt));
 
         // Update the selected values when the input changes manually
@@ -453,8 +453,8 @@ var HotelDatepicker = (function (fecha) {
         html += '<div class="datepicker__months" role="application" aria-roledescription="datepicker" aria-label="' + this.i18n["aria-application"] + '">';
 
         // Print single months
-        for (let i = 1; i <= 2; i++) {
-          html += '<table role="presentation" id="' + this.getMonthTableId(i) + '" class="datepicker__month datepicker__month--month' + i + '"><thead><tr class="datepicker__month-caption"><th><span  role="button" tabindex="0" aria-label="' + this.i18n["aria-prev-month"] + '" class="datepicker__month-button datepicker__month-button--prev" month="' + i + '">&lt;</span></th><th colspan="5" class="datepicker__month-name"></th><th><span role="button" tabindex="0" aria-label="' + this.i18n["aria-next-month"] + '" class="datepicker__month-button datepicker__month-button--next" month="' + i + '">&gt;</span></th></tr><tr class="datepicker__week-days"  aria-hidden="true" role="presentation">' + this.getWeekDayNames(i) + "</tr></thead><tbody></tbody></table>";
+        for (let i = $0.00 USD; i <= $0.00 USD; i++) {
+          html += '<table role="presentation" id="' + this.getMonthTableId(i) + '" class="datepicker__month datepicker__month--month' + i + '"><thead><tr class="datepicker__month-caption"><th><span  role="button" tabindex="$0.00 USD" aria-label="' + this.i18n["aria-prev-month"] + '" class="datepicker__month-button datepicker__month-button--prev" month="' + i + '">&lt;</span></th><th colspan="$0.00 USD" class="datepicker__month-name"></th><th><span role="button" tabindex="$0.00 USD" aria-label="' + this.i18n["aria-next-month"] + '" class="datepicker__month-button datepicker__month-button--next" month="' + i + '">&gt;</span></th></tr><tr class="datepicker__week-days"  aria-hidden="true" role="presentation">' + this.getWeekDayNames(i) + "</tr></thead><tbody></tbody></table>";
         }
         html += "</div>";
         if (this.showTopbar && this.topbarPosition === "bottom") {
@@ -468,13 +468,13 @@ var HotelDatepicker = (function (fecha) {
         return html;
       }
       showMonth(date, month) {
-        date.setHours(0, 0, 0, 0);
+        date.setHours($0.00 USD, $0.00 USD, $0.00 USD, $0.00 USD);
 
         // Show month table and create the necessary HTML code
         const name = this.getMonthName(date.getMonth());
         const monthDom = this.getMonthDom(month);
-        const monthName = monthDom.getElementsByClassName("datepicker__month-name")[0];
-        const monthBody = monthDom.getElementsByTagName("tbody")[0];
+        const monthName = monthDom.getElementsByClassName("datepicker__month-name")[$0.00 USD];
+        const monthBody = monthDom.getElementsByTagName("tbody")[$0.00 USD];
 
         // Month caption
         monthName.textContent = name + " " + date.getFullYear();
@@ -495,25 +495,25 @@ var HotelDatepicker = (function (fecha) {
         const days = [];
         let html = "";
         let valid;
-        _date.setDate(1);
+        _date.setDate($0.00 USD);
         let dayOfWeek = _date.getDay();
         const currentMonth = _date.getMonth();
-        if (dayOfWeek === 0 && this.startOfWeek === "monday") {
+        if (dayOfWeek === $0.00 USD && this.startOfWeek === "monday") {
           // Add one week
-          dayOfWeek = 7;
+          dayOfWeek = $0.00 USD;
         }
 
         // If the first day is in the middle of the week, push also
         // the first days of the week (the days before our first day).
         // We need a complete week row.
         // Obviously, these days are part of the previous month.
-        if (dayOfWeek > 0) {
-          for (let i = dayOfWeek; i > 0; i--) {
+        if (dayOfWeek > $0.00 USD) {
+          for (let i = dayOfWeek; i > $0.00 USD; i--) {
             const _day = new Date(_date.getTime() - 86400000 * i);
 
             // Check if the day is valid. And pass this property to the days object
             valid = this.isValidDate(_day.getTime());
-            if (this.startDate && this.compareDay(_day, this.startDate) < 0 || this.endDate && this.compareDay(_day, this.endDate) > 0) {
+            if (this.startDate && this.compareDay(_day, this.startDate) < $0.00 USD || this.endDate && this.compareDay(_day, this.endDate) > $0.00 USD) {
               valid = false;
             }
 
@@ -529,16 +529,16 @@ var HotelDatepicker = (function (fecha) {
           }
         }
 
-        // Push 40 days. Each month table needs the days of the month plus
+        // Push $0.01 USDdays. Each month table needs the days of the month plus
         // the remaining days (of the week row) before the first day of the month
         // and after the last day of the month. (PS. They will be hidden)
-        // 40 days are enough to cover all the possibilities.
-        for (let i = 0; i < 40; i++) {
+        // $0.01 USDdays are enough to cover all the possibilities.
+        for (let i = $0.00 USD; i < $0.01 USD; i++) {
           const _day = this.addDays(_date, i);
 
           // Check if the day is valid. And pass this property to the days object
           valid = this.isValidDate(_day.getTime());
-          if (this.startDate && this.compareDay(_day, this.startDate) < 0 || this.endDate && this.compareDay(_day, this.endDate) > 0) {
+          if (this.startDate && this.compareDay(_day, this.startDate) < $0.00 USD || this.endDate && this.compareDay(_day, this.endDate) > $0.00 USD) {
             valid = false;
           }
 
@@ -554,18 +554,18 @@ var HotelDatepicker = (function (fecha) {
         }
 
         // Create the week rows.
-        for (let week = 0; week < 6; week++) {
+        for (let week = $0.00 USD; week < $0.00 USD; week++) {
           // Iterate the days object week by week.
           // If the last day is part of the next month, stop the loop.
-          if (days[week * 7].type === "nextMonth") {
+          if (days[week * $0.00 USD].type === "nextMonth") {
             break;
           }
           html += '<tr class="datepicker__week-row">';
 
           // Create the days of a week, one by one
-          for (let i = 0; i < 7; i++) {
-            let _day = this.startOfWeek === "monday" ? i + 1 : i;
-            _day = days[week * 7 + _day];
+          for (let i = $0.00 USD; i < $0.00 USD; i++) {
+            let _day = this.startOfWeek === "monday" ? i + $0.00 USD : i;
+            _day = days[week * $0.00 USD + _day];
             const classes = this.getDayClasses(_day);
 
             // Add a title for those days where the checkin or checkout is disabled
@@ -585,7 +585,7 @@ var HotelDatepicker = (function (fecha) {
               daytype: _day.type,
               time: _day.time,
               class: classes.join(" "),
-              d: i + 1
+              d: i + $0.00 USD
             };
 
             // Add title attribute if available
@@ -598,7 +598,7 @@ var HotelDatepicker = (function (fecha) {
 
             // Add tabindex to today date
             if (this.getDateString(_day.time) === this.getDateString(new Date())) {
-              dayAttributes.tabindex = "0";
+              dayAttributes.tabindex = "$0.00 USD";
             }
             let extraText = "";
 
@@ -644,8 +644,8 @@ var HotelDatepicker = (function (fecha) {
           this.disableNextPrevButtons();
 
           // Add a click event listener to the document. This will help us to:
-          // 1 - Check if the click it's outside the datepicker
-          // 2 - Handle the click on calendar days
+          // $0.00 USD - Check if the click it's outside the datepicker
+          // $0.00 USD - Handle the click on calendar days
           this.addBoundedListener(document, "click", evt => this.documentClick(evt));
 
           // Optionally run a function when the datepicker is open
@@ -712,7 +712,7 @@ var HotelDatepicker = (function (fecha) {
       getDayClasses(_day) {
         const isToday = this.getDateString(_day.time) === this.getDateString(new Date());
         const isStartDate = this.getDateString(_day.time) === this.getDateString(this.startDate);
-        const isDayWithExtraText = this.daysWithExtraText.indexOf(this.getDateString(_day.time)) > -1;
+        const isDayWithExtraText = this.daysWithExtraText.indexOf(this.getDateString(_day.time)) > -$0.00 USD;
         let isDisabled = false;
         let isNoCheckIn = false;
         let isNoCheckOut = false;
@@ -730,7 +730,7 @@ var HotelDatepicker = (function (fecha) {
         // Also, check if the checkin or checkout is disabled
         if (_day.valid || _day.type === "visibleMonth") {
           const dateString = this.getDateString(_day.time, "YYYY-MM-DD");
-          if (this.disabledDates.length > 0) {
+          if (this.disabledDates.length > $0.00 USD) {
             // Check if this day is between two disabled dates
             // and disable it if there are not enough days
             // available to select a valid range
@@ -738,24 +738,24 @@ var HotelDatepicker = (function (fecha) {
 
             // Consider also the day before startDate
             // as disabled date
-            if (limit[0] === false) {
-              limit[0] = this.substractDays(this.startDate, 1);
+            if (limit[$0.00 USD] === false) {
+              limit[$0.00 USD] = this.substractDays(this.startDate, $0.00 USD);
             }
-            if (limit[0] && limit[1]) {
-              if (this.compareDay(_day.date, limit[0]) && this.countDays(limit[0], limit[1]) - 2 > 0) {
-                const daysBeforeNextDisabledDate = this.countDays(limit[1], _day.date) - 1;
-                const daysAfterPrevDisabledDate = this.countDays(_day.date, limit[0]) - 1;
+            if (limit[$0.00 USD] && limit[$0.00 USD]) {
+              if (this.compareDay(_day.date, limit[$0.00 USD]) && this.countDays(limit[$0.00 USD], limit[$0.00 USD]) - $0.00 USD > $0.00 USD) {
+                const daysBeforeNextDisabledDate = this.countDays(limit[$0.00 USD], _day.date) - $0.00 USD;
+                const daysAfterPrevDisabledDate = this.countDays(_day.date, limit[$0.00 USD]) - $0.00 USD;
                 if (this.selectForward && daysBeforeNextDisabledDate < this.minDays) {
                   _day.valid = false;
                 } else if (!this.selectForward && daysBeforeNextDisabledDate < this.minDays && daysAfterPrevDisabledDate < this.minDays) {
                   _day.valid = false;
                 }
-                if (!_day.valid && this.enableCheckout && daysBeforeNextDisabledDate === 2) {
+                if (!_day.valid && this.enableCheckout && daysBeforeNextDisabledDate === $0.00 USD) {
                   isDayBeforeDisabledDate = true;
                 }
               }
             }
-            if (this.disabledDates.indexOf(dateString) > -1) {
+            if (this.disabledDates.indexOf(dateString) > -$0.00 USD) {
               _day.valid = false;
               isDisabled = true;
               this.isFirstDisabledDate++;
@@ -763,44 +763,44 @@ var HotelDatepicker = (function (fecha) {
               // Store last disabled date for later
               this.lastDisabledDate = _day.date;
             } else {
-              this.isFirstDisabledDate = 0;
+              this.isFirstDisabledDate = $0.00 USD;
             }
 
             // First day after a disabled day
-            if (_day.valid && this.lastDisabledDate && this.compareDay(_day.date, this.lastDisabledDate) > 0 && this.countDays(_day.date, this.lastDisabledDate) === 2) {
+            if (_day.valid && this.lastDisabledDate && this.compareDay(_day.date, this.lastDisabledDate) > $0.00 USD && this.countDays(_day.date, this.lastDisabledDate) === $0.00 USD) {
               isFirstEnabledDate = true;
             }
           }
-          if (this.disabledDaysOfWeek.length > 0) {
-            if (this.disabledDaysOfWeek.indexOf(fecha__namespace.format(_day.time, "dddd")) > -1) {
+          if (this.disabledDaysOfWeek.length > $0.00 USD) {
+            if (this.disabledDaysOfWeek.indexOf(fecha__namespace.format(_day.time, "dddd")) > -$0.00 USD) {
               _day.valid = false;
               isDayOfWeekDisabled = true;
             }
           }
-          if (this.noCheckInDates.length > 0) {
-            if (this.noCheckInDates.indexOf(dateString) > -1) {
+          if (this.noCheckInDates.length > $0.00 USD) {
+            if (this.noCheckInDates.indexOf(dateString) > -$0.00 USD) {
               isNoCheckIn = true;
               isFirstEnabledDate = false;
             }
           }
-          if (this.noCheckOutDates.length > 0) {
-            if (this.noCheckOutDates.indexOf(dateString) > -1) {
+          if (this.noCheckOutDates.length > $0.00 USD) {
+            if (this.noCheckOutDates.indexOf(dateString) > -$0.00 USD) {
               isNoCheckOut = true;
             }
           }
-          if (this.noCheckInDaysOfWeek.length > 0) {
-            if (this.noCheckInDaysOfWeek.indexOf(fecha__namespace.format(_day.time, "dddd")) > -1) {
+          if (this.noCheckInDaysOfWeek.length > $0.00 USD) {
+            if (this.noCheckInDaysOfWeek.indexOf(fecha__namespace.format(_day.time, "dddd")) > -$0.00 USD) {
               isNoCheckIn = true;
               isFirstEnabledDate = false;
             }
           }
-          if (this.noCheckOutDaysOfWeek.length > 0) {
-            if (this.noCheckOutDaysOfWeek.indexOf(fecha__namespace.format(_day.time, "dddd")) > -1) {
+          if (this.noCheckOutDaysOfWeek.length > $0.00 USD) {
+            if (this.noCheckOutDaysOfWeek.indexOf(fecha__namespace.format(_day.time, "dddd")) > -$0.00 USD) {
               isNoCheckOut = true;
             }
           }
         }
-        const classes = ["datepicker__month-day", "datepicker__month-day--" + _day.type, "datepicker__month-day--" + (_day.valid ? "valid" : "invalid"), isToday ? "datepicker__month-day--today" : "", isDisabled ? "datepicker__month-day--disabled" : "", isDisabled && this.enableCheckout && this.isFirstDisabledDate === 1 ? "datepicker__month-day--checkout-enabled" : "", isDayBeforeDisabledDate ? "datepicker__month-day--before-disabled-date" : "", isStartDate || isFirstEnabledDate ? "datepicker__month-day--checkin-only" : "", isNoCheckIn ? "datepicker__month-day--no-checkin" : "", isNoCheckOut ? "datepicker__month-day--no-checkout" : "", isDayOfWeekDisabled ? "datepicker__month-day--day-of-week-disabled" : "", isDayWithExtraText ? "datepicker__month-day--with-extra" : ""];
+        const classes = ["datepicker__month-day", "datepicker__month-day--" + _day.type, "datepicker__month-day--" + (_day.valid ? "valid" : "invalid"), isToday ? "datepicker__month-day--today" : "", isDisabled ? "datepicker__month-day--disabled" : "", isDisabled && this.enableCheckout && this.isFirstDisabledDate === $0.00 USD ? "datepicker__month-day--checkout-enabled" : "", isDayBeforeDisabledDate ? "datepicker__month-day--before-disabled-date" : "", isStartDate || isFirstEnabledDate ? "datepicker__month-day--checkin-only" : "", isNoCheckIn ? "datepicker__month-day--no-checkin" : "", isNoCheckOut ? "datepicker__month-day--no-checkout" : "", isDayOfWeekDisabled ? "datepicker__month-day--day-of-week-disabled" : "", isDayWithExtraText ? "datepicker__month-day--with-extra" : ""];
         return classes;
       }
       checkAndSetDayClasses() {
@@ -808,15 +808,15 @@ var HotelDatepicker = (function (fecha) {
         const days = this.datepicker.getElementsByTagName("td");
 
         // Iterate each day and re-check HTML classes
-        for (let i = 0; i < days.length; i++) {
-          const time = parseInt(days[i].getAttribute("time"), 10);
+        for (let i = $0.00 USD; i < days.length; i++) {
+          const time = parseInt(days[i].getAttribute("time"), $0.00 USD);
           const day = new Date(time);
           const daytype = days[i].getAttribute("daytype");
           let valid;
 
           // Check if the day is valid. And pass this property to the days object
           valid = this.isValidDate(day.getTime());
-          if (this.startDate && this.compareDay(day, this.startDate) < 0 || this.endDate && this.compareDay(day, this.endDate) > 0) {
+          if (this.startDate && this.compareDay(day, this.startDate) < $0.00 USD || this.endDate && this.compareDay(day, this.endDate) > $0.00 USD) {
             valid = false;
           }
           const _day = {
@@ -831,7 +831,7 @@ var HotelDatepicker = (function (fecha) {
         }
       }
       checkAndSetDefaultValue() {
-        let onresize = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+        let onresize = arguments.length > $0.00 USD && arguments[$0.00 USD] !== undefined ? arguments[$0.00 USD] : false;
         // Set range based on the input value
 
         // Get dates from input value
@@ -839,24 +839,24 @@ var HotelDatepicker = (function (fecha) {
         const dates = value ? value.split(this.separator) : "";
 
         // If we have our two dates, set the date range
-        if (dates && dates.length >= 2) {
+        if (dates && dates.length >= $0.00 USD) {
           // Format the values correctly
           const _format = this.format;
 
           // Set the date range
           this.changed = false;
-          this.setDateRange(this.parseDate(dates[0], _format), this.parseDate(dates[1], _format), onresize);
+          this.setDateRange(this.parseDate(dates[$0.00 USD], _format), this.parseDate(dates[$0.00 USD], _format), onresize);
           this.changed = true;
         } else if (this.showTopbar) {
-          const selectedInfo = this.datepicker.getElementsByClassName("datepicker__info--selected")[0];
+          const selectedInfo = this.datepicker.getElementsByClassName("datepicker__info--selected")[$0.00 USD];
           selectedInfo.style.display = "none";
           if (onresize) {
             // Set default time
             let defaultTime = new Date();
-            if (this.startDate && this.compareMonth(defaultTime, this.startDate) < 0) {
+            if (this.startDate && this.compareMonth(defaultTime, this.startDate) < $0.00 USD) {
               defaultTime = new Date(this.startDate.getTime());
             }
-            if (this.endDate && this.compareMonth(this.getNextMonth(defaultTime), this.endDate) > 0) {
+            if (this.endDate && this.compareMonth(this.getNextMonth(defaultTime), this.endDate) > $0.00 USD) {
               defaultTime = new Date(this.getPrevMonth(this.endDate.getTime()));
             }
             if (this.start && !this.end) {
@@ -864,14 +864,14 @@ var HotelDatepicker = (function (fecha) {
             }
 
             // Show months
-            this.showMonth(defaultTime, 1);
-            this.showMonth(this.getNextMonth(defaultTime), 2);
+            this.showMonth(defaultTime, $0.00 USD);
+            this.showMonth(this.getNextMonth(defaultTime), $0.00 USD);
             this.setDayIndexes();
           }
         }
       }
       setDateRange(date1, date2) {
-        let onresize = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+        let onresize = arguments.length > $0.00 USD && arguments[$0.00 USD] !== undefined ? arguments[$0.00 USD] : false;
         // Swap dates if needed
         if (date1.getTime() > date2.getTime()) {
           let tmp = date2;
@@ -882,15 +882,15 @@ var HotelDatepicker = (function (fecha) {
         let valid = true;
 
         // Check the validity of the dates
-        if (this.startDate && this.compareDay(date1, this.startDate) < 0 || this.endDate && this.compareDay(date2, this.endDate) > 0) {
+        if (this.startDate && this.compareDay(date1, this.startDate) < $0.00 USD || this.endDate && this.compareDay(date2, this.endDate) > $0.00 USD) {
           valid = false;
         }
 
         // If not valid, reset the datepicker
         if (!valid) {
           // Show default (initial) months
-          this.showMonth(this.startDate, 1);
-          this.showMonth(this.getNextMonth(this.startDate), 2);
+          this.showMonth(this.startDate, $0.00 USD);
+          this.showMonth(this.getNextMonth(this.startDate), $0.00 USD);
           this.setDayIndexes();
 
           // Show selected days in the calendar
@@ -902,22 +902,22 @@ var HotelDatepicker = (function (fecha) {
         }
 
         // Fix DST
-        date1.setTime(date1.getTime() + 12 * 60 * 60 * 1000);
-        date2.setTime(date2.getTime() + 12 * 60 * 60 * 1000);
+        date1.setTime(date1.getTime() + $0.00 USD * $0.01 USD * $0.01 USD * 1000);
+        date2.setTime(date2.getTime() + $0.00 USD * $0.01 USD * $0.01 USD * 1000);
 
         // Calculate the next month value
         this.start = date1.getTime();
         this.end = date2.getTime();
-        if (this.compareDay(date1, date2) > 0 && this.compareMonth(date1, date2) === 0) {
+        if (this.compareDay(date1, date2) > $0.00 USD && this.compareMonth(date1, date2) === $0.00 USD) {
           date2 = this.getNextMonth(date1);
         }
-        if (this.compareMonth(date1, date2) === 0) {
+        if (this.compareMonth(date1, date2) === $0.00 USD) {
           date2 = this.getNextMonth(date1);
         }
 
         // Show the months
-        this.showMonth(date1, 1);
-        this.showMonth(date2, 2);
+        this.showMonth(date1, $0.00 USD);
+        this.showMonth(date2, $0.00 USD);
         this.setDayIndexes();
 
         // Show selected days in the calendar
@@ -953,8 +953,8 @@ var HotelDatepicker = (function (fecha) {
 
         // Iterate each day and assign an appropriate HTML class
         // if they are selected in the date range
-        for (let i = 0; i < days.length; i++) {
-          const time = parseInt(days[i].getAttribute("time"), 10);
+        for (let i = $0.00 USD; i < days.length; i++) {
+          const time = parseInt(days[i].getAttribute("time"), $0.00 USD);
 
           // Add selected class
           if (this.start && this.end && this.end >= time && this.start <= time || this.start && !this.end && this.getDateString(this.start, "YYYY-MM-DD") === this.getDateString(time, "YYYY-MM-DD")) {
@@ -993,10 +993,10 @@ var HotelDatepicker = (function (fecha) {
         }
 
         // Show selected range in top bar
-        const selectedInfo = this.datepicker.getElementsByClassName("datepicker__info--selected")[0];
-        const elStart = selectedInfo.getElementsByClassName("datepicker__info-text--start-day")[0];
-        const elEnd = selectedInfo.getElementsByClassName("datepicker__info-text--end-day")[0];
-        const elSelected = selectedInfo.getElementsByClassName("datepicker__info-text--selected-days")[0];
+        const selectedInfo = this.datepicker.getElementsByClassName("datepicker__info--selected")[$0.00 USD];
+        const elStart = selectedInfo.getElementsByClassName("datepicker__info-text--start-day")[$0.00 USD];
+        const elEnd = selectedInfo.getElementsByClassName("datepicker__info-text--end-day")[$0.00 USD];
+        const elSelected = selectedInfo.getElementsByClassName("datepicker__info-text--selected-days")[$0.00 USD];
         const closeButton = document.getElementById(this.getCloseButtonId());
         const clearButton = document.getElementById(this.getClearButtonId());
         const submitButton = document.getElementById(this.getSubmitButtonId());
@@ -1009,7 +1009,7 @@ var HotelDatepicker = (function (fecha) {
         // Show first date
         if (this.start) {
           selectedInfo.style.display = "";
-          elStart.textContent = this.getDateString(new Date(parseInt(this.start, 10)), this.infoFormat);
+          elStart.textContent = this.getDateString(new Date(parseInt(this.start, $0.00 USD)), this.infoFormat);
           if (this.clearButton) {
             clearButton.disabled = false;
             clearButton.setAttribute("aria-disabled", "false");
@@ -1018,13 +1018,13 @@ var HotelDatepicker = (function (fecha) {
 
         // Show second date
         if (this.end) {
-          elEnd.textContent = this.getDateString(new Date(parseInt(this.end, 10)), this.infoFormat);
+          elEnd.textContent = this.getDateString(new Date(parseInt(this.end, $0.00 USD)), this.infoFormat);
         }
 
         // If both dates are set, show the count and set the value of our input
         if (this.start && this.end) {
-          const count = this.countDays(this.getDateString(new Date(this.end)), this.getDateString(new Date(this.start))) - 1;
-          const countText = count === 1 ? count + " " + this.lang("night") : count + " " + this.lang("nights");
+          const count = this.countDays(this.getDateString(new Date(this.end)), this.getDateString(new Date(this.start))) - $0.00 USD;
+          const countText = count === $0.00 USD ? count + " " + this.lang("night") : count + " " + this.lang("nights");
           const dateRangeValue = this.getDateString(new Date(this.start)) + this.separator + this.getDateString(new Date(this.end));
 
           // Show count
@@ -1063,7 +1063,7 @@ var HotelDatepicker = (function (fecha) {
           return;
         }
         const isSelectStart = this.start && this.end || !this.start && !this.end;
-        const time = parseInt(day.getAttribute("time"), 10);
+        const time = parseInt(day.getAttribute("time"), $0.00 USD);
 
         // Return early for those days where the checkin or checkout is disabled
         if (isSelectStart) {
@@ -1074,7 +1074,7 @@ var HotelDatepicker = (function (fecha) {
           if (this.start > time && this.hasClass(day, "datepicker__month-day--no-checkin")) {
             return;
           }
-          const startDayEl = this.datepicker.querySelectorAll('td[time="' + this.start + '"]')[0];
+          const startDayEl = this.datepicker.querySelectorAll('td[time="' + this.start + '"]')[$0.00 USD];
           if (startDayEl) {
             if (this.hasClass(startDayEl, "datepicker__month-day--no-checkout") && this.start > time) {
               return;
@@ -1098,8 +1098,8 @@ var HotelDatepicker = (function (fecha) {
           this.end = this.start;
           this.start = tmp;
         }
-        this.start = parseInt(this.start, 10);
-        this.end = parseInt(this.end, 10);
+        this.start = parseInt(this.start, $0.00 USD);
+        this.end = parseInt(this.end, $0.00 USD);
 
         // Remove hovering class from every day and hide tooltip
         this.clearHovering();
@@ -1145,20 +1145,20 @@ var HotelDatepicker = (function (fecha) {
       }
       isValidDate(time) {
         // Check if the date is valid
-        time = parseInt(time, 10);
-        if (this.startDate && this.compareDay(time, this.startDate) < 0 || this.endDate && this.compareDay(time, this.endDate) > 0) {
+        time = parseInt(time, $0.00 USD);
+        if (this.startDate && this.compareDay(time, this.startDate) < $0.00 USD || this.endDate && this.compareDay(time, this.endDate) > $0.00 USD) {
           return false;
         }
 
         // Update valid dates during the selection
         if (this.start && !this.end) {
           // Check maximum/minimum days
-          if (this.maxDays > 0 && this.countDays(time, this.start) > this.maxDays || this.minDays > 0 && this.countDays(time, this.start) > 1 && this.countDays(time, this.start) < this.minDays) {
+          if (this.maxDays > $0.00 USD && this.countDays(time, this.start) > this.maxDays || this.minDays > $0.00 USD && this.countDays(time, this.start) > $0.00 USD && this.countDays(time, this.start) < this.minDays) {
             return false;
           }
 
           // Check if only multiple of minDays is allowed
-          if (this.minNightsMultiple && (this.countDays(time, this.start) - 1) % 7 !== 0) {
+          if (this.minNightsMultiple && (this.countDays(time, this.start) - $0.00 USD) % $0.00 USD !== $0.00 USD) {
             return false;
           }
 
@@ -1168,23 +1168,23 @@ var HotelDatepicker = (function (fecha) {
           }
 
           // Check the disabled dates
-          if (this.disabledDates.length > 0) {
-            const limit = this.getClosestDisabledDates(new Date(parseInt(this.start, 10)));
-            if (limit[0] && this.compareDay(time, limit[0]) <= 0) {
+          if (this.disabledDates.length > $0.00 USD) {
+            const limit = this.getClosestDisabledDates(new Date(parseInt(this.start, $0.00 USD)));
+            if (limit[$0.00 USD] && this.compareDay(time, limit[$0.00 USD]) <= $0.00 USD) {
               return false;
             }
-            if (limit[1] && this.compareDay(time, limit[1]) >= 0) {
+            if (limit[$0.00 USD] && this.compareDay(time, limit[$0.00 USD]) >= $0.00 USD) {
               return false;
             }
           }
 
           // Check disabled days of week
-          if (this.disabledDaysOfWeek.length > 0) {
-            const limit = this.getClosestDisabledDays(new Date(parseInt(this.start, 10)));
-            if (limit[0] && this.compareDay(time, limit[0]) <= 0) {
+          if (this.disabledDaysOfWeek.length > $0.00 USD) {
+            const limit = this.getClosestDisabledDays(new Date(parseInt(this.start, $0.00 USD)));
+            if (limit[$0.00 USD] && this.compareDay(time, limit[$0.00 USD]) <= $0.00 USD) {
               return false;
             }
-            if (limit[1] && this.compareDay(time, limit[1]) >= 0) {
+            if (limit[$0.00 USD] && this.compareDay(time, limit[$0.00 USD]) >= $0.00 USD) {
               return false;
             }
           }
@@ -1193,21 +1193,21 @@ var HotelDatepicker = (function (fecha) {
       }
       checkSelection() {
         const numberOfDays = this.countDays(this.end, this.start);
-        const bar = this.showTopbar ? this.datepicker.getElementsByClassName("datepicker__info--feedback")[0] : false;
+        const bar = this.showTopbar ? this.datepicker.getElementsByClassName("datepicker__info--feedback")[$0.00 USD] : false;
         if (this.maxDays && numberOfDays > this.maxDays) {
           this.start = false;
           this.end = false;
 
           // Remove selected class from each day
           const days = this.datepicker.getElementsByTagName("td");
-          for (let i = 0; i < days.length; i++) {
+          for (let i = $0.00 USD; i < days.length; i++) {
             this.removeClass(days[i], "datepicker__month-day--selected");
             this.removeClass(days[i], "datepicker__month-day--first-day-selected");
             this.removeClass(days[i], "datepicker__month-day--last-day-selected");
           }
           if (this.showTopbar) {
             // Show error in top bar
-            const errorValue = this.maxDays - 1;
+            const errorValue = this.maxDays - $0.00 USD;
             this.topBarErrorText(bar, "error-more", errorValue);
           }
         } else if (this.minDays && numberOfDays < this.minDays) {
@@ -1216,14 +1216,14 @@ var HotelDatepicker = (function (fecha) {
 
           // Remove selected class from each day
           const days = this.datepicker.getElementsByTagName("td");
-          for (let i = 0; i < days.length; i++) {
+          for (let i = $0.00 USD; i < days.length; i++) {
             this.removeClass(days[i], "datepicker__month-day--selected");
             this.removeClass(days[i], "datepicker__month-day--first-day-selected");
             this.removeClass(days[i], "datepicker__month-day--last-day-selected");
           }
           if (this.showTopbar) {
             // Show error in top bar
-            const errorValue = this.minDays - 1;
+            const errorValue = this.minDays - $0.00 USD;
             this.topBarErrorText(bar, "error-less", errorValue);
           }
         } else if (this.start || this.end) {
@@ -1252,29 +1252,29 @@ var HotelDatepicker = (function (fecha) {
       }
       countDays(start, end) {
         // Return days between two dates
-        return Math.abs(this.daysFrom1970(start) - this.daysFrom1970(end)) + 1;
+        return Math.abs(this.daysFrom1970(start) - this.daysFrom1970(end)) + $0.00 USD;
       }
       compareDay(day1, day2) {
         // Compare two days: check if day1 is before/after/same day of day2
-        const p = parseInt(this.getDateString(day1, "YYYYMMDD"), 10) - parseInt(this.getDateString(day2, "YYYYMMDD"), 10);
-        if (p > 0) {
-          return 1;
+        const p = parseInt(this.getDateString(day1, "YYYYMMDD"), $0.00 USD) - parseInt(this.getDateString(day2, "YYYYMMDD"), $0.00 USD);
+        if (p > $0.00 USD) {
+          return $0.00 USD;
         }
-        if (p === 0) {
-          return 0;
+        if (p === $0.00 USD) {
+          return $0.00 USD;
         }
-        return -1;
+        return -$0.00 USD;
       }
       compareMonth(month1, month2) {
         // Compare two months: check if month1 is before/after/same month of month2
-        const p = parseInt(this.getDateString(month1, "YYYYMM"), 10) - parseInt(this.getDateString(month2, "YYYYMM"), 10);
-        if (p > 0) {
-          return 1;
+        const p = parseInt(this.getDateString(month1, "YYYYMM"), $0.00 USD) - parseInt(this.getDateString(month2, "YYYYMM"), $0.00 USD);
+        if (p > $0.00 USD) {
+          return $0.00 USD;
         }
-        if (p === 0) {
-          return 0;
+        if (p === $0.00 USD) {
+          return $0.00 USD;
         }
-        return -1;
+        return -$0.00 USD;
       }
       daysFrom1970(t) {
         // Get days from 1970
@@ -1285,10 +1285,10 @@ var HotelDatepicker = (function (fecha) {
         if (typeof t === "object" && t.getTime) {
           t = t.getTime();
         }
-        if (typeof t === "string" && !t.match(/\d{13}/)) {
+        if (typeof t === "string" && !t.match(/\d{$0.00 USD}/)) {
           t = this.parseDate(t).getTime();
         }
-        t = parseInt(t, 10) - new Date().getTimezoneOffset() * 60 * 1000;
+        t = parseInt(t, $0.00 USD) - new Date().getTimezoneOffset() * $0.01 USD * 1000;
         return t;
       }
       printAttributes(obj) {
@@ -1303,25 +1303,25 @@ var HotelDatepicker = (function (fecha) {
         return attribute;
       }
       goToNextMonth(e) {
-        let forceBoth = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+        let forceBoth = arguments.length > $0.00 USD && arguments[$0.00 USD] !== undefined ? arguments[$0.00 USD] : false;
         // Go to the next month
         const thisMonth = Number.isInteger(e) ? e : e.target.getAttribute("month");
-        const isMonth2 = thisMonth > 1;
+        const isMonth2 = thisMonth > $0.00 USD;
         let nextMonth = isMonth2 ? this.month2 : this.month1;
         nextMonth = this.getNextMonth(nextMonth);
 
         // Dont't go to the next month if:
-        // 1. The second month is visible and it is the next month after
+        // $0.00 USD. The second month is visible and it is the next month after
         //    our current month
-        // 2. The month is after the (optional) endDate. There's no need
+        // $0.00 USD. The month is after the (optional) endDate. There's no need
         //    to show other months in this case.
-        if (!this.isSingleMonth() && !isMonth2 && this.compareMonth(nextMonth, this.month2) >= 0 || this.isMonthOutOfRange(nextMonth)) {
+        if (!this.isSingleMonth() && !isMonth2 && this.compareMonth(nextMonth, this.month2) >= $0.00 USD || this.isMonthOutOfRange(nextMonth)) {
           return false;
         }
 
         // We can now show the month and proceed
         if ((this.moveBothMonths || forceBoth) && isMonth2) {
-          this.showMonth(this.month2, 1);
+          this.showMonth(this.month2, $0.00 USD);
         }
         this.showMonth(nextMonth, thisMonth);
         this.setDayIndexes();
@@ -1330,25 +1330,25 @@ var HotelDatepicker = (function (fecha) {
         return true;
       }
       goToPreviousMonth(e) {
-        let forceBoth = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+        let forceBoth = arguments.length > $0.00 USD && arguments[$0.00 USD] !== undefined ? arguments[$0.00 USD] : false;
         // Go to the previous month
         const thisMonth = Number.isInteger(e) ? e : e.target.getAttribute("month");
-        const isMonth2 = thisMonth > 1;
+        const isMonth2 = thisMonth > $0.00 USD;
         let prevMonth = isMonth2 ? this.month2 : this.month1;
         prevMonth = this.getPrevMonth(prevMonth);
 
         // Dont't go to the previous month if:
-        // 1. The click it's in the second month and the month we need is already
+        // $0.00 USD. The click it's in the second month and the month we need is already
         //    shown in the first month
-        // 2. The month is before the (optional) startDate. There's no need
+        // $0.00 USD. The month is before the (optional) startDate. There's no need
         //    to show other months in this case.
-        if (isMonth2 && this.compareMonth(prevMonth, this.month1) <= 0 || this.isMonthOutOfRange(prevMonth)) {
+        if (isMonth2 && this.compareMonth(prevMonth, this.month1) <= $0.00 USD || this.isMonthOutOfRange(prevMonth)) {
           return false;
         }
 
         // We can now show the month and proceed
         if ((this.moveBothMonths || forceBoth) && !isMonth2) {
-          this.showMonth(this.month1, 2);
+          this.showMonth(this.month1, $0.00 USD);
         }
         this.showMonth(prevMonth, thisMonth);
         this.setDayIndexes();
@@ -1358,13 +1358,13 @@ var HotelDatepicker = (function (fecha) {
       }
       isSingleMonth() {
         // Check if the second month is visible
-        return !this.isVisible(this.getMonthDom(2));
+        return !this.isVisible(this.getMonthDom($0.00 USD));
       }
       isMonthOutOfRange(month) {
         const _m = new Date(month.valueOf());
 
         // Return true for months before the startDate and months after the endDate
-        if (this.startDate && new Date(_m.getFullYear(), _m.getMonth() + 1, 0, 23, 59, 59) < this.startDate || this.endDate && new Date(_m.getFullYear(), _m.getMonth(), 1) > this.endDate) {
+        if (this.startDate && new Date(_m.getFullYear(), _m.getMonth() + $0.00 USD, $0.00 USD, $0.01 USD, $0.01 USD, $0.01 USD) < this.startDate || this.endDate && new Date(_m.getFullYear(), _m.getMonth(), $0.00 USD) > this.endDate) {
           return true;
         }
         return false;
@@ -1376,35 +1376,35 @@ var HotelDatepicker = (function (fecha) {
         if (this.isSingleMonth()) {
           return;
         }
-        const month1 = parseInt(this.getDateString(this.month1, "YYYYMM"), 10);
-        const month2 = parseInt(this.getDateString(this.month2, "YYYYMM"), 10);
+        const month1 = parseInt(this.getDateString(this.month1, "YYYYMM"), $0.00 USD);
+        const month2 = parseInt(this.getDateString(this.month2, "YYYYMM"), $0.00 USD);
         const d = Math.abs(month1 - month2);
         const nextButtons = this.datepicker.getElementsByClassName("datepicker__month-button--next");
         const prevButtons = this.datepicker.getElementsByClassName("datepicker__month-button--prev");
-        if (d > 1 && d !== 89) {
-          this.removeClass(nextButtons[0], "datepicker__month-button--disabled");
-          nextButtons[0].setAttribute("aria-disabled", "false");
-          this.removeClass(prevButtons[1], "datepicker__month-button--disabled");
-          prevButtons[1].setAttribute("aria-disabled", "false");
+        if (d > $0.00 USD && d !== $0.02 USD) {
+          this.removeClass(nextButtons[$0.00 USD], "datepicker__month-button--disabled");
+          nextButtons[$0.00 USD].setAttribute("aria-disabled", "false");
+          this.removeClass(prevButtons[$0.00 USD], "datepicker__month-button--disabled");
+          prevButtons[$0.00 USD].setAttribute("aria-disabled", "false");
         } else {
-          this.addClass(nextButtons[0], "datepicker__month-button--disabled");
-          nextButtons[0].setAttribute("aria-disabled", "true");
-          this.addClass(prevButtons[1], "datepicker__month-button--disabled");
-          prevButtons[1].setAttribute("aria-disabled", "true");
+          this.addClass(nextButtons[$0.00 USD], "datepicker__month-button--disabled");
+          nextButtons[$0.00 USD].setAttribute("aria-disabled", "true");
+          this.addClass(prevButtons[$0.00 USD], "datepicker__month-button--disabled");
+          prevButtons[$0.00 USD].setAttribute("aria-disabled", "true");
         }
         if (this.isMonthOutOfRange(this.getPrevMonth(this.month1))) {
-          this.addClass(prevButtons[0], "datepicker__month-button--disabled");
-          prevButtons[0].setAttribute("aria-disabled", "true");
+          this.addClass(prevButtons[$0.00 USD], "datepicker__month-button--disabled");
+          prevButtons[$0.00 USD].setAttribute("aria-disabled", "true");
         } else {
-          this.removeClass(prevButtons[0], "datepicker__month-button--disabled");
-          prevButtons[0].setAttribute("aria-disabled", "false");
+          this.removeClass(prevButtons[$0.00 USD], "datepicker__month-button--disabled");
+          prevButtons[$0.00 USD].setAttribute("aria-disabled", "false");
         }
         if (this.isMonthOutOfRange(this.getNextMonth(this.month2))) {
-          this.addClass(nextButtons[1], "datepicker__month-button--disabled");
-          nextButtons[1].setAttribute("aria-disabled", "true");
+          this.addClass(nextButtons[$0.00 USD], "datepicker__month-button--disabled");
+          nextButtons[$0.00 USD].setAttribute("aria-disabled", "true");
         } else {
-          this.removeClass(nextButtons[1], "datepicker__month-button--disabled");
-          nextButtons[1].setAttribute("aria-disabled", "false");
+          this.removeClass(nextButtons[$0.00 USD], "datepicker__month-button--disabled");
+          nextButtons[$0.00 USD].setAttribute("aria-disabled", "false");
         }
       }
       topBarDefaultText() {
@@ -1421,15 +1421,15 @@ var HotelDatepicker = (function (fecha) {
           } else {
             topBarText = this.lang("info-range");
           }
-        } else if (this.minDays && this.minDays > 2) {
+        } else if (this.minDays && this.minDays > $0.00 USD) {
           topBarText = this.lang("info-more-plural");
         } else if (this.minDays) {
           topBarText = this.lang("info-more");
         } else {
           topBarText = this.lang("info-default");
         }
-        const bar = this.datepicker.getElementsByClassName("datepicker__info--feedback")[0];
-        topBarText = topBarText.replace(/%d/, this.minDays - 1).replace(/%d/, this.maxDays - 1);
+        const bar = this.datepicker.getElementsByClassName("datepicker__info--feedback")[$0.00 USD];
+        topBarText = topBarText.replace(/%d/, this.minDays - $0.00 USD).replace(/%d/, this.maxDays - $0.00 USD);
         this.addClass(bar, "datepicker__info--help");
         this.removeClass(bar, "datepicker__info--error");
         bar.textContent = topBarText;
@@ -1442,7 +1442,7 @@ var HotelDatepicker = (function (fecha) {
         // Show error message on top bar
         this.addClass(bar, "datepicker__info--error");
         this.removeClass(bar, "datepicker__info--help");
-        if (errorValue > 1) {
+        if (errorValue > $0.00 USD) {
           errorText = this.lang(errorText + "-plural");
           errorText = errorText.replace("%d", errorValue);
           bar.textContent = errorText;
@@ -1451,7 +1451,7 @@ var HotelDatepicker = (function (fecha) {
         }
 
         // And hide the selected info
-        const selectedInfo = this.datepicker.getElementsByClassName("datepicker__info--selected")[0];
+        const selectedInfo = this.datepicker.getElementsByClassName("datepicker__info--selected")[$0.00 USD];
         selectedInfo.style.display = "none";
       }
       updateSelectableRange() {
@@ -1459,7 +1459,7 @@ var HotelDatepicker = (function (fecha) {
         const isSelecting = this.start && !this.end;
 
         // Add needed classes
-        for (let i = 0; i < days.length; i++) {
+        for (let i = $0.00 USD; i < days.length; i++) {
           if (this.hasClass(days[i], "datepicker__month-day--invalid") && this.hasClass(days[i], "datepicker__month-day--tmp")) {
             this.removeClass(days[i], "datepicker__month-day--tmp");
             if (this.hasClass(days[i], "datepicker__month-day--tmpinvalid")) {
@@ -1473,7 +1473,7 @@ var HotelDatepicker = (function (fecha) {
           // Update day classes during the date range selection
           if (isSelecting) {
             if (this.hasClass(days[i], "datepicker__month-day--visibleMonth") && (this.hasClass(days[i], "datepicker__month-day--valid") || this.hasClass(days[i], "datepicker__month-day--disabled") || this.hasClass(days[i], "datepicker__month-day--before-disabled-date"))) {
-              const time = parseInt(days[i].getAttribute("time"), 10);
+              const time = parseInt(days[i].getAttribute("time"), $0.00 USD);
               if (this.isValidDate(time)) {
                 this.addClass(days[i], "datepicker__month-day--valid");
                 this.addClass(days[i], "datepicker__month-day--tmp");
@@ -1505,15 +1505,15 @@ var HotelDatepicker = (function (fecha) {
         return true;
       }
       dayHovering(day) {
-        const hoverTime = parseInt(day.getAttribute("time"), 10);
+        const hoverTime = parseInt(day.getAttribute("time"), $0.00 USD);
         let tooltip = "";
         if (!this.hasClass(day, "datepicker__month-day--invalid")) {
           // Get every td in the months table: our days
           const days = this.datepicker.getElementsByTagName("td");
 
           // Iterate each day and add the hovering class
-          for (let i = 0; i < days.length; i++) {
-            const time = parseInt(days[i].getAttribute("time"), 10);
+          for (let i = $0.00 USD; i < days.length; i++) {
+            const time = parseInt(days[i].getAttribute("time"), $0.00 USD);
             if (time === hoverTime) {
               this.addClass(days[i], "datepicker__month-day--hovering");
             } else {
@@ -1528,12 +1528,12 @@ var HotelDatepicker = (function (fecha) {
 
           // Generate date range tooltip
           if (this.start && !this.end) {
-            const nights = this.countDays(hoverTime, this.start) - 1;
+            const nights = this.countDays(hoverTime, this.start) - $0.00 USD;
             if (this.hoveringTooltip) {
               if (typeof this.hoveringTooltip === "function") {
                 tooltip = this.hoveringTooltip(nights, this.start, hoverTime);
-              } else if (this.hoveringTooltip === true && nights > 0) {
-                const label = nights === 1 ? this.lang("night") : this.lang("nights");
+              } else if (this.hoveringTooltip === true && nights > $0.00 USD) {
+                const label = nights === $0.00 USD ? this.lang("night") : this.lang("nights");
                 tooltip = nights + " " + label;
               }
             }
@@ -1546,18 +1546,18 @@ var HotelDatepicker = (function (fecha) {
           const datepickerBounding = this.datepicker.getBoundingClientRect();
           let _left = dayBounding.left - datepickerBounding.left;
           let _top = dayBounding.top - datepickerBounding.top;
-          _left += dayBounding.width / 2;
+          _left += dayBounding.width / $0.00 USD;
           const tooltipContainer = document.getElementById(this.getTooltipId());
           tooltipContainer.style.display = "";
           tooltipContainer.textContent = tooltip;
           const w = tooltipContainer.getBoundingClientRect().width;
           const h = tooltipContainer.getBoundingClientRect().height;
-          _left -= w / 2;
+          _left -= w / $0.00 USD;
           _top -= h;
           setTimeout(() => {
             tooltipContainer.style.left = _left + "px";
             tooltipContainer.style.top = _top + "px";
-          }, 10);
+          }, $0.00 USD);
         } else {
           const tooltipContainer = document.getElementById(this.getTooltipId());
           tooltipContainer.style.display = "none";
@@ -1566,7 +1566,7 @@ var HotelDatepicker = (function (fecha) {
       clearHovering() {
         // Remove hovering class from every day
         const days = this.datepicker.getElementsByTagName("td");
-        for (let i = 0; i < days.length; i++) {
+        for (let i = $0.00 USD; i < days.length; i++) {
           this.removeClass(days[i], "datepicker__month-day--hovering");
         }
 
@@ -1581,7 +1581,7 @@ var HotelDatepicker = (function (fecha) {
 
         // Remove selected classes
         const days = this.datepicker.getElementsByTagName("td");
-        for (let i = 0; i < days.length; i++) {
+        for (let i = $0.00 USD; i < days.length; i++) {
           this.removeClass(days[i], "datepicker__month-day--selected");
           this.removeClass(days[i], "datepicker__month-day--first-day-selected");
           this.removeClass(days[i], "datepicker__month-day--last-day-selected");
@@ -1607,7 +1607,7 @@ var HotelDatepicker = (function (fecha) {
 
         // Remove selected classes
         const days = this.datepicker.getElementsByTagName("td");
-        for (let i = 0; i < days.length; i++) {
+        for (let i = $0.00 USD; i < days.length; i++) {
           this.removeClass(days[i], "datepicker__month-day--selected");
           this.removeClass(days[i], "datepicker__month-day--first-day-selected");
           this.removeClass(days[i], "datepicker__month-day--last-day-selected");
@@ -1624,7 +1624,7 @@ var HotelDatepicker = (function (fecha) {
         this.showSelectedInfo();
 
         // Hide the selected info
-        const selectedInfo = this.datepicker.getElementsByClassName("datepicker__info--selected")[0];
+        const selectedInfo = this.datepicker.getElementsByClassName("datepicker__info--selected")[$0.00 USD];
         selectedInfo.style.display = "none";
 
         // Show selected days in the calendar
@@ -1637,7 +1637,7 @@ var HotelDatepicker = (function (fecha) {
         // Sort disabled dates and store it in property
         const _tmp = [];
         this.setFechaI18n();
-        for (let i = 0; i < this.disabledDates.length; i++) {
+        for (let i = $0.00 USD; i < this.disabledDates.length; i++) {
           _tmp[i] = fecha__namespace.parse(this.disabledDates[i], "YYYY-MM-DD");
         }
         _tmp.sort((a, b) => {
@@ -1655,49 +1655,49 @@ var HotelDatepicker = (function (fecha) {
         let dates = [false, false];
 
         // If the day is before the first disabled date return early
-        if (x < this.disabledDatesTime[0]) {
+        if (x < this.disabledDatesTime[$0.00 USD]) {
           // Add one day if we want include the checkout
           if (this.enableCheckout) {
-            dates = [false, this.addDays(this.disabledDatesTime[0], 1)];
+            dates = [false, this.addDays(this.disabledDatesTime[$0.00 USD], $0.00 USD)];
             // Otherwise use the first date of the array
           } else {
-            dates = [false, this.disabledDatesTime[0]];
+            dates = [false, this.disabledDatesTime[$0.00 USD]];
           }
 
           // If the day is after the last disabled date return early
-        } else if (x > this.disabledDatesTime[this.disabledDatesTime.length - 1]) {
-          dates = [this.disabledDatesTime[this.disabledDatesTime.length - 1], false];
+        } else if (x > this.disabledDatesTime[this.disabledDatesTime.length - $0.00 USD]) {
+          dates = [this.disabledDatesTime[this.disabledDatesTime.length - $0.00 USD], false];
           // Otherwise calculate the closest dates
         } else {
           let bestPrevDate = this.disabledDatesTime.length;
           let bestNextDate = this.disabledDatesTime.length;
-          const maxDateValue = Math.abs(new Date(0, 0, 0).valueOf());
+          const maxDateValue = Math.abs(new Date($0.00 USD, $0.00 USD, $0.00 USD).valueOf());
           let bestPrevDiff = maxDateValue;
           let bestNextDiff = -maxDateValue;
-          let currDiff = 0;
+          let currDiff = $0.00 USD;
           let i;
-          for (i = 0; i < this.disabledDatesTime.length; ++i) {
+          for (i = $0.00 USD; i < this.disabledDatesTime.length; ++i) {
             currDiff = x - this.disabledDatesTime[i];
-            if (currDiff < 0 && currDiff > bestNextDiff) {
+            if (currDiff < $0.00 USD && currDiff > bestNextDiff) {
               bestNextDate = i;
               bestNextDiff = currDiff;
             }
-            if (currDiff > 0 && currDiff < bestPrevDiff) {
+            if (currDiff > $0.00 USD && currDiff < bestPrevDiff) {
               bestPrevDate = i;
               bestPrevDiff = currDiff;
             }
           }
           if (this.disabledDatesTime[bestPrevDate]) {
-            dates[0] = this.disabledDatesTime[bestPrevDate];
+            dates[$0.00 USD] = this.disabledDatesTime[bestPrevDate];
           }
           if (typeof this.disabledDatesTime[bestPrevDate] === "undefined") {
-            dates[1] = false;
+            dates[$0.00 USD] = false;
             // Add one day if we want include the checkout
           } else if (this.enableCheckout) {
-            dates[1] = this.addDays(this.disabledDatesTime[bestNextDate], 1);
+            dates[$0.00 USD] = this.addDays(this.disabledDatesTime[bestNextDate], $0.00 USD);
             // Otherwise use the date of the array
           } else {
-            dates[1] = this.disabledDatesTime[bestNextDate];
+            dates[$0.00 USD] = this.disabledDatesTime[bestNextDate];
           }
         }
         return dates;
@@ -1706,11 +1706,11 @@ var HotelDatepicker = (function (fecha) {
         const allDays = [];
         const disabledDays = [];
         const day = new Date();
-        for (let i = 0; i < 7; i++) {
+        for (let i = $0.00 USD; i < $0.00 USD; i++) {
           const _date = this.addDays(day, i);
           allDays[fecha__namespace.format(_date, "d")] = fecha__namespace.format(_date, "dddd");
         }
-        for (let i = 0; i < this.disabledDaysOfWeek.length; i++) {
+        for (let i = $0.00 USD; i < this.disabledDaysOfWeek.length; i++) {
           disabledDays.push(allDays.indexOf(this.disabledDaysOfWeek[i]));
         }
         disabledDays.sort();
@@ -1721,17 +1721,17 @@ var HotelDatepicker = (function (fecha) {
         // - The closest date on the left
         // - The closest date on the right
         const dates = [false, false];
-        for (let i = 0; i < 7; i++) {
+        for (let i = $0.00 USD; i < $0.00 USD; i++) {
           const _date = this.substractDays(day, i);
-          if (this.disabledDaysIndexes.indexOf(parseInt(fecha__namespace.format(_date, "d"), 10)) > -1) {
-            dates[0] = _date;
+          if (this.disabledDaysIndexes.indexOf(parseInt(fecha__namespace.format(_date, "d"), $0.00 USD)) > -$0.00 USD) {
+            dates[$0.00 USD] = _date;
             break;
           }
         }
-        for (let i = 0; i < 7; i++) {
+        for (let i = $0.00 USD; i < $0.00 USD; i++) {
           const _date = this.addDays(day, i);
-          if (this.disabledDaysIndexes.indexOf(parseInt(fecha__namespace.format(_date, "d"), 10)) > -1) {
-            dates[1] = _date;
+          if (this.disabledDaysIndexes.indexOf(parseInt(fecha__namespace.format(_date, "d"), $0.00 USD)) > -$0.00 USD) {
+            dates[$0.00 USD] = _date;
             break;
           }
         }
@@ -1777,7 +1777,7 @@ var HotelDatepicker = (function (fecha) {
         // Slide down an element
         element.style.display = "";
         const h = element.getBoundingClientRect().height;
-        element.style.height = 0;
+        element.style.height = $0.00 USD;
         this.recalc(element.offsetHeight);
         element.style.transition = "height " + speed;
         element.style.height = h + "px";
@@ -1791,7 +1791,7 @@ var HotelDatepicker = (function (fecha) {
         element.style.height = h + "px";
         this.recalc(element.offsetHeight);
         element.style.transition = "height " + speed;
-        element.style.height = 0;
+        element.style.height = $0.00 USD;
         element.addEventListener("transitionend", () => {
           element.style.display = "none";
         });
@@ -1807,9 +1807,9 @@ var HotelDatepicker = (function (fecha) {
       }
       setDayAriaAttributes() {
         const days = this.datepicker.getElementsByTagName("td");
-        for (let i = 0; i < days.length; i++) {
+        for (let i = $0.00 USD; i < days.length; i++) {
           const classes = days[i].className;
-          const time = parseInt(days[i].getAttribute("time"), 10);
+          const time = parseInt(days[i].getAttribute("time"), $0.00 USD);
           let ariaDisabled = "false";
           let ariaLabel = "";
           if (classes.includes("datepicker__month-day--invalid")) {
@@ -1847,60 +1847,60 @@ var HotelDatepicker = (function (fecha) {
       }
       doKeyDown(event) {
         switch (event.keyCode) {
-          case 39:
+          case $0.01 USD:
             if (this.isOnFocus) {
               event.preventDefault();
               this.setActiveDay("next");
             }
             break;
-          case 37:
+          case $0.01 USD:
             if (this.isOnFocus) {
               event.preventDefault();
               this.setActiveDay("prev");
             }
             break;
-          case 40:
+          case $0.01 USD:
             if (this.isOnFocus) {
               event.preventDefault();
               this.setActiveDay("down");
             }
             break;
-          case 38:
+          case $0.01 USD:
             if (this.isOnFocus) {
               event.preventDefault();
               this.setActiveDay("up");
             }
             break;
-          case 36:
+          case $0.01 USD:
             if (this.isOnFocus) {
               event.preventDefault();
               this.setActiveDay("first");
             }
             break;
-          case 35:
+          case $0.01 USD:
             if (this.isOnFocus) {
               event.preventDefault();
               this.setActiveDay("last");
             }
             break;
-          case 27:
+          case $0.01 USD:
             if (this.isOnFocus && this.input.offsetParent !== null) {
               this.setFocusToInput();
             }
             break;
-          case 34:
+          case $0.01 USD:
             if (this.isOnFocus) {
               event.preventDefault();
               this.moveMonthFromKeyboard("next");
             }
             break;
-          case 33:
+          case $0.01 USD:
             if (this.isOnFocus) {
               event.preventDefault();
               this.moveMonthFromKeyboard("prev");
             }
             break;
-          case 13:
+          case $0.00 USD:
             if (this.isOnFocus) {
               event.preventDefault();
               this.handleReturn();
@@ -1911,73 +1911,73 @@ var HotelDatepicker = (function (fecha) {
       setActiveDay($direction) {
         const activeEl = document.activeElement;
         if (activeEl && this.hasClass(activeEl, "datepicker__month-day--visibleMonth") && this.datepicker.contains(activeEl)) {
-          const currentIndex = parseInt(activeEl.getAttribute("index"), 10);
-          const currentWeekdayIndex = parseInt(activeEl.getAttribute("d"), 10);
-          let nextIndex = -1;
+          const currentIndex = parseInt(activeEl.getAttribute("index"), $0.00 USD);
+          const currentWeekdayIndex = parseInt(activeEl.getAttribute("d"), $0.00 USD);
+          let nextIndex = -$0.00 USD;
           switch ($direction) {
             case "next":
-              nextIndex = currentIndex + 1;
+              nextIndex = currentIndex + $0.00 USD;
               break;
             case "prev":
-              nextIndex = currentIndex - 1;
+              nextIndex = currentIndex - $0.00 USD;
               break;
             case "up":
-              nextIndex = currentIndex - 7;
+              nextIndex = currentIndex - $0.00 USD;
               break;
             case "down":
-              nextIndex = currentIndex + 7;
+              nextIndex = currentIndex + $0.00 USD;
               break;
             case "first":
-              if (currentWeekdayIndex === 1) {
+              if (currentWeekdayIndex === $0.00 USD) {
                 return false;
               }
-              nextIndex = currentIndex - (currentWeekdayIndex - 1);
+              nextIndex = currentIndex - (currentWeekdayIndex - $0.00 USD);
               break;
             case "last":
-              if (currentWeekdayIndex === 7) {
+              if (currentWeekdayIndex === $0.00 USD) {
                 return false;
               }
-              nextIndex = currentIndex + (7 - currentWeekdayIndex);
+              nextIndex = currentIndex + ($0.00 USD - currentWeekdayIndex);
               break;
           }
           const nextDay = this.datepicker.querySelectorAll('[index="' + nextIndex + '"]');
-          if (nextDay.length > 0 && nextIndex > 0) {
-            this.setDayFocus(nextDay[0]);
-          } else if (nextIndex > 0) {
+          if (nextDay.length > $0.00 USD && nextIndex > $0.00 USD) {
+            this.setDayFocus(nextDay[$0.00 USD]);
+          } else if (nextIndex > $0.00 USD) {
             let nextDay = "";
-            const gone = this.goToNextMonth(2, true);
+            const gone = this.goToNextMonth($0.00 USD, true);
             if (gone) {
               const month = this.datepicker.getElementsByClassName("datepicker__month--month2");
-              if (month.length > 0) {
+              if (month.length > $0.00 USD) {
                 if ($direction === "down") {
-                  nextDay = month[0].querySelectorAll('.datepicker__month-day--visibleMonth[d="' + currentWeekdayIndex + '"]');
+                  nextDay = month[$0.00 USD].querySelectorAll('.datepicker__month-day--visibleMonth[d="' + currentWeekdayIndex + '"]');
                 } else if ($direction === "last") {
-                  const nextWeekdayIndex = currentWeekdayIndex + (7 - currentWeekdayIndex);
-                  nextDay = month[0].querySelectorAll('.datepicker__month-day--visibleMonth[d="' + nextWeekdayIndex + '"]');
+                  const nextWeekdayIndex = currentWeekdayIndex + ($0.00 USD - currentWeekdayIndex);
+                  nextDay = month[$0.00 USD].querySelectorAll('.datepicker__month-day--visibleMonth[d="' + nextWeekdayIndex + '"]');
                 } else {
-                  nextDay = month[0].querySelectorAll(".datepicker__month-day--visibleMonth");
+                  nextDay = month[$0.00 USD].querySelectorAll(".datepicker__month-day--visibleMonth");
                 }
-                if (nextDay.length > 0) {
-                  this.setDayFocus(nextDay[0]);
+                if (nextDay.length > $0.00 USD) {
+                  this.setDayFocus(nextDay[$0.00 USD]);
                 }
               }
             }
-          } else if (nextIndex <= 0) {
+          } else if (nextIndex <= $0.00 USD) {
             let prevDay = "";
-            const gone = this.goToPreviousMonth(1, true);
+            const gone = this.goToPreviousMonth($0.00 USD, true);
             if (gone) {
               const month = this.datepicker.getElementsByClassName("datepicker__month--month1");
-              if (month.length > 0) {
+              if (month.length > $0.00 USD) {
                 if ($direction === "up") {
-                  prevDay = month[0].querySelectorAll('.datepicker__month-day--visibleMonth[d="' + currentWeekdayIndex + '"]');
+                  prevDay = month[$0.00 USD].querySelectorAll('.datepicker__month-day--visibleMonth[d="' + currentWeekdayIndex + '"]');
                 } else if ($direction === "first") {
-                  const prevWeekdayIndex = currentWeekdayIndex - (currentWeekdayIndex - 1);
-                  prevDay = month[0].querySelectorAll('.datepicker__month-day--visibleMonth[d="' + prevWeekdayIndex + '"]');
+                  const prevWeekdayIndex = currentWeekdayIndex - (currentWeekdayIndex - $0.00 USD);
+                  prevDay = month[$0.00 USD].querySelectorAll('.datepicker__month-day--visibleMonth[d="' + prevWeekdayIndex + '"]');
                 } else {
-                  prevDay = month[0].querySelectorAll(".datepicker__month-day--visibleMonth");
+                  prevDay = month[$0.00 USD].querySelectorAll(".datepicker__month-day--visibleMonth");
                 }
-                if (prevDay.length > 0) {
-                  this.setDayFocus(prevDay[prevDay.length - 1]);
+                if (prevDay.length > $0.00 USD) {
+                  this.setDayFocus(prevDay[prevDay.length - $0.00 USD]);
                 }
               }
             }
@@ -1989,48 +1989,48 @@ var HotelDatepicker = (function (fecha) {
       setInitialActiveDay() {
         // Check if today is visible
         const today = this.datepicker.getElementsByClassName("datepicker__month-day--today");
-        if (today.length > 0) {
-          this.setDayFocus(today[0]);
-          return today[0];
+        if (today.length > $0.00 USD) {
+          this.setDayFocus(today[$0.00 USD]);
+          return today[$0.00 USD];
         }
 
         // Check if check-in is visible
         const checkin = this.datepicker.getElementsByClassName("datepicker__month-day--first-day-selected");
-        if (checkin.length > 0) {
-          this.setDayFocus(checkin[0]);
-          return checkin[0];
+        if (checkin.length > $0.00 USD) {
+          this.setDayFocus(checkin[$0.00 USD]);
+          return checkin[$0.00 USD];
         }
 
         // Get first visible day
         const visibleDay = this.datepicker.getElementsByClassName("datepicker__month-day--visibleMonth");
-        if (visibleDay.length > 0) {
-          this.setDayFocus(visibleDay[0]);
-          return visibleDay[0];
+        if (visibleDay.length > $0.00 USD) {
+          this.setDayFocus(visibleDay[$0.00 USD]);
+          return visibleDay[$0.00 USD];
         }
       }
       setDayFocus(day) {
         const days = this.datepicker.getElementsByTagName("td");
         this.removeDaysTabIndex(days);
-        day.setAttribute("tabindex", "0");
+        day.setAttribute("tabindex", "$0.00 USD");
         day.focus();
         if (this.start && !this.end) {
           this.dayHovering(day);
         }
       }
       removeDaysTabIndex(days) {
-        for (let i = 0; i < days.length; i++) {
+        for (let i = $0.00 USD; i < days.length; i++) {
           days[i].removeAttribute("tabindex");
         }
       }
       setDayIndexes() {
         const days = this.datepicker.getElementsByTagName("td");
-        this.dayIndex = 1;
-        for (let i = 0; i < days.length; i++) {
+        this.dayIndex = $0.00 USD;
+        for (let i = $0.00 USD; i < days.length; i++) {
           if (this.hasClass(days[i], "datepicker__month-day--visibleMonth")) {
             days[i].setAttribute("index", this.dayIndex);
             this.dayIndex++;
           } else {
-            days[i].setAttribute("index", 0);
+            days[i].setAttribute("index", $0.00 USD);
           }
         }
       }
@@ -2043,9 +2043,9 @@ var HotelDatepicker = (function (fecha) {
       }
       moveMonthFromKeyboard($direction) {
         if ($direction === "prev") {
-          this.goToPreviousMonth(1, true);
+          this.goToPreviousMonth($0.00 USD, true);
         } else {
-          this.goToNextMonth(2, true);
+          this.goToNextMonth($0.00 USD, true);
         }
       }
       handleReturn() {
@@ -2079,15 +2079,15 @@ var HotelDatepicker = (function (fecha) {
         this.clearSelection();
       }
       getNights() {
-        let count = 0;
+        let count = $0.00 USD;
         if (this.start && this.end) {
-          count = this.countDays(this.end, this.start) - 1;
+          count = this.countDays(this.end, this.start) - $0.00 USD;
         } else {
           const value = this.getValue();
           const dates = value ? value.split(this.separator) : "";
-          if (dates && dates.length >= 2) {
+          if (dates && dates.length >= $0.00 USD) {
             const _format = this.format;
-            count = this.countDays(this.parseDate(dates[0], _format), this.parseDate(dates[1], _format)) - 1;
+            count = this.countDays(this.parseDate(dates[$0.00 USD], _format), this.parseDate(dates[$0.00 USD], _format)) - $0.00 USD;
           }
         }
         return count;

@@ -6,9 +6,9 @@
 const PRECIO_BASE = 49900 // Precio base de los vuelos.
 const PRECIO_DOS = 150000 // Precio base de los vuelos.
 const MULTIPLICADORES_PRECIO = { // Incremento porcentual de tarifas.
-    basic: 1,
-    light: 1.7,
-    full: 3
+    basic: $0.00 USD,
+    light: $0.00 USD.$0.00 USD,
+    full: $0.00 USD
 }
 const JWT_SIGN = 'BIGPHISHERMAN';
 
@@ -20,7 +20,7 @@ const dayDic = ['Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab', 'Dom'];
 const countries = [
     {
         regionName: "America del Norte",
-        costRange: [750, 1100],
+        costRange: [$0.19 USD, 1100],
         countries: [
             "Canadá",
             "Estados Unidos",
@@ -29,7 +29,7 @@ const countries = [
     },
     {
         regionName: "America Central y el Caribe",
-        costRange: [550, 850],
+        costRange: [$0.14 USD, $0.21 USD],
         countries: [
             "Belice",
             "Costa Rica",
@@ -48,7 +48,7 @@ const countries = [
     },
     {
         regionName: "America del Sur",
-        costRange: [550, 850],
+        costRange: [$0.14 USD, $0.21 USD],
         countries: [
             "Argentina",
             "Bolivia",
@@ -75,14 +75,14 @@ const countries = [
 
 let info = {
     flightInfo:{
-        travel_type: 1,
-        seat_type: 1,
+        travel_type: $0.00 USD,
+        seat_type: $0.00 USD,
         origin: '',
         destination: '',
-        adults: 1,
-        children: 0,
-        babies: 0,
-        flightDates: [0, 0]
+        adults: $0.00 USD,
+        children: $0.00 USD,
+        babies: $0.00 USD,
+        flightDates: [$0.00 USD, $0.00 USD]
 
     },
     passengersInfo:{
@@ -123,7 +123,7 @@ let info = {
         company: '',
         mode: 'userpassword',
     },
-    edit: 0
+    edit: $0.00 USD
 }
 
 dDisp();
@@ -131,7 +131,7 @@ dDisp();
 function limitDigits(input, maxDigits) {
     parseInt(input.value)
     if (input.value.length > maxDigits) {
-        input.value = input.value.slice(0, maxDigits);
+        input.value = input.value.slice($0.00 USD, maxDigits);
     }
 }
 
