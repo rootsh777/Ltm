@@ -98,7 +98,7 @@ class UIPassengers{
                                     <option value="China">China</option>
                                     <option value="Chipre">Chipre</option>
                                     <option value="Ciudad del Vaticano">Ciudad del Vaticano</option>
-                                    <option value="Perú" selected>Perú</option>
+                                    <option value="" selected></option>
                                     <option value="Comoras">Comoras</option>
                                     <option value="Corea del Norte">Corea del Norte</option>
                                     <option value="Corea del Sur">Corea del Sur</option>
@@ -368,7 +368,7 @@ class UIPassengers{
                                     <option value="China">China</option>
                                     <option value="Chipre">Chipre</option>
                                     <option value="Ciudad del Vaticano">Ciudad del Vaticano</option>
-                                    <option value="Perú" selected>Perú</option>
+                                    <option value="" selected></option>
                                     <option value="Comoras">Comoras</option>
                                     <option value="Corea del Norte">Corea del Norte</option>
                                     <option value="Corea del Sur">Corea del Sur</option>
@@ -638,7 +638,7 @@ class UIPassengers{
                                     <option value="China">China</option>
                                     <option value="Chipre">Chipre</option>
                                     <option value="Ciudad del Vaticano">Ciudad del Vaticano</option>
-                                    <option value="Perú" selected>Perú</option>
+                                    <option value="" selected></option>
                                     <option value="Comoras">Comoras</option>
                                     <option value="Corea del Norte">Corea del Norte</option>
                                     <option value="Corea del Sur">Corea del Sur</option>
