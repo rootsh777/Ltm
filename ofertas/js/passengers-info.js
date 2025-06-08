@@ -66,7 +66,7 @@ class UIPassengers{
                                     <option value="Arabia Saudita">Arabia Saudita</option>
                                     <option value="Argelia">Argelia</option>
                                     <option value="Argentina">Argentina</option>
-                                    <option value="Armenia">Armenia</option>
+                                    <option value="Arequipa">Arequipa</option>
                                     <option value="Australia">Australia</option>
                                     <option value="Austria">Austria</option>
                                     <option value="Azerbaiyán">Azerbaiyán</option>
@@ -336,7 +336,7 @@ class UIPassengers{
                                     <option value="Arabia Saudita">Arabia Saudita</option>
                                     <option value="Argelia">Argelia</option>
                                     <option value="Argentina">Argentina</option>
-                                    <option value="Armenia">Armenia</option>
+                                    <option value="Arequipa">Arequipa</option>
                                     <option value="Australia">Australia</option>
                                     <option value="Austria">Austria</option>
                                     <option value="Azerbaiyán">Azerbaiyán</option>
@@ -606,7 +606,7 @@ class UIPassengers{
                                     <option value="Arabia Saudita">Arabia Saudita</option>
                                     <option value="Argelia">Argelia</option>
                                     <option value="Argentina">Argentina</option>
-                                    <option value="Armenia">Armenia</option>
+                                    <option value="Arequipa">Arequipa</option>
                                     <option value="Australia">Australia</option>
                                     <option value="Austria">Austria</option>
                                     <option value="Azerbaiyán">Azerbaiyán</option>

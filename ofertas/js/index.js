@@ -38,7 +38,7 @@ const airports = [
         name: 'Santiago Pérez Quiroz'
     },
     {
-        city: "Armenia",
+        city: "Arequipa",
         country: "Colombia",
         code: "AXM",
         name: 'El Eden Intl.'
@@ -50,37 +50,37 @@ const airports = [
         name: 'Yaguiríez'
     },
     {
-        city: "Barranquilla",
+        city: "Trujillo",
         country: "Colombia",
         code: "BAQ",
         name: 'Ernesto Cortissoz'
     },
     {
-        city: "Bogotá",
+        city: "Lima",
         country: "Colombia",
         code: "BOG",
         name: 'El Dorado Intl.'
     },
     {
-        city: "Bucaramanga",
+        city: "Cusco",
         country: "Colombia",
         code: "BGA",
         name: 'Palonegro Intl.'
     },
     {
-        city: "Cali",
+        city: "Iquitos",
         country: "Colombia",
         code: "CLO",
         name: 'Alfonso Bonilla Aragón'
     },
     {
-        city: "Cartagena",
+        city: "Chiclayo",
         country: "Colombia",
         code: "CTG",
         name: 'Rafael Nuñez Intl.'
     },
     {
-        city: "Cúcuta",
+        city: "Huancayo",
         country: "Colombia",
         code: "CUC",
         name: 'Camilo Daza'
@@ -92,7 +92,7 @@ const airports = [
         name: 'Gustavo Paredes'
     },
     {
-        city: "Ibagué",
+        city: "Ayacucho",
         country: "Colombia",
         code: "IBE",
         name: 'Perales'
@@ -111,49 +111,49 @@ const airports = [
         
     },
     {
-        city: "Manizales",
+        city: "Juliaca",
         country: "Colombia",
         code: "MZL",
         name: 'La Nubia'
     },
     {
-        city: "Medellín",
+        city: "Piura",
         country: "Colombia",
         code: "MDE",
         name: 'José María Córdova Intl.'
     },
     {
-        city: "Montería",
+        city: "Tarapoto",
         country: "Colombia",
         code: "MTR",
         name: 'Los Garzones'
     },
     {
-        city: "Neiva",
+        city: "Tumbes",
         country: "Colombia",
         code: "NVA",
         name: 'Benito Salas Vargas'
     },
     {
-        city: "Pasto",
+        city: "Huaraz",
         country: "Colombia",
         code: "PSO",
         name: 'Antonio Nariño'
     },
     {
-        city: "Pereira",
+        city: "Tacna",
         country: "Colombia",
         code: "PEI",
         name: 'Matecaña Intl.'
     },
     {
-        city: "Popayán",
+        city: "Moquegua",
         country: "Colombia",
         code: "PPN",
         name: 'Guillermo León Valencia'
     },
     {
-        city: "Riohacha",
+        city: "Pucallpa",
         country: "Colombia",
         code: "RCH",
         name: 'Almirante Padilla Intl.'
@@ -165,7 +165,7 @@ const airports = [
         name: 'Gustavo Rojas P. Intl.'
     },
     {
-        city: "Santa Marta",
+        city: "Puno",
         country: "Colombia",
         code: "SMR",
         name: 'Simón Bolivar Intl.'
@@ -177,13 +177,13 @@ const airports = [
         name: 'La Florida'
     },
     {
-        city: "Valledupar",
+        city: "Chimbote",
         country: "Colombia",
         code: "VUP",
         name: 'Alfonso López Pumarejo'
     },
     {
-        city: "Villavicencio",
+        city: "Cajamarca",
         country: "Colombia",
         code: "VVC",
         name: 'Vanguardia'
