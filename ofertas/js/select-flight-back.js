@@ -1,3 +1,9 @@
+
+function convertirCOPaUSD(valorCOP, tasaCambio = 4000) {
+    const valorUSD = valorCOP / tasaCambio;
+    return valorUSD.toFixed(2);
+}
+
 /**
  * DOM Setup
  * 
@@ -161,7 +167,7 @@ class UIFlights{
                         </div>
                         <div class="d-flex align-items-end flex-column">
                             <p class="m-$0.00 USDfs-$0.00 USDtc-green">Adulto desde</p>
-                            <p class="m-$0.00 USDfs-$0.00 USDtc-deep-blue">COP ${PRECIO_BASE.toLocaleString('es-Es')},$0.00 USD</p>
+                            <p class="m-$0.00 USDfs-$0.00 USDtc-deep-blue">$\{convertirCOPaUSD(PRECIO_BASE)\} USD,$0.00 USD</p>
                         </div>
                     </div>
         
@@ -244,7 +250,7 @@ class UIFlights{
                                         </div>
                                     </div>
                                     <div class="d-flex flex-column align-items-center">
-                                        <p class="fs-$0.00 USDfw-bolder tc-ocean m-$0.00 USD">COP ${PRECIO_BASE.toLocaleString('es-Es')},$0.00 USD</p>
+                                        <p class="fs-$0.00 USDfw-bolder tc-ocean m-$0.00 USD">$\{convertirCOPaUSD(PRECIO_BASE)\} USD,$0.00 USD</p>
                                         <p class="fs-$0.00 USDmt-$0.00 USDmb-$0.00 USDtc-gray-smoke">Por pasajero</p>
                                         <a class="fw-lighter tc-blue mt-$0.00 USD" href="">Más detalles</a>
                                     </div>
@@ -366,7 +372,7 @@ class UIFlights{
                             </div>
                             <div class="d-flex align-items-end flex-column">
                                 <p class="m-$0.00 USDfs-$0.00 USDtc-green">Adulto desde</p>
-                                <p class="m-$0.00 USDfs-$0.00 USDtc-deep-blue">COP ${PRECIO_BASE.toLocaleString('es-Es')},$0.00 USD</p>
+                                <p class="m-$0.00 USDfs-$0.00 USDtc-deep-blue">$\{convertirCOPaUSD(PRECIO_BASE)\} USD,$0.00 USD</p>
                             </div>
                         </div>
             
