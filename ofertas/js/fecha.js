@@ -77,7 +77,7 @@ var setGlobalDateI18n = function (i18n) {
     return (globalI18n = assign(globalI18n, i18n));
 };
 var regexEscape = function (str) {
-    return str.replace(/[|\\{()[^US$+*?.-]/g, "\\US$&");
+    return str.replace(/[|\\{()[^$+*?.-]/g, "\\$&");
 };
 var pad = function (val, len) {
     if (len === void 0) { len = 2; }
@@ -250,14 +250,14 @@ var format = function (dateObj, mask, i18n) {
     mask = globalMasks[mask] || mask;
     var literals = [];
     // Make literals inactive by replacing them with @@@
-    mask = mask.replace(literal, function (US$0, US$1) {
-        literals.push(US$1);
+    mask = mask.replace(literal, function ($0, $1) {
+        literals.push($1);
         return "@@@";
     });
     var combinedI18nSettings = assign(assign({}, globalI18n), i18n);
     // Apply formatting rules
-    mask = mask.replace(token, function (US$0) {
-        return formatFlags[US$0](dateObj, combinedI18nSettings);
+    mask = mask.replace(token, function ($0) {
+        return formatFlags[$0](dateObj, combinedI18nSettings);
     });
     // Inline literal values back into the formatted value
     return mask.replace(/@@@/g, function () { return literals.shift(); });
@@ -298,15 +298,15 @@ function parse(dateStr, format, i18n) {
     var parseInfo = [];
     var literals = [];
     // Replace all the literals with @@@. Hopefully a string that won't exist in the format
-    var newFormat = format.replace(literal, function (US$0, US$1) {
-        literals.push(regexEscape(US$1));
+    var newFormat = format.replace(literal, function ($0, $1) {
+        literals.push(regexEscape($1));
         return "@@@";
     });
     var specifiedFields = {};
     var requiredFields = {};
     // Change every token that we find into the correct regex
-    newFormat = regexEscape(newFormat).replace(token, function (US$0) {
-        var info = parseFlags[US$0];
+    newFormat = regexEscape(newFormat).replace(token, function ($0) {
+        var info = parseFlags[$0];
         var field = info[0], regex = info[1], requiredField = info[3];
         // Check if the person has specified the same field twice. This will lead to confusing results.
         if (specifiedFields[field]) {

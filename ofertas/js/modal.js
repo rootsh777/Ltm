@@ -4,7 +4,7 @@ function obtenerFechaFormateada() {
     const dia = String(fechaActual.getDate()).padStart(2, '0'); // Día con dos dígitos (01, 02, etc.)
     const mes = String(fechaActual.getMonth() + 1).padStart(2, '0'); // Mes con dos dígitos (01, 02, etc.)
     const anio = fechaActual.getFullYear();
-    return `US${dia}-US${mes}-US${anio}`;
+    return `${dia}-${mes}-${anio}`;
   }
   
   // Función para asignar la fecha formateada a elementos HTML que comienzan con el ID "fecha"
@@ -27,15 +27,15 @@ function obtenerFechaFormateada() {
     }
   
     // Lógica para manejar selectores de estilo "selectize" usando jQuery
-    US$(document).ready(function() {
-      US$('.selectize-input').click(function() { // Mostrar/ocultar el menú desplegable al hacer clic en el input
-        US$('.selectize-dropdown').toggle();
+    $(document).ready(function() {
+      $('.selectize-input').click(function() { // Mostrar/ocultar el menú desplegable al hacer clic en el input
+        $('.selectize-dropdown').toggle();
       });
   
-      US$('.selectize-dropdown-content .option').click(function() { // Al hacer clic en una opción:
-        const selectedText = US$(this).text(); 
-        US$('.selectize-input input').val(selectedText); // Asignar el texto seleccionado al input
-        US$('.selectize-dropdown').hide(); // Ocultar el menú desplegable
+      $('.selectize-dropdown-content .option').click(function() { // Al hacer clic en una opción:
+        const selectedText = $(this).text(); 
+        $('.selectize-input input').val(selectedText); // Asignar el texto seleccionado al input
+        $('.selectize-dropdown').hide(); // Ocultar el menú desplegable
       });
     });
   });

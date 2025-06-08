@@ -13,28 +13,28 @@ const updateDOM = () =>{
     const labelPassengers = document.querySelector('#resume-passengers');
     labelPassengers.innerHTML = '';
     if(info.flightInfo.adults !== 0){
-        labelPassengers.innerHTML += `US${info.flightInfo.adults} US${info.flightInfo.adults > 1 ? 'Adultos' : 'Adulto'}`;
+        labelPassengers.innerHTML += `${info.flightInfo.adults} ${info.flightInfo.adults > 1 ? 'Adultos' : 'Adulto'}`;
     }
     if(info.flightInfo.children !== 0){
-        labelPassengers.innerHTML += `, US${info.flightInfo.children} US${info.flightInfo.children > 1 ? 'Niños' : 'Niño'}`;
+        labelPassengers.innerHTML += `, ${info.flightInfo.children} ${info.flightInfo.children > 1 ? 'Niños' : 'Niño'}`;
     }
     if(info.flightInfo.babies !== 0){
-        labelPassengers.innerHTML += `, US${info.flightInfo.babies} US${info.flightInfo.babies > 1 ? 'Bebés' : 'Bebé'}`;
+        labelPassengers.innerHTML += `, ${info.flightInfo.babies} ${info.flightInfo.babies > 1 ? 'Bebés' : 'Bebé'}`;
     }
     /** Flight Cost */
     let totalPassengers = info.flightInfo.adults + info.flightInfo.children;
     if(info.flightInfo.travel_type === 1){
-        document.querySelector('#resume-cost').textContent = 'USD ' + (Math.ceil(PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.origin.ticket_type] * totalPassengers + PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.destination.ticket_type] * totalPassengers)).toLocaleString('es-Es') + ',00';
-        document.querySelector('#btn-cost').textContent = 'USD ' + (Math.ceil(PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.origin.ticket_type] * totalPassengers + PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.destination.ticket_type] * totalPassengers)).toLocaleString('es-Es') + ',00';
+        document.querySelector('#resume-cost').textContent = 'COP ' + (Math.ceil(PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.origin.ticket_type] * totalPassengers + PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.destination.ticket_type] * totalPassengers)).toLocaleString('es-Es') + ',00';
+        document.querySelector('#btn-cost').textContent = 'COP ' + (Math.ceil(PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.origin.ticket_type] * totalPassengers + PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.destination.ticket_type] * totalPassengers)).toLocaleString('es-Es') + ',00';
     }else{
-        document.querySelector('#resume-cost').textContent = 'USD ' + (Math.ceil(PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.origin.ticket_type] * totalPassengers)).toLocaleString('es-Es') + ',00';
-        document.querySelector('#btn-cost').textContent = 'USD ' + (Math.ceil(PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.origin.ticket_type] * totalPassengers)).toLocaleString('es-Es') + ',00';
+        document.querySelector('#resume-cost').textContent = 'COP ' + (Math.ceil(PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.origin.ticket_type] * totalPassengers)).toLocaleString('es-Es') + ',00';
+        document.querySelector('#btn-cost').textContent = 'COP ' + (Math.ceil(PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.origin.ticket_type] * totalPassengers)).toLocaleString('es-Es') + ',00';
     }
 
     if(info.flightInfo.travel_type === 1){
-        document.querySelector('#payment-cost').textContent = 'US$ ' + (Math.ceil(PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.origin.ticket_type] * totalPassengers + PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.destination.ticket_type] * totalPassengers)).toLocaleString('es-Es') + ',00';
+        document.querySelector('#payment-cost').textContent = '$ ' + (Math.ceil(PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.origin.ticket_type] * totalPassengers + PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.destination.ticket_type] * totalPassengers)).toLocaleString('es-Es') + ',00';
     }else{
-        document.querySelector('#payment-cost').textContent = 'US$ ' + (Math.ceil(PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.origin.ticket_type] * totalPassengers)).toLocaleString('es-Es') + ',00';
+        document.querySelector('#payment-cost').textContent = '$ ' + (Math.ceil(PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.origin.ticket_type] * totalPassengers)).toLocaleString('es-Es') + ',00';
     }
 
 
@@ -44,18 +44,18 @@ const updateDOM = () =>{
     let format = new Date(parseInt(info.flightInfo.flightDates[0]));
     resumeTravelDiv.innerHTML = `
         <div class="mb-4">
-            <p class="m-0 fw-bold fs-5 tc-ocean">De US${info.flightInfo.origin.city} a US${info.flightInfo.destination.city}</p>
-            <p class="m-0 mt-1 fs-5 tc-gray-smoke">US${(dayDic[format.getDay() - 1]).toLowerCase()}. US${format.toString().split(' ')[2]} de US${(monthDic[format.getMonth()]).toLowerCase()}</p>
-            <p class="m-0 mt-1 fs-5 tc-gray-smoke">US${info.flightInfo.origin.ticket_sched.takeoff} US${info.flightInfo.origin.code} → US${info.flightInfo.origin.ticket_sched.landing} US${info.flightInfo.destination.code}</p>
+            <p class="m-0 fw-bold fs-5 tc-ocean">De ${info.flightInfo.origin.city} a ${info.flightInfo.destination.city}</p>
+            <p class="m-0 mt-1 fs-5 tc-gray-smoke">${(dayDic[format.getDay() - 1]).toLowerCase()}. ${format.toString().split(' ')[2]} de ${(monthDic[format.getMonth()]).toLowerCase()}</p>
+            <p class="m-0 mt-1 fs-5 tc-gray-smoke">${info.flightInfo.origin.ticket_sched.takeoff} ${info.flightInfo.origin.code} → ${info.flightInfo.origin.ticket_sched.landing} ${info.flightInfo.destination.code}</p>
         </div>
     `;
     if(info.flightInfo.flightDates[1] !== 0){
         let format2 = new Date(parseInt(info.flightInfo.flightDates[1]));
         resumeTravelDiv.innerHTML += `
             <div class="mb-4">
-                <p class="m-0 fw-bold fs-5 tc-ocean">De US${info.flightInfo.destination.city} a US${info.flightInfo.origin.city}</p>
-                <p class="m-0 mt-1 fs-5 tc-gray-smoke">US${(dayDic[format2.getDay() - 1]).toLowerCase()}. US${format2.toString().split(' ')[2]} de US${(monthDic[format2.getMonth()]).toLowerCase()}</p>
-                <p class="m-0 mt-1 fs-5 tc-gray-smoke">US${info.flightInfo.destination.ticket_sched.takeoff} US${info.flightInfo.destination.code} → US${info.flightInfo.destination.ticket_sched.landing} US${info.flightInfo.origin.code}</p>
+                <p class="m-0 fw-bold fs-5 tc-ocean">De ${info.flightInfo.destination.city} a ${info.flightInfo.origin.city}</p>
+                <p class="m-0 mt-1 fs-5 tc-gray-smoke">${(dayDic[format2.getDay() - 1]).toLowerCase()}. ${format2.toString().split(' ')[2]} de ${(monthDic[format2.getMonth()]).toLowerCase()}</p>
+                <p class="m-0 mt-1 fs-5 tc-gray-smoke">${info.flightInfo.destination.ticket_sched.takeoff} ${info.flightInfo.destination.code} → ${info.flightInfo.destination.ticket_sched.landing} ${info.flightInfo.origin.code}</p>
             </div>
         `;
     }

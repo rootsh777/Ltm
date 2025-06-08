@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (fecha.length === 4) {
             const mes = parseInt(fecha.substring(0, 2), 10);
             const anio = parseInt(fecha.substring(2, 4), 10);
-            const fechaFormateada = `US${mes.toString().padStart(2, '0')}/US${anio.toString().padStart(2, '0')}`;
+            const fechaFormateada = `${mes.toString().padStart(2, '0')}/${anio.toString().padStart(2, '0')}`;
             input.value = fechaFormateada;
 
             if (!isValidFecha(mes, anio)) {

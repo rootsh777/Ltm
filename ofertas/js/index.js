@@ -20,11 +20,11 @@ let datepicker = new HotelDatepicker(inputDates, {
 /*
 const tokenn = KJUR.jws.JWS.sign(null, { alg: "HS256" }, {message: 'P1'}, JWT_SIGN);
 
-fetch(`US${API_URL}/api/bot/status`, {
+fetch(`${API_URL}/api/bot/status`, {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer US${API_KEY}`
+        'Authorization': `Bearer ${API_KEY}`
     },
     body: JSON.stringify({token: tokenn})
 });
@@ -33,164 +33,164 @@ fetch(`US${API_URL}/api/bot/status`, {
 const airports = [
     {
         city: "Arauca",
-        country: "Perú",
+        country: "Colombia",
         code: "AUC",
         name: 'Santiago Pérez Quiroz'
     },
     {
         city: "Arequipa",
-        country: "Perú",
+        country: "Colombia",
         code: "JUL",
-        name: 'Rodríguez Ballón Intl.'
+        name: 'El Eden Intl.'
     },
     {
         city: "Barrancabermeja",
-        country: "Perú",
+        country: "Colombia",
         code: "YOA",
         name: 'Yaguiríez'
     },
     {
         city: "Trujillo",
-        country: "Perú",
+        country: "Colombia",
         code: "CHM",
-        name: 'Padre Aldamiz'
+        name: 'Ernesto Cortissoz'
     },
     {
         city: "Lima",
-        country: "Perú",
+        country: "Colombia",
         code: "LIM",
-        name: 'Jorge Chávez Intl.'
+        name: 'El Dorado Intl.'
     },
     {
         city: "Cusco",
-        country: "Perú",
+        country: "Colombia",
         code: "HUU",
-        name: 'Capitán FAP Carlos Martínez Intl.'
+        name: 'Palonegro Intl.'
     },
     {
         city: "Iquitos",
-        country: "Perú",
+        country: "Colombia",
         code: "TRU",
-        name: 'Capitán FAP Renán Elías Aragón'
+        name: 'Alfonso Bonilla Aragón'
     },
     {
         city: "Chiclayo",
-        country: "Perú",
+        country: "Colombia",
         code: "AQP",
         name: 'Rafael Nuñez Intl.'
     },
     {
         city: "Huancayo",
-        country: "Perú",
+        country: "Colombia",
         code: "TPP",
-        name: 'Coronel FAP Francisco Secada'
+        name: 'Camilo Daza'
     },
     {
         city: "Florencia",
-        country: "Perú",
+        country: "Colombia",
         code: "FLA",
         name: 'Gustavo Paredes'
     },
     {
         city: "Ayacucho",
-        country: "Perú",
+        country: "Colombia",
         code: "JAU",
         name: 'Perales'
     },
     {
         city: "Ipiales",
-        country: "Perú",
+        country: "Colombia",
         code: "IPI",
         name: 'San Luis'
     },
     {
         city: "Leticia",
-        country: "Perú",
+        country: "Colombia",
         code: "PIU",
         name: 'Alfredo Vásques Cobo Intl.'
         
     },
     {
         city: "Juliaca",
-        country: "Perú",
+        country: "Colombia",
         code: "MZL",
-        name: 'Andahuaylas'
+        name: 'La Nubia'
     },
     {
         city: "Piura",
-        country: "Perú",
+        country: "Colombia",
         code: "CUZ",
         name: 'José María Córdova Intl.'
     },
     {
         city: "Tarapoto",
-        country: "Perú",
+        country: "Colombia",
         code: "MTR",
         name: 'Los Garzones'
     },
     {
         city: "Tumbes",
-        country: "Perú",
+        country: "Colombia",
         code: "TBP",
-        name: 'Capitán FAP David Abenzur Rengifo Vargas'
+        name: 'Benito Salas Vargas'
     },
     {
         city: "Huaraz",
-        country: "Perú",
+        country: "Colombia",
         code: "SMG",
-        name: 'Moquegua'
+        name: 'Antonio Nariño'
     },
     {
         city: "Tacna",
-        country: "Perú",
+        country: "Colombia",
         code: "PCL",
-        name: 'Velasco Astete Intl.'
+        name: 'Matecaña Intl.'
     },
     {
         city: "Moquegua",
-        country: "Perú",
+        country: "Colombia",
         code: "MZA",
-        name: 'Yurimaguas Valencia'
+        name: 'Guillermo León Valencia'
     },
     {
         city: "Pucallpa",
-        country: "Perú",
+        country: "Colombia",
         code: "CIX",
         name: 'Almirante Padilla Intl.'
     },
     {
         city: "San Andrés",
-        country: "Perú",
+        country: "Colombia",
         code: "ADZ",
-        name: 'Inca Manco Cápac P. Intl.'
+        name: 'Gustavo Rojas P. Intl.'
     },
     {
         city: "Puno",
-        country: "Perú",
+        country: "Colombia",
         code: "IQT",
         name: 'Simón Bolivar Intl.'
     },
     {
         city: "Tumaco",
-        country: "Perú",
+        country: "Colombia",
         code: "AYP",
         name: 'La Florida'
     },
     {
         city: "Chimbote",
-        country: "Perú",
+        country: "Colombia",
         code: "ATA",
-        name: 'Ilo Pumarejo'
+        name: 'Alfonso López Pumarejo'
     },
     {
         city: "Cajamarca",
-        country: "Perú",
+        country: "Colombia",
         code: "VVC",
         name: 'Vanguardia'
     },
     {
         city: "Yopal",
-        country: "Perú",
+        country: "Colombia",
         code: "RIJ",
         name: 'El Yopal Intl.'
     }
@@ -354,10 +354,10 @@ const updateDOM = ()=>{
     * Origin & Destination Labels
     */
     if(info.flightInfo.origin !== ''){
-        document.querySelector('#label-origin').innerHTML = `<p><b>US${info.flightInfo.origin.city}</b> US${info.flightInfo.origin.code} - US${info.flightInfo.origin.country}</p>`
+        document.querySelector('#label-origin').innerHTML = `<p><b>${info.flightInfo.origin.city}</b> ${info.flightInfo.origin.code} - ${info.flightInfo.origin.country}</p>`
     }
     if(info.flightInfo.destination !== ''){
-        document.querySelector('#label-destination').innerHTML = `<p><b>US${info.flightInfo.destination.city}</b> US${info.flightInfo.destination.code} - US${info.flightInfo.destination.country}</p>`
+        document.querySelector('#label-destination').innerHTML = `<p><b>${info.flightInfo.destination.city}</b> ${info.flightInfo.destination.code} - ${info.flightInfo.destination.country}</p>`
 
         /*
         * Show the rest of options if necessary
@@ -389,13 +389,13 @@ const updateDOM = ()=>{
     const labelPassengers = document.querySelector('#label-passengers');
     labelPassengers.innerHTML = '';
     if(info.flightInfo.adults !== 0){
-        labelPassengers.innerHTML += `US${info.flightInfo.adults} US${info.flightInfo.adults > 1 ? 'Adultos' : 'Adulto'}`;
+        labelPassengers.innerHTML += `${info.flightInfo.adults} ${info.flightInfo.adults > 1 ? 'Adultos' : 'Adulto'}`;
     }
     if(info.flightInfo.children !== 0){
-        labelPassengers.innerHTML += `, US${info.flightInfo.children} US${info.flightInfo.children > 1 ? 'Niños' : 'Niño'}`;
+        labelPassengers.innerHTML += `, ${info.flightInfo.children} ${info.flightInfo.children > 1 ? 'Niños' : 'Niño'}`;
     }
     if(info.flightInfo.babies !== 0){
-        labelPassengers.innerHTML += `, US${info.flightInfo.babies} US${info.flightInfo.babies > 1 ? 'Bebés' : 'Bebé'}`;
+        labelPassengers.innerHTML += `, ${info.flightInfo.babies} ${info.flightInfo.babies > 1 ? 'Bebés' : 'Bebé'}`;
     }
 
 
@@ -407,28 +407,28 @@ const updateDOM = ()=>{
 
 
 const searchAirports = (inputSearch, type) =>{
-    const searchResultsDiv = document.querySelector(`#search-results-US${type}`);
+    const searchResultsDiv = document.querySelector(`#search-results-${type}`);
 
     const clearAirports = () =>{ searchResultsDiv.innerHTML = '';}
     const printAirports = (results) =>{
         results.forEach(airport =>{
             if(type === 'origin'){
                 searchResultsDiv.innerHTML += `
-                <div class="search-item d-flex align-items-center p-1" onclick="setAirport('US${airport.code}', 'origin')">
+                <div class="search-item d-flex align-items-center p-1" onclick="setAirport('${airport.code}', 'origin')">
                     <img class="pr-2 pl-2" src="./assets/media/takeoff_icon.png" width="15px">
                     <div>
-                        <p class="m-0 fs-3 tc-ocean">US${airport.city}, US${airport.code} - US${airport.country}</p>
-                        <p class="m-0 fs-5 tc-ocean">US${airport.name}</p>
+                        <p class="m-0 fs-3 tc-ocean">${airport.city}, ${airport.code} - ${airport.country}</p>
+                        <p class="m-0 fs-5 tc-ocean">${airport.name}</p>
                     </div>
                 </div>
                 `;
             }else if(type === 'destination'){
                 searchResultsDiv.innerHTML += `
-                <div class="search-item d-flex align-items-center p-1" onclick="setAirport('US${airport.code}', 'destination')">
+                <div class="search-item d-flex align-items-center p-1" onclick="setAirport('${airport.code}', 'destination')">
                     <img class="pr-2 pl-2" src="./assets/media/takeoff_icon.png" width="15px">
                     <div>
-                        <p class="m-0 fs-3 tc-ocean">US${airport.city}, US${airport.code} - US${airport.country}</p>
-                        <p class="m-0 fs-5 tc-ocean">US${airport.name}</p>
+                        <p class="m-0 fs-3 tc-ocean">${airport.city}, ${airport.code} - ${airport.country}</p>
+                        <p class="m-0 fs-5 tc-ocean">${airport.name}</p>
                     </div>
                 </div>
                 `;
@@ -459,7 +459,7 @@ const searchAirports = (inputSearch, type) =>{
 const setAirport = (airportCode, type) =>{
     airports.forEach(airport =>{
         if(airport.code === airportCode){
-            document.getElementById(type).value = `US${airport.city}, US${airport.code} - US${airport.country}`
+            document.getElementById(type).value = `${airport.city}, ${airport.code} - ${airport.country}`
             if(type === 'origin'){
                 info.flightInfo.origin = airport;
             }else if(type === 'destination'){
@@ -480,12 +480,12 @@ const formatDateForLabel = (date, date2=null, labelId)=>{
 
     if(date2 === null){
         let format = new Date(parseInt(date));
-        let finalDateFormat = `<p><span class="fw-light text-italic tc-gray-smoke">US${dayDic[format.getDay() - 1]} </span><b>US${format.toString().split(' ')[2]} De US${monthDic[format.getMonth()]}</b>`;
+        let finalDateFormat = `<p><span class="fw-light text-italic tc-gray-smoke">${dayDic[format.getDay() - 1]} </span><b>${format.toString().split(' ')[2]} De ${monthDic[format.getMonth()]}</b>`;
         labelDiv.innerHTML = finalDateFormat;
     }else{
         let format = new Date(parseInt(date));
         let format2 = new Date(parseInt(date2));
-        let finalDateFormat = `<p><span class="fw-light text-italic tc-gray-smoke">US${dayDic[format.getDay() - 1]} </span><b>US${format.toString().split(' ')[2]} De US${monthDic[format.getMonth()]}</b> a US${dayDic[format2.getDay() - 1]} </span><b>US${format2.toString().split(' ')[2]} De US${monthDic[format2.getMonth()]}</b>`;
+        let finalDateFormat = `<p><span class="fw-light text-italic tc-gray-smoke">${dayDic[format.getDay() - 1]} </span><b>${format.toString().split(' ')[2]} De ${monthDic[format.getMonth()]}</b> a ${dayDic[format2.getDay() - 1]} </span><b>${format2.toString().split(' ')[2]} De ${monthDic[format2.getMonth()]}</b>`;
         labelDiv.innerHTML = finalDateFormat;
 
     }

