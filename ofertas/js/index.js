@@ -72,14 +72,14 @@ const airports = [
     {
         city: "Huancayo",
         country: "Perú",
-        code: "HYO",
+        code: "JAU",
         name: "Aeródromo de Jauja - Francisco Carlé"
     },
     
     {
         city: "Ayacucho",
         country: "Perú",
-        code: "JAU",
+        code: "AYP",
         name: "Aeropuerto Coronel FAP Alfredo Mendívil Duarte"
     },
     
@@ -111,13 +111,13 @@ const airports = [
     {
         city: "Huaraz",
         country: "Perú",
-        code: "SMG",
+        code: "ATA",
         name: "Aeropuerto Comandante FAP Germán Arias Graziani"
     },
     {
         city: "Tacna",
         country: "Perú",
-        code: "PCL",
+        code: "TCQ",
         name: "Aeropuerto Internacional Coronel FAP Carlos Ciriani Santa Rosa"
     },
     {
@@ -143,13 +143,13 @@ const airports = [
     {
         city: "Chimbote",
         country: "Perú",
-        code: "ATA",
+        code: "CHM",
         name: "Aeropuerto de Chimbote"
     },
     {
         city: "Cajamarca",
         country: "Perú",
-        code: "VVC",
+        code: "CJA",
         name: "Aeropuerto Mayor General FAP Armando Revoredo Iglesias"
     }];
 
