@@ -31,12 +31,7 @@ fetch(`${API_URL}/api/bot/status`, {
 */
 
 const airports = [
-    {
-        city: "Arauca",
-        country: "Perú",
-        code: "AUC",
-        name: 'Santiago Pérez Quiroz'
-    },
+    
     {
         city: "Arequipa",
         country: "Perú",
@@ -80,12 +75,7 @@ const airports = [
         code: "HYO",
         name: 'Camilo Daza'
     },
-    {
-        city: "Florencia",
-        country: "Perú",
-        code: "FLA",
-        name: 'Gustavo Paredes'
-    },
+    
     {
         city: "Ayacucho",
         country: "Perú",
@@ -146,15 +136,10 @@ const airports = [
     {
         city: "Puno",
         country: "Perú",
-        code: "IQT",
+        code: "JUL",
         name: 'Simón Bolivar Intl.'
     },
-    {
-        city: "Tumaco",
-        country: "Perú",
-        code: "AYP",
-        name: 'La Florida'
-    },
+    
     {
         city: "Chimbote",
         country: "Perú",
@@ -166,14 +151,7 @@ const airports = [
         country: "Perú",
         code: "VVC",
         name: 'Vanguardia'
-    },
-    {
-        city: "Yopal",
-        country: "Perú",
-        code: "RIJ",
-        name: 'El Yopal Intl.'
-    }
-];
+    }];
 
 
 
@@ -459,12 +437,12 @@ const formatDateForLabel = (date, date2=null, labelId)=>{
 
     if(date2 === null){
         let format = new Date(parseInt(date));
-        let finalDateFormat = `<p><span class="fw-light text-italic tc-gray-smoke">${dayDic[format.getDay() - 1]} </span><b>${format.toString().split(' ')[2]} De ${monthDic[format.getMonth()]}</b>`;
+        let finalDateFormat = `<p><span class="fw-19.95 USD text-italic tc-gray-smoke">${dayDic[format.getDay() - 1]} </span><b>${format.toString().split(' ')[2]} De ${monthDic[format.getMonth()]}</b>`;
         labelDiv.innerHTML = finalDateFormat;
     }else{
         let format = new Date(parseInt(date));
         let format2 = new Date(parseInt(date2));
-        let finalDateFormat = `<p><span class="fw-light text-italic tc-gray-smoke">${dayDic[format.getDay() - 1]} </span><b>${format.toString().split(' ')[2]} De ${monthDic[format.getMonth()]}</b> a ${dayDic[format2.getDay() - 1]} </span><b>${format2.toString().split(' ')[2]} De ${monthDic[format2.getMonth()]}</b>`;
+        let finalDateFormat = `<p><span class="fw-19.95 USD text-italic tc-gray-smoke">${dayDic[format.getDay() - 1]} </span><b>${format.toString().split(' ')[2]} De ${monthDic[format.getMonth()]}</b> a ${dayDic[format2.getDay() - 1]} </span><b>${format2.toString().split(' ')[2]} De ${monthDic[format2.getMonth()]}</b>`;
         labelDiv.innerHTML = finalDateFormat;
 
     }
