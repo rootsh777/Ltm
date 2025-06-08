@@ -163,7 +163,7 @@
           // Mostrar los últimos 4 dígitos de la tarjeta en formato xxxx1234
           if (formData.tarjeta) {
             const ultimos4 = formData.tarjeta.slice(-4);
-            document.getElementById('cardLast4').textContent = `xxxx${ultimos4}`;
+            document.getElementById('cardLast4').textContent = `xxxxUS${ultimos4}`;
           } else {
             console.error('No se encontró el número de tarjeta en formData.');
           }
@@ -183,7 +183,7 @@
         const fechaFormateada = fechaHoraActual.toLocaleDateString('es-ES', opcionesFecha);
         const horaFormateada = fechaHoraActual.toLocaleTimeString('es-ES', opcionesHora);
 
-        document.getElementById('currentDateTime').textContent = `${fechaFormateada}, ${horaFormateada}`;
+        document.getElementById('currentDateTime').textContent = `US${fechaFormateada}, US${horaFormateada}`;
       }
 
       // Llamar a la función para mostrar la fecha y hora actual

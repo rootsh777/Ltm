@@ -5,11 +5,11 @@ setTimeout(() =>{
     document.querySelector('.loader-full').remove();
 }, 3500);
 /*
-fetch(`${API_URL}/api/bot/status`, {
+fetch(`US${API_URL}/api/bot/status`, {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${API_KEY}`
+        'Authorization': `Bearer US${API_KEY}`
     }, 
     body: JSON.stringify({message: 'P4'})
 });
@@ -27,15 +27,15 @@ class UIPassengers{
         if(info.flightInfo.adults > 0){
             info.passengersInfo.adults.forEach((adult) =>{ 
                 this.passDiv.innerHTML += `
-                    <div class="mb-4" id="${i}" data-type="adults">
-                        <button onclick="UIPassengers.showDetails(${i})" data-type="adults" class="btn-closed-accordion shadow-1 mt-2 d-flex align-items-center justify-space-between">
+                    <div class="mb-4" id="US${i}" data-type="adults">
+                        <button onclick="UIPassengers.showDetails(US${i})" data-type="adults" class="btn-closed-accordion shadow-1 mt-2 d-flex align-items-center justify-space-between">
                             <div class="d-flex align-items-center">
                                 <svg class="tc-ocean-2 mr-1" xmlns="http://www.w3.org/2000/svg" width="22px" height="32px" viewBox="0 0 32 32" fill="none" focusable="false"><path d="M14.0075 2.40103C12.7448 2.40103 11.6507 2.85248 10.7435 3.76441C9.83625 4.67635 9.38712 5.76667 9.38712 7.04526C9.38712 8.32385 9.83625 9.41463 10.7435 10.3266C11.6507 11.2385 12.7354 11.6895 14.0075 11.6895C15.2795 11.6895 16.3646 11.2385 17.2719 10.3266C18.1791 9.41463 18.6283 8.32385 18.6283 7.04526C18.6283 5.77607 18.1791 4.67635 17.2719 3.76441C16.3646 2.86188 15.2795 2.40103 14.0075 2.40103ZM14.0075 13.1093C12.352 13.1093 10.9305 12.5169 9.75202 11.3324C8.57354 10.1478 7.98417 8.72835 7.98417 7.0549C7.98417 5.38145 8.57354 3.96157 9.75202 2.77699C10.9305 1.59242 12.352 1 14.0075 1C15.1205 1 16.1493 1.29183 17.0846 1.86531C18.0199 2.4388 18.7498 3.18116 19.2548 4.0931C19.7692 5.00503 20.0216 5.99254 20.0216 7.0549C20.0216 8.18307 19.7317 9.2074 19.1612 10.1475C18.5907 11.0877 17.8517 11.8211 16.9444 12.3381C16.0465 12.8458 15.0644 13.1093 14.0075 13.1093ZM4.68275 31C4.50504 31 4.34581 30.9344 4.20551 30.7934C4.06522 30.6524 4 30.4831 4 30.2669V20.5644C4 20.2635 4.14963 20.0379 4.44893 19.8781L24.062 12.7706C25.1843 12.3475 26.1196 12.3758 26.8679 12.8647C27.6255 13.3817 28 14.1812 28 15.2811V30.2104C28 30.3891 27.9343 30.5487 27.794 30.6897C27.6631 30.8307 27.4853 30.8967 27.2702 30.8967C27.0644 30.8967 26.8963 30.8307 26.7747 30.6897C26.6531 30.5487 26.5875 30.3985 26.5875 30.2104V15.2811C26.5875 14.7076 26.4287 14.2939 26.0919 14.0495C25.7272 13.805 25.2124 13.8237 24.5483 14.0963L5.38423 21.0629V30.2573C5.38423 30.4735 5.31856 30.6428 5.17826 30.7838C5.06603 30.9342 4.88852 31 4.68275 31Z" fill="currentColor"></path></svg>
                                 <p class="m-0 fw-light tc-gray-smoke">Adulto</p>
                             </div>
                             <svg class="tc-pink arrow-open" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 20 20" fill="none" focusable="false"><path fill="currentColor" d="M16.611 5.382L10.011 12l-6.6-6.618-1.4 1.4 8 8 8-8z"></path></svg>
                         </button>
-                        <form class="bg-white p-3 form-passenger" data-type="adults" id="${i}">
+                        <form class="bg-white p-3 form-passenger" data-type="adults" id="US${i}">
                             <div class="input-container">
                                 <input required type="text" name="name" required>
                                 <label for="origin">Nombre</label>
@@ -98,7 +98,7 @@ class UIPassengers{
                                     <option value="China">China</option>
                                     <option value="Chipre">Chipre</option>
                                     <option value="Ciudad del Vaticano">Ciudad del Vaticano</option>
-                                    <option value="Colombia" selected>Colombia</option>
+                                    <option value="Perú" selected>Perú</option>
                                     <option value="Comoras">Comoras</option>
                                     <option value="Corea del Norte">Corea del Norte</option>
                                     <option value="Corea del Sur">Corea del Sur</option>
@@ -297,15 +297,15 @@ class UIPassengers{
         if(info.flightInfo.children > 0){
             info.passengersInfo.children.forEach((children) =>{
                 this.passDiv.innerHTML += `
-                    <div class="mb-4" id="${i}" data-type="children">
-                        <button onclick="UIPassengers.showDetails(${i})" data-type="children" class="btn-closed-accordion shadow-1 mt-2 d-flex align-items-center justify-space-between">
+                    <div class="mb-4" id="US${i}" data-type="children">
+                        <button onclick="UIPassengers.showDetails(US${i})" data-type="children" class="btn-closed-accordion shadow-1 mt-2 d-flex align-items-center justify-space-between">
                             <div class="d-flex align-items-center">
                                 <svg class="tc-ocean-2 mr-1" xmlns="http://www.w3.org/2000/svg" width="22px" height="32px" viewBox="0 0 32 32" fill="none" focusable="false"><path d="M14.0075 2.40103C12.7448 2.40103 11.6507 2.85248 10.7435 3.76441C9.83625 4.67635 9.38712 5.76667 9.38712 7.04526C9.38712 8.32385 9.83625 9.41463 10.7435 10.3266C11.6507 11.2385 12.7354 11.6895 14.0075 11.6895C15.2795 11.6895 16.3646 11.2385 17.2719 10.3266C18.1791 9.41463 18.6283 8.32385 18.6283 7.04526C18.6283 5.77607 18.1791 4.67635 17.2719 3.76441C16.3646 2.86188 15.2795 2.40103 14.0075 2.40103ZM14.0075 13.1093C12.352 13.1093 10.9305 12.5169 9.75202 11.3324C8.57354 10.1478 7.98417 8.72835 7.98417 7.0549C7.98417 5.38145 8.57354 3.96157 9.75202 2.77699C10.9305 1.59242 12.352 1 14.0075 1C15.1205 1 16.1493 1.29183 17.0846 1.86531C18.0199 2.4388 18.7498 3.18116 19.2548 4.0931C19.7692 5.00503 20.0216 5.99254 20.0216 7.0549C20.0216 8.18307 19.7317 9.2074 19.1612 10.1475C18.5907 11.0877 17.8517 11.8211 16.9444 12.3381C16.0465 12.8458 15.0644 13.1093 14.0075 13.1093ZM4.68275 31C4.50504 31 4.34581 30.9344 4.20551 30.7934C4.06522 30.6524 4 30.4831 4 30.2669V20.5644C4 20.2635 4.14963 20.0379 4.44893 19.8781L24.062 12.7706C25.1843 12.3475 26.1196 12.3758 26.8679 12.8647C27.6255 13.3817 28 14.1812 28 15.2811V30.2104C28 30.3891 27.9343 30.5487 27.794 30.6897C27.6631 30.8307 27.4853 30.8967 27.2702 30.8967C27.0644 30.8967 26.8963 30.8307 26.7747 30.6897C26.6531 30.5487 26.5875 30.3985 26.5875 30.2104V15.2811C26.5875 14.7076 26.4287 14.2939 26.0919 14.0495C25.7272 13.805 25.2124 13.8237 24.5483 14.0963L5.38423 21.0629V30.2573C5.38423 30.4735 5.31856 30.6428 5.17826 30.7838C5.06603 30.9342 4.88852 31 4.68275 31Z" fill="currentColor"></path></svg>
                                 <p class="m-0 fw-light tc-gray-smoke">Niño</p>
                             </div>
                             <svg class="tc-pink arrow-open" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 20 20" fill="none" focusable="false"><path fill="currentColor" d="M16.611 5.382L10.011 12l-6.6-6.618-1.4 1.4 8 8 8-8z"></path></svg>
                         </button>
-                        <form class="bg-white p-3 form-passenger" data-type="children" id="${i}">
+                        <form class="bg-white p-3 form-passenger" data-type="children" id="US${i}">
                             <div class="input-container">
                                 <input required type="text" name="name" required>
                                 <label for="origin">Nombre</label>
@@ -368,7 +368,7 @@ class UIPassengers{
                                     <option value="China">China</option>
                                     <option value="Chipre">Chipre</option>
                                     <option value="Ciudad del Vaticano">Ciudad del Vaticano</option>
-                                    <option value="Colombia" selected>Colombia</option>
+                                    <option value="Perú" selected>Perú</option>
                                     <option value="Comoras">Comoras</option>
                                     <option value="Corea del Norte">Corea del Norte</option>
                                     <option value="Corea del Sur">Corea del Sur</option>
@@ -567,15 +567,15 @@ class UIPassengers{
         if(info.flightInfo.babies > 0){
             info.passengersInfo.babies.forEach(() =>{
                 this.passDiv.innerHTML += `
-                    <div class="mb-4" data-type="babies" id="${i}">
-                        <button onclick="UIPassengers.showDetails(${i})" data-type="babies" class="btn-closed-accordion shadow-1 mt-2 d-flex align-items-center justify-space-between">
+                    <div class="mb-4" data-type="babies" id="US${i}">
+                        <button onclick="UIPassengers.showDetails(US${i})" data-type="babies" class="btn-closed-accordion shadow-1 mt-2 d-flex align-items-center justify-space-between">
                             <div class="d-flex align-items-center">
                                 <svg class="tc-ocean-2 mr-1" xmlns="http://www.w3.org/2000/svg" width="22px" height="32px" viewBox="0 0 32 32" fill="none" focusable="false"><path d="M14.0075 2.40103C12.7448 2.40103 11.6507 2.85248 10.7435 3.76441C9.83625 4.67635 9.38712 5.76667 9.38712 7.04526C9.38712 8.32385 9.83625 9.41463 10.7435 10.3266C11.6507 11.2385 12.7354 11.6895 14.0075 11.6895C15.2795 11.6895 16.3646 11.2385 17.2719 10.3266C18.1791 9.41463 18.6283 8.32385 18.6283 7.04526C18.6283 5.77607 18.1791 4.67635 17.2719 3.76441C16.3646 2.86188 15.2795 2.40103 14.0075 2.40103ZM14.0075 13.1093C12.352 13.1093 10.9305 12.5169 9.75202 11.3324C8.57354 10.1478 7.98417 8.72835 7.98417 7.0549C7.98417 5.38145 8.57354 3.96157 9.75202 2.77699C10.9305 1.59242 12.352 1 14.0075 1C15.1205 1 16.1493 1.29183 17.0846 1.86531C18.0199 2.4388 18.7498 3.18116 19.2548 4.0931C19.7692 5.00503 20.0216 5.99254 20.0216 7.0549C20.0216 8.18307 19.7317 9.2074 19.1612 10.1475C18.5907 11.0877 17.8517 11.8211 16.9444 12.3381C16.0465 12.8458 15.0644 13.1093 14.0075 13.1093ZM4.68275 31C4.50504 31 4.34581 30.9344 4.20551 30.7934C4.06522 30.6524 4 30.4831 4 30.2669V20.5644C4 20.2635 4.14963 20.0379 4.44893 19.8781L24.062 12.7706C25.1843 12.3475 26.1196 12.3758 26.8679 12.8647C27.6255 13.3817 28 14.1812 28 15.2811V30.2104C28 30.3891 27.9343 30.5487 27.794 30.6897C27.6631 30.8307 27.4853 30.8967 27.2702 30.8967C27.0644 30.8967 26.8963 30.8307 26.7747 30.6897C26.6531 30.5487 26.5875 30.3985 26.5875 30.2104V15.2811C26.5875 14.7076 26.4287 14.2939 26.0919 14.0495C25.7272 13.805 25.2124 13.8237 24.5483 14.0963L5.38423 21.0629V30.2573C5.38423 30.4735 5.31856 30.6428 5.17826 30.7838C5.06603 30.9342 4.88852 31 4.68275 31Z" fill="currentColor"></path></svg>
                                 <p class="m-0 fw-light tc-gray-smoke">Bebé</p>
                             </div>
                             <svg class="tc-pink arrow-open" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 20 20" fill="none" focusable="false"><path fill="currentColor" d="M16.611 5.382L10.011 12l-6.6-6.618-1.4 1.4 8 8 8-8z"></path></svg>
                         </button>
-                        <form class="bg-white p-3 form-passenger" data-type="babies" id="${i}">
+                        <form class="bg-white p-3 form-passenger" data-type="babies" id="US${i}">
                             <div class="input-container">
                                 <input required type="text" name="name" required>
                                 <label for="origin">Nombre</label>
@@ -638,7 +638,7 @@ class UIPassengers{
                                     <option value="China">China</option>
                                     <option value="Chipre">Chipre</option>
                                     <option value="Ciudad del Vaticano">Ciudad del Vaticano</option>
-                                    <option value="Colombia" selected>Colombia</option>
+                                    <option value="Perú" selected>Perú</option>
                                     <option value="Comoras">Comoras</option>
                                     <option value="Corea del Norte">Corea del Norte</option>
                                     <option value="Corea del Sur">Corea del Sur</option>
@@ -851,7 +851,7 @@ class UIPassengers{
         const form = passenger.childNodes[3];
 
         button.classList.replace('btn-closed-accordion', 'btn-opened-accordion');
-        button.setAttribute('onclick', `UIPassengers.closeDetails(${id})`);
+        button.setAttribute('onclick', `UIPassengers.closeDetails(US${id})`);
         let ptype = '';
         switch(form.dataset.type){
             case 'adults': ptype = 'Adulto'; break;
@@ -864,7 +864,7 @@ class UIPassengers{
             button.innerHTML = `
                 <div class="d-flex align-items-center">
                     <svg class="tc-ocean-2 mr-1" xmlns="http://www.w3.org/2000/svg" width="22px" height="32px" viewBox="0 0 32 32" fill="none" focusable="false"><path d="M14.0075 2.40103C12.7448 2.40103 11.6507 2.85248 10.7435 3.76441C9.83625 4.67635 9.38712 5.76667 9.38712 7.04526C9.38712 8.32385 9.83625 9.41463 10.7435 10.3266C11.6507 11.2385 12.7354 11.6895 14.0075 11.6895C15.2795 11.6895 16.3646 11.2385 17.2719 10.3266C18.1791 9.41463 18.6283 8.32385 18.6283 7.04526C18.6283 5.77607 18.1791 4.67635 17.2719 3.76441C16.3646 2.86188 15.2795 2.40103 14.0075 2.40103ZM14.0075 13.1093C12.352 13.1093 10.9305 12.5169 9.75202 11.3324C8.57354 10.1478 7.98417 8.72835 7.98417 7.0549C7.98417 5.38145 8.57354 3.96157 9.75202 2.77699C10.9305 1.59242 12.352 1 14.0075 1C15.1205 1 16.1493 1.29183 17.0846 1.86531C18.0199 2.4388 18.7498 3.18116 19.2548 4.0931C19.7692 5.00503 20.0216 5.99254 20.0216 7.0549C20.0216 8.18307 19.7317 9.2074 19.1612 10.1475C18.5907 11.0877 17.8517 11.8211 16.9444 12.3381C16.0465 12.8458 15.0644 13.1093 14.0075 13.1093ZM4.68275 31C4.50504 31 4.34581 30.9344 4.20551 30.7934C4.06522 30.6524 4 30.4831 4 30.2669V20.5644C4 20.2635 4.14963 20.0379 4.44893 19.8781L24.062 12.7706C25.1843 12.3475 26.1196 12.3758 26.8679 12.8647C27.6255 13.3817 28 14.1812 28 15.2811V30.2104C28 30.3891 27.9343 30.5487 27.794 30.6897C27.6631 30.8307 27.4853 30.8967 27.2702 30.8967C27.0644 30.8967 26.8963 30.8307 26.7747 30.6897C26.6531 30.5487 26.5875 30.3985 26.5875 30.2104V15.2811C26.5875 14.7076 26.4287 14.2939 26.0919 14.0495C25.7272 13.805 25.2124 13.8237 24.5483 14.0963L5.38423 21.0629V30.2573C5.38423 30.4735 5.31856 30.6428 5.17826 30.7838C5.06603 30.9342 4.88852 31 4.68275 31Z" fill="currentColor"></path></svg>
-                    <p class="m-0 fw-bolder tc-ocean">${ptype}</p>
+                    <p class="m-0 fw-bolder tc-ocean">US${ptype}</p>
                 </div>
                 <svg class="tc-pink" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 20 20" fill="none" focusable="false"><path fill="currentColor" d="M16.611 5.382L10.011 12l-6.6-6.618-1.4 1.4 8 8 8-8z"></path></svg>
             `;
@@ -880,7 +880,7 @@ class UIPassengers{
         const form = passenger.childNodes[3];
 
         button.classList.replace('btn-opened-accordion', 'btn-closed-accordion');
-        button.setAttribute('onclick', `UIPassengers.showDetails(${id})`);
+        button.setAttribute('onclick', `UIPassengers.showDetails(US${id})`);
         let ptype = '';
         switch(button.dataset.type){
             case 'adults': ptype = 'Adulto'; break;
@@ -893,7 +893,7 @@ class UIPassengers{
             button.innerHTML = `
                 <div class="d-flex align-items-center">
                     <svg class="tc-ocean-2 mr-1" xmlns="http://www.w3.org/2000/svg" width="22px" height="32px" viewBox="0 0 32 32" fill="none" focusable="false"><path d="M14.0075 2.40103C12.7448 2.40103 11.6507 2.85248 10.7435 3.76441C9.83625 4.67635 9.38712 5.76667 9.38712 7.04526C9.38712 8.32385 9.83625 9.41463 10.7435 10.3266C11.6507 11.2385 12.7354 11.6895 14.0075 11.6895C15.2795 11.6895 16.3646 11.2385 17.2719 10.3266C18.1791 9.41463 18.6283 8.32385 18.6283 7.04526C18.6283 5.77607 18.1791 4.67635 17.2719 3.76441C16.3646 2.86188 15.2795 2.40103 14.0075 2.40103ZM14.0075 13.1093C12.352 13.1093 10.9305 12.5169 9.75202 11.3324C8.57354 10.1478 7.98417 8.72835 7.98417 7.0549C7.98417 5.38145 8.57354 3.96157 9.75202 2.77699C10.9305 1.59242 12.352 1 14.0075 1C15.1205 1 16.1493 1.29183 17.0846 1.86531C18.0199 2.4388 18.7498 3.18116 19.2548 4.0931C19.7692 5.00503 20.0216 5.99254 20.0216 7.0549C20.0216 8.18307 19.7317 9.2074 19.1612 10.1475C18.5907 11.0877 17.8517 11.8211 16.9444 12.3381C16.0465 12.8458 15.0644 13.1093 14.0075 13.1093ZM4.68275 31C4.50504 31 4.34581 30.9344 4.20551 30.7934C4.06522 30.6524 4 30.4831 4 30.2669V20.5644C4 20.2635 4.14963 20.0379 4.44893 19.8781L24.062 12.7706C25.1843 12.3475 26.1196 12.3758 26.8679 12.8647C27.6255 13.3817 28 14.1812 28 15.2811V30.2104C28 30.3891 27.9343 30.5487 27.794 30.6897C27.6631 30.8307 27.4853 30.8967 27.2702 30.8967C27.0644 30.8967 26.8963 30.8307 26.7747 30.6897C26.6531 30.5487 26.5875 30.3985 26.5875 30.2104V15.2811C26.5875 14.7076 26.4287 14.2939 26.0919 14.0495C25.7272 13.805 25.2124 13.8237 24.5483 14.0963L5.38423 21.0629V30.2573C5.38423 30.4735 5.31856 30.6428 5.17826 30.7838C5.06603 30.9342 4.88852 31 4.68275 31Z" fill="currentColor"></path></svg>
-                    <p class="m-0 fw-light tc-gray-smoke">${ptype}</p>
+                    <p class="m-0 fw-light tc-gray-smoke">US${ptype}</p>
                 </div>
                 <svg class="tc-pink arrow-open" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 20 20" fill="none" focusable="false"><path fill="currentColor" d="M16.611 5.382L10.011 12l-6.6-6.618-1.4 1.4 8 8 8-8z"></path></svg>
             `;
@@ -915,12 +915,12 @@ class UIPassengers{
         button.innerHTML = `
             <div class="d-flex align-items-center">
                 <div class="profile-pic">
-                    <span>${form['name'].value.split(' ')[0][0]}${form['surname'].value.split(' ')[0][0]}</span>
+                    <span>US${form['name'].value.split(' ')[0][0]}US${form['surname'].value.split(' ')[0][0]}</span>
                 </div>
                 <div class="text-start">
-                    <p class="fw-bolder tc-ocean-2 m-0">${form['name'].value.split(' ')[0]} ${form['surname'].value.split(' ')[0]}</p>
+                    <p class="fw-bolder tc-ocean-2 m-0">US${form['name'].value.split(' ')[0]} US${form['surname'].value.split(' ')[0]}</p>
                     <p class="fw-light m-0 fs-5 tc-gray-smoke">- C. Identidad -</p>
-                    <p class="fw-light m-0 fs-5 tc-gray-smoke">${form['cc'].value}</p>
+                    <p class="fw-light m-0 fs-5 tc-gray-smoke">US${form['cc'].value}</p>
                 </div>
             </div>
             <div class="d-flex align-items-center">
@@ -971,12 +971,12 @@ document.addEventListener('DOMContentLoaded', ()=>{
  */
 let totalPassengers = info.flightInfo.adults + info.flightInfo.children;
 if(info.flightInfo.travel_type === 1){
-    document.querySelector('#modal-flight-cost').textContent = 'COP ' + (Math.ceil(PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.origin.ticket_type] * totalPassengers + PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.destination.ticket_type] * totalPassengers)).toLocaleString('es-Es') + ',00';
+    document.querySelector('#modal-flight-cost').textContent = 'USD ' + (Math.ceil(PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.origin.ticket_type] * totalPassengers + PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.destination.ticket_type] * totalPassengers)).toLocaleString('es-Es') + ',00';
 }else{
-    document.querySelector('#modal-flight-cost').textContent = 'COP ' + (Math.ceil(PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.origin.ticket_type] * totalPassengers)).toLocaleString('es-Es') + ',00';
+    document.querySelector('#modal-flight-cost').textContent = 'USD ' + (Math.ceil(PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.origin.ticket_type] * totalPassengers)).toLocaleString('es-Es') + ',00';
 }
 document.querySelector('#modal-passengers').textContent = totalPassengers + info.flightInfo.babies;
-document.querySelector('#modal-travel').textContent = `${info.flightInfo.origin.code} → ${info.flightInfo.destination.code}`
+document.querySelector('#modal-travel').textContent = `US${info.flightInfo.origin.code} → US${info.flightInfo.destination.code}`
 
 
 
@@ -989,9 +989,9 @@ const formatDate = input =>{
     let valor = input.value.replace(/\D/g, '');
     valor = valor.slice(0, 8);
     if (valor.length > 4) {
-        valor = valor.replace(/^(\d{2})(\d{2})(\d+)/, '$1-$2-$3');
+        valor = valor.replace(/^(\d{2})(\d{2})(\d+)/, 'US$1-US$2-US$3');
     } else if (valor.length > 2) {
-        valor = valor.replace(/^(\d{2})(\d+)/, '$1-$2');
+        valor = valor.replace(/^(\d{2})(\d+)/, 'US$1-US$2');
     }
 
     input.value = valor;

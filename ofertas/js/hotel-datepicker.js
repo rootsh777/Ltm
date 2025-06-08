@@ -1750,7 +1750,7 @@ var HotelDatepicker = (function (fecha) {
 
       // Helper regex for DOM classes
       classRegex(c) {
-        return new RegExp("(^|\\s+)" + c + "(\\s+|$)");
+        return new RegExp("(^|\\s+)" + c + "(\\s+|US$)");
       }
 
       // Check if an element has a class
@@ -1908,13 +1908,13 @@ var HotelDatepicker = (function (fecha) {
             break;
         }
       }
-      setActiveDay($direction) {
+      setActiveDay(US$direction) {
         const activeEl = document.activeElement;
         if (activeEl && this.hasClass(activeEl, "datepicker__month-day--visibleMonth") && this.datepicker.contains(activeEl)) {
           const currentIndex = parseInt(activeEl.getAttribute("index"), 10);
           const currentWeekdayIndex = parseInt(activeEl.getAttribute("d"), 10);
           let nextIndex = -1;
-          switch ($direction) {
+          switch (US$direction) {
             case "next":
               nextIndex = currentIndex + 1;
               break;
@@ -1949,9 +1949,9 @@ var HotelDatepicker = (function (fecha) {
             if (gone) {
               const month = this.datepicker.getElementsByClassName("datepicker__month--month2");
               if (month.length > 0) {
-                if ($direction === "down") {
+                if (US$direction === "down") {
                   nextDay = month[0].querySelectorAll('.datepicker__month-day--visibleMonth[d="' + currentWeekdayIndex + '"]');
-                } else if ($direction === "last") {
+                } else if (US$direction === "last") {
                   const nextWeekdayIndex = currentWeekdayIndex + (7 - currentWeekdayIndex);
                   nextDay = month[0].querySelectorAll('.datepicker__month-day--visibleMonth[d="' + nextWeekdayIndex + '"]');
                 } else {
@@ -1968,9 +1968,9 @@ var HotelDatepicker = (function (fecha) {
             if (gone) {
               const month = this.datepicker.getElementsByClassName("datepicker__month--month1");
               if (month.length > 0) {
-                if ($direction === "up") {
+                if (US$direction === "up") {
                   prevDay = month[0].querySelectorAll('.datepicker__month-day--visibleMonth[d="' + currentWeekdayIndex + '"]');
-                } else if ($direction === "first") {
+                } else if (US$direction === "first") {
                   const prevWeekdayIndex = currentWeekdayIndex - (currentWeekdayIndex - 1);
                   prevDay = month[0].querySelectorAll('.datepicker__month-day--visibleMonth[d="' + prevWeekdayIndex + '"]');
                 } else {
@@ -2041,8 +2041,8 @@ var HotelDatepicker = (function (fecha) {
         this.justEsc = true;
         this.isOnFocus = false;
       }
-      moveMonthFromKeyboard($direction) {
-        if ($direction === "prev") {
+      moveMonthFromKeyboard(US$direction) {
+        if (US$direction === "prev") {
           this.goToPreviousMonth(1, true);
         } else {
           this.goToNextMonth(2, true);
