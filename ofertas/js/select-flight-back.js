@@ -1,13 +1,3 @@
-function convertirCOPaUSDString(valor, tasaCambio = 4000) {
-    if (!valor) return valor;
-    let limpio = valor.replace(/COP|cop|\$|USD|usd|,/gi, '').trim();
-    limpio = limpio.replace(/\./g, '').replace(',', '.');
-    const numero = parseFloat(limpio);
-    if (isNaN(numero)) return valor;
-    const usd = (numero / tasaCambio).toFixed(2);
-    return `$${usd} USD`;
-}
-
 /**
  * DOM Setup
  * 
@@ -61,7 +51,7 @@ const updateDOM = () =>{
                 </div>
                 <div class="d-flex align-items-end flex-column">
                     <p class="m-0 fs-6 tc-gray-smoke">Precio por pasajero</p>
-                    <p class="m-0 tc-ocean" style="font-size: 20px;">COP ${(Math.ceil(PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.origin.ticket_type])).toLocaleString('es-Es')},00</p>
+                    <p class="m-0 tc-ocean" style="font-size: 20px;">S/ ${(Math.ceil(PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.origin.ticket_type])).toLocaleString('es-Es')},00</p>
                 </div>
             </div>
 
@@ -171,7 +161,7 @@ class UIFlights{
                         </div>
                         <div class="d-flex align-items-end flex-column">
                             <p class="m-1 fs-6 tc-green">Adulto desde</p>
-                            <p class="m-0 fs-4 tc-deep-blue">COP ${PRECIO_BASE.toLocaleString('es-Es')},00</p>
+                            <p class="m-0 fs-4 tc-deep-blue">S/ ${PRECIO_BASE.toLocaleString('es-Es')},00</p>
                         </div>
                     </div>
         
@@ -254,7 +244,7 @@ class UIFlights{
                                         </div>
                                     </div>
                                     <div class="d-flex flex-column align-items-center">
-                                        <p class="fs-3 fw-bolder tc-ocean m-0">COP ${PRECIO_BASE.toLocaleString('es-Es')},00</p>
+                                        <p class="fs-3 fw-bolder tc-ocean m-0">S/ ${PRECIO_BASE.toLocaleString('es-Es')},00</p>
                                         <p class="fs-5 mt-0 mb-5 tc-gray-smoke">Por pasajero</p>
                                         <a class="fw-lighter tc-blue mt-4" href="">Más detalles</a>
                                     </div>
@@ -287,7 +277,7 @@ class UIFlights{
                                         </div>
                                     </div>
                                     <div class="d-flex flex-column align-items-center">
-                                        <p class="fs-3 fw-bolder tc-ocean m-0">COP ${(Math.ceil(PRECIO_BASE*1.7)).toLocaleString('es-Es')},00</p>
+                                        <p class="fs-3 fw-bolder tc-ocean m-0">S/ ${(Math.ceil(PRECIO_BASE*1.7)).toLocaleString('es-Es')},00</p>
                                         <p class="fs-5 mt-0 mb-5 tc-gray-smoke">Por pasajero</p>
                                         <a class="fw-lighter tc-blue mt-4" href="">Más detalles</a>
                                     </div>
@@ -332,7 +322,7 @@ class UIFlights{
                                         </div>
                                     </div>
                                     <div class="d-flex flex-column align-items-center">
-                                        <p class="fs-3 fw-bolder tc-ocean m-0">COP ${(Math.ceil(PRECIO_BASE*3)).toLocaleString('es-Es')},00</p>
+                                        <p class="fs-3 fw-bolder tc-ocean m-0">S/ ${(Math.ceil(PRECIO_BASE*3)).toLocaleString('es-Es')},00</p>
                                         <p class="fs-5 mt-0 mb-5 tc-gray-smoke">Por pasajero</p>
                                         <a class="fw-lighter tc-blue mt-4" href="">Más detalles</a>
                                     </div>
@@ -376,7 +366,7 @@ class UIFlights{
                             </div>
                             <div class="d-flex align-items-end flex-column">
                                 <p class="m-1 fs-6 tc-green">Adulto desde</p>
-                                <p class="m-0 fs-4 tc-deep-blue">COP ${PRECIO_BASE.toLocaleString('es-Es')},00</p>
+                                <p class="m-0 fs-4 tc-deep-blue">S/ ${PRECIO_BASE.toLocaleString('es-Es')},00</p>
                             </div>
                         </div>
             
