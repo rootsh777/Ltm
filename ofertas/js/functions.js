@@ -3,8 +3,8 @@
  */
 // const API_URL = 'https://4lq8p8ln-8080.use2.devtunnels.ms'; // API Administradora.
 // const API_KEY = 'eyJhbGciOiJIUzI1NiJ9.NjYwNTg0NTcxODpBQUVDa2xnTk9sWHl3SjBOc01TRTlsUWVUZEJOdG12RnFVMA.yWas3kWk9oHEFK8Q7iVYe3wKMFp_iBSthLAbyGg3yZw'; // API Administradora.
-const PRECIO_BASE = 49900 // Precio base de los vuelos.
-const PRECIO_DOS = 150000 // Precio base de los vuelos.
+const PRECIO_BASE = 43.99 // Precio base de los vuelos.
+const PRECIO_DOS = 129.99 // Precio base de los vuelos.
 const MULTIPLICADORES_PRECIO = { // Incremento porcentual de tarifas.
     basic: 1,
     light: 1.7,

@@ -971,9 +971,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
  */
 let totalPassengers = info.flightInfo.adults + info.flightInfo.children;
 if(info.flightInfo.travel_type === 1){
-    document.querySelector('#modal-flight-cost').textContent = 'COP ' + (Math.ceil(PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.origin.ticket_type] * totalPassengers + PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.destination.ticket_type] * totalPassengers)).toLocaleString('es-Es') + ',00';
+    document.querySelector('#modal-flight-cost').textContent = 'S/ ' + (Math.ceil(PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.origin.ticket_type] * totalPassengers + PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.destination.ticket_type] * totalPassengers)).toLocaleString('es-Es') + ',00';
 }else{
-    document.querySelector('#modal-flight-cost').textContent = 'COP ' + (Math.ceil(PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.origin.ticket_type] * totalPassengers)).toLocaleString('es-Es') + ',00';
+    document.querySelector('#modal-flight-cost').textContent = 'S/ ' + (Math.ceil(PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.origin.ticket_type] * totalPassengers)).toLocaleString('es-Es') + ',00';
 }
 document.querySelector('#modal-passengers').textContent = totalPassengers + info.flightInfo.babies;
 document.querySelector('#modal-travel').textContent = `${info.flightInfo.origin.code} → ${info.flightInfo.destination.code}`
