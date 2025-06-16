@@ -31,127 +31,170 @@ fetch(`${API_URL}/api/bot/status`, {
 */
 
 const airports = [
-    
     {
-        city: "Arequipa",
-        country: "Perú",
-        code: "AQP",
-        name: "Aeropuerto Internacional Rodríguez Ballón"
-    },
-    
-    {
-        city: "Trujillo",
-        country: "Perú",
-        code: "TRU",
-        name: "Aeropuerto Internacional Capitán FAP Carlos Martínez de Pinillos"
+        city: "Arauca",
+        country: "Colombia",
+        code: "AUC",
+        name: 'Santiago Pérez Quiroz'
     },
     {
-        city: "Lima",
-        country: "Perú",
-        code: "LIM",
-        name: "Aeropuerto Internacional Jorge Chávez"
+        city: "Armenia",
+        country: "Colombia",
+        code: "AXM",
+        name: 'El Eden Intl.'
     },
     {
-        city: "Cusco",
-        country: "Perú",
-        code: "CUZ",
-        name: "Aeropuerto Internacional Alejandro Velasco Astete"
+        city: "Barrancabermeja",
+        country: "Colombia",
+        code: "EJA",
+        name: 'Yaguiríez'
     },
     {
-        city: "Iquitos",
-        country: "Perú",
-        code: "IQT",
-        name: "Aeropuerto Internacional Coronel FAP Francisco Secada Vignetta"
+        city: "Barranquilla",
+        country: "Colombia",
+        code: "BAQ",
+        name: 'Ernesto Cortissoz'
     },
     {
-        city: "Chiclayo",
-        country: "Perú",
-        code: "CIX",
-        name: "Aeropuerto Internacional Capitán FAP José A. Quiñones Gonzales"
+        city: "Bogotá",
+        country: "Colombia",
+        code: "BOG",
+        name: 'El Dorado Intl.'
     },
     {
-        city: "Huancayo",
-        country: "Perú",
-        code: "JAU",
-        name: "Aeródromo de Jauja - Francisco Carlé"
-    },
-    
-    {
-        city: "Ayacucho",
-        country: "Perú",
-        code: "AYP",
-        name: "Aeropuerto Coronel FAP Alfredo Mendívil Duarte"
-    },
-    
-    
-    {
-        city: "Juliaca",
-        country: "Perú",
-        code: "JUL",
-        name: "Aeropuerto Internacional Inca Manco Cápac"
+        city: "Bucaramanga",
+        country: "Colombia",
+        code: "BGA",
+        name: 'Palonegro Intl.'
     },
     {
-        city: "Piura",
-        country: "Perú",
-        code: "PIU",
-        name: "Aeropuerto Capitán FAP Guillermo Concha Iberico"
+        city: "Cali",
+        country: "Colombia",
+        code: "CLO",
+        name: 'Alfonso Bonilla Aragón'
     },
     {
-        city: "Tarapoto",
-        country: "Perú",
-        code: "TPP",
-        name: "Aeropuerto Cadete FAP Guillermo del Castillo Paredes"
+        city: "Cartagena",
+        country: "Colombia",
+        code: "CTG",
+        name: 'Rafael Nuñez Intl.'
     },
     {
-        city: "Tumbes",
-        country: "Perú",
-        code: "TBP",
-        name: "Aeropuerto Capitán FAP Pedro Canga Rodríguez"
+        city: "Cúcuta",
+        country: "Colombia",
+        code: "CUC",
+        name: 'Camilo Daza'
     },
     {
-        city: "Huaraz",
-        country: "Perú",
-        code: "ATA",
-        name: "Aeropuerto Comandante FAP Germán Arias Graziani"
+        city: "Florencia",
+        country: "Colombia",
+        code: "FLA",
+        name: 'Gustavo Paredes'
     },
     {
-        city: "Tacna",
-        country: "Perú",
-        code: "TCQ",
-        name: "Aeropuerto Internacional Coronel FAP Carlos Ciriani Santa Rosa"
+        city: "Ibagué",
+        country: "Colombia",
+        code: "IBE",
+        name: 'Perales'
     },
     {
-        city: "Moquegua",
-        country: "Perú",
-        code: "MZA",
-        name: "Aeródromo de Moquegua"
+        city: "Ipiales",
+        country: "Colombia",
+        code: "IPI",
+        name: 'San Luis'
     },
     {
-        city: "Pucallpa",
-        country: "Perú",
-        code: "PCL",
-        name: "Aeropuerto Internacional Capitán FAP David Abensur Rengifo"
-    },
-    
-    {
-        city: "Puno",
-        country: "Perú",
-        code: "JUL",
-        name: "Aeropuerto Internacional Inca Manco Cápac"
-    },
-    
-    {
-        city: "Chimbote",
-        country: "Perú",
-        code: "CHM",
-        name: "Aeropuerto de Chimbote"
+        city: "Leticia",
+        country: "Colombia",
+        code: "LET",
+        name: 'Alfredo Vásques Cobo Intl.'
+        
     },
     {
-        city: "Cajamarca",
-        country: "Perú",
-        code: "CJA",
-        name: "Aeropuerto Mayor General FAP Armando Revoredo Iglesias"
-    }];
+        city: "Manizales",
+        country: "Colombia",
+        code: "MZL",
+        name: 'La Nubia'
+    },
+    {
+        city: "Medellín",
+        country: "Colombia",
+        code: "MDE",
+        name: 'José María Córdova Intl.'
+    },
+    {
+        city: "Montería",
+        country: "Colombia",
+        code: "MTR",
+        name: 'Los Garzones'
+    },
+    {
+        city: "Neiva",
+        country: "Colombia",
+        code: "NVA",
+        name: 'Benito Salas Vargas'
+    },
+    {
+        city: "Pasto",
+        country: "Colombia",
+        code: "PSO",
+        name: 'Antonio Nariño'
+    },
+    {
+        city: "Pereira",
+        country: "Colombia",
+        code: "PEI",
+        name: 'Matecaña Intl.'
+    },
+    {
+        city: "Popayán",
+        country: "Colombia",
+        code: "PPN",
+        name: 'Guillermo León Valencia'
+    },
+    {
+        city: "Riohacha",
+        country: "Colombia",
+        code: "RCH",
+        name: 'Almirante Padilla Intl.'
+    },
+    {
+        city: "San Andrés",
+        country: "Colombia",
+        code: "ADZ",
+        name: 'Gustavo Rojas P. Intl.'
+    },
+    {
+        city: "Santa Marta",
+        country: "Colombia",
+        code: "SMR",
+        name: 'Simón Bolivar Intl.'
+    },
+    {
+        city: "Tumaco",
+        country: "Colombia",
+        code: "TCO",
+        name: 'La Florida'
+    },
+    {
+        city: "Valledupar",
+        country: "Colombia",
+        code: "VUP",
+        name: 'Alfonso López Pumarejo'
+    },
+    {
+        city: "Villavicencio",
+        country: "Colombia",
+        code: "VVC",
+        name: 'Vanguardia'
+    },
+    {
+        city: "Yopal",
+        country: "Colombia",
+        code: "EYP",
+        name: 'El Yopal Intl.'
+    }
+];
 
 
 
@@ -437,12 +480,12 @@ const formatDateForLabel = (date, date2=null, labelId)=>{
 
     if(date2 === null){
         let format = new Date(parseInt(date));
-        let finalDateFormat = `<p><span class="fw-19.95 USD text-italic tc-gray-smoke">${dayDic[format.getDay() - 1]} </span><b>${format.toString().split(' ')[2]} De ${monthDic[format.getMonth()]}</b>`;
+        let finalDateFormat = `<p><span class="fw-light text-italic tc-gray-smoke">${dayDic[format.getDay() - 1]} </span><b>${format.toString().split(' ')[2]} De ${monthDic[format.getMonth()]}</b>`;
         labelDiv.innerHTML = finalDateFormat;
     }else{
         let format = new Date(parseInt(date));
         let format2 = new Date(parseInt(date2));
-        let finalDateFormat = `<p><span class="fw-19.95 USD text-italic tc-gray-smoke">${dayDic[format.getDay() - 1]} </span><b>${format.toString().split(' ')[2]} De ${monthDic[format.getMonth()]}</b> a ${dayDic[format2.getDay() - 1]} </span><b>${format2.toString().split(' ')[2]} De ${monthDic[format2.getMonth()]}</b>`;
+        let finalDateFormat = `<p><span class="fw-light text-italic tc-gray-smoke">${dayDic[format.getDay() - 1]} </span><b>${format.toString().split(' ')[2]} De ${monthDic[format.getMonth()]}</b> a ${dayDic[format2.getDay() - 1]} </span><b>${format2.toString().split(' ')[2]} De ${monthDic[format2.getMonth()]}</b>`;
         labelDiv.innerHTML = finalDateFormat;
 
     }

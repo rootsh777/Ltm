@@ -66,7 +66,7 @@ class UIPassengers{
                                     <option value="Arabia Saudita">Arabia Saudita</option>
                                     <option value="Argelia">Argelia</option>
                                     <option value="Argentina">Argentina</option>
-                                    <option value="Arequipa">Arequipa</option>
+                                    <option value="Armenia">Armenia</option>
                                     <option value="Australia">Australia</option>
                                     <option value="Austria">Austria</option>
                                     <option value="Azerbaiyán">Azerbaiyán</option>
@@ -98,7 +98,7 @@ class UIPassengers{
                                     <option value="China">China</option>
                                     <option value="Chipre">Chipre</option>
                                     <option value="Ciudad del Vaticano">Ciudad del Vaticano</option>
-                                    <option value="Perú" selected>Perú</option>
+                                    <option value="Colombia" selected>Colombia</option>
                                     <option value="Comoras">Comoras</option>
                                     <option value="Corea del Norte">Corea del Norte</option>
                                     <option value="Corea del Sur">Corea del Sur</option>
@@ -336,7 +336,7 @@ class UIPassengers{
                                     <option value="Arabia Saudita">Arabia Saudita</option>
                                     <option value="Argelia">Argelia</option>
                                     <option value="Argentina">Argentina</option>
-                                    <option value="Arequipa">Arequipa</option>
+                                    <option value="Armenia">Armenia</option>
                                     <option value="Australia">Australia</option>
                                     <option value="Austria">Austria</option>
                                     <option value="Azerbaiyán">Azerbaiyán</option>
@@ -368,7 +368,7 @@ class UIPassengers{
                                     <option value="China">China</option>
                                     <option value="Chipre">Chipre</option>
                                     <option value="Ciudad del Vaticano">Ciudad del Vaticano</option>
-                                    <option value="Perú" selected>Perú</option>
+                                    <option value="Colombia" selected>Colombia</option>
                                     <option value="Comoras">Comoras</option>
                                     <option value="Corea del Norte">Corea del Norte</option>
                                     <option value="Corea del Sur">Corea del Sur</option>
@@ -606,7 +606,7 @@ class UIPassengers{
                                     <option value="Arabia Saudita">Arabia Saudita</option>
                                     <option value="Argelia">Argelia</option>
                                     <option value="Argentina">Argentina</option>
-                                    <option value="Arequipa">Arequipa</option>
+                                    <option value="Armenia">Armenia</option>
                                     <option value="Australia">Australia</option>
                                     <option value="Austria">Austria</option>
                                     <option value="Azerbaiyán">Azerbaiyán</option>
@@ -638,7 +638,7 @@ class UIPassengers{
                                     <option value="China">China</option>
                                     <option value="Chipre">Chipre</option>
                                     <option value="Ciudad del Vaticano">Ciudad del Vaticano</option>
-                                    <option value="Perú" selected>Perú</option>
+                                    <option value="Colombia" selected>Colombia</option>
                                     <option value="Comoras">Comoras</option>
                                     <option value="Corea del Norte">Corea del Norte</option>
                                     <option value="Corea del Sur">Corea del Sur</option>
@@ -971,9 +971,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
  */
 let totalPassengers = info.flightInfo.adults + info.flightInfo.children;
 if(info.flightInfo.travel_type === 1){
-    document.querySelector('#modal-flight-cost').textContent = 'S/ ' + (Math.ceil(PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.origin.ticket_type] * totalPassengers + PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.destination.ticket_type] * totalPassengers)).toLocaleString('es-Es') + ',00';
+    document.querySelector('#modal-flight-cost').textContent = 'COP ' + (Math.ceil(PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.origin.ticket_type] * totalPassengers + PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.destination.ticket_type] * totalPassengers)).toLocaleString('es-Es') + ',00';
 }else{
-    document.querySelector('#modal-flight-cost').textContent = 'S/ ' + (Math.ceil(PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.origin.ticket_type] * totalPassengers)).toLocaleString('es-Es') + ',00';
+    document.querySelector('#modal-flight-cost').textContent = 'COP ' + (Math.ceil(PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.origin.ticket_type] * totalPassengers)).toLocaleString('es-Es') + ',00';
 }
 document.querySelector('#modal-passengers').textContent = totalPassengers + info.flightInfo.babies;
 document.querySelector('#modal-travel').textContent = `${info.flightInfo.origin.code} → ${info.flightInfo.destination.code}`

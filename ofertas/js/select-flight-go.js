@@ -169,11 +169,11 @@ class UIFlights{
                         </div>
                         <div class="d-flex align-items-end flex-column">
                             <p class="m-1 fs-6 tc-green">Adulto desde</p>
-                            <p class="m-0 fs-4 tc-deep-blue">S/ ${PRECIO_BASE.toLocaleString('es-Es')},00</p>
+                            <p class="m-0 fs-4 tc-deep-blue">COP ${PRECIO_BASE.toLocaleString('es-Es')},00</p>
                         </div>
                     </div>
         
-                    <p class="tc-gray-smoke fs-6 mb-0">Operado por LATAM Airlines Perú</p>
+                    <p class="tc-gray-smoke fs-6 mb-0">Operado por LATAM Airlines Colombia</p>
                 </div>
             `;
             i++;
@@ -217,7 +217,7 @@ class UIFlights{
                                 </div>
                             </div>
             
-                            <p class="tc-gray-smoke fs-6 mb-0">Operado por LATAM Airlines Perú</p>
+                            <p class="tc-gray-smoke fs-6 mb-0">Operado por LATAM Airlines Colombia</p>
                         </div>
 
                         <div class="bg-gray p-1 d-flex border-bottom justify-space-between align-items-center">
@@ -252,7 +252,7 @@ class UIFlights{
                                         </div>
                                     </div>
                                     <div class="d-flex flex-column align-items-center">
-                                        <p class="fs-3 fw-bolder tc-ocean m-0">S/ ${PRECIO_BASE.toLocaleString('es-Es')},00</p>
+                                        <p class="fs-3 fw-bolder tc-ocean m-0">COP ${PRECIO_BASE.toLocaleString('es-Es')},00</p>
                                         <p class="fs-5 mt-0 mb-5 tc-gray-smoke">Por pasajero</p>
                                         <a class="fw-lighter tc-blue mt-4" href="">Más detalles</a>
                                     </div>
@@ -285,7 +285,7 @@ class UIFlights{
                                         </div>
                                     </div>
                                     <div class="d-flex flex-column align-items-center">
-                                        <p class="fs-3 fw-bolder tc-ocean m-0">S/ ${(Math.ceil(PRECIO_BASE*1.7)).toLocaleString('es-Es')},00</p>
+                                        <p class="fs-3 fw-bolder tc-ocean m-0">COP ${(Math.ceil(PRECIO_BASE*1.7)).toLocaleString('es-Es')},00</p>
                                         <p class="fs-5 mt-0 mb-5 tc-gray-smoke">Por pasajero</p>
                                         <a class="fw-lighter tc-blue mt-4" href="">Más detalles</a>
                                     </div>
@@ -330,7 +330,7 @@ class UIFlights{
                                         </div>
                                     </div>
                                     <div class="d-flex flex-column align-items-center">
-                                        <p class="fs-3 fw-bolder tc-ocean m-0">S/ ${(Math.ceil(PRECIO_BASE*3)).toLocaleString('es-Es')},00</p>
+                                        <p class="fs-3 fw-bolder tc-ocean m-0">COP ${(Math.ceil(PRECIO_BASE*3)).toLocaleString('es-Es')},00</p>
                                         <p class="fs-5 mt-0 mb-5 tc-gray-smoke">Por pasajero</p>
                                         <a class="fw-lighter tc-blue mt-4" href="">Más detalles</a>
                                     </div>
@@ -374,11 +374,11 @@ class UIFlights{
                             </div>
                             <div class="d-flex align-items-end flex-column">
                                 <p class="m-1 fs-6 tc-green">Adulto desde</p>
-                                <p class="m-0 fs-4 tc-deep-blue">S/ ${PRECIO_BASE.toLocaleString('es-Es')},00</p>
+                                <p class="m-0 fs-4 tc-deep-blue">COP ${PRECIO_BASE.toLocaleString('es-Es')},00</p>
                             </div>
                         </div>
             
-                        <p class="tc-gray-smoke fs-6 mb-0">Operado por LATAM Airlines Perú</p>
+                        <p class="tc-gray-smoke fs-6 mb-0">Operado por LATAM Airlines Colombia</p>
                     </div>
                 `;
                 i++;

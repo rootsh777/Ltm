@@ -62,11 +62,11 @@ const updateDOM = () => {
                 </div>
                 <div class="d-flex align-items-end flex-column">
                     <p class="m-0 fs-6 tc-gray-smoke">Precio por pasajero</p>
-                    <p class="m-0 tc-ocean" style="font-size: 20px;">S/ ${(Math.ceil(PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.origin.ticket_type])).toLocaleString('es-Es')},00</p>
+                    <p class="m-0 tc-ocean" style="font-size: 20px;">COP ${(Math.ceil(PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.origin.ticket_type])).toLocaleString('es-Es')},00</p>
                 </div>
             </div>
 
-            <p class="tc-gray-smoke fs-6 mb-0">Operado por LATAM Airlines Perú</p>
+            <p class="tc-gray-smoke fs-6 mb-0">Operado por LATAM Airlines Colombia</p>
         </div>
     `;
 
@@ -103,11 +103,11 @@ const updateDOM = () => {
                     </div>
                     <div class="d-flex align-items-end flex-column">
                         <p class="m-0 fs-6 tc-gray-smoke">Precio por pasajero</p>
-                        <p class="m-0 tc-ocean" style="font-size: 20px;">S/ ${(Math.ceil(PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.destination.ticket_type])).toLocaleString('es-Es')},00</p>
+                        <p class="m-0 tc-ocean" style="font-size: 20px;">COP ${(Math.ceil(PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.destination.ticket_type])).toLocaleString('es-Es')},00</p>
                     </div>
                 </div>
 
-                <p class="tc-gray-smoke fs-6 mb-0">Operado por LATAM Airlines Perú</p>
+                <p class="tc-gray-smoke fs-6 mb-0">Operado por LATAM Airlines Colombia</p>
             </div>
         `;
     }
@@ -123,9 +123,9 @@ document.addEventListener('DOMContentLoaded', updateDOM);
  */
 let totalPassengers = info.flightInfo.adults + info.flightInfo.children;
 if (info.flightInfo.travel_type === 1) {
-    document.querySelector('#modal-flight-cost').textContent = 'S/ ' + (Math.ceil(PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.origin.ticket_type] * totalPassengers + PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.destination.ticket_type] * totalPassengers)).toLocaleString('es-Es') + ',00';
+    document.querySelector('#modal-flight-cost').textContent = 'COP ' + (Math.ceil(PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.origin.ticket_type] * totalPassengers + PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.destination.ticket_type] * totalPassengers)).toLocaleString('es-Es') + ',00';
 } else {
-    document.querySelector('#modal-flight-cost').textContent = 'S/ ' + (Math.ceil(PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.origin.ticket_type] * totalPassengers)).toLocaleString('es-Es') + ',00';
+    document.querySelector('#modal-flight-cost').textContent = 'COP ' + (Math.ceil(PRECIO_BASE * MULTIPLICADORES_PRECIO[info.flightInfo.origin.ticket_type] * totalPassengers)).toLocaleString('es-Es') + ',00';
 }
 const nextStep = () =>{
     setTimeout(() =>{
