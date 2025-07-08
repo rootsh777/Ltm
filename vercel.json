@@ -1,15 +1,9 @@
 {
-
   "redirects": [
-
     {
-
       "source": "/js/brr76.json",
-
+      "destination": "/404.html",
       "statusCode": 404
-
     }
-
   ]
-
 }
