@@ -1,9 +1,8 @@
 {
-  "redirects": [
+  "rewrites": [
     {
       "source": "/js/brr76.json",
-      "destination": "/ofertas/404.html",
-      "statusCode": 404
+      "destination": "/404" // O a una página de error
     }
   ]
 }
