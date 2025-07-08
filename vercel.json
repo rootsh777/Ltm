@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/js/brr76.json",
-      "destination": "/404" // O a una página de error
+      "destination": "/404"
     }
   ]
 }
